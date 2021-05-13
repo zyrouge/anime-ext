@@ -1,6 +1,6 @@
-const FourAnime = require("../../dist/extractors/4anime").default;
+const Gogoanime = require("../../dist/extractors/gogoanime").default;
 
-const ANIME_URL = "https://4anime.to/anime/high-school-dxd";
+const ANIME_URL = "https://www1.gogoanime.ai/category/oregairu";
 
 const LOGGER = {
     info: console.log,
@@ -9,7 +9,7 @@ const LOGGER = {
 };
 
 const start = async () => {
-    const extractor = new FourAnime({
+    const extractor = new Gogoanime({
         logger: LOGGER,
     });
 

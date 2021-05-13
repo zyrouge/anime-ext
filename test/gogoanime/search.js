@@ -1,4 +1,4 @@
-const FourAnime = require("../../dist/extractors/4anime").default;
+const Gogoanime = require("../../dist/extractors/gogoanime").default;
 
 const SEARCH_TERMS = "highschool dxd";
 
@@ -9,7 +9,7 @@ const LOGGER = {
 };
 
 const start = async () => {
-    const extractor = new FourAnime({
+    const extractor = new Gogoanime({
         logger: LOGGER,
     });
 

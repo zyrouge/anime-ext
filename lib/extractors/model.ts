@@ -23,6 +23,7 @@ export interface ExtractorEpisodeResult {
 export interface ExtractorDownloadResult {
     quality: string;
     url: string;
+    type: "viewable" | "downloadable";
 }
 
 export interface ExtractorModel {

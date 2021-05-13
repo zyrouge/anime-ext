@@ -11,14 +11,13 @@ import {
 import { constants } from "../util";
 
 export const config = {
-    base: "https://4anime.to/",
-    search: "?s=",
+    baseUrl: "https://4anime.to",
+    searchUrl: (search: string) => `https://4anime.to/?s=${search}`,
     animeRegex: /^https:\/\/4anime\.to\/anime\/.*/,
     episodeRegex: /^https:\/\/4anime\.to\/.*-episode-\w+$/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
-            Referer: this.base,
         };
     },
 };
@@ -58,9 +57,7 @@ export default class FourAnime implements ExtractorModel {
                 `(${this.name}) Search terms: ${terms}`
             );
 
-            const url = `${config.base}${config.search}${encodeURIComponent(
-                terms
-            )}`;
+            const url = config.searchUrl(encodeURIComponent(terms));
             this.options.logger?.debug?.(`(${this.name}) Search URL: ${url}`);
 
             const { data } = await axios.get<string>(url, {
@@ -117,7 +114,7 @@ export default class FourAnime implements ExtractorModel {
 
     /**
      * Get episode URLs from 4Anime URL
-     * @param url Anime URL
+     * @param url 4Anime anime URL
      */
     async getEpisodeLinks(url: string) {
         try {
@@ -143,12 +140,12 @@ export default class FourAnime implements ExtractorModel {
             );
 
             links.each(function () {
-                const title = $(this);
-                const url = title.attr("href");
+                const episode = $(this);
+                const url = episode.attr("href");
 
                 if (url) {
                     results.push({
-                        episode: +title.text().trim(),
+                        episode: +episode.text().trim(),
                         url: url.trim(),
                     });
                 }
@@ -170,7 +167,7 @@ export default class FourAnime implements ExtractorModel {
 
     /**
      * Get download URLs from 4Anime episode URL
-     * @param url Episode URL
+     * @param url 4Anime episode URL
      */
     async getDownloadLinks(url: string) {
         try {
@@ -195,7 +192,12 @@ export default class FourAnime implements ExtractorModel {
             const result: ExtractorDownloadResult = {
                 quality: src.match(/([\w\d]+)\.[\w\d]+$/)?.[1] || "unknown",
                 url: src.trim(),
+                type: "downloadable",
             };
+
+            this.options.logger?.debug?.(
+                `(${this.name}) No. of links after parsing: 1 (${url})`
+            );
 
             return [result];
         } catch (err) {
