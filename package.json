@@ -8,8 +8,15 @@
     "docs": "npm run build && typedoc"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zyrouge/anime-ext.git"
+  },
   "author": "ZYROUGE",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zyrouge/anime-ext/issues"
+  },
   "devDependencies": {
     "@types/node": "^15.0.3",
     "typedoc": "^0.20.36",
