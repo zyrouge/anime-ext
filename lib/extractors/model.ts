@@ -6,6 +6,8 @@ export interface ExtractorConstructorOptions {
     };
 }
 
+export type ExtractorValidateResults = "anime_url" | "episode_url" | boolean;
+
 export interface ExtractorSearchResult {
     title: string;
     url: string;
@@ -27,6 +29,7 @@ export interface ExtractorModel {
     name: string;
     options: ExtractorConstructorOptions;
 
+    validateURL(url: string): ExtractorValidateResults;
     search(terms: string): Promise<ExtractorSearchResult[]>;
     getEpisodeLinks(url: string): Promise<ExtractorEpisodeResult[]>;
     getDownloadLinks(url: string): Promise<ExtractorDownloadResult[]>;

@@ -2,6 +2,7 @@ import axios from "axios";
 import cheerio from "cheerio";
 import {
     ExtractorConstructorOptions,
+    ExtractorValidateResults,
     ExtractorSearchResult,
     ExtractorEpisodeResult,
     ExtractorDownloadResult,
@@ -12,6 +13,8 @@ import { constants } from "../util";
 export const config = {
     base: "https://4anime.to/",
     search: "?s=",
+    animeRegex: /^https:\/\/4anime\.to\/anime\/.*/,
+    episodeRegex: /^https:\/\/4anime\.to\/.*-episode-\w+$/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
@@ -29,6 +32,19 @@ export default class FourAnime implements ExtractorModel {
 
     constructor(options: ExtractorConstructorOptions = {}) {
         this.options = options;
+    }
+
+    /**
+     * Validate 4Anime URL
+     * @param url 4Anime URL
+     */
+    validateURL(url: string) {
+        let result: ExtractorValidateResults = false;
+
+        if (config.animeRegex.test(url)) result = "anime_url";
+        else if (config.episodeRegex.test(url)) result = "episode_url";
+
+        return result;
     }
 
     /**
