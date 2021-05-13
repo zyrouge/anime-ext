@@ -11,8 +11,8 @@ import {
 import { constants } from "../util";
 
 export const config = {
-    baseUrl: "https://4anime.to",
-    searchUrl: (search: string) => `https://4anime.to/?s=${search}`,
+    baseUrl: "https://simply.moe",
+    // searchUrl: (search: string) => `https://simply.moe/?s=${search}`,
     animeRegex: /^https:\/\/4anime\.to\/anime\/.*/,
     episodeRegex: /^https:\/\/4anime\.to\/.*-episode-\w+$/,
     defaultHeaders() {
@@ -23,10 +23,10 @@ export const config = {
 };
 
 /**
- * 4Anime Extractor
+ * Simply.moe Extractor
  */
-export default class FourAnime implements ExtractorModel {
-    name = "4anime";
+export default class SimplyDotMoe implements ExtractorModel {
+    name = "Simply.moe";
     options: ExtractorConstructorOptions;
 
     constructor(options: ExtractorConstructorOptions = {}) {
@@ -34,8 +34,8 @@ export default class FourAnime implements ExtractorModel {
     }
 
     /**
-     * Validate 4Anime URL
-     * @param url 4Anime URL
+     * Validate Simply.moe URL
+     * @param url Simply.moe URL
      */
     validateURL(url: string) {
         let result: ExtractorValidateResults = false;
@@ -47,74 +47,21 @@ export default class FourAnime implements ExtractorModel {
     }
 
     /**
-     * 4Anime Search (avoid using this)
+     * Simply.moe Search (not implemented)
      * @param terms Search term
      */
     async search(terms: string) {
-        try {
-            terms = terms.split(" ").join("+");
-            this.options.logger?.debug?.(
-                `(${this.name}) Search terms: ${terms}`
-            );
+        this.options.logger?.debug?.(
+            `(${this.name}) Search for this site is not implemented yet!`
+        );
 
-            const url = config.searchUrl(encodeURIComponent(terms));
-            this.options.logger?.debug?.(`(${this.name}) Search URL: ${url}`);
-
-            const { data } = await axios.get<string>(url, {
-                headers: config.defaultHeaders(),
-                responseType: "text",
-            });
-
-            const $ = cheerio.load(data);
-            this.options.logger?.debug?.(
-                `(${this.name}) DOM creation successful! (${url})`
-            );
-
-            const results: ExtractorSearchResult[] = [];
-
-            const links = $(".container a");
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${links.length} (${url})`
-            );
-
-            links.each(function () {
-                const ele = $(this);
-
-                const title = ele.find("div");
-                const url = ele.attr("href");
-                const thumbnail = ele.find("img").attr("src");
-                const air = ele.find("span");
-
-                if (url) {
-                    const year = $(air[0]).text().trim() || "unknown";
-                    const season = $(air[2]).text().trim() || "unknown";
-
-                    results.push({
-                        title: title.text().trim(),
-                        url: url.trim(),
-                        thumbnail: thumbnail?.trim(),
-                        air: `${year} (${season})`,
-                    });
-                }
-            });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${results.length} (${url})`
-            );
-
-            return results;
-        } catch (err) {
-            this.options.logger?.error?.(
-                `(${this.name}) Failed to scrape: ${err}`
-            );
-
-            throw new Error(`Failed to scrape: ${err}`);
-        }
+        const results: ExtractorSearchResult[] = [];
+        return results;
     }
 
     /**
-     * Get episode URLs from 4Anime URL
-     * @param url 4Anime anime URL
+     * Get episode URLs from Simply.moe URL
+     * @param url Simply.moe anime URL
      */
     async getEpisodeLinks(url: string) {
         try {
@@ -134,7 +81,7 @@ export default class FourAnime implements ExtractorModel {
 
             const results: ExtractorEpisodeResult[] = [];
 
-            const links = $(".episodes a");
+            const links = $(".episodez.range a");
             this.options.logger?.debug?.(
                 `(${this.name}) No. of links found: ${links.length} (${url})`
             );
@@ -166,8 +113,8 @@ export default class FourAnime implements ExtractorModel {
     }
 
     /**
-     * Get download URLs from 4Anime episode URL
-     * @param url 4Anime episode URL
+     * Get download URLs from Simply.moe episode URL
+     * @param url Simply.moe episode URL
      */
     async getDownloadLinks(url: string) {
         try {
@@ -185,13 +132,13 @@ export default class FourAnime implements ExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const src = $("source").attr("src");
-            if (!src)
+            const link = $(".opt-download a").attr("href");
+            if (!link)
                 throw new Error(`Could not find download url for: ${url}`);
 
             const result: ExtractorDownloadResult = {
-                quality: src.match(/([\w\d]+)\.[\w\d]+$/)?.[1] || "unknown",
-                url: src.trim(),
+                quality: link.match(/([\w\d]+)\.[\w\d]+$/)?.[1] || "unknown",
+                url: link.trim(),
                 type: "downloadable",
             };
 
