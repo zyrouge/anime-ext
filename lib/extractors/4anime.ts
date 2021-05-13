@@ -20,6 +20,9 @@ export const config = {
     },
 };
 
+/**
+ * 4Anime Extractor
+ */
 export default class FourAnime implements ExtractorModel {
     name = "4anime";
     options: ExtractorConstructorOptions;
@@ -28,6 +31,10 @@ export default class FourAnime implements ExtractorModel {
         this.options = options;
     }
 
+    /**
+     * 4Anime Search (avoid using this)
+     * @param terms Search term
+     */
     async search(terms: string) {
         try {
             terms = terms.split(" ").join("+");
@@ -92,6 +99,10 @@ export default class FourAnime implements ExtractorModel {
         }
     }
 
+    /**
+     * Get episode URLs from 4Anime URL
+     * @param url Anime URL
+     */
     async getEpisodeLinks(url: string) {
         try {
             this.options.logger?.debug?.(
@@ -141,6 +152,10 @@ export default class FourAnime implements ExtractorModel {
         }
     }
 
+    /**
+     * Get download URLs from 4Anime episode URL
+     * @param url Episode URL
+     */
     async getDownloadLinks(url: string) {
         try {
             this.options.logger?.debug?.(
