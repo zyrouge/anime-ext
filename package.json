@@ -4,13 +4,16 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "docs": "npm run build && typedoc"
   },
   "keywords": [],
   "author": "ZYROUGE",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^15.0.3",
+    "typedoc": "^0.20.36",
+    "typedoc-material-dark": "github:zyrouge/typedoc-material-dark",
     "typescript": "^4.2.4"
   },
   "dependencies": {
