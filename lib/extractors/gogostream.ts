@@ -8,16 +8,16 @@ import {
     ExtractorDownloadResult,
     ExtractorModel,
 } from "./model";
+import GogoParser from "./parsers/gogo-iframe";
+import { getExtractor } from "./sources";
 import { constants } from "../util";
 
 export const config = {
-    baseUrl: "https://www1.gogoanime.ai",
+    baseUrl: "https://gogo-stream.com",
     searchUrl: (search: string) =>
-        `https://www1.gogoanime.ai/search.html?keyword=${search}`,
-    episodesUrl: (start: string, end: string, id: string) =>
-        `https://ajax.gogo-load.com/ajax/load-list-episode?ep_start=${start}&ep_end=${end}&id=${id}`,
-    animeRegex: /^https:\/\/www1.gogoanime.ai\/category\/.*/,
-    episodeRegex: /^https:\/\/www1.gogoanime.ai\/.*-episode-\w+$/,
+        `https://gogo-stream.com/search.html?keyword=${search}`,
+    animeRegex: /^https:\/\/Gogostream\.to\/anime\/.*/,
+    episodeRegex: /^https:\/\/Gogostream\.to\/.*-episode-\w+$/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
@@ -26,10 +26,10 @@ export const config = {
 };
 
 /**
- * Gogoanime Extractor
+ * Gogostream Extractor
  */
-export default class Gogoanime implements ExtractorModel {
-    name = "Gogoanime";
+export default class Gogostream implements ExtractorModel {
+    name = "Gogostream";
     options: ExtractorConstructorOptions;
 
     constructor(options: ExtractorConstructorOptions = {}) {
@@ -37,8 +37,8 @@ export default class Gogoanime implements ExtractorModel {
     }
 
     /**
-     * Validate Gogoanime URL
-     * @param url Gogoanime URL
+     * Validate Gogostream URL
+     * @param url Gogostream URL
      */
     validateURL(url: string) {
         let result: ExtractorValidateResults = false;
@@ -50,11 +50,12 @@ export default class Gogoanime implements ExtractorModel {
     }
 
     /**
-     * Gogoanime Search (avoid using this)
+     * Gogostream Search (avoid using this)
      * @param terms Search term
      */
     async search(terms: string) {
         try {
+            terms = terms.split(" ").join("+");
             this.options.logger?.debug?.(
                 `(${this.name}) Search terms: ${terms}`
             );
@@ -74,29 +75,27 @@ export default class Gogoanime implements ExtractorModel {
 
             const results: ExtractorSearchResult[] = [];
 
-            const links = $(".items li");
+            const list = $(".listing.items .video-block a");
             this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${links.length} (${url})`
+                `(${this.name}) No. of links found: ${list.length} (${url})`
             );
 
-            links.each(function () {
+            list.each(function () {
                 const ele = $(this);
 
-                const title = ele.find(".name a");
-                const url = title.attr("href");
-                const thumbnail = ele.find(".img img").attr("src");
-                const air = ele.find(".released");
+                const title = ele.find(".name");
+                const url = ele.attr("href");
+                const thumbnail = ele.find("img").attr("src");
+                const air = ele.find(".date");
 
                 if (url) {
-                    const year =
-                        $(air[0]).text().replace("Released:", "").trim() ||
-                        "unknown";
-
                     results.push({
                         title: title.text().trim(),
                         url: `${config.baseUrl}${url.trim()}`,
                         thumbnail: thumbnail?.trim(),
-                        air: year,
+                        air: new Date(air.text().trim())
+                            .toLocaleDateString()
+                            .replace(/\//g, "-"),
                     });
                 }
             });
@@ -116,8 +115,8 @@ export default class Gogoanime implements ExtractorModel {
     }
 
     /**
-     * Get episode URLs from Gogoanime URL
-     * @param url Gogoanime URL
+     * Get episode URLs from Gogostream URL
+     * @param url Gogostream anime URL
      */
     async getEpisodeLinks(url: string) {
         try {
@@ -135,41 +134,22 @@ export default class Gogoanime implements ExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const episodesUrl = config.episodesUrl(
-                $("#episode_page a.active").attr("ep_start") as string,
-                $("#episode_page a.active").attr("ep_end") as string,
-                $("input#movie_id").val() as string
-            );
-
-            const { data: episodesData } = await axios.get<string>(
-                episodesUrl,
-                {
-                    headers: config.defaultHeaders(),
-                    responseType: "text",
-                }
-            );
-
-            const e$ = cheerio.load(episodesData);
-            this.options.logger?.debug?.(
-                `(${this.name}) DOM creation successful! (${url})`
-            );
-
             const results: ExtractorEpisodeResult[] = [];
 
-            const links = e$("#episode_related a");
+            const links = $(".video-info-left .listing.items a");
             this.options.logger?.debug?.(
                 `(${this.name}) No. of links found: ${links.length} (${url})`
             );
 
             links.each(function () {
-                const ele = e$(this);
+                const ele = $(this);
 
                 const episode = ele.find(".name");
                 const url = ele.attr("href");
 
                 if (url) {
                     results.push({
-                        episode: +episode.text().replace("EP", "").trim(),
+                        episode: +episode.text().trim().match(/\d+$/)![0],
                         url: `${config.baseUrl}${url.trim()}`,
                     });
                 }
@@ -190,8 +170,8 @@ export default class Gogoanime implements ExtractorModel {
     }
 
     /**
-     * Get download URLs from Gogoanime episode URL
-     * @param url Episode URL
+     * Get download URLs from Gogostream episode URL
+     * @param url Gogostream episode URL
      */
     async getDownloadLinks(url: string) {
         try {
@@ -209,63 +189,33 @@ export default class Gogoanime implements ExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const dwlLinks: string[] = [];
-            $(".anime_muti_link a").each(function () {
-                const ele = $(this);
-
-                let link = ele.attr("data-video");
-                if (link) {
-                    if (!link.startsWith("http")) link = `https:${link}`;
-                    dwlLinks.push(link);
-                }
-            });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of source links after parsing: ${dwlLinks.length} (${url})`
-            );
+            let iframeUrl = $(".play-video iframe").attr("src");
+            if (!iframeUrl)
+                throw new Error(`Could not find download urls for: ${url}`);
 
             const results: ExtractorDownloadResult[] = [];
 
-            console.log(dwlLinks);
-            for (const dwlLink of dwlLinks) {
-                try {
-                    const { data: dwlData } = await axios.get<string>(dwlLink, {
-                        headers: config.defaultHeaders(),
-                        responseType: "text",
-                        timeout: 5000,
-                    });
-
-                    const dwlUrls = [
-                        ...dwlData.matchAll(
-                            /file:\s+[\'\"](https?:\/\/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b[-a-zA-Z0-9()@:%_\+.~#?&//=]*)[\'\"]/g
-                        ),
-                    ].map((x) => x[1]);
-
-                    if (dwlUrls && dwlUrls.length) {
-                        dwlUrls.forEach((dwlUrl) => {
-                            results.push({
-                                quality: "unknown",
-                                url: dwlUrl,
-                                type: "downloadable",
-                            });
-                        });
+            if (!iframeUrl.startsWith("http")) iframeUrl = `https:${iframeUrl}`;
+            const sources = await GogoParser(iframeUrl);
+            for (const src of sources) {
+                const extractor = getExtractor(src);
+                if (extractor) {
+                    try {
+                        const res = await extractor.fetch(src);
+                        results.push(...res);
+                    } catch (err) {
+                        this.options.logger?.debug?.(
+                            `(${this.name}) Could not parse download source: ${src} (${url})`
+                        );
                     }
-
-                    results.push({
-                        quality: "unknown",
-                        url: dwlLink,
-                        type: "viewable",
-                    });
-                } catch (err) {
-                    this.options.logger?.debug?.(
-                        `(${this.name}) Failed to parse: ${dwlLink} (${url})`
-                    );
                 }
-            }
 
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${results.length} (${url})`
-            );
+                results.push({
+                    quality: "unknown",
+                    url: src,
+                    type: "viewable",
+                });
+            }
 
             return results;
         } catch (err) {

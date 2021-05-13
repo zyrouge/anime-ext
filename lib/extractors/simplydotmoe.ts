@@ -12,9 +12,9 @@ import { constants } from "../util";
 
 export const config = {
     baseUrl: "https://simply.moe",
-    // searchUrl: (search: string) => `https://simply.moe/?s=${search}`,
-    animeRegex: /^https:\/\/4anime\.to\/anime\/.*/,
-    episodeRegex: /^https:\/\/4anime\.to\/.*-episode-\w+$/,
+    searchUrl: (search: string) => `https://simply.moe/?s=${search}`,
+    animeRegex: /^https:\/\/simply\.moe\/anime\/.*/,
+    episodeRegex: /^https:\/\/simply.moe\/.*-episode-\w+$/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
