@@ -8,6 +8,8 @@ import {
     ExtractorDownloadResult,
     ExtractorModel,
 } from "./model";
+import GogoParser from "./parsers/gogo-iframe";
+import { getExtractor } from "./sources";
 import { constants } from "../util";
 
 export const config = {
@@ -209,58 +211,32 @@ export default class Gogoanime implements ExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const dwlLinks: string[] = [];
-            $(".anime_muti_link a").each(function () {
-                const ele = $(this);
-
-                let link = ele.attr("data-video");
-                if (link) {
-                    if (!link.startsWith("http")) link = `https:${link}`;
-                    dwlLinks.push(link);
-                }
-            });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of source links after parsing: ${dwlLinks.length} (${url})`
-            );
+            let iframeUrl = $(".play-video iframe").attr("src");
+            if (!iframeUrl)
+                throw new Error(`Could not find download urls for: ${url}`);
 
             const results: ExtractorDownloadResult[] = [];
 
-            console.log(dwlLinks);
-            for (const dwlLink of dwlLinks) {
-                try {
-                    const { data: dwlData } = await axios.get<string>(dwlLink, {
-                        headers: config.defaultHeaders(),
-                        responseType: "text",
-                        timeout: 5000,
-                    });
-
-                    const dwlUrls = [
-                        ...dwlData.matchAll(
-                            /file:\s+[\'\"](https?:\/\/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b[-a-zA-Z0-9()@:%_\+.~#?&//=]*)[\'\"]/g
-                        ),
-                    ].map((x) => x[1]);
-
-                    if (dwlUrls && dwlUrls.length) {
-                        dwlUrls.forEach((dwlUrl) => {
-                            results.push({
-                                quality: "unknown",
-                                url: dwlUrl,
-                                type: "downloadable",
-                            });
-                        });
+            if (!iframeUrl.startsWith("http")) iframeUrl = `https:${iframeUrl}`;
+            const sources = await GogoParser(iframeUrl);
+            for (const src of sources) {
+                const extractor = getExtractor(src);
+                if (extractor) {
+                    try {
+                        const res = await extractor.fetch(src);
+                        results.push(...res);
+                    } catch (err) {
+                        this.options.logger?.debug?.(
+                            `(${this.name}) Could not parse download source: ${src} (${url})`
+                        );
                     }
-
-                    results.push({
-                        quality: "unknown",
-                        url: dwlLink,
-                        type: "viewable",
-                    });
-                } catch (err) {
-                    this.options.logger?.debug?.(
-                        `(${this.name}) Failed to parse: ${dwlLink} (${url})`
-                    );
                 }
+
+                results.push({
+                    quality: "unknown",
+                    url: src,
+                    type: "viewable",
+                });
             }
 
             this.options.logger?.debug?.(
