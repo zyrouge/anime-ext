@@ -2,79 +2,5051 @@
 	"id": 0,
 	"name": "Anime Extractor - Documentation",
 	"kind": 0,
-	"kindString": "Project",
 	"flags": {},
 	"children": [
 		{
 			"id": 1,
-			"name": "default",
-			"kind": 1024,
-			"kindString": "Property",
+			"name": "extractors/4anime",
+			"kind": 1,
+			"kindString": "Module",
 			"flags": {},
-			"type": {
-				"type": "reflection",
-				"declaration": {
-					"id": 2,
-					"name": "__type",
-					"kind": 65536,
-					"kindString": "Type literal",
+			"children": [
+				{
+					"id": 16,
+					"name": "default",
+					"kind": 128,
+					"kindString": "Class",
 					"flags": {},
+					"comment": {
+						"shortText": "4Anime Extractor"
+					},
 					"children": [
 						{
-							"id": 3,
-							"name": "extractors",
+							"id": 17,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 18,
+									"name": "new default",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 19,
+											"name": "options",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 107,
+												"name": "ExtractorConstructorOptions"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 16,
+										"name": "default"
+									}
+								}
+							]
+						},
+						{
+							"id": 20,
+							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/4anime.ts",
+									"line": 30,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"4anime\"",
+							"implementationOf": {
+								"type": "reference",
+								"id": 126,
+								"name": "ExtractorModel.name"
+							}
+						},
+						{
+							"id": 21,
+							"name": "options",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/4anime.ts",
+									"line": 31,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 107,
+								"name": "ExtractorConstructorOptions"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 127,
+								"name": "ExtractorModel.options"
+							}
+						},
+						{
+							"id": 31,
+							"name": "getDownloadLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/4anime.ts",
+									"line": 173,
+									"character": 26
+								}
+							],
+							"signatures": [
+								{
+									"id": 32,
+									"name": "getDownloadLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get download URLs from 4Anime episode URL"
+									},
+									"parameters": [
+										{
+											"id": 33,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "4Anime episode URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 120,
+													"name": "ExtractorDownloadResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 138,
+										"name": "ExtractorModel.getDownloadLinks"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 137,
+								"name": "ExtractorModel.getDownloadLinks"
+							}
+						},
+						{
+							"id": 28,
+							"name": "getEpisodeLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/4anime.ts",
+									"line": 120,
+									"character": 25
+								}
+							],
+							"signatures": [
+								{
+									"id": 29,
+									"name": "getEpisodeLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get episode URLs from 4Anime URL"
+									},
+									"parameters": [
+										{
+											"id": 30,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "4Anime anime URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 115,
+													"name": "ExtractorEpisodeResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 135,
+										"name": "ExtractorModel.getEpisodeLinks"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 134,
+								"name": "ExtractorModel.getEpisodeLinks"
+							}
+						},
+						{
+							"id": 25,
+							"name": "search",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/4anime.ts",
+									"line": 54,
+									"character": 16
+								}
+							],
+							"signatures": [
+								{
+									"id": 26,
+									"name": "search",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "4Anime Search (avoid using this)"
+									},
+									"parameters": [
+										{
+											"id": 27,
+											"name": "terms",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Search term\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 110,
+													"name": "ExtractorSearchResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 132,
+										"name": "ExtractorModel.search"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 131,
+								"name": "ExtractorModel.search"
+							}
+						},
+						{
+							"id": 22,
+							"name": "validateURL",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/4anime.ts",
+									"line": 41,
+									"character": 15
+								}
+							],
+							"signatures": [
+								{
+									"id": 23,
+									"name": "validateURL",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Validate 4Anime URL"
+									},
+									"parameters": [
+										{
+											"id": 24,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "4Anime URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "literal",
+												"value": false
+											},
+											{
+												"type": "literal",
+												"value": "anime_url"
+											},
+											{
+												"type": "literal",
+												"value": "episode_url"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 129,
+										"name": "ExtractorModel.validateURL"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 128,
+								"name": "ExtractorModel.validateURL"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								17
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								20,
+								21
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								31,
+								28,
+								25,
+								22
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "extractors/4anime.ts",
+							"line": 29,
+							"character": 30
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"id": 125,
+							"name": "ExtractorModel"
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/4anime.ts",
+							"line": 13,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 3,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 9,
+									"name": "animeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 4,
+									"name": "baseUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"https://4anime.to\""
+								},
+								{
+									"id": 10,
+									"name": "episodeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 5,
+									"name": "searchUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 6,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 7,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 8,
+															"name": "search",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 11,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "extractors/4anime.ts",
+											"line": 18,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 12,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 13,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 15,
+															"name": "Referer",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														},
+														{
+															"id": 14,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																15,
+																14
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										9,
+										4,
+										10,
+										5
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										11
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						16
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						2
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "extractors/4anime.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 34,
+			"name": "extractors/gogoanime",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 55,
+					"name": "default",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"comment": {
+						"shortText": "Gogoanime Extractor"
+					},
+					"children": [
+						{
+							"id": 56,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 57,
+									"name": "new default",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 58,
+											"name": "options",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 107,
+												"name": "ExtractorConstructorOptions"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 55,
+										"name": "default"
+									}
+								}
+							]
+						},
+						{
+							"id": 59,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogoanime.ts",
+									"line": 35,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"Gogoanime\"",
+							"implementationOf": {
+								"type": "reference",
+								"id": 126,
+								"name": "ExtractorModel.name"
+							}
+						},
+						{
+							"id": 60,
+							"name": "options",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogoanime.ts",
+									"line": 36,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 107,
+								"name": "ExtractorConstructorOptions"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 127,
+								"name": "ExtractorModel.options"
+							}
+						},
+						{
+							"id": 70,
+							"name": "getDownloadLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogoanime.ts",
+									"line": 199,
+									"character": 26
+								}
+							],
+							"signatures": [
+								{
+									"id": 71,
+									"name": "getDownloadLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get download URLs from Gogoanime episode URL"
+									},
+									"parameters": [
+										{
+											"id": 72,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Episode URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 120,
+													"name": "ExtractorDownloadResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 138,
+										"name": "ExtractorModel.getDownloadLinks"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 137,
+								"name": "ExtractorModel.getDownloadLinks"
+							}
+						},
+						{
+							"id": 67,
+							"name": "getEpisodeLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogoanime.ts",
+									"line": 125,
+									"character": 25
+								}
+							],
+							"signatures": [
+								{
+									"id": 68,
+									"name": "getEpisodeLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get episode URLs from Gogoanime URL"
+									},
+									"parameters": [
+										{
+											"id": 69,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Gogoanime URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 115,
+													"name": "ExtractorEpisodeResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 135,
+										"name": "ExtractorModel.getEpisodeLinks"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 134,
+								"name": "ExtractorModel.getEpisodeLinks"
+							}
+						},
+						{
+							"id": 64,
+							"name": "search",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogoanime.ts",
+									"line": 59,
+									"character": 16
+								}
+							],
+							"signatures": [
+								{
+									"id": 65,
+									"name": "search",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Gogoanime Search (avoid using this)"
+									},
+									"parameters": [
+										{
+											"id": 66,
+											"name": "terms",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Search term\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 110,
+													"name": "ExtractorSearchResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 132,
+										"name": "ExtractorModel.search"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 131,
+								"name": "ExtractorModel.search"
+							}
+						},
+						{
+							"id": 61,
+							"name": "validateURL",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogoanime.ts",
+									"line": 46,
+									"character": 15
+								}
+							],
+							"signatures": [
+								{
+									"id": 62,
+									"name": "validateURL",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Validate Gogoanime URL"
+									},
+									"parameters": [
+										{
+											"id": 63,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Gogoanime URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "literal",
+												"value": false
+											},
+											{
+												"type": "literal",
+												"value": "anime_url"
+											},
+											{
+												"type": "literal",
+												"value": "episode_url"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 129,
+										"name": "ExtractorModel.validateURL"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 128,
+								"name": "ExtractorModel.validateURL"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								56
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								59,
+								60
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								70,
+								67,
+								64,
+								61
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "extractors/gogoanime.ts",
+							"line": 34,
+							"character": 30
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"id": 125,
+							"name": "ExtractorModel"
+						}
+					]
+				},
+				{
+					"id": 35,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/gogoanime.ts",
+							"line": 15,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 36,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 48,
+									"name": "animeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 37,
+									"name": "baseUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"https://www1.gogoanime.ai\""
+								},
+								{
+									"id": 49,
+									"name": "episodeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 42,
+									"name": "episodesUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 43,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 44,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 45,
+															"name": "start",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														},
+														{
+															"id": 46,
+															"name": "end",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														},
+														{
+															"id": 47,
+															"name": "id",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 38,
+									"name": "searchUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 39,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 40,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 41,
+															"name": "search",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 50,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "extractors/gogoanime.ts",
+											"line": 23,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 51,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 52,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 54,
+															"name": "Referer",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														},
+														{
+															"id": 53,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																54,
+																53
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										48,
+										37,
+										49,
+										42,
+										38
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										50
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						55
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						35
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "extractors/gogoanime.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 73,
+			"name": "extractors/gogostream",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 88,
+					"name": "default",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"comment": {
+						"shortText": "Gogostream Extractor"
+					},
+					"children": [
+						{
+							"id": 89,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 90,
+									"name": "new default",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 91,
+											"name": "options",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 107,
+												"name": "ExtractorConstructorOptions"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 88,
+										"name": "default"
+									}
+								}
+							]
+						},
+						{
+							"id": 92,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogostream.ts",
+									"line": 33,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"Gogostream\"",
+							"implementationOf": {
+								"type": "reference",
+								"id": 126,
+								"name": "ExtractorModel.name"
+							}
+						},
+						{
+							"id": 93,
+							"name": "options",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogostream.ts",
+									"line": 34,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 107,
+								"name": "ExtractorConstructorOptions"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 127,
+								"name": "ExtractorModel.options"
+							}
+						},
+						{
+							"id": 103,
+							"name": "getDownloadLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogostream.ts",
+									"line": 177,
+									"character": 26
+								}
+							],
+							"signatures": [
+								{
+									"id": 104,
+									"name": "getDownloadLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get download URLs from Gogostream episode URL"
+									},
+									"parameters": [
+										{
+											"id": 105,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Gogostream episode URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 120,
+													"name": "ExtractorDownloadResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 138,
+										"name": "ExtractorModel.getDownloadLinks"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 137,
+								"name": "ExtractorModel.getDownloadLinks"
+							}
+						},
+						{
+							"id": 100,
+							"name": "getEpisodeLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogostream.ts",
+									"line": 122,
+									"character": 25
+								}
+							],
+							"signatures": [
+								{
+									"id": 101,
+									"name": "getEpisodeLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get episode URLs from Gogostream URL"
+									},
+									"parameters": [
+										{
+											"id": 102,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Gogostream anime URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 115,
+													"name": "ExtractorEpisodeResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 135,
+										"name": "ExtractorModel.getEpisodeLinks"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 134,
+								"name": "ExtractorModel.getEpisodeLinks"
+							}
+						},
+						{
+							"id": 97,
+							"name": "search",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogostream.ts",
+									"line": 57,
+									"character": 16
+								}
+							],
+							"signatures": [
+								{
+									"id": 98,
+									"name": "search",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Gogostream Search (avoid using this)"
+									},
+									"parameters": [
+										{
+											"id": 99,
+											"name": "terms",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Search term\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 110,
+													"name": "ExtractorSearchResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 132,
+										"name": "ExtractorModel.search"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 131,
+								"name": "ExtractorModel.search"
+							}
+						},
+						{
+							"id": 94,
+							"name": "validateURL",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/gogostream.ts",
+									"line": 44,
+									"character": 15
+								}
+							],
+							"signatures": [
+								{
+									"id": 95,
+									"name": "validateURL",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Validate Gogostream URL"
+									},
+									"parameters": [
+										{
+											"id": 96,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Gogostream URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "literal",
+												"value": false
+											},
+											{
+												"type": "literal",
+												"value": "anime_url"
+											},
+											{
+												"type": "literal",
+												"value": "episode_url"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 129,
+										"name": "ExtractorModel.validateURL"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 128,
+								"name": "ExtractorModel.validateURL"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								89
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								92,
+								93
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								103,
+								100,
+								97,
+								94
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "extractors/gogostream.ts",
+							"line": 32,
+							"character": 31
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"id": 125,
+							"name": "ExtractorModel"
+						}
+					]
+				},
+				{
+					"id": 74,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/gogostream.ts",
+							"line": 15,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 75,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 81,
+									"name": "animeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 76,
+									"name": "baseUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"https://gogo-stream.com\""
+								},
+								{
+									"id": 82,
+									"name": "episodeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 77,
+									"name": "searchUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 78,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 79,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 80,
+															"name": "search",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 83,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "extractors/gogostream.ts",
+											"line": 21,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 84,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 85,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 87,
+															"name": "Referer",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														},
+														{
+															"id": 86,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																87,
+																86
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										81,
+										76,
+										82,
+										77
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										83
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						88
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						74
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "extractors/gogostream.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 106,
+			"name": "extractors/model",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 107,
+					"name": "ExtractorConstructorOptions",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 108,
+							"name": "logger",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 4,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 356,
+										"name": "Logger"
+									}
+								],
+								"name": "Partial"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								108
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "extractors/model.ts",
+							"line": 3,
+							"character": 44
+						}
+					]
+				},
+				{
+					"id": 120,
+					"name": "ExtractorDownloadResult",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 124,
+							"name": "headers",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 33,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								],
+								"name": "Record"
+							}
+						},
+						{
+							"id": 121,
+							"name": "quality",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 30,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 123,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 32,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "union",
+									"types": [
+										{
+											"type": "literal",
+											"value": "streamable"
+										},
+										{
+											"type": "literal",
+											"value": "downloadable"
+										},
+										{
+											"type": "literal",
+											"value": "external_embed"
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 122,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 31,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								124,
+								121,
+								123,
+								122
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "extractors/model.ts",
+							"line": 29,
+							"character": 40
+						}
+					]
+				},
+				{
+					"id": 115,
+					"name": "ExtractorEpisodeResult",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 116,
+							"name": "episode",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 17,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						},
+						{
+							"id": 117,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 18,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								116,
+								117
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "extractors/model.ts",
+							"line": 16,
+							"character": 39
+						}
+					]
+				},
+				{
+					"id": 125,
+					"name": "ExtractorModel",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 126,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 37,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 127,
+							"name": "options",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 38,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 107,
+								"name": "ExtractorConstructorOptions"
+							}
+						},
+						{
+							"id": 137,
+							"name": "getDownloadLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 138,
+									"name": "getDownloadLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 139,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 120,
+													"name": "ExtractorDownloadResult"
+												}
+											}
+										],
+										"name": "Promise"
+									}
+								}
+							]
+						},
+						{
+							"id": 134,
+							"name": "getEpisodeLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 135,
+									"name": "getEpisodeLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 136,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 115,
+													"name": "ExtractorEpisodeResult"
+												}
+											}
+										],
+										"name": "Promise"
+									}
+								}
+							]
+						},
+						{
+							"id": 131,
+							"name": "search",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 132,
+									"name": "search",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 133,
+											"name": "terms",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 110,
+													"name": "ExtractorSearchResult"
+												}
+											}
+										],
+										"name": "Promise"
+									}
+								}
+							]
+						},
+						{
+							"id": 128,
+							"name": "validateURL",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 129,
+									"name": "validateURL",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 130,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 109,
+										"name": "ExtractorValidateResults"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								126,
+								127
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								137,
+								134,
+								131,
+								128
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "extractors/model.ts",
+							"line": 36,
+							"character": 31
+						}
+					],
+					"implementedBy": [
+						{
+							"type": "reference",
+							"id": 16,
+							"name": "default"
+						},
+						{
+							"type": "reference",
+							"id": 55,
+							"name": "default"
+						},
+						{
+							"type": "reference",
+							"id": 88,
+							"name": "default"
+						},
+						{
+							"type": "reference",
+							"id": 160,
+							"name": "default"
+						},
+						{
+							"type": "reference",
+							"id": 231,
+							"name": "default"
+						}
+					]
+				},
+				{
+					"id": 110,
+					"name": "ExtractorSearchResult",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 114,
+							"name": "air",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 13,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 113,
+							"name": "thumbnail",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 12,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 111,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 10,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 112,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/model.ts",
+									"line": 11,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								114,
+								113,
+								111,
+								112
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "extractors/model.ts",
+							"line": 9,
+							"character": 38
+						}
+					]
+				},
+				{
+					"id": 119,
+					"name": "ExtractorDownloadResultTypesType",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "extractors/model.ts",
+							"line": 26,
+							"character": 44
+						}
+					],
+					"type": {
+						"type": "indexedAccess",
+						"indexType": {
+							"type": "intrinsic",
+							"name": "number"
+						},
+						"objectType": {
+							"type": "query",
+							"queryType": {
+								"type": "reference",
+								"id": 118,
+								"name": "ExtractorDownloadResultTypes"
+							}
+						}
+					}
+				},
+				{
+					"id": 109,
+					"name": "ExtractorValidateResults",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "extractors/model.ts",
+							"line": 7,
+							"character": 36
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": "anime_url"
+							},
+							{
+								"type": "literal",
+								"value": "episode_url"
+							},
+							{
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						]
+					}
+				},
+				{
+					"id": 118,
+					"name": "ExtractorDownloadResultTypes",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/model.ts",
+							"line": 21,
+							"character": 41
+						}
+					],
+					"type": {
+						"type": "typeOperator",
+						"operator": "readonly",
+						"target": {
+							"type": "tuple",
+							"elements": [
+								{
+									"type": "literal",
+									"value": "streamable"
+								},
+								{
+									"type": "literal",
+									"value": "downloadable"
+								},
+								{
+									"type": "literal",
+									"value": "external_embed"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						107,
+						120,
+						115,
+						125,
+						110
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						119,
+						109
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						118
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "extractors/model.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 140,
+			"name": "extractors/parsers/gogo-iframe",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 144,
+					"name": "default",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"target": 141
+				},
+				{
+					"id": 141,
+					"name": "GogoIframeParser",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/parsers/gogo-iframe.ts",
+							"line": 9,
+							"character": 29
+						}
+					],
+					"signatures": [
+						{
+							"id": 142,
+							"name": "GogoIframeParser",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 143,
+									"name": "url",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								],
+								"name": "Promise"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "References",
+					"kind": 16777216,
+					"children": [
+						144
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						141
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "extractors/parsers/gogo-iframe.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 145,
+			"name": "extractors/simplydotmoe",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 160,
+					"name": "default",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"comment": {
+						"shortText": "Simply.moe Extractor"
+					},
+					"children": [
+						{
+							"id": 161,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 162,
+									"name": "new default",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 163,
+											"name": "options",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 107,
+												"name": "ExtractorConstructorOptions"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 160,
+										"name": "default"
+									}
+								}
+							]
+						},
+						{
+							"id": 164,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/simplydotmoe.ts",
+									"line": 30,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"Simply.moe\"",
+							"implementationOf": {
+								"type": "reference",
+								"id": 126,
+								"name": "ExtractorModel.name"
+							}
+						},
+						{
+							"id": 165,
+							"name": "options",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/simplydotmoe.ts",
+									"line": 31,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 107,
+								"name": "ExtractorConstructorOptions"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 127,
+								"name": "ExtractorModel.options"
+							}
+						},
+						{
+							"id": 175,
+							"name": "getDownloadLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/simplydotmoe.ts",
+									"line": 120,
+									"character": 26
+								}
+							],
+							"signatures": [
+								{
+									"id": 176,
+									"name": "getDownloadLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get download URLs from Simply.moe episode URL"
+									},
+									"parameters": [
+										{
+											"id": 177,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Simply.moe episode URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 120,
+													"name": "ExtractorDownloadResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 138,
+										"name": "ExtractorModel.getDownloadLinks"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 137,
+								"name": "ExtractorModel.getDownloadLinks"
+							}
+						},
+						{
+							"id": 172,
+							"name": "getEpisodeLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/simplydotmoe.ts",
+									"line": 67,
+									"character": 25
+								}
+							],
+							"signatures": [
+								{
+									"id": 173,
+									"name": "getEpisodeLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get episode URLs from Simply.moe URL"
+									},
+									"parameters": [
+										{
+											"id": 174,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Simply.moe anime URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 115,
+													"name": "ExtractorEpisodeResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 135,
+										"name": "ExtractorModel.getEpisodeLinks"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 134,
+								"name": "ExtractorModel.getEpisodeLinks"
+							}
+						},
+						{
+							"id": 169,
+							"name": "search",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/simplydotmoe.ts",
+									"line": 54,
+									"character": 16
+								}
+							],
+							"signatures": [
+								{
+									"id": 170,
+									"name": "search",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Simply.moe Search (not implemented)"
+									},
+									"parameters": [
+										{
+											"id": 171,
+											"name": "terms",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Search term\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 110,
+													"name": "ExtractorSearchResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 132,
+										"name": "ExtractorModel.search"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 131,
+								"name": "ExtractorModel.search"
+							}
+						},
+						{
+							"id": 166,
+							"name": "validateURL",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/simplydotmoe.ts",
+									"line": 41,
+									"character": 15
+								}
+							],
+							"signatures": [
+								{
+									"id": 167,
+									"name": "validateURL",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Validate Simply.moe URL"
+									},
+									"parameters": [
+										{
+											"id": 168,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Simply.moe URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "literal",
+												"value": false
+											},
+											{
+												"type": "literal",
+												"value": "anime_url"
+											},
+											{
+												"type": "literal",
+												"value": "episode_url"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 129,
+										"name": "ExtractorModel.validateURL"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 128,
+								"name": "ExtractorModel.validateURL"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								161
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								164,
+								165
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								175,
+								172,
+								169,
+								166
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "extractors/simplydotmoe.ts",
+							"line": 29,
+							"character": 33
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"id": 125,
+							"name": "ExtractorModel"
+						}
+					]
+				},
+				{
+					"id": 146,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/simplydotmoe.ts",
+							"line": 13,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 147,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 153,
+									"name": "animeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 148,
+									"name": "baseUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"https://simply.moe\""
+								},
+								{
+									"id": 154,
+									"name": "episodeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 149,
+									"name": "searchUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 150,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 151,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 152,
+															"name": "search",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 155,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "extractors/simplydotmoe.ts",
+											"line": 18,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 156,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 157,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 159,
+															"name": "Referer",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														},
+														{
+															"id": 158,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																159,
+																158
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										153,
+										148,
+										154,
+										149
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										155
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						160
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						146
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "extractors/simplydotmoe.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 182,
+			"name": "extractors/sources",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 183,
+					"name": "extractors",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/sources/index.ts",
+							"line": 5,
+							"character": 23
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"id": 188,
+							"name": "SourceRetriever"
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 184,
+					"name": "getExtractor",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/sources/index.ts",
+							"line": 7,
+							"character": 25
+						}
+					],
+					"signatures": [
+						{
+							"id": 185,
+							"name": "getExtractor",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 186,
+									"name": "url",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "undefined"
+									},
+									{
+										"type": "reference",
+										"id": 188,
+										"name": "SourceRetriever"
+									}
+								]
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						183
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						184
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "extractors/sources/index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 178,
+			"name": "extractors/sources/gogoplay-load",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 179,
+					"name": "default",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/sources/gogoplay-load.ts",
+							"line": 9,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 188,
+						"name": "SourceRetriever"
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						179
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "extractors/sources/gogoplay-load.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 180,
+			"name": "extractors/sources/gogoplay-streaming",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 181,
+					"name": "default",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/sources/gogoplay-streaming.ts",
+							"line": 9,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 188,
+						"name": "SourceRetriever"
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						181
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "extractors/sources/gogoplay-streaming.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 187,
+			"name": "extractors/sources/model",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 372,
+					"name": "ExtractorDownloadResult",
+					"kind": 16777216,
+					"kindString": "Reference",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "extractors/sources/model.ts",
+							"line": 9,
+							"character": 32
+						}
+					],
+					"target": 120
+				},
+				{
+					"id": 188,
+					"name": "SourceRetriever",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 189,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/sources/model.ts",
+									"line": 4,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 193,
+							"name": "fetch",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 194,
+									"name": "fetch",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 195,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 120,
+													"name": "ExtractorDownloadResult"
+												}
+											}
+										],
+										"name": "Promise"
+									}
+								}
+							]
+						},
+						{
+							"id": 190,
+							"name": "validate",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 191,
+									"name": "validate",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 192,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								189
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								193,
+								190
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "extractors/sources/model.ts",
+							"line": 3,
+							"character": 32
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "References",
+					"kind": 16777216,
+					"children": [
+						372
+					]
+				},
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						188
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "extractors/sources/model.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 196,
+			"name": "extractors/twistdotmoe",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 231,
+					"name": "default",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"comment": {
+						"shortText": "4Anime Extractor"
+					},
+					"children": [
+						{
+							"id": 232,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 233,
+									"name": "new default",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 234,
+											"name": "options",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 107,
+												"name": "ExtractorConstructorOptions"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 231,
+										"name": "default"
+									}
+								}
+							]
+						},
+						{
+							"id": 235,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/twistdotmoe.ts",
+									"line": 48,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"Twist.moe\"",
+							"implementationOf": {
+								"type": "reference",
+								"id": 126,
+								"name": "ExtractorModel.name"
+							}
+						},
+						{
+							"id": 236,
+							"name": "options",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/twistdotmoe.ts",
+									"line": 49,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 107,
+								"name": "ExtractorConstructorOptions"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 127,
+								"name": "ExtractorModel.options"
+							}
+						},
+						{
+							"id": 237,
+							"name": "searchCache",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/twistdotmoe.ts",
+									"line": 50,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reflection",
+									"declaration": {
+										"id": 238,
+										"name": "__type",
+										"kind": 65536,
+										"kindString": "Type literal",
+										"flags": {},
+										"children": [
+											{
+												"id": 240,
+												"name": "alt_title",
+												"kind": 1024,
+												"kindString": "Property",
+												"flags": {
+													"isOptional": true
+												},
+												"sources": [
+													{
+														"fileName": "extractors/twistdotmoe.ts",
+														"line": 52,
+														"character": 17
+													}
+												],
+												"type": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											},
+											{
+												"id": 239,
+												"name": "title",
+												"kind": 1024,
+												"kindString": "Property",
+												"flags": {},
+												"sources": [
+													{
+														"fileName": "extractors/twistdotmoe.ts",
+														"line": 51,
+														"character": 13
+													}
+												],
+												"type": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											},
+											{
+												"id": 241,
+												"name": "url",
+												"kind": 1024,
+												"kindString": "Property",
+												"flags": {},
+												"sources": [
+													{
+														"fileName": "extractors/twistdotmoe.ts",
+														"line": 53,
+														"character": 11
+													}
+												],
+												"type": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											}
+										],
+										"groups": [
+											{
+												"title": "Properties",
+												"kind": 1024,
+												"children": [
+													240,
+													239,
+													241
+												]
+											}
+										]
+									}
+								}
+							},
+							"defaultValue": "[]"
+						},
+						{
+							"id": 251,
+							"name": "getDownloadLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/twistdotmoe.ts",
+									"line": 195,
+									"character": 26
+								}
+							],
+							"signatures": [
+								{
+									"id": 252,
+									"name": "getDownloadLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get download URLs from 4Anime episode URL"
+									},
+									"parameters": [
+										{
+											"id": 253,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "4Anime episode URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 120,
+													"name": "ExtractorDownloadResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 138,
+										"name": "ExtractorModel.getDownloadLinks"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 137,
+								"name": "ExtractorModel.getDownloadLinks"
+							}
+						},
+						{
+							"id": 248,
+							"name": "getEpisodeLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/twistdotmoe.ts",
+									"line": 151,
+									"character": 25
+								}
+							],
+							"signatures": [
+								{
+									"id": 249,
+									"name": "getEpisodeLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get episode URLs from 4Anime URL"
+									},
+									"parameters": [
+										{
+											"id": 250,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "4Anime anime URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 115,
+													"name": "ExtractorEpisodeResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 135,
+										"name": "ExtractorModel.getEpisodeLinks"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 134,
+								"name": "ExtractorModel.getEpisodeLinks"
+							}
+						},
+						{
+							"id": 245,
+							"name": "search",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/twistdotmoe.ts",
+									"line": 77,
+									"character": 16
+								}
+							],
+							"signatures": [
+								{
+									"id": 246,
+									"name": "search",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "4Anime Search (avoid using this)"
+									},
+									"parameters": [
+										{
+											"id": 247,
+											"name": "terms",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Search term\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 110,
+													"name": "ExtractorSearchResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 132,
+										"name": "ExtractorModel.search"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 131,
+								"name": "ExtractorModel.search"
+							}
+						},
+						{
+							"id": 242,
+							"name": "validateURL",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "extractors/twistdotmoe.ts",
+									"line": 64,
+									"character": 15
+								}
+							],
+							"signatures": [
+								{
+									"id": 243,
+									"name": "validateURL",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Validate 4Anime URL"
+									},
+									"parameters": [
+										{
+											"id": 244,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "4Anime URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "literal",
+												"value": false
+											},
+											{
+												"type": "literal",
+												"value": "anime_url"
+											},
+											{
+												"type": "literal",
+												"value": "episode_url"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 129,
+										"name": "ExtractorModel.validateURL"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 128,
+								"name": "ExtractorModel.validateURL"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								232
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								235,
+								236,
+								237
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								251,
+								248,
+								245,
+								242
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "extractors/twistdotmoe.ts",
+							"line": 47,
+							"character": 30
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"id": 125,
+							"name": "ExtractorModel"
+						}
+					]
+				},
+				{
+					"id": 197,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/twistdotmoe.ts",
+							"line": 13,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 198,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 206,
+									"name": "animePageUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 207,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 208,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 209,
+															"name": "slug",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 219,
+									"name": "animeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 199,
+									"name": "baseUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"https://twist.moe\""
+								},
+								{
+									"id": 218,
+									"name": "cdnUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 201,
+									"name": "decryptKey",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"267041df55ca2b36f2e322d05ee2c9cf\""
+								},
+								{
+									"id": 220,
+									"name": "episodeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 210,
+									"name": "episodesApiUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 211,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 212,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 213,
+															"name": "slug",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 202,
+									"name": "getSlugFromUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 203,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 204,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 205,
+															"name": "url",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "union",
+														"types": [
+															{
+																"type": "intrinsic",
+																"name": "undefined"
+															},
+															{
+																"type": "intrinsic",
+																"name": "string"
+															}
+														]
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 200,
+									"name": "searchUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"https://api.twist.moe/api/anime\""
+								},
+								{
+									"id": 214,
+									"name": "sourcesApiUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 215,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 216,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 217,
+															"name": "slug",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 221,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "extractors/twistdotmoe.ts",
+											"line": 29,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 222,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 223,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 225,
+															"name": "Referer",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														},
+														{
+															"id": 224,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														},
+														{
+															"id": 226,
+															"name": "x-access-token",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "\"0df14814b9e590a1f26d3071a4ed7974\""
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																225,
+																224,
+																226
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										206,
+										219,
+										199,
+										218,
+										201,
+										220,
+										210,
+										202,
+										200,
+										214
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										221
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 227,
+					"name": "matcher",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "extractors/twistdotmoe.ts",
+							"line": 38,
+							"character": 20
+						}
+					],
+					"signatures": [
+						{
+							"id": 228,
+							"name": "matcher",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 229,
+									"name": "origin",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 230,
+									"name": "keywords",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						231
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						197
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						227
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "extractors/twistdotmoe.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 254,
+			"name": "index",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 255,
+					"name": "default",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 256,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 257,
+									"name": "extractors",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 258,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 259,
+													"name": "FourAnime",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {},
+													"type": {
+														"type": "query",
+														"queryType": {
+															"type": "reference",
+															"id": 16,
+															"name": "default"
+														}
+													}
+												},
+												{
+													"id": 260,
+													"name": "Gogoanime",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {},
+													"type": {
+														"type": "query",
+														"queryType": {
+															"type": "reference",
+															"id": 55,
+															"name": "default"
+														}
+													}
+												},
+												{
+													"id": 261,
+													"name": "Simplydotmoe",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {},
+													"type": {
+														"type": "query",
+														"queryType": {
+															"type": "reference",
+															"id": 160,
+															"name": "default"
+														}
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Properties",
+													"kind": 1024,
+													"children": [
+														259,
+														260,
+														261
+													]
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										257
+									]
+								}
+							]
+						}
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"kind": 1024,
+					"children": [
+						255
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 262,
+			"name": "integrations/myanimelist/anime-info",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 276,
+					"name": "CharacterEntity",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 281,
+							"name": "actor",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 26,
+									"character": 9
+								}
+							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 4,
+									"id": 282,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 5,
-											"name": "FourAnime",
+											"id": 285,
+											"name": "image",
 											"kind": 1024,
 											"kindString": "Property",
 											"flags": {},
-											"type": {
-												"type": "query",
-												"queryType": {
-													"type": "reference",
-													"name": "default"
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 29,
+													"character": 13
 												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
 											}
 										},
 										{
-											"id": 6,
-											"name": "Gogoanime",
+											"id": 286,
+											"name": "language",
 											"kind": 1024,
 											"kindString": "Property",
 											"flags": {},
-											"type": {
-												"type": "query",
-												"queryType": {
-													"type": "reference",
-													"name": "default"
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 30,
+													"character": 16
 												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
 											}
 										},
 										{
-											"id": 7,
-											"name": "Simplydotmoe",
+											"id": 283,
+											"name": "name",
 											"kind": 1024,
 											"kindString": "Property",
 											"flags": {},
-											"type": {
-												"type": "query",
-												"queryType": {
-													"type": "reference",
-													"name": "default"
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 27,
+													"character": 12
 												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 284,
+											"name": "url",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 28,
+													"character": 11
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
 											}
 										}
 									],
@@ -83,15 +5055,87 @@
 											"title": "Properties",
 											"kind": 1024,
 											"children": [
-												5,
-												6,
-												7
+												285,
+												286,
+												283,
+												284
 											]
 										}
 									]
 								}
-							},
-							"defaultValue": "..."
+							}
+						},
+						{
+							"id": 279,
+							"name": "image",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 24,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 277,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 22,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 280,
+							"name": "role",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 25,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 278,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 23,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
 						}
 					],
 					"groups": [
@@ -99,28 +5143,1823 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								3
+								281,
+								279,
+								277,
+								280,
+								278
 							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-info.ts",
+							"line": 21,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 274,
+					"name": "InfoOptions",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 275,
+							"name": "logger",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 18,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 356,
+										"name": "Logger"
+									}
+								],
+								"name": "Partial"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								275
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-info.ts",
+							"line": 17,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 296,
+					"name": "InfoResult",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 322,
+							"name": "characters",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 73,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 276,
+									"name": "CharacterEntity"
+								}
+							}
+						},
+						{
+							"id": 299,
+							"name": "image",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 50,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 307,
+							"name": "info",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 58,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 308,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 312,
+											"name": "aired",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 62,
+													"character": 13
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 314,
+											"name": "broadcast",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 64,
+													"character": 17
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 320,
+											"name": "duration",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 70,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 310,
+											"name": "episodes",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 60,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 319,
+											"name": "genres",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 69,
+													"character": 14
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 316,
+											"name": "licensors",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 66,
+													"character": 17
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 313,
+											"name": "premiered",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 63,
+													"character": 17
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 315,
+											"name": "producers",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 65,
+													"character": 17
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 321,
+											"name": "rating",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 71,
+													"character": 14
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 318,
+											"name": "source",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 68,
+													"character": 14
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 311,
+											"name": "status",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 61,
+													"character": 14
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 317,
+											"name": "studios",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 67,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 309,
+											"name": "type",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 59,
+													"character": 12
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												312,
+												314,
+												320,
+												310,
+												319,
+												316,
+												313,
+												315,
+												321,
+												318,
+												311,
+												317,
+												309
+											]
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 305,
+							"name": "members",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 56,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 324,
+							"name": "recommendations",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 75,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 292,
+									"name": "RecommendationEntity"
+								}
+							}
+						},
+						{
+							"id": 306,
+							"name": "season",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 57,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 323,
+							"name": "staffs",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 74,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 287,
+									"name": "StaffEntity"
+								}
+							}
+						},
+						{
+							"id": 300,
+							"name": "stats",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 51,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 301,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 304,
+											"name": "populatrity",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 54,
+													"character": 19
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 303,
+											"name": "rank",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 53,
+													"character": 12
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 302,
+											"name": "score",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 52,
+													"character": 13
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												304,
+												303,
+												302
+											]
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 298,
+							"name": "synonpsis",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 49,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 297,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 48,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								322,
+								299,
+								307,
+								305,
+								324,
+								306,
+								323,
+								300,
+								298,
+								297
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-info.ts",
+							"line": 47,
+							"character": 27
+						}
+					]
+				},
+				{
+					"id": 292,
+					"name": "RecommendationEntity",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 295,
+							"name": "thumbnail",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 44,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 293,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 42,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 294,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 43,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								295,
+								293,
+								294
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-info.ts",
+							"line": 41,
+							"character": 37
+						}
+					]
+				},
+				{
+					"id": 287,
+					"name": "StaffEntity",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 290,
+							"name": "image",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 37,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 288,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 35,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 291,
+							"name": "role",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 38,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 289,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 36,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								290,
+								288,
+								291,
+								289
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-info.ts",
+							"line": 34,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 263,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-info.ts",
+							"line": 6,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 264,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 266,
+									"name": "baseUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 267,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 268,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 269,
+															"name": "terms",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 265,
+									"name": "name",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"MyAnimeList-anime-info\""
+								},
+								{
+									"id": 270,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "integrations/myanimelist/anime-info.ts",
+											"line": 10,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 271,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 272,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 273,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																273
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										266,
+										265
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										270
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 325,
+					"name": "default",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-info.ts",
+							"line": 78,
+							"character": 12
+						}
+					],
+					"signatures": [
+						{
+							"id": 326,
+							"name": "default",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 327,
+									"name": "url",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 328,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 274,
+										"name": "InfoOptions"
+									},
+									"defaultValue": "{}"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 296,
+										"name": "InfoResult"
+									}
+								],
+								"name": "Promise"
+							}
 						}
 					]
 				}
-			}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						276,
+						274,
+						296,
+						292,
+						287
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						263
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						325
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "integrations/myanimelist/anime-info.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 329,
+			"name": "integrations/myanimelist/search-anime",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 341,
+					"name": "SearchOptions",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 342,
+							"name": "logger",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/search-anime.ts",
+									"line": 18,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 356,
+										"name": "Logger"
+									}
+								],
+								"name": "Partial"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								342
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/search-anime.ts",
+							"line": 17,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 343,
+					"name": "SearchResult",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 346,
+							"name": "description",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/search-anime.ts",
+									"line": 24,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 349,
+							"name": "episodes",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/search-anime.ts",
+									"line": 27,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 350,
+							"name": "score",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/search-anime.ts",
+									"line": 28,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 347,
+							"name": "thumbnail",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/search-anime.ts",
+									"line": 25,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 344,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/search-anime.ts",
+									"line": 22,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 348,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/search-anime.ts",
+									"line": 26,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 345,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/search-anime.ts",
+									"line": 23,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								346,
+								349,
+								350,
+								347,
+								344,
+								348,
+								345
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/search-anime.ts",
+							"line": 21,
+							"character": 29
+						}
+					]
+				},
+				{
+					"id": 330,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/search-anime.ts",
+							"line": 6,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 331,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 333,
+									"name": "baseUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 334,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 335,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 336,
+															"name": "terms",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 332,
+									"name": "name",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"MyAnimeList-search\""
+								},
+								{
+									"id": 337,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "integrations/myanimelist/search-anime.ts",
+											"line": 10,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 338,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 339,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 340,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																340
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										333,
+										332
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										337
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 351,
+					"name": "default",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/search-anime.ts",
+							"line": 31,
+							"character": 12
+						}
+					],
+					"signatures": [
+						{
+							"id": 352,
+							"name": "default",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 353,
+									"name": "terms",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 354,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 341,
+										"name": "SearchOptions"
+									},
+									"defaultValue": "{}"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 343,
+											"name": "SearchResult"
+										}
+									}
+								],
+								"name": "Promise"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						341,
+						343
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						330
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						351
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "integrations/myanimelist/search-anime.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 355,
+			"name": "types",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 356,
+					"name": "Logger",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 360,
+							"name": "debug",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 361,
+									"name": "debug",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 362,
+											"name": "text",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							]
+						},
+						{
+							"id": 363,
+							"name": "error",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 364,
+									"name": "error",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 365,
+											"name": "text",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							]
+						},
+						{
+							"id": 357,
+							"name": "info",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 358,
+									"name": "info",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 359,
+											"name": "text",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							]
+						}
+					],
+					"groups": [
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								360,
+								363,
+								357
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "types.ts",
+							"line": 1,
+							"character": 23
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						356
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "types.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 366,
+			"name": "util",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 367,
+					"name": "constants",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "util.ts",
+							"line": 1,
+							"character": 22
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 368,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 369,
+									"name": "http",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 370,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"children": [
+												{
+													"id": 371,
+													"name": "userAgent",
+													"kind": 1024,
+													"kindString": "Property",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													},
+													"defaultValue": "\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36\""
+												}
+											],
+											"groups": [
+												{
+													"title": "Properties",
+													"kind": 1024,
+													"children": [
+														371
+													]
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										369
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						367
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "util.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
 		}
 	],
 	"groups": [
 		{
-			"title": "Properties",
-			"kind": 1024,
+			"title": "Modules",
+			"kind": 1,
 			"children": [
-				1
+				1,
+				34,
+				73,
+				106,
+				140,
+				145,
+				182,
+				178,
+				180,
+				187,
+				196,
+				254,
+				262,
+				329,
+				355,
+				366
 			]
-		}
-	],
-	"sources": [
-		{
-			"fileName": "index.ts",
-			"line": 1,
-			"character": 0
 		}
 	]
 }
