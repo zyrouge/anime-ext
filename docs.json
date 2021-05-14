@@ -1,0 +1,126 @@
+{
+	"id": 0,
+	"name": "Anime Extractor - Documentation",
+	"kind": 0,
+	"kindString": "Project",
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "default",
+			"kind": 1024,
+			"kindString": "Property",
+			"flags": {},
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 2,
+					"name": "__type",
+					"kind": 65536,
+					"kindString": "Type literal",
+					"flags": {},
+					"children": [
+						{
+							"id": 3,
+							"name": "extractors",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 4,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 5,
+											"name": "FourAnime",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "query",
+												"queryType": {
+													"type": "reference",
+													"name": "default"
+												}
+											}
+										},
+										{
+											"id": 6,
+											"name": "Gogoanime",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "query",
+												"queryType": {
+													"type": "reference",
+													"name": "default"
+												}
+											}
+										},
+										{
+											"id": 7,
+											"name": "Simplydotmoe",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"type": {
+												"type": "query",
+												"queryType": {
+													"type": "reference",
+													"name": "default"
+												}
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												5,
+												6,
+												7
+											]
+										}
+									]
+								}
+							},
+							"defaultValue": "..."
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								3
+							]
+						}
+					]
+				}
+			}
+		}
+	],
+	"groups": [
+		{
+			"title": "Properties",
+			"kind": 1024,
+			"children": [
+				1
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "index.ts",
+			"line": 1,
+			"character": 0
+		}
+	]
+}
