@@ -71,7 +71,7 @@
   "typedocOptions": {
     "name": "Anime Extractor - Documentation",
     "entryPoints": [
-      "lib/index.ts"
+      "lib"
     ],
     "out": "./docs",
     "json": "./docs/docs.json",
