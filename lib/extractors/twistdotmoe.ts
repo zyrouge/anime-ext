@@ -24,8 +24,8 @@ export const config = {
         `https://api.twist.moe/api/anime/${slug}/sources`,
     cdnUrl: `https://cdn.twist.moe`,
 
-    animeRegex: /^https:\/\/4anime\.to\/anime\/.*/,
-    episodeRegex: /^https:\/\/4anime\.to\/.*-episode-\w+$/,
+    animeRegex: /^https:\/\/twist\.moe\/a\/.*/,
+    episodeRegex: /^https:\/\/twist\.moe\/a\/.*\/\d+$/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,

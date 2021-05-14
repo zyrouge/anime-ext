@@ -1,9 +1,7 @@
+import { Logger } from "../types";
+
 export interface ExtractorConstructorOptions {
-    logger?: {
-        info?(text: string): string;
-        debug?(text: string): string;
-        error?(text: string): string;
-    };
+    logger?: Partial<Logger>;
 }
 
 export type ExtractorValidateResults = "anime_url" | "episode_url" | boolean;
