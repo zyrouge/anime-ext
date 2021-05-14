@@ -11,10 +11,14 @@ const gogoplay: SourceRetriever = {
     validate: (url: string) => url.includes("/streaming.php"),
     async fetch(url: string) {
         try {
+            const headers = Object.assign(defaultHeaders(), {
+                Referer: url,
+            });
+
             const { data: currentData } = await axios.get<any>(
                 url.replace("streaming.php", "ajax.php"),
                 {
-                    headers: defaultHeaders(),
+                    headers,
                     responseType: "json",
                 }
             );
@@ -31,7 +35,8 @@ const gogoplay: SourceRetriever = {
                     results.push({
                         quality: src.label || "unknown",
                         url: src.file,
-                        type: "downloadable",
+                        type: ["downloadable", "streamable"],
+                        headers,
                     });
                 }
             });

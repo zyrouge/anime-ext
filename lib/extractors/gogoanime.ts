@@ -23,6 +23,7 @@ export const config = {
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
+            Referer: this.baseUrl,
         };
     },
 };
@@ -235,7 +236,8 @@ export default class Gogoanime implements ExtractorModel {
                 results.push({
                     quality: "unknown",
                     url: src,
-                    type: "viewable",
+                    type: ["external_embed"],
+                    headers: config.defaultHeaders(),
                 });
             }
 

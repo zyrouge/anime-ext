@@ -9,7 +9,9 @@ const defaultHeaders = () => ({
 export const GogoIframeParser = async (url: string) => {
     try {
         const { data } = await axios.get(url, {
-            headers: defaultHeaders(),
+            headers: Object.assign(defaultHeaders(), {
+                Referer: url,
+            }),
         });
 
         const $ = cheerio.load(data);

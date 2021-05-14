@@ -18,6 +18,7 @@
     "url": "https://github.com/zyrouge/anime-ext/issues"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.0.1",
     "@types/node": "^15.0.3",
     "rimraf": "^3.0.2",
     "typedoc": "^0.20.36",
@@ -26,6 +27,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "cheerio": "^1.0.0-rc.9"
+    "cheerio": "^1.0.0-rc.9",
+    "crypto-js": "^4.0.0",
+    "fluent-ffmpeg": "^2.1.2"
   }
 }

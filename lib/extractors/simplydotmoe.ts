@@ -18,6 +18,7 @@ export const config = {
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
+            Referer: this.baseUrl,
         };
     },
 };
@@ -139,7 +140,8 @@ export default class SimplyDotMoe implements ExtractorModel {
             const result: ExtractorDownloadResult = {
                 quality: link.match(/([\w\d]+)\.[\w\d]+$/)?.[1] || "unknown",
                 url: link.trim(),
-                type: "downloadable",
+                type: ["downloadable", "streamable"],
+                headers: config.defaultHeaders(),
             };
 
             this.options.logger?.debug?.(

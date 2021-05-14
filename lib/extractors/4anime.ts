@@ -18,6 +18,7 @@ export const config = {
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
+            Referer: this.baseUrl,
         };
     },
 };
@@ -192,7 +193,8 @@ export default class FourAnime implements ExtractorModel {
             const result: ExtractorDownloadResult = {
                 quality: src.match(/([\w\d]+)\.[\w\d]+$/)?.[1] || "unknown",
                 url: src.trim(),
-                type: "downloadable",
+                type: ["downloadable", "streamable"],
+                headers: config.defaultHeaders(),
             };
 
             this.options.logger?.debug?.(

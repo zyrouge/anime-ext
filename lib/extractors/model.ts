@@ -20,10 +20,19 @@ export interface ExtractorEpisodeResult {
     url: string;
 }
 
+export const ExtractorDownloadResultTypes = [
+    "streamable",
+    "downloadable",
+    "external_embed",
+] as const;
+export type ExtractorDownloadResultTypesType =
+    typeof ExtractorDownloadResultTypes[number];
+
 export interface ExtractorDownloadResult {
     quality: string;
     url: string;
-    type: "viewable" | "downloadable";
+    type: ExtractorDownloadResultTypesType[];
+    headers?: Record<string, any>;
 }
 
 export interface ExtractorModel {
