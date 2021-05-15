@@ -1,5 +1,5 @@
 const AnimeInfo =
-    require("../../dist/integrations/myanimelist/anime-info").default;
+    require("../../dist/lib/integrations/myanimelist/anime-info").default;
 
 const ANIME_URL = "https://myanimelist.net/anime/10110/Mayo_Chiki";
 

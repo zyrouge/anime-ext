@@ -1,4 +1,4 @@
-const Gogoanime = require("../../dist/extractors/gogoanime").default;
+const Gogoanime = require("../../dist/lib/extractors/gogoanime").default;
 
 const ANIME_URL = "https://www1.gogoanime.ai/category/oregairu";
 

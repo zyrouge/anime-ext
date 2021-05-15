@@ -1,4 +1,4 @@
-const Twistdotmoe = require("../../dist/extractors/twistdotmoe").default;
+const Twistdotmoe = require("../../dist/lib/extractors/twistdotmoe").default;
 
 const EPISODE_URL =
     "https://twist.moe/a/seishun-buta-yarou-wa-bunny-girl-senpai-no-yume-wo-minai/13";
