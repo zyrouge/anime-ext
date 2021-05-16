@@ -46,7 +46,7 @@ export interface RecommendationEntity {
 
 export interface InfoResult {
     title: string;
-    synonpsis: string;
+    synopsis: string;
     image: string;
     stats: {
         score: string;
@@ -192,8 +192,8 @@ const search = async (url: string, options: InfoOptions = {}) => {
 
         const result: InfoResult = {
             title: $(".title-name strong").text().trim(),
-            synonpsis: $(".description").text().trim(),
-            image: $("img").attr("data-src") || "",
+            synopsis: $("[itemprop='description']").text().trim(),
+            image: $("#contentWrapper img").attr("data-src") || "",
             stats: {
                 score: stats.find(".score").text().trim(),
                 rank: stats.find(".ranked strong").text().trim(),
