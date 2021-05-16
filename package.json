@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rimraf ./dist && tsc",
-    "docs": "npm run build && rimraf ./docs && typedoc"
+    "docs": "npm run build && rimraf ./docs && typedoc",
+    "release": "release-it"
   },
   "keywords": [],
   "repository": {
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@types/crypto-js": "^4.0.1",
     "@types/node": "^15.0.3",
+    "release-it": "^14.6.2",
     "rimraf": "^3.0.2",
     "typedoc": "^0.20.36",
     "typedoc-material-dark": "github:zyrouge/typedoc-material-dark",
@@ -28,7 +30,15 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.9",
-    "crypto-js": "^4.0.0",
-    "fluent-ffmpeg": "^2.1.2"
+    "crypto-js": "^4.0.0"
+  },
+  "release-it": {
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      "after:bump": "npm run build",
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    }
   }
 }
