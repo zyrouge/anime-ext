@@ -51,7 +51,7 @@ export interface InfoResult {
     stats: {
         score: string;
         rank: string;
-        populatrity: string;
+        popularity: string;
     };
     members: string;
     season: string;
@@ -197,7 +197,7 @@ const search = async (url: string, options: InfoOptions = {}) => {
             stats: {
                 score: stats.find(".score").text().trim(),
                 rank: stats.find(".ranked strong").text().trim(),
-                populatrity: stats.find(".popularity strong").text().trim(),
+                popularity: stats.find(".popularity strong").text().trim(),
             },
             members: stats.find(".members strong").text().trim(),
             season: stats.find(".season").text().trim(),
