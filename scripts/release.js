@@ -30,7 +30,7 @@ const version = async () => {
         return;
     }
 
-    log("version", `Version updated to ${stdout}!`);
+    log("version", `Version updated to ${stdout.trim()}!`);
 };
 
 const git = async () => {
@@ -72,13 +72,7 @@ const push = async () => {
         return;
     }
 
-    const { stdout, stderr } = await exec("git push");
-    if (stderr) {
-        log("git", "Failed to push files!");
-        err("git", stderr);
-        return;
-    }
-
+    const { stdout } = await exec("git push");
     log("git", "Pushed files to git!");
     log("git", stdout);
 };
