@@ -223,7 +223,7 @@ export default class FourAnime implements AnimeExtractorModel {
                 quality:
                     path.match(/\[([\w\d]+)\]\.[\d\w]+$/)?.[1] || "unknown",
                 url: `${config.cdnUrl}${path}`,
-                type: ["downloadable"],
+                type: ["external_download"],
                 headers: config.defaultHeaders(),
             };
 
