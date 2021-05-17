@@ -25,7 +25,6 @@
     "@types/node": "^15.0.3",
     "rimraf": "^3.0.2",
     "typedoc": "^0.20.36",
-    "typedoc-material-dark": "github:zyrouge/typedoc-material-dark",
     "typescript": "^4.2.4"
   },
   "dependencies": {

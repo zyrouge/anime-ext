@@ -70,7 +70,7 @@
     "forceConsistentCasingInFileNames": true        /* Disallow inconsistently-cased references to the same file. */
   },
   "typedocOptions": {
-    "name": "Anime Extractor - Documentation",
+    "name": "Anime Extractor",
     "entryPoints": [
       "lib"
     ],
