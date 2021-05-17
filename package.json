@@ -30,6 +30,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.9",
-    "crypto-js": "^4.0.0"
+    "crypto-js": "^4.0.0",
+    "typedoc-material-dark": "github:zyrouge/typedoc-material-dark"
   }
 }
