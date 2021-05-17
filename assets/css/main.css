@@ -2248,9 +2248,6 @@ footer .tsd-legend {
   background-color: #212121;
   border-top: 1px solid #ccc;
 }
-.tsd-panel table tr:nth-child(2n) {
-  background-color: #f8f8f8;
-}
 .tsd-panel-group {
   margin: 60px 0;
 }
