@@ -1,5 +1,5 @@
 const Simplydotmoe =
-    require("../../dist/lib/extractors/anime/simplydotmoe").default;
+    require("../../dist/extractors/anime/simplydotmoe").default;
 
 const SEARCH_TERMS = "highschool dxd";
 

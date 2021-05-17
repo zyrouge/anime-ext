@@ -1,4 +1,4 @@
-const FanFox = require("../../dist/lib/extractors/manga/fanfox").default;
+const FanFox = require("../../dist/extractors/manga/fanfox").default;
 
 const MANGA_URL =
     "https://fanfox.net/manga/masamune_kun_no_revenge/v01/c001/1.html";

@@ -1,4 +1,4 @@
-const FanFox = require("../../dist/lib/extractors/manga/fanfox").default;
+const FanFox = require("../../dist/extractors/manga/fanfox").default;
 
 const SEARCH_TERMS = "masamune kun no revenge";
 

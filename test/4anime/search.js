@@ -1,4 +1,4 @@
-const FourAnime = require("../../dist/lib/extractors/anime/4anime").default;
+const FourAnime = require("../../dist/extractors/anime/4anime").default;
 
 const SEARCH_TERMS = "highschool dxd";
 

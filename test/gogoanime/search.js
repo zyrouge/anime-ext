@@ -1,4 +1,4 @@
-const Gogoanime = require("../../dist/lib/extractors/anime/gogoanime").default;
+const Gogoanime = require("../../dist/extractors/anime/gogoanime").default;
 
 const SEARCH_TERMS = "highschool dxd";
 

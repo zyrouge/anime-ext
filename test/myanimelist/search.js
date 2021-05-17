@@ -1,5 +1,5 @@
 const search =
-    require("../../dist/lib/integrations/myanimelist/search-anime").default;
+    require("../../dist/integrations/myanimelist/search-anime").default;
 
 const SEARCH_TERMS = "mayo chiki";
 

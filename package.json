@@ -2,7 +2,6 @@
   "name": "anime-ext",
   "version": "1.0.12",
   "description": "",
-  "main": "dist/lib/index.js",
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "docs": "npm run build && rimraf ./docs && typedoc",
