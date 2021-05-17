@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "docs": "npm run build && rimraf ./docs && typedoc",
-    "release": "npm run build && npm version patch && git push"
+    "release": "node scripts/release"
   },
   "keywords": [],
   "repository": {
