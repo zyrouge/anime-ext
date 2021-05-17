@@ -7,7 +7,7 @@ Anime extractor used in [Yukino](https://zyrouge.github.io/yukino)!
 ## Installation
 
 ```bash
-npm install zyrouge/anime-ext#dist
+npm install anime-ext
 ```
 
 ## Includes
