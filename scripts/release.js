@@ -2,17 +2,11 @@ const child_process = require("child_process");
 const util = require("util");
 
 const log = (tag, txt) => console.log(`[${tag}] ${txt}`);
-const err = (tag, txt) => console.error(`[${tag}] ${txt}`);
+
 const exec = util.promisify(child_process.exec);
 
 const build = async () => {
-    const { stdout, stderr } = await exec("npm run build");
-    if (stderr) {
-        log("ts-build", "Build failed!");
-        err("ts-build", stderr);
-        return;
-    }
-
+    const { stdout } = await exec("npm run build");
     log("ts-build", "Build success");
     log("ts-build", stdout);
 };
@@ -23,13 +17,7 @@ const version = async () => {
         return;
     }
 
-    const { stdout, stderr } = await exec("npm version patch");
-    if (stderr) {
-        log("version", "Version update failed!");
-        err("version", stderr);
-        return;
-    }
-
+    const { stdout } = await exec("npm version patch");
     log("version", `Version updated to ${stdout.trim()}!`);
 };
 
@@ -40,27 +28,15 @@ const git = async () => {
     }
 
     {
-        const { stdout, stderr } = await exec("git add .");
-        if (stderr) {
-            log("git", "Failed to add files!");
-            err("git", stderr);
-            return;
-        }
-
+        const { stdout } = await exec("git add .");
         log("git", "Added files to git!");
         log("git", stdout);
     }
 
     {
-        const { stdout, stderr } = await exec(
+        const { stdout } = await exec(
             `git commit -m "${require("../package.json").version}"`
         );
-        if (stderr) {
-            log("git", "Failed to commit files!");
-            err("git", stderr);
-            return;
-        }
-
         log("git", "Committed files to git!");
         log("git", stdout);
     }
@@ -84,13 +60,7 @@ const merge = async () => {
     }
 
     {
-        const { stdout, stderr } = await exec("git checkout main");
-        if (stderr) {
-            log("git", "Failed to switch to main branch!");
-            err("git", stderr);
-            return;
-        }
-
+        const { stdout } = await exec("git checkout main");
         log("git", "Switched to main branch!");
         log("git", stdout);
     }
@@ -99,13 +69,7 @@ const merge = async () => {
     await push();
 
     {
-        const { stdout, stderr } = await exec("git checkout next");
-        if (stderr) {
-            log("git", "Failed to switch to next branch!");
-            err("git", stderr);
-            return;
-        }
-
+        const { stdout } = await exec("git checkout next");
         log("git", "Switched back to next branch!");
         log("git", stdout);
     }
