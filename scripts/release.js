@@ -1,11 +1,12 @@
-const { execSync: exec } = require("child_process");
+const { execSync } = require("child_process");
 
 const log = (tag, txt) => console.log(`[${tag}] ${txt}`);
+const exec = (...args) => execSync(...args).toString();
 
 const build = () => {
-    const { stdout } = exec("npm run build");
+    const stdout = exec("npm run build");
     log("ts-build", "Build success");
-    log("ts-build", stdout);
+    if (stdout) log("ts-build", stdout);
 };
 
 const version = () => {
@@ -14,8 +15,8 @@ const version = () => {
         return;
     }
 
-    const { stdout } = exec("npm version patch");
-    log("version", `Version updated to ${stdout.trim()}!`);
+    const stdout = exec("npm version patch");
+    if (stdout) log("version", `Version updated to ${stdout.trim()}!`);
 };
 
 const git = () => {
@@ -25,17 +26,17 @@ const git = () => {
     }
 
     {
-        const { stdout } = exec("git add .");
+        const stdout = exec("git add .");
         log("git", "Added files to git!");
-        log("git", stdout);
+        if (stdout) log("git", stdout);
     }
 
     {
-        const { stdout } = exec(
+        const stdout = exec(
             `git commit -m "${require("../package.json").version}"`
         );
         log("git", "Committed files to git!");
-        log("git", stdout);
+        if (stdout) log("git", stdout);
     }
 };
 
@@ -45,9 +46,9 @@ const push = () => {
         return;
     }
 
-    const { stdout } = exec("git push");
+    const stdout = exec("git push");
     log("git", "Pushed files to git!");
-    log("git", stdout);
+    if (stdout) log("git", stdout);
 };
 
 const merge = () => {
@@ -57,18 +58,18 @@ const merge = () => {
     }
 
     {
-        const { stdout } = exec("git checkout main");
+        const stdout = exec("git checkout main");
         log("git", "Switched to main branch!");
-        log("git", stdout);
+        if (stdout) log("git", stdout);
     }
 
     git();
     push();
 
     {
-        const { stdout } = exec("git checkout next");
+        const stdout = exec("git checkout next");
         log("git", "Switched back to next branch!");
-        log("git", stdout);
+        if (stdout) log("git", stdout);
     }
 };
 
