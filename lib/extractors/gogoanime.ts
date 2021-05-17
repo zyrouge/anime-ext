@@ -8,7 +8,7 @@ import {
     ExtractorDownloadResult,
     ExtractorModel,
 } from "./model";
-import GogoParser from "./parsers/gogo-iframe";
+import GogoParser from "./parsers/gogoplay-iframe";
 import { getExtractor } from "./sources";
 import { constants } from "../util";
 
