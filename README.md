@@ -19,7 +19,7 @@ npm install zyrouge/anime-ext#dist
 | [GogoStream](./lib/extractors/anime/gogostream.ts)                    | `extractor (anime)` | ✔️ Search <br>✔️ Episodes<br>✔️ Download |
 | [Simply.moe](./lib/extractors/anime/simplydotmoe.ts)                  | `extractor (anime)` | ❌ Search <br>✔️ Episodes<br>✔️ Download |
 | [Twist.moe](./lib/extractors/anime/twistdotmoe.ts)                    | `extractor (anime)` | ✔️ Search <br>✔️ Episodes<br>✔️ Download |
-| [Faxfox.net](./lib/extractors/manga/fanfox.ts)                        | `extractor (manga)` | ✔️ Search <br>✔️ Chapters<br>✔️ Pages    |
+| [Fanfox.net](./lib/extractors/manga/fanfox.ts)                        | `extractor (manga)` | ✔️ Search <br>✔️ Chapters<br>✔️ Pages    |
 | [MyAnimeList](./lib/integrations/myanimelist)                         | `integration`       | ✔️ Search <br>✔️ Anime Information       |
 | [Gogo-play Iframe](./lib/extractors/parsers/gogoplay-iframe.ts)       | `parser`            | ✔️ Source extractor                      |
 | [Gogo-play Streaming](./lib/extractors/sources/gogoplay-streaming.ts) | `source`            | ✔️ Stream link extractor                 |
