@@ -1,12 +1,12 @@
 {
   "name": "anime-ext",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "docs": "npm run build && rimraf ./docs && typedoc",
-    "release": "release-it"
+    "release": "npm run build && npm version patch && git push"
   },
   "keywords": [],
   "repository": {
@@ -21,7 +21,6 @@
   "devDependencies": {
     "@types/crypto-js": "^4.0.1",
     "@types/node": "^15.0.3",
-    "release-it": "^14.6.2",
     "rimraf": "^3.0.2",
     "typedoc": "^0.20.36",
     "typedoc-material-dark": "github:zyrouge/typedoc-material-dark",
@@ -31,14 +30,5 @@
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.9",
     "crypto-js": "^4.0.0"
-  },
-  "release-it": {
-    "npm": {
-      "publish": false
-    },
-    "hooks": {
-      "after:bump": "npm run build",
-      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
-    }
   }
 }
