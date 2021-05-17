@@ -42,7 +42,7 @@ export const matcher = (origin: string, keywords: string[]) =>
         .find((x) => keywords.find((s) => x.indexOf(s) > -1));
 
 /**
- * 4Anime Extractor
+ * Twist.moe Extractor
  */
 export default class FourAnime implements ExtractorModel {
     name = "Twist.moe";
