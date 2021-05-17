@@ -1,6 +1,6 @@
 {
   "name": "anime-ext",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
