@@ -51,7 +51,7 @@ export default class Gogostream implements AnimeExtractorModel {
     }
 
     /**
-     * Gogostream Search (avoid using this)
+     * Gogostream Search
      * @param terms Search term
      */
     async search(terms: string) {

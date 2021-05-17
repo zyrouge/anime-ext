@@ -53,7 +53,7 @@ export default class Gogoanime implements AnimeExtractorModel {
     }
 
     /**
-     * Gogoanime Search (avoid using this)
+     * Gogoanime Search
      * @param terms Search term
      */
     async search(terms: string) {

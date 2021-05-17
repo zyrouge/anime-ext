@@ -1,7 +1,6 @@
-const Gogostream =
-    require("../../dist/lib/extractors/anime/gogostream").default;
+const FanFox = require("../../dist/lib/extractors/manga/fanfox").default;
 
-const SEARCH_TERMS = "mayo chiki";
+const SEARCH_TERMS = "masamune kun no revenge";
 
 const LOGGER = {
     info: console.log,
@@ -10,7 +9,7 @@ const LOGGER = {
 };
 
 const start = async () => {
-    const extractor = new Gogostream({
+    const extractor = new FanFox({
         logger: LOGGER,
     });
 

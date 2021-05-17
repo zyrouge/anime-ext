@@ -17,4 +17,6 @@ const start = async () => {
     console.log(info);
 };
 
-start();
+if (!process.env.NODE_ENV) start();
+
+module.exports = start;

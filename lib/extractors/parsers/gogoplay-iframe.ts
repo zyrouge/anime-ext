@@ -6,7 +6,7 @@ const defaultHeaders = () => ({
     "User-Agent": constants.http.userAgent,
 });
 
-export const GogoIframeParser = async (url: string) => {
+export default async (url: string) => {
     try {
         const { data } = await axios.get<string>(url, {
             headers: Object.assign(defaultHeaders(), {
@@ -37,5 +37,3 @@ export const GogoIframeParser = async (url: string) => {
         throw err;
     }
 };
-
-export default GogoIframeParser;

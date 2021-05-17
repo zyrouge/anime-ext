@@ -18,4 +18,6 @@ const start = async () => {
     console.log(search);
 };
 
-start();
+if (!process.env.NODE_ENV) start();
+
+module.exports = start;

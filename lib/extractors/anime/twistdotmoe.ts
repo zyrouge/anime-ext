@@ -44,7 +44,7 @@ export const matcher = (origin: string, keywords: string[]) =>
 /**
  * Twist.moe Extractor
  */
-export default class FourAnime implements AnimeExtractorModel {
+export default class TwistDotAnime implements AnimeExtractorModel {
     name = "Twist.moe";
     options: AnimeExtractorConstructorOptions;
     searchCache: {
@@ -71,7 +71,7 @@ export default class FourAnime implements AnimeExtractorModel {
     }
 
     /**
-     * Twist.moe Search (avoid using this)
+     * Twist.moe Search
      * @param terms Search term
      */
     async search(terms: string) {
