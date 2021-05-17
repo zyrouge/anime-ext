@@ -1,7 +1,13 @@
 const { execSync } = require("child_process");
 
 const log = (tag, txt) => console.log(`[${tag}] ${txt}`);
-const exec = (...args) => execSync(...args).toString();
+const exec = (...args) => {
+    try {
+        return execSync(...args).toString();
+    } catch (err) {
+        console.warn(err);
+    }
+};
 
 const build = () => {
     const stdout = exec("npm run build");
