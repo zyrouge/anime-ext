@@ -219,10 +219,11 @@ const search = async (url: string, options: InfoOptions = {}) => {
 
         return result;
     } catch (err) {
-        console.error(err);
-        options.logger?.debug?.(`(${config.name}) Failed to parse: ${err}!`);
+        options.logger?.debug?.(
+            `(${config.name}) Failed to parse: ${err?.message}!`
+        );
 
-        throw new Error(`Something went wrong: ${err}!`);
+        throw new Error(`Something went wrong: ${err?.message}!`);
     }
 };
 

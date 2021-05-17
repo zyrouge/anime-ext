@@ -112,10 +112,10 @@ export default class Gogoanime implements AnimeExtractorModel {
             return results;
         } catch (err) {
             this.options.logger?.error?.(
-                `(${this.name}) Failed to scrape: ${err}`
+                `(${this.name}) Failed to scrape: ${err?.message}`
             );
 
-            throw new Error(`Failed to scrape: ${err}`);
+            throw new Error(`Failed to scrape: ${err?.message}`);
         }
     }
 
@@ -188,10 +188,10 @@ export default class Gogoanime implements AnimeExtractorModel {
             return results;
         } catch (err) {
             this.options.logger?.error?.(
-                `(${this.name}) Failed to scrape: ${err}`
+                `(${this.name}) Failed to scrape: ${err?.message}`
             );
 
-            throw new Error(`Failed to scrape: ${err}`);
+            throw new Error(`Failed to scrape: ${err?.message}`);
         }
     }
 
@@ -252,10 +252,10 @@ export default class Gogoanime implements AnimeExtractorModel {
             return results;
         } catch (err) {
             this.options.logger?.error?.(
-                `(${this.name}) Failed to scrape: ${err}`
+                `(${this.name}) Failed to scrape: ${err?.message}`
             );
 
-            throw new Error(`Failed to scrape: ${err}`);
+            throw new Error(`Failed to scrape: ${err?.message}`);
         }
     }
 }

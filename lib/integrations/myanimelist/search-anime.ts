@@ -86,9 +86,11 @@ const search = async (terms: string, options: SearchOptions = {}) => {
 
         return results;
     } catch (err) {
-        options.logger?.debug?.(`(${config.name}) Failed to parse: ${err}!`);
+        options.logger?.debug?.(
+            `(${config.name}) Failed to parse: ${err?.message}!`
+        );
 
-        throw new Error(`Something went wrong: ${err}!`);
+        throw new Error(`Something went wrong: ${err?.message}!`);
     }
 };
 
