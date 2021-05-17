@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rimraf ./dist && tsc",
-    "docs": "npm run build && rimraf ./docs && typedoc"
+    "docs": "npm run build && rimraf ./docs && typedoc",
+    "release": "npm run build && npm publish"
   },
   "keywords": [],
   "repository": {
