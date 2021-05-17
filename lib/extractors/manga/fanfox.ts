@@ -250,7 +250,7 @@ export default class FanFox implements MangaExtractorModel {
                             /<img src="(.*?)".*id="image".*>/
                         )?.[1];
 
-                        functions.sleep(25);
+                        await functions.sleep(10);
                     } catch (err) {
                         this.options.logger?.debug?.(
                             `(${this.name}) Failed to parse page: ${page.url} (${url})`
