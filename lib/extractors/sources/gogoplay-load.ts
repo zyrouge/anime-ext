@@ -27,7 +27,7 @@ const gogoplay: SourceRetriever = {
                 ),
             ].map((x) => x[1]);
 
-            const results: ExtractorDownloadResult[] = urls
+            const results: ExtractorDownloadResult[] = <any[]>urls
                 .filter((x) => x)
                 .map((x) => ({
                     quality: "unknown",

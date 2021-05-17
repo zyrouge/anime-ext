@@ -23,7 +23,7 @@ export interface CharacterEntity {
     url: string;
     image: string;
     role: string;
-    actor: {
+    actor?: {
         name: string;
         url: string;
         image: string;
@@ -123,7 +123,7 @@ const search = async (url: string, options: InfoOptions = {}) => {
         );
 
         const characters: CharacterEntity[] = [];
-        charactersTable.find("> div > table > tbody > tr").each(function () {
+        charactersTable?.find("> div > table > tbody > tr").each(function () {
             const ele = $(this);
             const [charImg, charInfo, actorInfoCont] = ele
                 .find("> td")
@@ -132,33 +132,40 @@ const search = async (url: string, options: InfoOptions = {}) => {
                 })
                 .toArray();
 
-            const name = charInfo.find("a");
+            const name = charInfo?.find("a");
 
-            const [actorInfo, actorImg] = actorInfoCont
-                .find("td")
-                .map(function () {
-                    return $(this);
-                })
-                .toArray();
+            const [actorInfo, actorImg] =
+                actorInfoCont
+                    ?.find("td")
+                    .map(function () {
+                        return $(this);
+                    })
+                    .toArray() || [];
 
-            const actorName = actorInfo.find("a");
+            const actorName = actorInfo?.find("a");
 
-            characters.push({
-                name: name.text().trim(),
-                url: name.attr("href") || "",
-                image: charImg.find("img").attr("data-src") || "",
-                role: charInfo.find("small").text().trim(),
-                actor: {
-                    name: actorName.text().trim(),
-                    url: actorName.attr("href") || "",
-                    image: actorImg.find("img").attr("data-src") || "",
-                    language: actorInfo.find("small").text().trim(),
-                },
-            });
+            if (name) {
+                characters.push({
+                    name: name.text().trim(),
+                    url: name.attr("href") || "",
+                    image: charImg?.find("img").attr("data-src") || "",
+                    role: charInfo?.find("small").text().trim() || "",
+                    actor: actorName
+                        ? {
+                              name: actorName.text().trim(),
+                              url: actorName.attr("href") || "",
+                              image:
+                                  actorImg?.find("img").attr("data-src") || "",
+                              language:
+                                  actorInfo?.find("small").text().trim() || "",
+                          }
+                        : undefined,
+                });
+            }
         });
 
         const staffs: StaffEntity[] = [];
-        staffTable.find("tr").each(function () {
+        staffTable?.find("tr").each(function () {
             const ele = $(this);
             const [staffImg, staffInfo] = ele
                 .find("td")
@@ -167,14 +174,16 @@ const search = async (url: string, options: InfoOptions = {}) => {
                 })
                 .toArray();
 
-            const name = staffInfo.find("a");
+            const name = staffInfo?.find("a");
 
-            staffs.push({
-                name: name.text().trim(),
-                url: name.attr("href") || "",
-                image: staffImg.find("img").attr("data-src") || "",
-                role: staffInfo.find("small").text().trim(),
-            });
+            if (name) {
+                staffs.push({
+                    name: name.text().trim(),
+                    url: name.attr("href") || "",
+                    image: staffImg?.find("img").attr("data-src") || "",
+                    role: staffInfo?.find("small").text().trim() || "",
+                });
+            }
         });
 
         const recommendations: RecommendationEntity[] = [];

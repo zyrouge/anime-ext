@@ -8,7 +8,7 @@ import {
     ExtractorDownloadResult,
     ExtractorModel,
 } from "./model";
-import GogoParser from "./parsers/gogo-iframe";
+import GogoParser from "./parsers/gogoplay-iframe";
 import { getExtractor } from "./sources";
 import { constants } from "../util";
 
@@ -149,8 +149,9 @@ export default class Gogostream implements ExtractorModel {
                 const url = ele.attr("href");
 
                 if (url) {
+                    const ep = episode.text().trim().match(/\d+$/)?.[0];
                     results.push({
-                        episode: +episode.text().trim().match(/\d+$/)![0],
+                        episode: ep ? +ep : "unknown",
                         url: `${config.baseUrl}${url.trim()}`,
                     });
                 }

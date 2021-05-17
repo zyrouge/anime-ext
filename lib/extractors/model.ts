@@ -14,7 +14,7 @@ export interface ExtractorSearchResult {
 }
 
 export interface ExtractorEpisodeResult {
-    episode: number;
+    episode: number | "unknown";
     url: string;
 }
 

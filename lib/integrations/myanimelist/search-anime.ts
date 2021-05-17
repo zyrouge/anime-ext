@@ -61,20 +61,20 @@ const search = async (terms: string, options: SearchOptions = {}) => {
                     return $(this);
                 });
 
-            const link = pic.find("a").attr("href");
-            const img = pic.find("img").attr("data-src");
-            const title = info.find("strong");
-            const description = info.find(".pt4");
+            const link = pic?.find("a").attr("href");
+            const img = pic?.find("img").attr("data-src");
+            const title = info?.find("strong");
+            const description = info?.find(".pt4");
 
             if (link && title) {
                 results.push({
                     title: title.text().trim(),
                     url: link,
-                    description: description.text().trim(),
+                    description: description?.text().trim() || "",
                     thumbnail: img?.trim() || "",
-                    type: type.text().trim(),
-                    episodes: eps.text().trim(),
-                    score: score.text().trim(),
+                    type: type?.text().trim() || "",
+                    episodes: eps?.text().trim() || "",
+                    score: score?.text().trim() || "",
                 });
             }
         });
