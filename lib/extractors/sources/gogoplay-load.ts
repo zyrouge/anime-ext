@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SourceRetriever, ExtractorDownloadResult } from "./model";
+import { SourceRetriever, AnimeExtractorDownloadResult } from "./model";
 import { constants } from "../../util";
 
 const defaultHeaders = () => ({
@@ -19,6 +19,7 @@ const gogoplay: SourceRetriever = {
             const { data } = await axios.get<string>(url, {
                 headers,
                 responseType: "text",
+                timeout: constants.http.maxTimeout,
             });
 
             const urls = [
@@ -27,7 +28,7 @@ const gogoplay: SourceRetriever = {
                 ),
             ].map((x) => x[1]);
 
-            const results: ExtractorDownloadResult[] = <any[]>urls
+            const results: AnimeExtractorDownloadResult[] = <any[]>urls
                 .filter((x) => x)
                 .map((x) => ({
                     quality: "unknown",

@@ -1,23 +1,20 @@
 import axios from "axios";
 import cheerio from "cheerio";
 import {
-    ExtractorConstructorOptions,
-    ExtractorValidateResults,
-    ExtractorSearchResult,
-    ExtractorEpisodeResult,
-    ExtractorDownloadResult,
-    ExtractorModel,
+    AnimeExtractorConstructorOptions,
+    AnimeExtractorValidateResults,
+    AnimeExtractorSearchResult,
+    AnimeExtractorEpisodeResult,
+    AnimeExtractorDownloadResult,
+    AnimeExtractorModel,
 } from "./model";
-import GogoParser from "./parsers/gogoplay-iframe";
-import { getExtractor } from "./sources";
-import { constants } from "../util";
+import { constants } from "../../util";
 
 export const config = {
-    baseUrl: "https://gogo-stream.com",
-    searchUrl: (search: string) =>
-        `https://gogo-stream.com/search.html?keyword=${search}`,
-    animeRegex: /^https:\/\/Gogostream\.to\/anime\/.*/,
-    episodeRegex: /^https:\/\/Gogostream\.to\/.*-episode-\w+$/,
+    baseUrl: "https://4anime.to",
+    searchUrl: (search: string) => `https://4anime.to/?s=${search}`,
+    animeRegex: /^https:\/\/4anime\.to\/anime\/.*/,
+    episodeRegex: /^https:\/\/4anime\.to\/.*-episode-\w+$/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
@@ -27,22 +24,22 @@ export const config = {
 };
 
 /**
- * Gogostream Extractor
+ * 4Anime Extractor
  */
-export default class Gogostream implements ExtractorModel {
-    name = "Gogostream";
-    options: ExtractorConstructorOptions;
+export default class FourAnime implements AnimeExtractorModel {
+    name = "4anime";
+    options: AnimeExtractorConstructorOptions;
 
-    constructor(options: ExtractorConstructorOptions = {}) {
+    constructor(options: AnimeExtractorConstructorOptions = {}) {
         this.options = options;
     }
 
     /**
-     * Validate Gogostream URL
-     * @param url Gogostream URL
+     * Validate 4Anime URL
+     * @param url 4Anime URL
      */
     validateURL(url: string) {
-        let result: ExtractorValidateResults = false;
+        let result: AnimeExtractorValidateResults = false;
 
         if (config.animeRegex.test(url)) result = "anime_url";
         else if (config.episodeRegex.test(url)) result = "episode_url";
@@ -51,7 +48,7 @@ export default class Gogostream implements ExtractorModel {
     }
 
     /**
-     * Gogostream Search (avoid using this)
+     * 4Anime Search (avoid using this)
      * @param terms Search term
      */
     async search(terms: string) {
@@ -67,6 +64,7 @@ export default class Gogostream implements ExtractorModel {
             const { data } = await axios.get<string>(url, {
                 headers: config.defaultHeaders(),
                 responseType: "text",
+                timeout: constants.http.maxTimeout,
             });
 
             const $ = cheerio.load(data);
@@ -74,29 +72,30 @@ export default class Gogostream implements ExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const results: ExtractorSearchResult[] = [];
+            const results: AnimeExtractorSearchResult[] = [];
 
-            const list = $(".listing.items .video-block a");
+            const links = $(".container a");
             this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${list.length} (${url})`
+                `(${this.name}) No. of links found: ${links.length} (${url})`
             );
 
-            list.each(function () {
+            links.each(function () {
                 const ele = $(this);
 
-                const title = ele.find(".name");
+                const title = ele.find("div");
                 const url = ele.attr("href");
                 const thumbnail = ele.find("img").attr("src");
-                const air = ele.find(".date");
+                const air = ele.find("span");
 
                 if (url) {
+                    const year = $(air[0]).text().trim() || "unknown";
+                    const season = $(air[2]).text().trim() || "unknown";
+
                     results.push({
                         title: title.text().trim(),
-                        url: `${config.baseUrl}${url.trim()}`,
+                        url: url.trim(),
                         thumbnail: thumbnail?.trim(),
-                        air: new Date(air.text().trim())
-                            .toLocaleDateString()
-                            .replace(/\//g, "-"),
+                        air: `${year} (${season})`,
                     });
                 }
             });
@@ -116,8 +115,8 @@ export default class Gogostream implements ExtractorModel {
     }
 
     /**
-     * Get episode URLs from Gogostream URL
-     * @param url Gogostream anime URL
+     * Get episode URLs from 4Anime URL
+     * @param url 4Anime anime URL
      */
     async getEpisodeLinks(url: string) {
         try {
@@ -128,6 +127,7 @@ export default class Gogostream implements ExtractorModel {
             const { data } = await axios.get<string>(url, {
                 headers: config.defaultHeaders(),
                 responseType: "text",
+                timeout: constants.http.maxTimeout,
             });
 
             const $ = cheerio.load(data);
@@ -135,24 +135,21 @@ export default class Gogostream implements ExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const results: ExtractorEpisodeResult[] = [];
+            const results: AnimeExtractorEpisodeResult[] = [];
 
-            const links = $(".video-info-left .listing.items a");
+            const links = $(".episodes a");
             this.options.logger?.debug?.(
                 `(${this.name}) No. of links found: ${links.length} (${url})`
             );
 
             links.each(function () {
-                const ele = $(this);
-
-                const episode = ele.find(".name");
-                const url = ele.attr("href");
+                const episode = $(this);
+                const url = episode.attr("href");
 
                 if (url) {
-                    const ep = episode.text().trim().match(/\d+$/)?.[0];
                     results.push({
-                        episode: ep ? +ep : "unknown",
-                        url: `${config.baseUrl}${url.trim()}`,
+                        episode: +episode.text().trim(),
+                        url: url.trim(),
                     });
                 }
             });
@@ -172,8 +169,8 @@ export default class Gogostream implements ExtractorModel {
     }
 
     /**
-     * Get download URLs from Gogostream episode URL
-     * @param url Gogostream episode URL
+     * Get download URLs from 4Anime episode URL
+     * @param url 4Anime episode URL
      */
     async getDownloadLinks(url: string) {
         try {
@@ -184,6 +181,7 @@ export default class Gogostream implements ExtractorModel {
             const { data } = await axios.get<string>(url, {
                 headers: config.defaultHeaders(),
                 responseType: "text",
+                timeout: constants.http.maxTimeout,
             });
 
             const $ = cheerio.load(data);
@@ -191,36 +189,22 @@ export default class Gogostream implements ExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            let iframeUrl = $(".play-video iframe").attr("src");
-            if (!iframeUrl)
-                throw new Error(`Could not find download urls for: ${url}`);
+            const src = $("source").attr("src");
+            if (!src)
+                throw new Error(`Could not find download url for: ${url}`);
 
-            const results: ExtractorDownloadResult[] = [];
+            const result: AnimeExtractorDownloadResult = {
+                quality: src.match(/([\w\d]+)\.[\w\d]+$/)?.[1] || "unknown",
+                url: src.trim(),
+                type: ["downloadable", "streamable"],
+                headers: config.defaultHeaders(),
+            };
 
-            if (!iframeUrl.startsWith("http")) iframeUrl = `https:${iframeUrl}`;
-            const sources = await GogoParser(iframeUrl);
-            for (const src of sources) {
-                const extractor = getExtractor(src);
-                if (extractor) {
-                    try {
-                        const res = await extractor.fetch(src);
-                        results.push(...res);
-                    } catch (err) {
-                        this.options.logger?.debug?.(
-                            `(${this.name}) Could not parse download source: ${src} (${url})`
-                        );
-                    }
-                }
+            this.options.logger?.debug?.(
+                `(${this.name}) No. of links after parsing: 1 (${url})`
+            );
 
-                results.push({
-                    quality: "unknown",
-                    url: src,
-                    type: ["external_embed"],
-                    headers: config.defaultHeaders(),
-                });
-            }
-
-            return results;
+            return [result];
         } catch (err) {
             this.options.logger?.error?.(
                 `(${this.name}) Failed to scrape: ${err}`

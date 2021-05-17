@@ -1,4 +1,5 @@
-const Twistdotmoe = require("../../dist/lib/extractors/twistdotmoe").default;
+const Twistdotmoe =
+    require("../../dist/lib/extractors/anime/twistdotmoe").default;
 
 const SEARCH_TERMS = "bunny girl senpai";
 

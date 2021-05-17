@@ -1,4 +1,5 @@
-const Gogostream = require("../../dist/lib/extractors/gogostream").default;
+const Gogostream =
+    require("../../dist/lib/extractors/anime/gogostream").default;
 
 const SEARCH_TERMS = "mayo chiki";
 

@@ -84,6 +84,7 @@ const search = async (url: string, options: InfoOptions = {}) => {
         const { data } = await axios.get<string>(url, {
             headers: config.defaultHeaders(),
             responseType: "text",
+            timeout: constants.http.maxTimeout,
         });
 
         const $ = cheerio.load(data);

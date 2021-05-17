@@ -8,10 +8,12 @@ const defaultHeaders = () => ({
 
 export const GogoIframeParser = async (url: string) => {
     try {
-        const { data } = await axios.get(url, {
+        const { data } = await axios.get<string>(url, {
             headers: Object.assign(defaultHeaders(), {
                 Referer: url,
             }),
+            responseType: "text",
+            timeout: constants.http.maxTimeout,
         });
 
         const $ = cheerio.load(data);

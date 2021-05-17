@@ -1,9 +1,9 @@
-import { ExtractorDownloadResult } from "../model";
+import { AnimeExtractorDownloadResult } from "../anime/model";
 
 export interface SourceRetriever {
     name: string;
     validate(url: string): boolean;
-    fetch(url: string): Promise<ExtractorDownloadResult[]>;
+    fetch(url: string): Promise<AnimeExtractorDownloadResult[]>;
 }
 
-export { ExtractorDownloadResult } from "../model";
+export { AnimeExtractorDownloadResult } from "../anime/model";

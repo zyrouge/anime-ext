@@ -1,14 +1,14 @@
 import axios from "axios";
 import cheerio from "cheerio";
 import {
-    ExtractorConstructorOptions,
-    ExtractorValidateResults,
-    ExtractorSearchResult,
-    ExtractorEpisodeResult,
-    ExtractorDownloadResult,
-    ExtractorModel,
+    AnimeExtractorConstructorOptions,
+    AnimeExtractorValidateResults,
+    AnimeExtractorSearchResult,
+    AnimeExtractorEpisodeResult,
+    AnimeExtractorDownloadResult,
+    AnimeExtractorModel,
 } from "./model";
-import { constants } from "../util";
+import { constants } from "../../util";
 
 export const config = {
     baseUrl: "https://simply.moe",
@@ -26,11 +26,11 @@ export const config = {
 /**
  * Simply.moe Extractor
  */
-export default class SimplyDotMoe implements ExtractorModel {
+export default class SimplyDotMoe implements AnimeExtractorModel {
     name = "Simply.moe";
-    options: ExtractorConstructorOptions;
+    options: AnimeExtractorConstructorOptions;
 
-    constructor(options: ExtractorConstructorOptions = {}) {
+    constructor(options: AnimeExtractorConstructorOptions = {}) {
         this.options = options;
     }
 
@@ -39,7 +39,7 @@ export default class SimplyDotMoe implements ExtractorModel {
      * @param url Simply.moe URL
      */
     validateURL(url: string) {
-        let result: ExtractorValidateResults = false;
+        let result: AnimeExtractorValidateResults = false;
 
         if (config.animeRegex.test(url)) result = "anime_url";
         else if (config.episodeRegex.test(url)) result = "episode_url";
@@ -56,7 +56,7 @@ export default class SimplyDotMoe implements ExtractorModel {
             `(${this.name}) Search for this site is not implemented yet!`
         );
 
-        const results: ExtractorSearchResult[] = [];
+        const results: AnimeExtractorSearchResult[] = [];
         return results;
     }
 
@@ -73,6 +73,7 @@ export default class SimplyDotMoe implements ExtractorModel {
             const { data } = await axios.get<string>(url, {
                 headers: config.defaultHeaders(),
                 responseType: "text",
+                timeout: constants.http.maxTimeout,
             });
 
             const $ = cheerio.load(data);
@@ -80,7 +81,7 @@ export default class SimplyDotMoe implements ExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const results: ExtractorEpisodeResult[] = [];
+            const results: AnimeExtractorEpisodeResult[] = [];
 
             const links = $(".episodez.range a");
             this.options.logger?.debug?.(
@@ -126,6 +127,7 @@ export default class SimplyDotMoe implements ExtractorModel {
             const { data } = await axios.get<string>(url, {
                 headers: config.defaultHeaders(),
                 responseType: "text",
+                timeout: constants.http.maxTimeout,
             });
 
             const $ = cheerio.load(data);
@@ -137,7 +139,7 @@ export default class SimplyDotMoe implements ExtractorModel {
             if (!link)
                 throw new Error(`Could not find download url for: ${url}`);
 
-            const result: ExtractorDownloadResult = {
+            const result: AnimeExtractorDownloadResult = {
                 quality: link.match(/([\w\d]+)\.[\w\d]+$/)?.[1] || "unknown",
                 url: link.trim(),
                 type: ["downloadable", "streamable"],

@@ -1,4 +1,4 @@
-const FourAnime = require("../../dist/lib/extractors/4anime").default;
+const FourAnime = require("../../dist/lib/extractors/anime/4anime").default;
 
 const ANIME_URL = "https://4anime.to/anime/high-school-dxd";
 

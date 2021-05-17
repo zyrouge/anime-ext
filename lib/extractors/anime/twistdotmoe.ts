@@ -1,14 +1,14 @@
 import axios from "axios";
 import { enc, AES } from "crypto-js";
 import {
-    ExtractorConstructorOptions,
-    ExtractorValidateResults,
-    ExtractorSearchResult,
-    ExtractorEpisodeResult,
-    ExtractorDownloadResult,
-    ExtractorModel,
+    AnimeExtractorConstructorOptions,
+    AnimeExtractorValidateResults,
+    AnimeExtractorSearchResult,
+    AnimeExtractorEpisodeResult,
+    AnimeExtractorDownloadResult,
+    AnimeExtractorModel,
 } from "./model";
-import { constants } from "../util";
+import { constants } from "../../util";
 
 export const config = {
     baseUrl: "https://twist.moe",
@@ -44,25 +44,25 @@ export const matcher = (origin: string, keywords: string[]) =>
 /**
  * Twist.moe Extractor
  */
-export default class FourAnime implements ExtractorModel {
+export default class FourAnime implements AnimeExtractorModel {
     name = "Twist.moe";
-    options: ExtractorConstructorOptions;
+    options: AnimeExtractorConstructorOptions;
     searchCache: {
         title: string;
         alt_title?: string;
         url: string;
     }[] = [];
 
-    constructor(options: ExtractorConstructorOptions = {}) {
+    constructor(options: AnimeExtractorConstructorOptions = {}) {
         this.options = options;
     }
 
     /**
-     * Validate 4Anime URL
-     * @param url 4Anime URL
+     * Validate Twist.moe URL
+     * @param url Twist.moe URL
      */
     validateURL(url: string) {
-        let result: ExtractorValidateResults = false;
+        let result: AnimeExtractorValidateResults = false;
 
         if (config.animeRegex.test(url)) result = "anime_url";
         else if (config.episodeRegex.test(url)) result = "episode_url";
@@ -71,7 +71,7 @@ export default class FourAnime implements ExtractorModel {
     }
 
     /**
-     * 4Anime Search (avoid using this)
+     * Twist.moe Search (avoid using this)
      * @param terms Search term
      */
     async search(terms: string) {
@@ -91,6 +91,7 @@ export default class FourAnime implements ExtractorModel {
                 const { data } = await axios.get<any>(url, {
                     headers: config.defaultHeaders(),
                     responseType: "json",
+                    timeout: constants.http.maxTimeout,
                 });
 
                 if (Array.isArray(data)) {
@@ -111,7 +112,8 @@ export default class FourAnime implements ExtractorModel {
             }
 
             const searches = terms.split(" ");
-            const results: (ExtractorSearchResult & { score: number })[] = [];
+            const results: (AnimeExtractorSearchResult & { score: number })[] =
+                [];
 
             this.searchCache.forEach(({ title, alt_title, url }) => {
                 let points = 0;
@@ -132,9 +134,9 @@ export default class FourAnime implements ExtractorModel {
                 }
             });
 
-            return results
-                .sort((a, b) => b.score - a.score)
-                .slice(0, 10) as ExtractorSearchResult[];
+            return <AnimeExtractorSearchResult[]>(
+                results.sort((a, b) => b.score - a.score).slice(0, 10)
+            );
         } catch (err) {
             this.options.logger?.error?.(
                 `(${this.name}) Failed to scrape: ${err}`
@@ -145,8 +147,8 @@ export default class FourAnime implements ExtractorModel {
     }
 
     /**
-     * Get episode URLs from 4Anime URL
-     * @param url 4Anime anime URL
+     * Get episode URLs from Twist.moe URL
+     * @param url Twist.moe anime URL
      */
     async getEpisodeLinks(url: string) {
         try {
@@ -160,9 +162,10 @@ export default class FourAnime implements ExtractorModel {
             const { data } = await axios.get<any>(config.episodesApiUrl(slug), {
                 headers: config.defaultHeaders(),
                 responseType: "json",
+                timeout: constants.http.maxTimeout,
             });
 
-            const results: ExtractorEpisodeResult[] = [];
+            const results: AnimeExtractorEpisodeResult[] = [];
 
             if (data.slug.slug && Array.isArray(data.episodes)) {
                 const animeUrl = config.animePageUrl(data.slug.slug);
@@ -189,8 +192,8 @@ export default class FourAnime implements ExtractorModel {
     }
 
     /**
-     * Get download URLs from 4Anime episode URL
-     * @param url 4Anime episode URL
+     * Get download URLs from Twist.moe episode URL
+     * @param url Twist.moe episode URL
      */
     async getDownloadLinks(url: string) {
         try {
@@ -204,6 +207,7 @@ export default class FourAnime implements ExtractorModel {
             const { data } = await axios.get<any>(config.sourcesApiUrl(slug), {
                 headers: config.defaultHeaders(),
                 responseType: "json",
+                timeout: constants.http.maxTimeout,
             });
 
             const episode = +(url.match(/(\d+)$/)?.[1] || "1");
@@ -215,7 +219,7 @@ export default class FourAnime implements ExtractorModel {
                 .toString(enc.Utf8)
                 .trim();
 
-            const result: ExtractorDownloadResult = {
+            const result: AnimeExtractorDownloadResult = {
                 quality:
                     path.match(/\[([\w\d]+)\]\.[\d\w]+$/)?.[1] || "unknown",
                 url: `${config.cdnUrl}${path}`,

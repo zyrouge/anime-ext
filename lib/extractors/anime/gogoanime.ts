@@ -1,16 +1,16 @@
 import axios from "axios";
 import cheerio from "cheerio";
 import {
-    ExtractorConstructorOptions,
-    ExtractorValidateResults,
-    ExtractorSearchResult,
-    ExtractorEpisodeResult,
-    ExtractorDownloadResult,
-    ExtractorModel,
+    AnimeExtractorConstructorOptions,
+    AnimeExtractorValidateResults,
+    AnimeExtractorSearchResult,
+    AnimeExtractorEpisodeResult,
+    AnimeExtractorDownloadResult,
+    AnimeExtractorModel,
 } from "./model";
-import GogoParser from "./parsers/gogoplay-iframe";
-import { getExtractor } from "./sources";
-import { constants } from "../util";
+import GogoParser from "../parsers/gogoplay-iframe";
+import { getExtractor } from "../sources";
+import { constants } from "../../util";
 
 export const config = {
     baseUrl: "https://www1.gogoanime.ai",
@@ -31,11 +31,11 @@ export const config = {
 /**
  * Gogoanime Extractor
  */
-export default class Gogoanime implements ExtractorModel {
+export default class Gogoanime implements AnimeExtractorModel {
     name = "Gogoanime";
-    options: ExtractorConstructorOptions;
+    options: AnimeExtractorConstructorOptions;
 
-    constructor(options: ExtractorConstructorOptions = {}) {
+    constructor(options: AnimeExtractorConstructorOptions = {}) {
         this.options = options;
     }
 
@@ -44,7 +44,7 @@ export default class Gogoanime implements ExtractorModel {
      * @param url Gogoanime URL
      */
     validateURL(url: string) {
-        let result: ExtractorValidateResults = false;
+        let result: AnimeExtractorValidateResults = false;
 
         if (config.animeRegex.test(url)) result = "anime_url";
         else if (config.episodeRegex.test(url)) result = "episode_url";
@@ -68,6 +68,7 @@ export default class Gogoanime implements ExtractorModel {
             const { data } = await axios.get<string>(url, {
                 headers: config.defaultHeaders(),
                 responseType: "text",
+                timeout: constants.http.maxTimeout,
             });
 
             const $ = cheerio.load(data);
@@ -75,7 +76,7 @@ export default class Gogoanime implements ExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const results: ExtractorSearchResult[] = [];
+            const results: AnimeExtractorSearchResult[] = [];
 
             const links = $(".items li");
             this.options.logger?.debug?.(
@@ -131,6 +132,7 @@ export default class Gogoanime implements ExtractorModel {
             const { data } = await axios.get<string>(url, {
                 headers: config.defaultHeaders(),
                 responseType: "text",
+                timeout: constants.http.maxTimeout,
             });
 
             const $ = cheerio.load(data);
@@ -139,9 +141,9 @@ export default class Gogoanime implements ExtractorModel {
             );
 
             const episodesUrl = config.episodesUrl(
-                $("#episode_page a.active").attr("ep_start") as string,
-                $("#episode_page a.active").attr("ep_end") as string,
-                $("input#movie_id").val() as string
+                <string>$("#episode_page a.active").attr("ep_start"),
+                <string>$("#episode_page a.active").attr("ep_end"),
+                <string>$("input#movie_id").val()
             );
 
             const { data: episodesData } = await axios.get<string>(
@@ -149,6 +151,7 @@ export default class Gogoanime implements ExtractorModel {
                 {
                     headers: config.defaultHeaders(),
                     responseType: "text",
+                    timeout: constants.http.maxTimeout,
                 }
             );
 
@@ -157,7 +160,7 @@ export default class Gogoanime implements ExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const results: ExtractorEpisodeResult[] = [];
+            const results: AnimeExtractorEpisodeResult[] = [];
 
             const links = e$("#episode_related a");
             this.options.logger?.debug?.(
@@ -205,6 +208,7 @@ export default class Gogoanime implements ExtractorModel {
             const { data } = await axios.get<string>(url, {
                 headers: config.defaultHeaders(),
                 responseType: "text",
+                timeout: constants.http.maxTimeout,
             });
 
             const $ = cheerio.load(data);
@@ -216,7 +220,7 @@ export default class Gogoanime implements ExtractorModel {
             if (!iframeUrl)
                 throw new Error(`Could not find download urls for: ${url}`);
 
-            const results: ExtractorDownloadResult[] = [];
+            const results: AnimeExtractorDownloadResult[] = [];
 
             if (!iframeUrl.startsWith("http")) iframeUrl = `https:${iframeUrl}`;
             const sources = await GogoParser(iframeUrl);

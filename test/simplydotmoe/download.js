@@ -1,4 +1,5 @@
-const Simplydotmoe = require("../../dist/lib/extractors/simplydotmoe").default;
+const Simplydotmoe =
+    require("../../dist/lib/extractors/anime/simplydotmoe").default;
 
 const EPISODE_URL = "https://simply.moe/86-eighty-six-episode-01";
 
