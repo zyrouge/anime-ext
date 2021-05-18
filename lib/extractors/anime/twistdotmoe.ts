@@ -5,6 +5,7 @@ import {
     AnimeExtractorValidateResults,
     AnimeExtractorSearchResult,
     AnimeExtractorEpisodeResult,
+    AnimeExtractorInfoResult,
     AnimeExtractorDownloadResult,
     AnimeExtractorModel,
 } from "./model";
@@ -91,7 +92,7 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                 const { data } = await axios.get<any>(url, {
                     headers: config.defaultHeaders(),
                     responseType: "json",
-                    timeout: constants.http.maxTimeout,
+                    timeout: 30 * 1000,
                 });
 
                 if (Array.isArray(data)) {
@@ -150,7 +151,7 @@ export default class TwistDotAnime implements AnimeExtractorModel {
      * Get episode URLs from Twist.moe URL
      * @param url Twist.moe anime URL
      */
-    async getEpisodeLinks(url: string) {
+    async getInfo(url: string) {
         try {
             this.options.logger?.debug?.(
                 `(${this.name}) Episode links requested for: ${url}`
@@ -165,12 +166,12 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                 timeout: constants.http.maxTimeout,
             });
 
-            const results: AnimeExtractorEpisodeResult[] = [];
+            const episodes: AnimeExtractorEpisodeResult[] = [];
 
             if (data.slug.slug && Array.isArray(data.episodes)) {
                 const animeUrl = config.animePageUrl(data.slug.slug);
                 data.episodes.forEach((ep: any) => {
-                    results.push({
+                    episodes.push({
                         episode: ep.number,
                         url: `${animeUrl}/${ep.number}`,
                     });
@@ -178,10 +179,15 @@ export default class TwistDotAnime implements AnimeExtractorModel {
             }
 
             this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${results.length} (${url})`
+                `(${this.name}) No. of links after parsing: ${episodes.length} (${url})`
             );
 
-            return results;
+            const result: AnimeExtractorInfoResult = {
+                title: data.title || "",
+                episodes,
+            };
+
+            return result;
         } catch (err) {
             this.options.logger?.error?.(
                 `(${this.name}) Failed to scrape: ${err?.message}`

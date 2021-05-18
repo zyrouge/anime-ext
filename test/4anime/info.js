@@ -13,7 +13,7 @@ const start = async () => {
         logger: LOGGER,
     });
 
-    const episodes = await extractor.getEpisodeLinks(ANIME_URL);
+    const episodes = await extractor.getInfo(ANIME_URL);
     console.log(episodes);
 };
 

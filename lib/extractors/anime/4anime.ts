@@ -5,6 +5,7 @@ import {
     AnimeExtractorValidateResults,
     AnimeExtractorSearchResult,
     AnimeExtractorEpisodeResult,
+    AnimeExtractorInfoResult,
     AnimeExtractorDownloadResult,
     AnimeExtractorModel,
 } from "./model";
@@ -117,7 +118,7 @@ export default class FourAnime implements AnimeExtractorModel {
      * Get episode URLs from 4Anime URL
      * @param url 4Anime anime URL
      */
-    async getEpisodeLinks(url: string) {
+    async getInfo(url: string) {
         try {
             this.options.logger?.debug?.(
                 `(${this.name}) Episode links requested for: ${url}`
@@ -134,7 +135,7 @@ export default class FourAnime implements AnimeExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const results: AnimeExtractorEpisodeResult[] = [];
+            const episodes: AnimeExtractorEpisodeResult[] = [];
 
             const links = $(".episodes a");
             this.options.logger?.debug?.(
@@ -146,7 +147,7 @@ export default class FourAnime implements AnimeExtractorModel {
                 const url = episode.attr("href");
 
                 if (url) {
-                    results.push({
+                    episodes.push({
                         episode: +episode.text().trim(),
                         url: url.trim(),
                     });
@@ -154,10 +155,15 @@ export default class FourAnime implements AnimeExtractorModel {
             });
 
             this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${results.length} (${url})`
+                `(${this.name}) No. of links after parsing: ${episodes.length} (${url})`
             );
 
-            return results;
+            const result: AnimeExtractorInfoResult = {
+                title: $(".single-anime-desktop").text().trim(),
+                episodes,
+            };
+
+            return result;
         } catch (err) {
             this.options.logger?.error?.(
                 `(${this.name}) Failed to scrape: ${err?.message}`

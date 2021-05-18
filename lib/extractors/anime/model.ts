@@ -21,6 +21,11 @@ export interface AnimeExtractorEpisodeResult {
     url: string;
 }
 
+export interface AnimeExtractorInfoResult {
+    title: string;
+    episodes: AnimeExtractorEpisodeResult[];
+}
+
 export const AnimeExtractorDownloadResultTypes = [
     "streamable",
     "downloadable",
@@ -44,6 +49,6 @@ export interface AnimeExtractorModel {
 
     validateURL(url: string): AnimeExtractorValidateResults;
     search(terms: string): Promise<AnimeExtractorSearchResult[]>;
-    getEpisodeLinks(url: string): Promise<AnimeExtractorEpisodeResult[]>;
+    getInfo(url: string): Promise<AnimeExtractorInfoResult>;
     getDownloadLinks(url: string): Promise<AnimeExtractorDownloadResult[]>;
 }
