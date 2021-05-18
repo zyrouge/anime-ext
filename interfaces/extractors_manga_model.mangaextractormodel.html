@@ -96,8 +96,8 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="extractors_manga_model.mangaextractormodel.html#getchapterlinks" class="tsd-kind-icon">get<wbr>Chapter<wbr>Links</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="extractors_manga_model.mangaextractormodel.html#getchapterpageimages" class="tsd-kind-icon">get<wbr>Chapter<wbr>Page<wbr>Images</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="extractors_manga_model.mangaextractormodel.html#getinfo" class="tsd-kind-icon">get<wbr>Info</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="extractors_manga_model.mangaextractormodel.html#search" class="tsd-kind-icon">search</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="extractors_manga_model.mangaextractormodel.html#validateurl" class="tsd-kind-icon">validateURL</a></li>
 							</ul>
@@ -113,7 +113,7 @@
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bcd8d57/lib/extractors/manga/model.ts#L31">lib/extractors/manga/model.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bd72ef2/lib/extractors/manga/model.ts#L36">lib/extractors/manga/model.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -123,36 +123,13 @@
 					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="extractors_manga_model.mangaextractorconstructoroptions.html" class="tsd-signature-type" data-tsd-kind="Interface">MangaExtractorConstructorOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bcd8d57/lib/extractors/manga/model.ts#L32">lib/extractors/manga/model.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bd72ef2/lib/extractors/manga/model.ts#L37">lib/extractors/manga/model.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="getchapterlinks" class="tsd-anchor"></a>
-					<h3>get<wbr>Chapter<wbr>Links</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Chapter<wbr>Links<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="extractors_manga_model.mangaextractorchapterresult.html" class="tsd-signature-type" data-tsd-kind="Interface">MangaExtractorChapterResult</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bcd8d57/lib/extractors/manga/model.ts#L36">lib/extractors/manga/model.ts:36</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>url: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="extractors_manga_model.mangaextractorchapterresult.html" class="tsd-signature-type" data-tsd-kind="Interface">MangaExtractorChapterResult</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="getchapterpageimages" class="tsd-anchor"></a>
 					<h3>get<wbr>Chapter<wbr>Page<wbr>Images</h3>
@@ -163,7 +140,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bcd8d57/lib/extractors/manga/model.ts#L37">lib/extractors/manga/model.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bd72ef2/lib/extractors/manga/model.ts#L42">lib/extractors/manga/model.ts:42</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -177,6 +154,29 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="getinfo" class="tsd-anchor"></a>
+					<h3>get<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Info<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="extractors_manga_model.mangaextractorinforesult.html" class="tsd-signature-type" data-tsd-kind="Interface">MangaExtractorInfoResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bd72ef2/lib/extractors/manga/model.ts#L41">lib/extractors/manga/model.ts:41</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="extractors_manga_model.mangaextractorinforesult.html" class="tsd-signature-type" data-tsd-kind="Interface">MangaExtractorInfoResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="search" class="tsd-anchor"></a>
 					<h3>search</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -186,7 +186,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bcd8d57/lib/extractors/manga/model.ts#L35">lib/extractors/manga/model.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bd72ef2/lib/extractors/manga/model.ts#L40">lib/extractors/manga/model.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -209,7 +209,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bcd8d57/lib/extractors/manga/model.ts#L34">lib/extractors/manga/model.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/bd72ef2/lib/extractors/manga/model.ts#L39">lib/extractors/manga/model.ts:39</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -294,6 +294,9 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="extractors_manga_model.mangaextractorconstructoroptions.html" class="tsd-kind-icon">Manga<wbr>Extractor<wbr>Constructor<wbr>Options</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="extractors_manga_model.mangaextractorinforesult.html" class="tsd-kind-icon">Manga<wbr>Extractor<wbr>Info<wbr>Result</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
@@ -306,10 +309,10 @@
 								<a href="extractors_manga_model.mangaextractormodel.html#options" class="tsd-kind-icon">options</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="extractors_manga_model.mangaextractormodel.html#getchapterlinks" class="tsd-kind-icon">get<wbr>Chapter<wbr>Links</a>
+								<a href="extractors_manga_model.mangaextractormodel.html#getchapterpageimages" class="tsd-kind-icon">get<wbr>Chapter<wbr>Page<wbr>Images</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="extractors_manga_model.mangaextractormodel.html#getchapterpageimages" class="tsd-kind-icon">get<wbr>Chapter<wbr>Page<wbr>Images</a>
+								<a href="extractors_manga_model.mangaextractormodel.html#getinfo" class="tsd-kind-icon">get<wbr>Info</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="extractors_manga_model.mangaextractormodel.html#search" class="tsd-kind-icon">search</a>
