@@ -6,6 +6,7 @@ import {
     MangaExtractorSearchResult,
     MangaExtractorModel,
     MangaExtractorChapterResult,
+    MangaExtractorInfoResult,
     MangaExtractorChapterPagesResult,
 } from "./model";
 import { constants, functions } from "../../util";
@@ -115,7 +116,7 @@ export default class FanFox implements MangaExtractorModel {
      * Get chapter URLs from FanFox.net URL
      * @param url FanFox.net chapter URL
      */
-    async getChapterLinks(url: string) {
+    async getInfo(url: string) {
         try {
             this.options.logger?.debug?.(
                 `(${this.name}) Chapter links requested for: ${url}`
@@ -132,7 +133,7 @@ export default class FanFox implements MangaExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const results: MangaExtractorChapterResult[] = [];
+            const chapters: MangaExtractorChapterResult[] = [];
             $("#chapterlist li a").each(function () {
                 const ele = $(this);
 
@@ -144,7 +145,7 @@ export default class FanFox implements MangaExtractorModel {
                     const vol = title.match(/Vol.(\d+)/)?.[1];
                     const chap = title.match(/Ch.([\d.]+)/)?.[1];
 
-                    results.push({
+                    chapters.push({
                         title: shortTitle?.trim() || title,
                         volume: vol?.trim() || "unknown",
                         chapter: chap?.trim() || "unknown",
@@ -153,7 +154,12 @@ export default class FanFox implements MangaExtractorModel {
                 }
             });
 
-            return results;
+            const result: MangaExtractorInfoResult = {
+                title: $(".detail-info-right-title-font").text().trim(),
+                chapters,
+            };
+
+            return result;
         } catch (err) {
             this.options.logger?.error?.(
                 `(${this.name}) Failed to scrape: ${err?.message}`
