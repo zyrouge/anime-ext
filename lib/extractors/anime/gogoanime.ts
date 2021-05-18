@@ -78,13 +78,7 @@ export default class Gogoanime implements AnimeExtractorModel {
             );
 
             const results: AnimeExtractorSearchResult[] = [];
-
-            const links = $(".items li");
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${links.length} (${url})`
-            );
-
-            links.each(function () {
+            $(".items li").each(function () {
                 const ele = $(this);
 
                 const title = ele.find(".name a");
@@ -105,10 +99,6 @@ export default class Gogoanime implements AnimeExtractorModel {
                     });
                 }
             });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${results.length} (${url})`
-            );
 
             return results;
         } catch (err) {
@@ -162,13 +152,7 @@ export default class Gogoanime implements AnimeExtractorModel {
             );
 
             const episodes: AnimeExtractorEpisodeResult[] = [];
-
-            const links = e$("#episode_related a");
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${links.length} (${url})`
-            );
-
-            links.each(function () {
+            e$("#episode_related a").each(function () {
                 const ele = e$(this);
 
                 const episode = ele.find(".name");
@@ -181,10 +165,6 @@ export default class Gogoanime implements AnimeExtractorModel {
                     });
                 }
             });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${episodes.length} (${url})`
-            );
 
             const result: AnimeExtractorInfoResult = {
                 title: $(".anime_info_body_bg h1").text().trim(),
@@ -230,6 +210,7 @@ export default class Gogoanime implements AnimeExtractorModel {
 
             if (!iframeUrl.startsWith("http")) iframeUrl = `https:${iframeUrl}`;
             const sources = await GogoParser(iframeUrl);
+
             for (const src of sources) {
                 const extractor = getExtractor(src);
                 if (extractor) {
@@ -250,10 +231,6 @@ export default class Gogoanime implements AnimeExtractorModel {
                     headers: config.defaultHeaders(),
                 });
             }
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${results.length} (${url})`
-            );
 
             return results;
         } catch (err) {

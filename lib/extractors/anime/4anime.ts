@@ -73,13 +73,7 @@ export default class FourAnime implements AnimeExtractorModel {
             );
 
             const results: AnimeExtractorSearchResult[] = [];
-
-            const links = $(".container a");
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${links.length} (${url})`
-            );
-
-            links.each(function () {
+            $(".container a").each(function () {
                 const ele = $(this);
 
                 const title = ele.find("div");
@@ -99,10 +93,6 @@ export default class FourAnime implements AnimeExtractorModel {
                     });
                 }
             });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${results.length} (${url})`
-            );
 
             return results;
         } catch (err) {
@@ -136,13 +126,7 @@ export default class FourAnime implements AnimeExtractorModel {
             );
 
             const episodes: AnimeExtractorEpisodeResult[] = [];
-
-            const links = $(".episodes a");
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${links.length} (${url})`
-            );
-
-            links.each(function () {
+            $(".episodes a").each(function () {
                 const episode = $(this);
                 const url = episode.attr("href");
 
@@ -153,10 +137,6 @@ export default class FourAnime implements AnimeExtractorModel {
                     });
                 }
             });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${episodes.length} (${url})`
-            );
 
             const result: AnimeExtractorInfoResult = {
                 title: $(".single-anime-desktop").text().trim(),
@@ -204,10 +184,6 @@ export default class FourAnime implements AnimeExtractorModel {
                 type: ["downloadable", "streamable"],
                 headers: config.defaultHeaders(),
             };
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: 1 (${url})`
-            );
 
             return [result];
         } catch (err) {

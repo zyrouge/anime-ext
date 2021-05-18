@@ -83,13 +83,7 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
             );
 
             const episodes: AnimeExtractorEpisodeResult[] = [];
-
-            const links = $(".episodez.range a");
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${links.length} (${url})`
-            );
-
-            links.each(function () {
+            $(".episodez.range a").each(function () {
                 const episode = $(this);
                 const url = episode.attr("href");
 
@@ -100,10 +94,6 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
                     });
                 }
             });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${episodes.length} (${url})`
-            );
 
             const result: AnimeExtractorInfoResult = {
                 title: $(".info-container .title").text().trim(),
@@ -151,10 +141,6 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
                 type: ["downloadable", "streamable"],
                 headers: config.defaultHeaders(),
             };
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: 1 (${url})`
-            );
 
             return [result];
         } catch (err) {

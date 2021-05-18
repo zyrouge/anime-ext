@@ -77,13 +77,7 @@ export default class Gogostream implements AnimeExtractorModel {
             );
 
             const results: AnimeExtractorSearchResult[] = [];
-
-            const list = $(".listing.items .video-block a");
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${list.length} (${url})`
-            );
-
-            list.each(function () {
+            $(".listing.items .video-block a").each(function () {
                 const ele = $(this);
 
                 const title = ele.find(".name");
@@ -102,10 +96,6 @@ export default class Gogostream implements AnimeExtractorModel {
                     });
                 }
             });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${results.length} (${url})`
-            );
 
             return results;
         } catch (err) {
@@ -139,13 +129,7 @@ export default class Gogostream implements AnimeExtractorModel {
             );
 
             const episodes: AnimeExtractorEpisodeResult[] = [];
-
-            const links = $(".video-info-left .listing.items a");
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${links.length} (${url})`
-            );
-
-            links.each(function () {
+            $(".video-info-left .listing.items a").each(function () {
                 const ele = $(this);
 
                 const episode = ele.find(".name");
@@ -159,10 +143,6 @@ export default class Gogostream implements AnimeExtractorModel {
                     });
                 }
             });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${episodes.length} (${url})`
-            );
 
             const result: AnimeExtractorInfoResult = {
                 title: $(".video-info-left h1")
@@ -211,6 +191,7 @@ export default class Gogostream implements AnimeExtractorModel {
 
             if (!iframeUrl.startsWith("http")) iframeUrl = `https:${iframeUrl}`;
             const sources = await GogoParser(iframeUrl);
+
             for (const src of sources) {
                 const extractor = getExtractor(src);
                 if (extractor) {

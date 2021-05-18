@@ -178,10 +178,6 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                 });
             }
 
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${episodes.length} (${url})`
-            );
-
             const result: AnimeExtractorInfoResult = {
                 title: data.title || "",
                 episodes,
@@ -232,10 +228,6 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                 type: ["external_download"],
                 headers: config.defaultHeaders(),
             };
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: 1 (${url})`
-            );
 
             return [result];
         } catch (err) {

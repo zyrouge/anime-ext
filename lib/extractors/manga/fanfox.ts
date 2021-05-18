@@ -73,13 +73,7 @@ export default class FanFox implements MangaExtractorModel {
             );
 
             const results: MangaExtractorSearchResult[] = [];
-
-            const links = $(".line-list li");
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${links.length} (${url})`
-            );
-
-            links.each(function () {
+            $(".line-list li").each(function () {
                 const ele = $(this);
 
                 const title = ele.find(".manga-list-4-item-title a");
@@ -106,10 +100,6 @@ export default class FanFox implements MangaExtractorModel {
                     });
                 }
             });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${results.length} (${url})`
-            );
 
             return results;
         } catch (err) {
@@ -143,13 +133,7 @@ export default class FanFox implements MangaExtractorModel {
             );
 
             const results: MangaExtractorChapterResult[] = [];
-
-            const links = $("#chapterlist li a");
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links found: ${links.length} (${url})`
-            );
-
-            links.each(function () {
+            $("#chapterlist li a").each(function () {
                 const ele = $(this);
 
                 const title = ele.find(".title3").text().trim();
@@ -168,10 +152,6 @@ export default class FanFox implements MangaExtractorModel {
                     });
                 }
             });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${results.length} (${url})`
-            );
 
             return results;
         } catch (err) {
@@ -226,10 +206,6 @@ export default class FanFox implements MangaExtractorModel {
                         });
                     }
                 });
-
-            this.options.logger?.debug?.(
-                `(${this.name}) No. of links after parsing: ${pages.length} (${url})`
-            );
 
             const results: MangaExtractorChapterPagesResult[] = [];
 
