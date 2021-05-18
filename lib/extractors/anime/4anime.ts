@@ -53,7 +53,6 @@ export default class FourAnime implements AnimeExtractorModel {
      */
     async search(terms: string) {
         try {
-            terms = terms.split(" ").join("+");
             this.options.logger?.debug?.(
                 `(${this.name}) Search terms: ${terms}`
             );
