@@ -4,7 +4,7 @@ import { Logger } from "../../types";
 import { constants } from "../../util";
 
 export const config = {
-    name: "MyAnimeList-search",
+    name: "MyAnimeList-top",
     baseUrl: (type?: string) =>
         `https://myanimelist.net/topanime.php${
             type && type !== "all" ? `?type=${type}` : ""
@@ -40,6 +40,7 @@ export interface TopResult {
     score: string;
     series: string;
     run: string;
+    image: string;
 }
 
 const top = async (
@@ -69,14 +70,8 @@ const top = async (
         $(".ranking-list").each(function () {
             const ele = $(this);
 
-            const rank = ele.find(".rank").text().trim();
-            const titleEle = ele.find(".title h3 a");
-
-            const title = titleEle.text().trim();
-            const url = titleEle.attr("href");
-            if (!url) return;
-
-            const score = ele.find(".score").text().trim();
+            const title = ele.find(".title h3 a");
+            const url = title.attr("href");
             const [series, run] = ele
                 .find(".information")
                 .text()
@@ -84,14 +79,17 @@ const top = async (
                 .split("\n")
                 .map((x) => x.trim());
 
-            results.push({
-                rank,
-                title,
-                url,
-                score,
-                series: series || "-",
-                run: series || "-",
-            });
+            if (url) {
+                results.push({
+                    rank: ele.find(".rank").text().trim(),
+                    title: title.text().trim(),
+                    url,
+                    score: ele.find(".score").text().trim(),
+                    series: series || "-",
+                    run: run || "-",
+                    image: ele.find("img").attr("data-src")?.trim() || "",
+                });
+            }
         });
 
         options.logger?.debug?.(
