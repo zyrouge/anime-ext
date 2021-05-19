@@ -1995,7 +1995,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 418,
+										"id": 445,
 										"name": "Logger"
 									}
 								],
@@ -5236,7 +5236,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 418,
+										"id": 445,
 										"name": "Logger"
 									}
 								],
@@ -5999,7 +5999,7 @@
 			"flags": {},
 			"children": [
 				{
-					"id": 445,
+					"id": 472,
 					"name": "AnimeExtractorDownloadResult",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -6146,7 +6146,7 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						445
+						472
 					]
 				},
 				{
@@ -6412,7 +6412,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 418,
+										"id": 445,
 										"name": "Logger"
 									}
 								],
@@ -7470,7 +7470,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 418,
+										"id": 445,
 										"name": "Logger"
 									}
 								],
@@ -7910,34 +7910,629 @@
 		},
 		{
 			"id": 417,
+			"name": "integrations/myanimelist/top",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 429,
+					"name": "SearchOptions",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 430,
+							"name": "logger",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "lib/integrations/myanimelist/top.ts",
+									"line": 20,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 445,
+										"name": "Logger"
+									}
+								],
+								"name": "Partial"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								430
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "lib/integrations/myanimelist/top.ts",
+							"line": 19,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 433,
+					"name": "TopResult",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 434,
+							"name": "rank",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/integrations/myanimelist/top.ts",
+									"line": 37,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 439,
+							"name": "run",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/integrations/myanimelist/top.ts",
+									"line": 42,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 437,
+							"name": "score",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/integrations/myanimelist/top.ts",
+									"line": 40,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 438,
+							"name": "series",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/integrations/myanimelist/top.ts",
+									"line": 41,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 435,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/integrations/myanimelist/top.ts",
+									"line": 38,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 436,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/integrations/myanimelist/top.ts",
+									"line": 39,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								434,
+								439,
+								437,
+								438,
+								435,
+								436
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "lib/integrations/myanimelist/top.ts",
+							"line": 36,
+							"character": 26
+						}
+					]
+				},
+				{
+					"id": 432,
+					"name": "TopAnimeTypesType",
+					"kind": 4194304,
+					"kindString": "Type alias",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "lib/integrations/myanimelist/top.ts",
+							"line": 34,
+							"character": 29
+						}
+					],
+					"type": {
+						"type": "indexedAccess",
+						"indexType": {
+							"type": "intrinsic",
+							"name": "number"
+						},
+						"objectType": {
+							"type": "query",
+							"queryType": {
+								"type": "reference",
+								"id": 431,
+								"name": "TopAnimeTypes"
+							}
+						}
+					}
+				},
+				{
+					"id": 431,
+					"name": "TopAnimeTypes",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "lib/integrations/myanimelist/top.ts",
+							"line": 23,
+							"character": 26
+						}
+					],
+					"type": {
+						"type": "typeOperator",
+						"operator": "readonly",
+						"target": {
+							"type": "tuple",
+							"elements": [
+								{
+									"type": "literal",
+									"value": "airing"
+								},
+								{
+									"type": "literal",
+									"value": "upcoming"
+								},
+								{
+									"type": "literal",
+									"value": "tv"
+								},
+								{
+									"type": "literal",
+									"value": "movie"
+								},
+								{
+									"type": "literal",
+									"value": "ova"
+								},
+								{
+									"type": "literal",
+									"value": "ona"
+								},
+								{
+									"type": "literal",
+									"value": "special"
+								},
+								{
+									"type": "literal",
+									"value": "bypopularity"
+								},
+								{
+									"type": "literal",
+									"value": "favorite"
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 418,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "lib/integrations/myanimelist/top.ts",
+							"line": 6,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 419,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 421,
+									"name": "baseUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 422,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 423,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 424,
+															"name": "type",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isOptional": true
+															},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 420,
+									"name": "name",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"MyAnimeList-search\""
+								},
+								{
+									"id": 425,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "lib/integrations/myanimelist/top.ts",
+											"line": 12,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 426,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 427,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 428,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																428
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										421,
+										420
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										425
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 440,
+					"name": "default",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "lib/integrations/myanimelist/top.ts",
+							"line": 45,
+							"character": 9
+						}
+					],
+					"signatures": [
+						{
+							"id": 441,
+							"name": "default",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 442,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "literal",
+												"value": "all"
+											},
+											{
+												"type": "literal",
+												"value": "airing"
+											},
+											{
+												"type": "literal",
+												"value": "upcoming"
+											},
+											{
+												"type": "literal",
+												"value": "tv"
+											},
+											{
+												"type": "literal",
+												"value": "movie"
+											},
+											{
+												"type": "literal",
+												"value": "ova"
+											},
+											{
+												"type": "literal",
+												"value": "ona"
+											},
+											{
+												"type": "literal",
+												"value": "special"
+											},
+											{
+												"type": "literal",
+												"value": "bypopularity"
+											},
+											{
+												"type": "literal",
+												"value": "favorite"
+											}
+										]
+									}
+								},
+								{
+									"id": 443,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 429,
+										"name": "SearchOptions"
+									},
+									"defaultValue": "{}"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 433,
+											"name": "TopResult"
+										}
+									}
+								],
+								"name": "Promise"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						429,
+						433
+					]
+				},
+				{
+					"title": "Type aliases",
+					"kind": 4194304,
+					"children": [
+						432
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						431,
+						418
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						440
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "lib/integrations/myanimelist/top.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 444,
 			"name": "types",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 418,
+					"id": 445,
 					"name": "Logger",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 422,
+							"id": 449,
 							"name": "debug",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 423,
+									"id": 450,
 									"name": "debug",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 424,
+											"id": 451,
 											"name": "text",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7956,21 +8551,21 @@
 							]
 						},
 						{
-							"id": 425,
+							"id": 452,
 							"name": "error",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 426,
+									"id": 453,
 									"name": "error",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 427,
+											"id": 454,
 											"name": "text",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7989,21 +8584,21 @@
 							]
 						},
 						{
-							"id": 419,
+							"id": 446,
 							"name": "info",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 420,
+									"id": 447,
 									"name": "info",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 421,
+											"id": 448,
 											"name": "text",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -8027,9 +8622,9 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								422,
-								425,
-								419
+								449,
+								452,
+								446
 							]
 						}
 					],
@@ -8047,7 +8642,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						418
+						445
 					]
 				}
 			],
@@ -8060,14 +8655,14 @@
 			]
 		},
 		{
-			"id": 428,
+			"id": 455,
 			"name": "util",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 429,
+					"id": 456,
 					"name": "constants",
 					"kind": 32,
 					"kindString": "Variable",
@@ -8084,14 +8679,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 430,
+							"id": 457,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 431,
+									"id": 458,
 									"name": "http",
 									"kind": 1024,
 									"kindString": "Property",
@@ -8099,14 +8694,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 432,
+											"id": 459,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 434,
+													"id": 461,
 													"name": "maxTimeout",
 													"kind": 1024,
 													"kindString": "Property",
@@ -8118,7 +8713,7 @@
 													"defaultValue": "..."
 												},
 												{
-													"id": 433,
+													"id": 460,
 													"name": "userAgent",
 													"kind": 1024,
 													"kindString": "Property",
@@ -8135,8 +8730,8 @@
 													"title": "Properties",
 													"kind": 1024,
 													"children": [
-														434,
-														433
+														461,
+														460
 													]
 												}
 											]
@@ -8150,7 +8745,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										431
+										458
 									]
 								}
 							]
@@ -8159,7 +8754,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 435,
+					"id": 462,
 					"name": "functions",
 					"kind": 32,
 					"kindString": "Variable",
@@ -8176,14 +8771,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 436,
+							"id": 463,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 437,
+									"id": 464,
 									"name": "sleep",
 									"kind": 1024,
 									"kindString": "Property",
@@ -8191,21 +8786,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 438,
+											"id": 465,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 439,
+													"id": 466,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 440,
+															"id": 467,
 															"name": "ms",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -8228,14 +8823,14 @@
 													}
 												},
 												{
-													"id": 441,
+													"id": 468,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"typeParameter": [
 														{
-															"id": 442,
+															"id": 469,
 															"name": "T",
 															"kind": 131072,
 															"kindString": "Type parameter",
@@ -8244,7 +8839,7 @@
 													],
 													"parameters": [
 														{
-															"id": 443,
+															"id": 470,
 															"name": "ms",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -8255,7 +8850,7 @@
 															}
 														},
 														{
-															"id": 444,
+															"id": 471,
 															"name": "value",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -8288,7 +8883,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										437
+										464
 									]
 								}
 							]
@@ -8302,8 +8897,8 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						429,
-						435
+						456,
+						462
 					]
 				}
 			],
@@ -8337,7 +8932,8 @@
 				324,
 				391,
 				417,
-				428
+				444,
+				455
 			]
 		}
 	]
