@@ -20,6 +20,7 @@ export const config = {
         return {
             "User-Agent": constants.http.userAgent,
             Referer: this.baseUrl,
+            Cookie: "isAdult=1;"
         };
     },
 };
