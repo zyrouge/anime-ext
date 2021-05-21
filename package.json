@@ -1,6 +1,6 @@
 {
   "name": "anime-ext",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "",
   "scripts": {
     "build": "rimraf ./dist && tsc",
