@@ -3630,7 +3630,7 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/twistdotmoe.ts",
-									"line": 203,
+									"line": 206,
 									"character": 26
 								}
 							],
@@ -3696,7 +3696,7 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/twistdotmoe.ts",
-									"line": 154,
+									"line": 157,
 									"character": 17
 								}
 							],
@@ -6180,7 +6180,7 @@
 			"flags": {},
 			"children": [
 				{
-					"id": 483,
+					"id": 486,
 					"name": "AnimeExtractorDownloadResult",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -6327,7 +6327,7 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						483
+						486
 					]
 				},
 				{
@@ -9076,6 +9076,46 @@
 										}
 									},
 									"defaultValue": "..."
+								},
+								{
+									"id": 483,
+									"name": "encodeURI",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "lib/util.ts",
+											"line": 13,
+											"character": 13
+										}
+									],
+									"signatures": [
+										{
+											"id": 484,
+											"name": "encodeURI",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 485,
+													"name": "url",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									]
 								}
 							],
 							"groups": [
@@ -9084,6 +9124,13 @@
 									"kind": 1024,
 									"children": [
 										475
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										483
 									]
 								}
 							]
