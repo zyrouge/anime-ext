@@ -1,7 +1,7 @@
 import axios from "axios";
 import cheerio from "cheerio";
 import { Logger } from "../../types";
-import { constants } from "../../util";
+import { constants, functions } from "../../util";
 
 export const config = {
     name: "MyAnimeList-search",
@@ -35,7 +35,7 @@ const search = async (terms: string, options: SearchOptions = {}) => {
         const url = config.baseUrl(terms);
         options.logger?.debug?.(`(${config.name}) Search url: ${url}!`);
 
-        const { data } = await axios.get<string>(encodeURI(url), {
+        const { data } = await axios.get<string>(functions.encodeURI(url), {
             headers: config.defaultHeaders(),
             responseType: "text",
             timeout: constants.http.maxTimeout,

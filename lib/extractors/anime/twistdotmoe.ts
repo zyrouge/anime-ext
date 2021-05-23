@@ -9,7 +9,7 @@ import {
     AnimeExtractorDownloadResult,
     AnimeExtractorModel,
 } from "./model";
-import { constants } from "../../util";
+import { constants, functions } from "../../util";
 
 export const config = {
     baseUrl: "https://twist.moe",
@@ -89,11 +89,14 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                     `(${this.name}) Search URL: ${url}`
                 );
 
-                const { data } = await axios.get<any>(encodeURI(url), {
-                    headers: config.defaultHeaders(),
-                    responseType: "json",
-                    timeout: 30 * 1000,
-                });
+                const { data } = await axios.get<any>(
+                    functions.encodeURI(url),
+                    {
+                        headers: config.defaultHeaders(),
+                        responseType: "json",
+                        timeout: 30 * 1000,
+                    }
+                );
 
                 if (Array.isArray(data)) {
                     data.forEach((anime) => {
@@ -161,7 +164,7 @@ export default class TwistDotAnime implements AnimeExtractorModel {
             if (!slug) throw new Error(`Could not parse slug from ${url}`);
 
             const { data } = await axios.get<any>(
-                encodeURI(config.episodesApiUrl(slug)),
+                functions.encodeURI(config.episodesApiUrl(slug)),
                 {
                     headers: config.defaultHeaders(),
                     responseType: "json",
@@ -210,7 +213,7 @@ export default class TwistDotAnime implements AnimeExtractorModel {
             if (!slug) throw new Error(`Could not parse slug from ${url}`);
 
             const { data } = await axios.get<any>(
-                encodeURI(config.sourcesApiUrl(slug)),
+                functions.encodeURI(config.sourcesApiUrl(slug)),
                 {
                     headers: config.defaultHeaders(),
                     responseType: "json",

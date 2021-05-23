@@ -1,6 +1,6 @@
 import axios from "axios";
 import { SourceRetriever, AnimeExtractorDownloadResult } from "./model";
-import { constants } from "../../util";
+import { constants, functions } from "../../util";
 
 const defaultHeaders = () => ({
     "User-Agent": constants.http.userAgent,
@@ -16,7 +16,7 @@ const gogoplay: SourceRetriever = {
             });
 
             const { data: currentData } = await axios.get<any>(
-                encodeURI(url.replace("streaming.php", "ajax.php")),
+                functions.encodeURI(url.replace("streaming.php", "ajax.php")),
                 {
                     headers,
                     responseType: "json",

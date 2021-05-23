@@ -63,7 +63,7 @@ export default class FanFox implements MangaExtractorModel {
             const url = config.searchUrl(terms);
             this.options.logger?.debug?.(`(${this.name}) Search URL: ${url}`);
 
-            const { data } = await axios.get<string>(encodeURI(url), {
+            const { data } = await axios.get<string>(functions.encodeURI(url), {
                 withCredentials: true,
                 headers: config.defaultHeaders(),
                 responseType: "text",
@@ -124,7 +124,7 @@ export default class FanFox implements MangaExtractorModel {
                 `(${this.name}) Chapter links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(encodeURI(url), {
+            const { data } = await axios.get<string>(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
                 responseType: "text",
                 timeout: constants.http.maxTimeout,
@@ -183,7 +183,7 @@ export default class FanFox implements MangaExtractorModel {
                 `(${this.name}) Chapters pages requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(encodeURI(url), {
+            const { data } = await axios.get<string>(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
                 responseType: "text",
                 timeout: constants.http.maxTimeout,
@@ -236,7 +236,7 @@ export default class FanFox implements MangaExtractorModel {
                 `(${this.name}) Chapters pages requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(encodeURI(url), {
+            const { data } = await axios.get<string>(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
                 responseType: "text",
                 timeout: constants.http.maxTimeout,

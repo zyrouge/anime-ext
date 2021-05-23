@@ -9,7 +9,7 @@ import {
     AnimeExtractorDownloadResult,
     AnimeExtractorModel,
 } from "./model";
-import { constants } from "../../util";
+import { constants, functions } from "../../util";
 
 export const config = {
     baseUrl: "https://4anime.to",
@@ -61,7 +61,7 @@ export default class FourAnime implements AnimeExtractorModel {
             const url = config.searchUrl(terms);
             this.options.logger?.debug?.(`(${this.name}) Search URL: ${url}`);
 
-            const { data } = await axios.get<string>(encodeURI(url), {
+            const { data } = await axios.get<string>(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
                 responseType: "text",
                 timeout: constants.http.maxTimeout,
@@ -114,7 +114,7 @@ export default class FourAnime implements AnimeExtractorModel {
                 `(${this.name}) Episode links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(encodeURI(url), {
+            const { data } = await axios.get<string>(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
                 responseType: "text",
                 timeout: constants.http.maxTimeout,
@@ -163,7 +163,7 @@ export default class FourAnime implements AnimeExtractorModel {
                 `(${this.name}) Download links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(encodeURI(url), {
+            const { data } = await axios.get<string>(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
                 responseType: "text",
                 timeout: constants.http.maxTimeout,

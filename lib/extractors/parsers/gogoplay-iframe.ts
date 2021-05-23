@@ -1,6 +1,6 @@
 import axios from "axios";
 import cheerio from "cheerio";
-import { constants } from "../../util";
+import { constants, functions } from "../../util";
 
 const defaultHeaders = () => ({
     "User-Agent": constants.http.userAgent,
@@ -8,7 +8,7 @@ const defaultHeaders = () => ({
 
 export default async (url: string) => {
     try {
-        const { data } = await axios.get<string>(encodeURI(url), {
+        const { data } = await axios.get<string>(functions.encodeURI(url), {
             headers: Object.assign(defaultHeaders(), {
                 Referer: url,
             }),

@@ -10,4 +10,8 @@ export const constants = {
 
 export const functions = {
     sleep: util.promisify(setTimeout),
+    encodeURI(url: string) {
+        if (url === decodeURI(url)) return encodeURI(url);
+        return url;
+    },
 };

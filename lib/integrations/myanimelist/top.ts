@@ -1,7 +1,7 @@
 import axios from "axios";
 import cheerio from "cheerio";
 import { Logger } from "../../types";
-import { constants } from "../../util";
+import { constants, functions } from "../../util";
 
 export const config = {
     name: "MyAnimeList-top",
@@ -55,7 +55,7 @@ const top = async (
         const url = config.baseUrl(type);
         options.logger?.debug?.(`(${config.name}) Top animes url: ${url}!`);
 
-        const { data } = await axios.get<string>(encodeURI(url), {
+        const { data } = await axios.get<string>(functions.encodeURI(url), {
             headers: config.defaultHeaders(),
             responseType: "text",
             timeout: constants.http.maxTimeout,
