@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AnimeExtractorDownloadResult | Anime Extractor</title>
+	<title>MangaExtractorPageImageResult | Anime Extractor</title>
 	<meta name="description" content="Documentation for Anime Extractor">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,13 +55,13 @@
 					<a href="../modules.html">Anime Extractor</a>
 				</li>
 				<li>
-					<a href="../modules/extractors_anime_model.html">extractors/anime/model</a>
+					<a href="../modules/extractors_manga_model.html">extractors/manga/model</a>
 				</li>
 				<li>
-					<a href="extractors_anime_model.animeextractordownloadresult.html">AnimeExtractorDownloadResult</a>
+					<a href="extractors_manga_model.mangaextractorpageimageresult.html">MangaExtractorPageImageResult</a>
 				</li>
 			</ul>
-			<h1>Interface AnimeExtractorDownloadResult</h1>
+			<h1>Interface MangaExtractorPageImageResult</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AnimeExtractorDownloadResult</span>
+						<span class="target">MangaExtractorPageImageResult</span>
 					</li>
 				</ul>
 			</section>
@@ -83,10 +83,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="extractors_anime_model.animeextractordownloadresult.html#headers" class="tsd-kind-icon">headers</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="extractors_anime_model.animeextractordownloadresult.html#quality" class="tsd-kind-icon">quality</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="extractors_anime_model.animeextractordownloadresult.html#type" class="tsd-kind-icon">type</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="extractors_anime_model.animeextractordownloadresult.html#url" class="tsd-kind-icon">url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="extractors_manga_model.mangaextractorpageimageresult.html#image" class="tsd-kind-icon">image</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="extractors_manga_model.mangaextractorpageimageresult.html#page" class="tsd-kind-icon">page</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,42 +93,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="headers" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> headers</h3>
-					<div class="tsd-signature tsd-kind-icon">headers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="image" class="tsd-anchor"></a>
+					<h3>image</h3>
+					<div class="tsd-signature tsd-kind-icon">image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/120bc55/lib/extractors/anime/model.ts#L43">lib/extractors/anime/model.ts:43</a></li>
+							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/120bc55/lib/extractors/manga/model.ts#L37">lib/extractors/manga/model.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="quality" class="tsd-anchor"></a>
-					<h3>quality</h3>
-					<div class="tsd-signature tsd-kind-icon">quality<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="page" class="tsd-anchor"></a>
+					<h3>page</h3>
+					<div class="tsd-signature tsd-kind-icon">page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/120bc55/lib/extractors/anime/model.ts#L40">lib/extractors/anime/model.ts:40</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">&quot;streamable&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;downloadable&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;external_download&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;external_embed&quot;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/120bc55/lib/extractors/anime/model.ts#L42">lib/extractors/anime/model.ts:42</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="url" class="tsd-anchor"></a>
-					<h3>url</h3>
-					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/120bc55/lib/extractors/anime/model.ts#L41">lib/extractors/anime/model.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/120bc55/lib/extractors/manga/model.ts#L36">lib/extractors/manga/model.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -151,7 +129,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/extractors_anime_gogostream.html">extractors/anime/gogostream</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/extractors_anime_model.html">extractors/anime/model</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -163,7 +141,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/extractors_manga_fanfox.html">extractors/manga/fanfox</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/extractors_manga_model.html">extractors/manga/model</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -201,49 +179,40 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="extractors_anime_model.animeextractorconstructoroptions.html" class="tsd-kind-icon">Anime<wbr>Extractor<wbr>Constructor<wbr>Options</a>
+						<a href="extractors_manga_model.mangaextractorchapterpagesresult.html" class="tsd-kind-icon">Manga<wbr>Extractor<wbr>Chapter<wbr>Pages<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="extractors_manga_model.mangaextractorchapterresult.html" class="tsd-kind-icon">Manga<wbr>Extractor<wbr>Chapter<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="extractors_manga_model.mangaextractorconstructoroptions.html" class="tsd-kind-icon">Manga<wbr>Extractor<wbr>Constructor<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="extractors_manga_model.mangaextractorinforesult.html" class="tsd-kind-icon">Manga<wbr>Extractor<wbr>Info<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="extractors_manga_model.mangaextractormodel.html" class="tsd-kind-icon">Manga<wbr>Extractor<wbr>Model</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="extractors_anime_model.animeextractordownloadresult.html" class="tsd-kind-icon">Anime<wbr>Extractor<wbr>Download<wbr>Result</a>
+						<a href="extractors_manga_model.mangaextractorpageimageresult.html" class="tsd-kind-icon">Manga<wbr>Extractor<wbr>Page<wbr>Image<wbr>Result</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="extractors_anime_model.animeextractordownloadresult.html#headers" class="tsd-kind-icon">headers</a>
+								<a href="extractors_manga_model.mangaextractorpageimageresult.html#image" class="tsd-kind-icon">image</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="extractors_anime_model.animeextractordownloadresult.html#quality" class="tsd-kind-icon">quality</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="extractors_anime_model.animeextractordownloadresult.html#type" class="tsd-kind-icon">type</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="extractors_anime_model.animeextractordownloadresult.html#url" class="tsd-kind-icon">url</a>
+								<a href="extractors_manga_model.mangaextractorpageimageresult.html#page" class="tsd-kind-icon">page</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="extractors_anime_model.animeextractorepisoderesult.html" class="tsd-kind-icon">Anime<wbr>Extractor<wbr>Episode<wbr>Result</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="extractors_anime_model.animeextractorinforesult.html" class="tsd-kind-icon">Anime<wbr>Extractor<wbr>Info<wbr>Result</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="extractors_anime_model.animeextractormodel.html" class="tsd-kind-icon">Anime<wbr>Extractor<wbr>Model</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="extractors_anime_model.animeextractorsearchresult.html" class="tsd-kind-icon">Anime<wbr>Extractor<wbr>Search<wbr>Result</a>
+						<a href="extractors_manga_model.mangaextractorsearchresult.html" class="tsd-kind-icon">Manga<wbr>Extractor<wbr>Search<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/extractors_anime_model.html#animeextractordownloadresulttypestype" class="tsd-kind-icon">Anime<wbr>Extractor<wbr>Download<wbr>Result<wbr>Types<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="../modules/extractors_anime_model.html#animeextractorvalidateresults" class="tsd-kind-icon">Anime<wbr>Extractor<wbr>Validate<wbr>Results</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/extractors_anime_model.html#animeextractordownloadresulttypes" class="tsd-kind-icon">Anime<wbr>Extractor<wbr>Download<wbr>Result<wbr>Types</a>
+						<a href="../modules/extractors_manga_model.html#mangaextractorvalidateresults" class="tsd-kind-icon">Manga<wbr>Extractor<wbr>Validate<wbr>Results</a>
 					</li>
 				</ul>
 			</nav>
