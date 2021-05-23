@@ -16,7 +16,7 @@ const gogoplay: SourceRetriever = {
             });
 
             const { data: currentData } = await axios.get<any>(
-                url.replace("streaming.php", "ajax.php"),
+                encodeURI(url.replace("streaming.php", "ajax.php")),
                 {
                     headers,
                     responseType: "json",

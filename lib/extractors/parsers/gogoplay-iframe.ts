@@ -8,7 +8,7 @@ const defaultHeaders = () => ({
 
 export default async (url: string) => {
     try {
-        const { data } = await axios.get<string>(url, {
+        const { data } = await axios.get<string>(encodeURI(url), {
             headers: Object.assign(defaultHeaders(), {
                 Referer: url,
             }),

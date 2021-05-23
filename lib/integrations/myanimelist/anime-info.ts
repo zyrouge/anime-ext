@@ -81,7 +81,7 @@ const search = async (url: string, options: InfoOptions = {}) => {
             `(${config.name}) Anime info requested: ${url}!`
         );
 
-        const { data } = await axios.get<string>(url, {
+        const { data } = await axios.get<string>(encodeURI(url), {
             headers: config.defaultHeaders(),
             responseType: "text",
             timeout: constants.http.maxTimeout,

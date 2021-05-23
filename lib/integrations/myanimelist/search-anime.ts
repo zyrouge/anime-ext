@@ -32,10 +32,10 @@ const search = async (terms: string, options: SearchOptions = {}) => {
     try {
         options.logger?.debug?.(`(${config.name}) Search terms: ${terms}!`);
 
-        const url = config.baseUrl(encodeURIComponent(terms));
+        const url = config.baseUrl(terms);
         options.logger?.debug?.(`(${config.name}) Search url: ${url}!`);
 
-        const { data } = await axios.get<string>(url, {
+        const { data } = await axios.get<string>(encodeURI(url), {
             headers: config.defaultHeaders(),
             responseType: "text",
             timeout: constants.http.maxTimeout,

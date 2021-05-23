@@ -16,7 +16,7 @@ const gogoplay: SourceRetriever = {
                 Referer: url,
             });
 
-            const { data } = await axios.get<string>(url, {
+            const { data } = await axios.get<string>(encodeURI(url), {
                 headers,
                 responseType: "text",
                 timeout: constants.http.maxTimeout,

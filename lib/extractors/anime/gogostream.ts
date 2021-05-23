@@ -62,10 +62,10 @@ export default class Gogostream implements AnimeExtractorModel {
                 `(${this.name}) Search terms: ${terms}`
             );
 
-            const url = config.searchUrl(encodeURIComponent(terms));
+            const url = config.searchUrl(terms);
             this.options.logger?.debug?.(`(${this.name}) Search URL: ${url}`);
 
-            const { data } = await axios.get<string>(url, {
+            const { data } = await axios.get<string>(encodeURI(url), {
                 headers: config.defaultHeaders(),
                 responseType: "text",
                 timeout: constants.http.maxTimeout,
@@ -117,7 +117,7 @@ export default class Gogostream implements AnimeExtractorModel {
                 `(${this.name}) Episode links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(url, {
+            const { data } = await axios.get<string>(encodeURI(url), {
                 headers: config.defaultHeaders(),
                 responseType: "text",
                 timeout: constants.http.maxTimeout,
@@ -172,7 +172,7 @@ export default class Gogostream implements AnimeExtractorModel {
                 `(${this.name}) Download links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(url, {
+            const { data } = await axios.get<string>(encodeURI(url), {
                 headers: config.defaultHeaders(),
                 responseType: "text",
                 timeout: constants.http.maxTimeout,

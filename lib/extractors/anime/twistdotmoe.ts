@@ -89,7 +89,7 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                     `(${this.name}) Search URL: ${url}`
                 );
 
-                const { data } = await axios.get<any>(url, {
+                const { data } = await axios.get<any>(encodeURI(url), {
                     headers: config.defaultHeaders(),
                     responseType: "json",
                     timeout: 30 * 1000,
@@ -160,11 +160,14 @@ export default class TwistDotAnime implements AnimeExtractorModel {
             const slug = config.getSlugFromUrl(url);
             if (!slug) throw new Error(`Could not parse slug from ${url}`);
 
-            const { data } = await axios.get<any>(config.episodesApiUrl(slug), {
-                headers: config.defaultHeaders(),
-                responseType: "json",
-                timeout: constants.http.maxTimeout,
-            });
+            const { data } = await axios.get<any>(
+                encodeURI(config.episodesApiUrl(slug)),
+                {
+                    headers: config.defaultHeaders(),
+                    responseType: "json",
+                    timeout: constants.http.maxTimeout,
+                }
+            );
 
             const episodes: AnimeExtractorEpisodeResult[] = [];
 
@@ -206,11 +209,14 @@ export default class TwistDotAnime implements AnimeExtractorModel {
             const slug = config.getSlugFromUrl(url);
             if (!slug) throw new Error(`Could not parse slug from ${url}`);
 
-            const { data } = await axios.get<any>(config.sourcesApiUrl(slug), {
-                headers: config.defaultHeaders(),
-                responseType: "json",
-                timeout: constants.http.maxTimeout,
-            });
+            const { data } = await axios.get<any>(
+                encodeURI(config.sourcesApiUrl(slug)),
+                {
+                    headers: config.defaultHeaders(),
+                    responseType: "json",
+                    timeout: constants.http.maxTimeout,
+                }
+            );
 
             const episode = +(url.match(/(\d+)$/)?.[1] || "1");
             const source = data.find((x: any) => x.number === episode)?.source;

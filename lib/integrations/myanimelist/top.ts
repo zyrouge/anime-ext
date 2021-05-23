@@ -52,10 +52,10 @@ const top = async (
             `(${config.name}) Requested animes in ${type} category!`
         );
 
-        const url = config.baseUrl(encodeURIComponent(type));
+        const url = config.baseUrl(type);
         options.logger?.debug?.(`(${config.name}) Top animes url: ${url}!`);
 
-        const { data } = await axios.get<string>(url, {
+        const { data } = await axios.get<string>(encodeURI(url), {
             headers: config.defaultHeaders(),
             responseType: "text",
             timeout: constants.http.maxTimeout,
