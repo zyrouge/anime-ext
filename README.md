@@ -4,6 +4,8 @@
 
 Anime extractor used in [Yukino](https://zyrouge.github.io/yukino)!
 
+[![Documentation](https://github.com/zyrouge/anime-ext/actions/workflows/Documentation.yml/badge.svg)](https://github.com/zyrouge/anime-ext/actions/workflows/Documentation.yml) [![CodeQL](https://github.com/zyrouge/anime-ext/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/zyrouge/anime-ext/actions/workflows/codeql-analysis.yml)
+
 ## Installation
 
 ```bash
