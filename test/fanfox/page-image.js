@@ -1,7 +1,7 @@
 const FanFox = require("../../dist/extractors/manga/fanfox").default;
 
-const MANGA_URL =
-    "https://fanfox.net/manga/masamune_kun_no_revenge/v01/c001/1.html";
+const PAGE_URL =
+    "https://m.fanfox.net/manga/masamune_kun_no_revenge/v01/c001/48.html";
 
 const LOGGER = {
     info: console.log,
@@ -14,8 +14,8 @@ const start = async () => {
         logger: LOGGER,
     });
 
-    const chapters = await extractor.getChapterPages(MANGA_URL);
-    console.log(chapters);
+    const page = await extractor.getPageImage(PAGE_URL);
+    console.log(page);
 };
 
 if (!process.env.NODE_ENV) start();

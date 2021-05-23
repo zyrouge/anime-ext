@@ -8,6 +8,7 @@ import {
     MangaExtractorChapterResult,
     MangaExtractorInfoResult,
     MangaExtractorChapterPagesResult,
+    MangaExtractorPageImageResult,
 } from "./model";
 import { constants, functions } from "../../util";
 
@@ -20,7 +21,7 @@ export const config = {
         return {
             "User-Agent": constants.http.userAgent,
             Referer: this.baseUrl,
-            Cookie: "isAdult=1;"
+            Cookie: "isAdult=1;",
         };
     },
 };
@@ -174,7 +175,7 @@ export default class FanFox implements MangaExtractorModel {
      * Get page image URLs from FanFox.net page URL
      * @param url FanFox.net page URL
      */
-    async getChapterPageImages(url: string) {
+    async getChapterPages(url: string) {
         try {
             url = url.replace(/https?:\/\/fanfox/, "https://m.fanfox");
 
@@ -190,11 +191,7 @@ export default class FanFox implements MangaExtractorModel {
 
             const $ = cheerio.load(data);
 
-            const pages: {
-                page: number;
-                url: string;
-                isCurrent: boolean;
-            }[] = [];
+            const results: MangaExtractorChapterPagesResult[] = [];
 
             $("select.mangaread-page")
                 .first()
@@ -206,56 +203,57 @@ export default class FanFox implements MangaExtractorModel {
                     if (typeof url === "string") {
                         if (!url.startsWith("http")) url = `https:${url}`;
 
-                        pages.push({
+                        results.push({
                             page: +ele.text(),
                             url: url,
-                            isCurrent: !!ele.attr("selected"),
                         });
                     }
                 });
-
-            const results: MangaExtractorChapterPagesResult[] = [];
-
-            for (const page of pages) {
-                let image: string | undefined;
-
-                if (page.isCurrent) {
-                    image = $(".mangaread-img img").attr("src");
-                } else {
-                    try {
-                        const { data } = await axios.get<string>(page.url, {
-                            headers: config.defaultHeaders(),
-                            responseType: "text",
-                            timeout: constants.http.maxTimeout,
-                        });
-
-                        image = data.match(
-                            /<img src="(.*?)".*id="image".*>/
-                        )?.[1];
-
-                        await functions.sleep(10);
-                    } catch (err) {
-                        this.options.logger?.debug?.(
-                            `(${this.name}) Failed to parse page: ${page.url} (${url})`
-                        );
-                    }
-                }
-
-                if (image) {
-                    if (!image.startsWith("http")) image = `https:${image}`;
-
-                    results.push({
-                        page: page.page,
-                        image: image.trim(),
-                    });
-                }
-            }
 
             this.options.logger?.debug?.(
                 `(${this.name}) No. of pages resolved after fetching: ${results.length} (${url})`
             );
 
             return results;
+        } catch (err) {
+            this.options.logger?.error?.(
+                `(${this.name}) Failed to scrape: ${err?.message}`
+            );
+
+            throw new Error(`Failed to scrape: ${err?.message}`);
+        }
+    }
+
+    /**
+     * Get page image URLs from FanFox.net page URL
+     * @param url FanFox.net page URL
+     */
+    async getPageImage(url: string) {
+        try {
+            url = url.replace(/https?:\/\/fanfox/, "https://m.fanfox");
+
+            this.options.logger?.debug?.(
+                `(${this.name}) Chapters pages requested for: ${url}`
+            );
+
+            const { data } = await axios.get<string>(url, {
+                headers: config.defaultHeaders(),
+                responseType: "text",
+                timeout: constants.http.maxTimeout,
+            });
+
+            const page = data.match(
+                /<option.*?selected=.*?>(\d+)<\/option>/
+            )?.[1];
+            const image = data.match(/<img src="(.*?)".*id="image".*>/)?.[1];
+            if (!page || !image) throw new Error("No images were found");
+
+            const result: MangaExtractorPageImageResult = {
+                page: +page,
+                image,
+            };
+
+            return result;
         } catch (err) {
             this.options.logger?.error?.(
                 `(${this.name}) Failed to scrape: ${err?.message}`

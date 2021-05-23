@@ -29,6 +29,11 @@ export interface MangaExtractorInfoResult {
 
 export interface MangaExtractorChapterPagesResult {
     page: number;
+    url: string;
+}
+
+export interface MangaExtractorPageImageResult {
+    page: number;
     image: string;
 }
 
@@ -39,7 +44,6 @@ export interface MangaExtractorModel {
     validateURL(url: string): MangaExtractorValidateResults;
     search(terms: string): Promise<MangaExtractorSearchResult[]>;
     getInfo(url: string): Promise<MangaExtractorInfoResult>;
-    getChapterPageImages(
-        url: string
-    ): Promise<MangaExtractorChapterPagesResult[]>;
+    getChapterPages(url: string): Promise<MangaExtractorChapterPagesResult[]>;
+    getPageImage(url: string): Promise<MangaExtractorPageImageResult>;
 }
