@@ -183,7 +183,10 @@ export default class MangaInn implements MangaExtractorModel {
 
             const $ = cheerio.load(data);
 
-            const results: MangaExtractorChapterPagesResult[] = [];
+            const result: MangaExtractorChapterPagesResult = {
+                type: "page_urls",
+                entities: [],
+            };
 
             $(".selectPage.pull-right select")
                 .first()
@@ -193,7 +196,7 @@ export default class MangaInn implements MangaExtractorModel {
 
                     let url = ele.val();
                     if (typeof url === "string") {
-                        results.push({
+                        result.entities.push({
                             page: ele.text().split(" ").pop()?.trim() || "",
                             url: url,
                         });
@@ -201,10 +204,10 @@ export default class MangaInn implements MangaExtractorModel {
                 });
 
             this.options.logger?.debug?.(
-                `(${this.name}) No. of pages resolved after fetching: ${results.length} (${url})`
+                `(${this.name}) No. of pages resolved after fetching: ${result.entities.length} (${url})`
             );
 
-            return results;
+            return result;
         } catch (err) {
             this.options.logger?.error?.(
                 `(${this.name}) Failed to scrape: ${err?.message}`

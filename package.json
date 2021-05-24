@@ -25,12 +25,12 @@
     "@types/node": "^15.0.3",
     "rimraf": "^3.0.2",
     "typedoc": "^0.20.36",
+    "typedoc-material-dark": "github:zyrouge/typedoc-material-dark",
     "typescript": "^4.2.4"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.9",
-    "crypto-js": "^4.0.0",
-    "typedoc-material-dark": "github:zyrouge/typedoc-material-dark"
+    "crypto-js": "^4.0.0"
   }
 }

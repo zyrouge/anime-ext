@@ -13,15 +13,15 @@ import {
 import { constants, functions } from "../../util";
 
 export const config = {
-    baseUrl: "https://fanfox.net",
-    searchUrl: (search: string) => `https://fanfox.net/search?title=${search}`,
+    baseUrl: "https://mangadex.tv",
+    searchUrl: (search: string) =>
+        `https://mangadex.tv/search?type=titles&title=${search}&submit=`,
     mangaRegex: /^https:\/\/fanfox\.net\/manga.*/,
     chapterRegex: /^https:\/\/fanfox\.net\/manga.*?\/\d+\.html$/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
             Referer: this.baseUrl,
-            Cookie: "isAdult=1;",
         };
     },
 };
@@ -76,30 +76,18 @@ export default class FanFox implements MangaExtractorModel {
             );
 
             const results: MangaExtractorSearchResult[] = [];
-            $(".line-list li").each(function () {
+            $("#content .manga-entry").each(function () {
                 const ele = $(this);
 
-                const title = ele.find(".manga-list-4-item-title a");
+                const title = ele.find(".manga_title");
                 const url = title.attr("href");
-                const image = ele.find("img").attr("src");
-                const latestChap = ele
-                    .find(".manga-list-4-item-tip:contains('Latest Chapter:')")
-                    .text()
-                    .trim();
+                const image = ele.find(".img-loading").attr("data-src");
 
                 if (url) {
-                    let append = "";
-
-                    if (latestChap)
-                        append += ` (Latest Chapter: ${latestChap.replace(
-                            /^Latest Chapter\:/,
-                            ""
-                        )})`;
-
                     results.push({
-                        title: `${title.text().trim()}${append}`,
+                        title: title.text().trim(),
                         url: `${config.baseUrl}${url.trim()}`,
-                        image: image?.trim() || "",
+                        image: image ? `${config.baseUrl}${image}` : "",
                     });
                 }
             });
@@ -135,29 +123,28 @@ export default class FanFox implements MangaExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
+            var titleParser = this.parseMangaDexTitle;
             const chapters: MangaExtractorChapterResult[] = [];
-            $("#chapterlist li a").each(function () {
+            $(".chapter-container .chapter-row a").each(function () {
                 const ele = $(this);
 
-                const title = ele.find(".title3").text().trim();
+                const title = ele.text().trim();
                 const url = ele.attr("href");
 
                 if (url) {
-                    const shortTitle = title.match(/-(.*)/)?.[1];
-                    const vol = title.match(/Vol.(\d+)/)?.[1];
-                    const chap = title.match(/Ch.([\d.]+)/)?.[1];
+                    const { shortTitle, chapter, volume } = titleParser(title);
 
                     chapters.push({
                         title: shortTitle?.trim() || title,
-                        volume: vol?.trim() || "unknown",
-                        chapter: chap?.trim() || "unknown",
                         url: `${config.baseUrl}${url.trim()}`,
+                        volume,
+                        chapter,
                     });
                 }
             });
 
             const result: MangaExtractorInfoResult = {
-                title: $(".detail-info-right-title-font").text().trim(),
+                title: $("#content .card-header > span").text().trim(),
                 chapters,
             };
 
@@ -177,8 +164,6 @@ export default class FanFox implements MangaExtractorModel {
      */
     async getChapterPages(url: string) {
         try {
-            url = url.replace(/https?:\/\/fanfox/, "https://m.fanfox");
-
             this.options.logger?.debug?.(
                 `(${this.name}) Chapters pages requested for: ${url}`
             );
@@ -192,26 +177,21 @@ export default class FanFox implements MangaExtractorModel {
             const $ = cheerio.load(data);
 
             const result: MangaExtractorChapterPagesResult = {
-                type: "page_urls",
+                type: "image_urls",
                 entities: [],
             };
 
-            $("select.mangaread-page")
-                .first()
-                .find("option")
-                .each(function () {
-                    const ele = $(this);
+            $(".reader-image-wrapper img").each(function () {
+                const ele = $(this);
 
-                    let url = ele.val();
-                    if (typeof url === "string") {
-                        if (!url.startsWith("http")) url = `https:${url}`;
-
-                        result.entities.push({
-                            page: ele.text().trim(),
-                            url,
-                        });
-                    }
-                });
+                const url = ele.attr("data-src");
+                if (typeof url === "string") {
+                    result.entities.push({
+                        page: ele.parent().attr("data-page")?.trim() || "",
+                        url,
+                    });
+                }
+            });
 
             this.options.logger?.debug?.(
                 `(${this.name}) No. of pages resolved after fetching: ${result.entities.length} (${url})`
@@ -227,42 +207,22 @@ export default class FanFox implements MangaExtractorModel {
         }
     }
 
-    /**
-     * Get page image URLs from FanFox.net page URL
-     * @param url FanFox.net page URL
-     */
-    async getPageImage(url: string) {
-        try {
-            url = url.replace(/https?:\/\/fanfox/, "https://m.fanfox");
+    parseMangaDexTitle(title: string) {
+        let volume = "unknown",
+            chapter = "unknown";
+        const [vcInfo, shortTitle] = title.split(":");
+        if (vcInfo && shortTitle) {
+            const matchedVol = vcInfo.match(/(Vol\.)?(.*?) /)?.[2]?.trim();
+            if (matchedVol) volume = matchedVol;
 
-            this.options.logger?.debug?.(
-                `(${this.name}) Chapters pages requested for: ${url}`
-            );
-
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
-                headers: config.defaultHeaders(),
-                responseType: "text",
-                timeout: constants.http.maxTimeout,
-            });
-
-            const page = data.match(
-                /<option.*?selected=.*?>(.*?)<\/option>/
-            )?.[1];
-            const image = data.match(/<img src="(.*?)".*id="image".*>/)?.[1];
-            if (!page || !image) throw new Error("No images were found");
-
-            const result: MangaExtractorPageImageResult = {
-                page,
-                image,
-            };
-
-            return result;
-        } catch (err) {
-            this.options.logger?.error?.(
-                `(${this.name}) Failed to scrape: ${err?.message}`
-            );
-
-            throw new Error(`Failed to scrape: ${err?.message}`);
+            const matchedChapter = vcInfo.match(/Chapter(.*)/)?.[1]?.trim();
+            if (matchedChapter) chapter = matchedChapter;
         }
+
+        return {
+            volume,
+            chapter,
+            shortTitle,
+        };
     }
 }
