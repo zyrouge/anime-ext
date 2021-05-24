@@ -8,7 +8,6 @@ import {
     MangaExtractorChapterResult,
     MangaExtractorInfoResult,
     MangaExtractorChapterPagesResult,
-    MangaExtractorPageImageResult,
 } from "./model";
 import { constants, functions } from "../../util";
 
@@ -16,8 +15,8 @@ export const config = {
     baseUrl: "https://mangadex.tv",
     searchUrl: (search: string) =>
         `https://mangadex.tv/search?type=titles&title=${search}&submit=`,
-    mangaRegex: /^https:\/\/fanfox\.net\/manga.*/,
-    chapterRegex: /^https:\/\/fanfox\.net\/manga.*?\/\d+\.html$/,
+    mangaRegex: /^https:\/\/mangadex\.tv\/manga\/.*/,
+    chapterRegex: /^https:\/\/mangadex\.tv\/chapter\/.*\/.*/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
@@ -27,10 +26,10 @@ export const config = {
 };
 
 /**
- * FanFox.net Extractor
+ * MangaDex.tv Extractor
  */
-export default class FanFox implements MangaExtractorModel {
-    name = "FanFox.net";
+export default class MangaDex implements MangaExtractorModel {
+    name = "MangaDex.tv";
     options: MangaExtractorConstructorOptions;
 
     constructor(options: MangaExtractorConstructorOptions = {}) {
@@ -38,8 +37,8 @@ export default class FanFox implements MangaExtractorModel {
     }
 
     /**
-     * Validate FanFox.net URL
-     * @param url FanFox.net URL
+     * Validate MangaDex.tv URL
+     * @param url MangaDex.tv URL
      */
     validateURL(url: string) {
         let result: MangaExtractorValidateResults = false;
@@ -51,7 +50,7 @@ export default class FanFox implements MangaExtractorModel {
     }
 
     /**
-     * FanFox.net Search
+     * MangaDex.tv Search
      * @param terms Search term
      */
     async search(terms: string) {
@@ -103,8 +102,8 @@ export default class FanFox implements MangaExtractorModel {
     }
 
     /**
-     * Get chapter URLs from FanFox.net URL
-     * @param url FanFox.net chapter URL
+     * Get chapter URLs from MangaDex.tv URL
+     * @param url MangaDex.tv chapter URL
      */
     async getInfo(url: string) {
         try {
@@ -159,8 +158,8 @@ export default class FanFox implements MangaExtractorModel {
     }
 
     /**
-     * Get page image URLs from FanFox.net page URL
-     * @param url FanFox.net page URL
+     * Get page image URLs from MangaDex.tv page URL
+     * @param url MangaDex.tv page URL
      */
     async getChapterPages(url: string) {
         try {
