@@ -212,10 +212,10 @@ export default class MangaDex implements MangaExtractorModel {
 
         const [vcInfo, shortTitle] = title.split(":");
         if (vcInfo && shortTitle) {
-            const matchedVol = vcInfo.match(/(Vol\.)?(.*?) /)?.[2]?.trim();
+            const matchedVol = vcInfo.match(/Vol\.(.*?) /)?.[1]?.trim();
             if (matchedVol) volume = matchedVol;
 
-            const matchedChapter = vcInfo.match(/Chapter(.*)/)?.[1]?.trim();
+            const matchedChapter = vcInfo.match(/Chapter (.*)/)?.[1]?.trim();
             if (matchedChapter) chapter = matchedChapter;
         }
 
