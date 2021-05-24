@@ -213,6 +213,13 @@ export default class Gogostream implements AnimeExtractorModel {
                 });
             }
 
+            results.push({
+                quality: "unknown",
+                url: iframeUrl,
+                type: ["embedable", "external_embed"],
+                headers: config.defaultHeaders(),
+            });
+
             return results;
         } catch (err) {
             this.options.logger?.error?.(

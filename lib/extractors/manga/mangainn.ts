@@ -1,3 +1,4 @@
+import qs from "querystring";
 import axios from "axios";
 import cheerio from "cheerio";
 import {
@@ -13,24 +14,24 @@ import {
 import { constants, functions } from "../../util";
 
 export const config = {
-    baseUrl: "https://fanfox.net",
-    searchUrl: (search: string) => `https://fanfox.net/search?title=${search}`,
+    baseUrl: "https://www.mangainn.net",
+    searchUrl: "https://www.mangainn.net/service/advanced_search",
     mangaRegex: /^https:\/\/fanfox\.net\/manga.*/,
     chapterRegex: /^https:\/\/fanfox\.net\/manga.*?\/\d+\.html$/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
             Referer: this.baseUrl,
-            Cookie: "isAdult=1;",
+            "x-requested-with": "XMLHttpRequest",
         };
     },
 };
 
 /**
- * FanFox.net Extractor
+ * MangaInn.net Extractor
  */
-export default class FanFox implements MangaExtractorModel {
-    name = "FanFox.net";
+export default class MangaInn implements MangaExtractorModel {
+    name = "Mangainn.net";
     options: MangaExtractorConstructorOptions;
 
     constructor(options: MangaExtractorConstructorOptions = {}) {
@@ -38,8 +39,8 @@ export default class FanFox implements MangaExtractorModel {
     }
 
     /**
-     * Validate FanFox.net URL
-     * @param url FanFox.net URL
+     * Validate MangaInn.net URL
+     * @param url MangaInn.net URL
      */
     validateURL(url: string) {
         let result: MangaExtractorValidateResults = false;
@@ -51,7 +52,7 @@ export default class FanFox implements MangaExtractorModel {
     }
 
     /**
-     * FanFox.net Search
+     * MangaInn.net Search
      * @param terms Search term
      */
     async search(terms: string) {
@@ -60,46 +61,41 @@ export default class FanFox implements MangaExtractorModel {
                 `(${this.name}) Search terms: ${terms}`
             );
 
-            const url = config.searchUrl(terms);
-            this.options.logger?.debug?.(`(${this.name}) Search URL: ${url}`);
-
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
-                withCredentials: true,
-                headers: config.defaultHeaders(),
-                responseType: "text",
-                timeout: constants.http.maxTimeout,
-            });
+            const { data } = await axios.post<string>(
+                functions.encodeURI(config.searchUrl),
+                qs.stringify({
+                    type: "all",
+                    "manga-name": terms,
+                    status: "both",
+                }),
+                {
+                    headers: Object.assign(config.defaultHeaders(), {
+                        "Content-Type":
+                            "application/x-www-form-urlencoded; charset=UTF-8",
+                    }),
+                    responseType: "text",
+                    timeout: constants.http.maxTimeout,
+                }
+            );
 
             const $ = cheerio.load(data);
             this.options.logger?.debug?.(
-                `(${this.name}) DOM creation successful! (${url})`
+                `(${this.name}) DOM creation successful! (${config.searchUrl})`
             );
 
             const results: MangaExtractorSearchResult[] = [];
-            $(".line-list li").each(function () {
+            $(".row").each(function () {
                 const ele = $(this);
 
-                const title = ele.find(".manga-list-4-item-title a");
+                const title = ele.find(".manga-title a");
                 const url = title.attr("href");
-                const image = ele.find("img").attr("src");
-                const latestChap = ele
-                    .find(".manga-list-4-item-tip:contains('Latest Chapter:')")
-                    .text()
-                    .trim();
+                const image = ele.find(".img-responsive").attr("src");
 
                 if (url) {
-                    let append = "";
-
-                    if (latestChap)
-                        append += ` (Latest Chapter: ${latestChap.replace(
-                            /^Latest Chapter\:/,
-                            ""
-                        )})`;
-
                     results.push({
-                        title: `${title.text().trim()}${append}`,
-                        url: `${config.baseUrl}${url.trim()}`,
+                        title: title.text().trim(),
                         image: image?.trim() || "",
+                        url,
                     });
                 }
             });
@@ -115,8 +111,8 @@ export default class FanFox implements MangaExtractorModel {
     }
 
     /**
-     * Get chapter URLs from FanFox.net URL
-     * @param url FanFox.net chapter URL
+     * Get chapter URLs from MangaInn.net URL
+     * @param url MangaInn.net chapter URL
      */
     async getInfo(url: string) {
         try {
@@ -136,28 +132,26 @@ export default class FanFox implements MangaExtractorModel {
             );
 
             const chapters: MangaExtractorChapterResult[] = [];
-            $("#chapterlist li a").each(function () {
+            $(".chapter-list li a").each(function () {
                 const ele = $(this);
 
-                const title = ele.find(".title3").text().trim();
+                const title = ele.find(".val").text().trim();
                 const url = ele.attr("href");
 
                 if (url) {
-                    const shortTitle = title.match(/-(.*)/)?.[1];
-                    const vol = title.match(/Vol.(\d+)/)?.[1];
-                    const chap = title.match(/Ch.([\d.]+)/)?.[1];
+                    const [shortTitle, chap] = title.split("-");
 
                     chapters.push({
                         title: shortTitle?.trim() || title,
-                        volume: vol?.trim() || "unknown",
+                        volume: "unknown",
                         chapter: chap?.trim() || "unknown",
-                        url: `${config.baseUrl}${url.trim()}`,
+                        url,
                     });
                 }
             });
 
             const result: MangaExtractorInfoResult = {
-                title: $(".detail-info-right-title-font").text().trim(),
+                title: $(".content .widget-heading").first().text().trim(),
                 chapters,
             };
 
@@ -172,13 +166,11 @@ export default class FanFox implements MangaExtractorModel {
     }
 
     /**
-     * Get page image URLs from FanFox.net page URL
-     * @param url FanFox.net page URL
+     * Get page image URLs from MangaInn.net page URL
+     * @param url MangaInn.net page URL
      */
     async getChapterPages(url: string) {
         try {
-            url = url.replace(/https?:\/\/fanfox/, "https://m.fanfox");
-
             this.options.logger?.debug?.(
                 `(${this.name}) Chapters pages requested for: ${url}`
             );
@@ -193,7 +185,7 @@ export default class FanFox implements MangaExtractorModel {
 
             const results: MangaExtractorChapterPagesResult[] = [];
 
-            $("select.mangaread-page")
+            $(".selectPage.pull-right select")
                 .first()
                 .find("option")
                 .each(function () {
@@ -201,10 +193,8 @@ export default class FanFox implements MangaExtractorModel {
 
                     let url = ele.val();
                     if (typeof url === "string") {
-                        if (!url.startsWith("http")) url = `https:${url}`;
-
                         results.push({
-                            page: ele.text().trim(),
+                            page: ele.text().split(" ").pop()?.trim() || "",
                             url: url,
                         });
                     }
@@ -225,13 +215,11 @@ export default class FanFox implements MangaExtractorModel {
     }
 
     /**
-     * Get page image URLs from FanFox.net page URL
-     * @param url FanFox.net page URL
+     * Get page image URLs from MangaInn.net page URL
+     * @param url MangaInn.net page URL
      */
     async getPageImage(url: string) {
         try {
-            url = url.replace(/https?:\/\/fanfox/, "https://m.fanfox");
-
             this.options.logger?.debug?.(
                 `(${this.name}) Chapters pages requested for: ${url}`
             );
@@ -242,10 +230,13 @@ export default class FanFox implements MangaExtractorModel {
                 timeout: constants.http.maxTimeout,
             });
 
-            const page = data.match(
-                /<option.*?selected=.*?>(.*?)<\/option>/
+            const page = data
+                .match(/<option.*?selected=.*?>(.*?)<\/option>/)?.[1]
+                ?.split(" ")
+                .pop();
+            const image = data.match(
+                /<img src="(.*?)".*id="chapter_img">/
             )?.[1];
-            const image = data.match(/<img src="(.*?)".*id="image".*>/)?.[1];
             if (!page || !image) throw new Error("No images were found");
 
             const result: MangaExtractorPageImageResult = {

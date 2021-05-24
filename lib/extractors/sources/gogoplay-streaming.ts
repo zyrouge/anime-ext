@@ -33,12 +33,18 @@ const gogoplay: SourceRetriever = {
             const results: AnimeExtractorDownloadResult[] = [];
             sources.forEach((src: any) => {
                 if (src.file) {
-                    results.push({
+                    const result: AnimeExtractorDownloadResult = {
                         quality: src.label || "unknown",
                         url: src.file,
-                        type: ["downloadable", "streamable"],
+                        type: ["downloadable"],
                         headers,
-                    });
+                    };
+
+                    if (!result.url.includes(".m3u8")) {
+                        result.type.push("streamable");
+                    }
+
+                    results.push(result);
                 }
             });
 

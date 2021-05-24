@@ -1,6 +1,6 @@
-const FanFox = require("../../dist/extractors/manga/fanfox").default;
+const MangaInn = require("../../dist/extractors/manga/mangainn").default;
 
-const MANGA_URL = "https://fanfox.net/manga/masamune_kun_no_revenge/";
+const MANGA_URL = "https://www.mangainn.net/mayo-chiki/2/1";
 
 const LOGGER = {
     info: console.log,
@@ -9,11 +9,11 @@ const LOGGER = {
 };
 
 const start = async () => {
-    const extractor = new FanFox({
+    const extractor = new MangaInn({
         logger: LOGGER,
     });
 
-    const chapters = await extractor.getInfo(MANGA_URL);
+    const chapters = await extractor.getChapterPages(MANGA_URL);
     console.log(chapters);
 };
 

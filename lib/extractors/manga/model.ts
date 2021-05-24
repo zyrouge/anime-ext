@@ -28,12 +28,12 @@ export interface MangaExtractorInfoResult {
 }
 
 export interface MangaExtractorChapterPagesResult {
-    page: number;
+    page: string;
     url: string;
 }
 
 export interface MangaExtractorPageImageResult {
-    page: number;
+    page: string;
     image: string;
 }
 

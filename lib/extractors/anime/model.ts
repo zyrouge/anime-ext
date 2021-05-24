@@ -29,6 +29,7 @@ export interface AnimeExtractorInfoResult {
 export const AnimeExtractorDownloadResultTypes = [
     "streamable",
     "downloadable",
+    "embedable",
     "external_download",
     "external_embed",
 ] as const;
