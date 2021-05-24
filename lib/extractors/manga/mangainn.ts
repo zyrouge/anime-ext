@@ -16,8 +16,8 @@ import { constants, functions } from "../../util";
 export const config = {
     baseUrl: "https://www.mangainn.net",
     searchUrl: "https://www.mangainn.net/service/advanced_search",
-    mangaRegex: /^https:\/\/fanfox\.net\/manga.*/,
-    chapterRegex: /^https:\/\/fanfox\.net\/manga.*?\/\d+\.html$/,
+    mangaRegex: /^https:\/\/www\.mangainn\.net\/.*/,
+    chapterRegex: /^https:\/\/www\.mangainn\.net\/mayo-chiki\/.*/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
