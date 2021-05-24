@@ -149,8 +149,8 @@ export default class FanFox implements MangaExtractorModel {
 
                     chapters.push({
                         title: shortTitle?.trim() || title,
-                        volume: vol?.trim() || "unknown",
-                        chapter: chap?.trim() || "unknown",
+                        volume: vol?.trim() || "-",
+                        chapter: chap?.trim() || "-",
                         url: `${config.baseUrl}${url.trim()}`,
                     });
                 }
@@ -245,10 +245,10 @@ export default class FanFox implements MangaExtractorModel {
                 timeout: constants.http.maxTimeout,
             });
 
-            const page = data.match(
-                /<option.*?selected=.*?>(.*?)<\/option>/
-            )?.[1];
-            const image = data.match(/<img src="(.*?)".*id="image".*>/)?.[1];
+            const page = data
+                .match(/<option.*?selected=.*?>(.*?)<\/option>/)?.[1]
+                ?.trim();
+            const image = data.match(/<img src="(.*?)".*id="image".*>/)?.[1]?.trim();
             if (!page || !image) throw new Error("No images were found");
 
             const result: MangaExtractorPageImageResult = {

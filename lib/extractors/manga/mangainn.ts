@@ -143,8 +143,8 @@ export default class MangaInn implements MangaExtractorModel {
 
                     chapters.push({
                         title: shortTitle?.trim() || title,
-                        volume: "unknown",
-                        chapter: chap?.trim() || "unknown",
+                        volume: "-",
+                        chapter: chap?.trim() || "-",
                         url,
                     });
                 }
