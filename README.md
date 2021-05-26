@@ -19,8 +19,10 @@ npm install anime-ext
 | [4Anime](./lib/extractors/anime/4anime.ts)                            | `extractor (anime)` | ✔️ Search <br>✔️ Episodes<br>✔️ Download                |
 | [GogoAnime](./lib/extractors/anime/gogoanime.ts)                      | `extractor (anime)` | ✔️ Search <br>✔️ Episodes<br>✔️ Download                |
 | [GogoStream](./lib/extractors/anime/gogostream.ts)                    | `extractor (anime)` | ✔️ Search <br>✔️ Episodes<br>✔️ Download                |
-| [Simply.moe](./lib/extractors/anime/simplydotmoe.ts)                  | `extractor (anime)` | ❌ Search <br>✔️ Episodes<br>✔️ Download                |
+| [Simply.moe](./lib/extractors/anime/simplydotmoe.ts)                  | `extractor (anime)` | ✔️ Search <br>✔️ Episodes<br>✔️ Download                |
 | [Twist.moe](./lib/extractors/anime/twistdotmoe.ts)                    | `extractor (anime)` | ✔️ Search <br>✔️ Episodes<br>✔️ Download                |
+| [Kawaiifu.com](./lib/extractors/anime/kawaiifu.ts)                    | `extractor (anime)` | ✔️ Search <br>✔️ Episodes<br>✔️ Download                |
+| [Tenshi.moe](./lib/extractors/anime/tenshidotmoe.ts)                  | `extractor (anime)` | ✔️ Search <br>✔️ Episodes<br>✔️ Download                |
 | [Fanfox.net](./lib/extractors/manga/fanfox.ts)                        | `extractor (manga)` | ✔️ Search <br>✔️ Chapters<br>✔️ Pages<br>✔️ Page images |
 | [MangaInn.net](./lib/extractors/manga/mangainn.ts)                    | `extractor (manga)` | ✔️ Search <br>✔️ Chapters<br>✔️ Pages<br>✔️ Page images |
 | [MangaDex.tv](./lib/extractors/manga/mangadex.ts)                     | `extractor (manga)` | ✔️ Search <br>✔️ Chapters<br>✔️ Pages<br>✔️ Page images |
