@@ -12,12 +12,12 @@ export type AnimeExtractorValidateResults =
 export interface AnimeExtractorSearchResult {
     title: string;
     url: string;
-    thumbnail?: string;
-    air?: string;
+    thumbnail: string;
+    air: string;
 }
 
 export interface AnimeExtractorEpisodeResult {
-    episode: number | "unknown";
+    episode: string;
     url: string;
 }
 

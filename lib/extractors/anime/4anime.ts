@@ -82,14 +82,18 @@ export default class FourAnime implements AnimeExtractorModel {
                 const air = ele.find("span");
 
                 if (url) {
-                    const year = $(air[0]).text().trim() || "unknown";
-                    const season = $(air[2]).text().trim() || "unknown";
+                    let aired = [];
+                    const year = $(air[0]).text().trim();
+                    if (year) aired.push(year);
+
+                    const season = $(air[2]).text().trim();
+                    if (season) aired.push(`(${season})`);
 
                     results.push({
                         title: title.text().trim(),
                         url: url.trim(),
-                        thumbnail: thumbnail?.trim(),
-                        air: `${year} (${season})`,
+                        thumbnail: thumbnail?.trim() || "",
+                        air: aired.length ? aired.join(" ") : "unknown",
                     });
                 }
             });
@@ -132,7 +136,7 @@ export default class FourAnime implements AnimeExtractorModel {
 
                 if (url) {
                     episodes.push({
-                        episode: +episode.text().trim(),
+                        episode: episode.text().trim(),
                         url: url.trim(),
                     });
                 }

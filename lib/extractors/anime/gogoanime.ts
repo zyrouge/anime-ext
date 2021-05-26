@@ -94,7 +94,7 @@ export default class Gogoanime implements AnimeExtractorModel {
                     results.push({
                         title: title.text().trim(),
                         url: `${config.baseUrl}${url.trim()}`,
-                        thumbnail: thumbnail?.trim(),
+                        thumbnail: thumbnail?.trim() || "",
                         air: year,
                     });
                 }
@@ -160,7 +160,7 @@ export default class Gogoanime implements AnimeExtractorModel {
 
                 if (url) {
                     episodes.push({
-                        episode: +episode.text().replace("EP", "").trim(),
+                        episode: episode.text().replace("EP", "").trim(),
                         url: `${config.baseUrl}${url.trim()}`,
                     });
                 }

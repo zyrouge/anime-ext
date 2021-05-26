@@ -9,16 +9,13 @@ import {
     AnimeExtractorDownloadResult,
     AnimeExtractorModel,
 } from "./model";
-import GogoParser from "../parsers/gogoplay-iframe";
-import { getExtractor } from "../sources";
 import { constants, functions } from "../../util";
 
 export const config = {
-    baseUrl: "https://gogo-stream.com",
-    searchUrl: (search: string) =>
-        `https://gogo-stream.com/search.html?keyword=${search}`,
-    animeRegex: /^https:\/\/Gogostream\.to\/anime\/.*/,
-    episodeRegex: /^https:\/\/Gogostream\.to\/.*-episode-\w+$/,
+    baseUrl: "https://tenshi.moe",
+    searchUrl: (search: string) => `https://tenshi.moe/anime?q=${search}`,
+    animeRegex: /^https:\/\/tenshi\.moe\/anime\/.*/,
+    episodeRegex: /^https:\/\/tenshi\.moe\/anime\/.*\/.*/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
@@ -28,10 +25,10 @@ export const config = {
 };
 
 /**
- * Gogostream Extractor
+ * Tenshi.moe Extractor
  */
-export default class Gogostream implements AnimeExtractorModel {
-    name = "Gogostream";
+export default class TenshiDotMoe implements AnimeExtractorModel {
+    name = "Tenshi.moe";
     options: AnimeExtractorConstructorOptions;
 
     constructor(options: AnimeExtractorConstructorOptions = {}) {
@@ -39,8 +36,8 @@ export default class Gogostream implements AnimeExtractorModel {
     }
 
     /**
-     * Validate Gogostream URL
-     * @param url Gogostream URL
+     * Validate Tenshi.moe URL
+     * @param url Tenshi.moe URL
      */
     validateURL(url: string) {
         let result: AnimeExtractorValidateResults = false;
@@ -52,12 +49,11 @@ export default class Gogostream implements AnimeExtractorModel {
     }
 
     /**
-     * Gogostream Search
-     * @param terms Search term
+     * Tenshi.moe Search
+     * @param terms Tenshi.moe term
      */
     async search(terms: string) {
         try {
-            terms = terms.split(" ").join("+");
             this.options.logger?.debug?.(
                 `(${this.name}) Search terms: ${terms}`
             );
@@ -77,22 +73,27 @@ export default class Gogostream implements AnimeExtractorModel {
             );
 
             const results: AnimeExtractorSearchResult[] = [];
-            $(".listing.items .video-block a").each(function () {
+            $(".anime-loop li > a").each(function () {
                 const ele = $(this);
 
-                const title = ele.find(".name");
+                const title = ele.find(".text-primary");
                 const url = ele.attr("href");
                 const thumbnail = ele.find("img").attr("src");
-                const air = ele.find(".date");
 
                 if (url) {
+                    let aired = [];
+
+                    const year = ele.find(".year").text().trim();
+                    if (year) aired.push(year);
+
+                    const type = ele.find(".type").text().trim();
+                    if (type) aired.push(type);
+
                     results.push({
                         title: title.text().trim(),
-                        url: `${config.baseUrl}${url.trim()}`,
+                        url: url.trim(),
                         thumbnail: thumbnail?.trim() || "",
-                        air: new Date(air.text().trim())
-                            .toLocaleDateString()
-                            .replace(/\//g, "-"),
+                        air: aired.length ? aired.join(" ") : "unknown",
                     });
                 }
             });
@@ -108,8 +109,8 @@ export default class Gogostream implements AnimeExtractorModel {
     }
 
     /**
-     * Get episode URLs from Gogostream URL
-     * @param url Gogostream anime URL
+     * Get episode URLs from Tenshi.moe URL
+     * @param url Tenshi.moe anime URL
      */
     async getInfo(url: string) {
         try {
@@ -129,26 +130,26 @@ export default class Gogostream implements AnimeExtractorModel {
             );
 
             const episodes: AnimeExtractorEpisodeResult[] = [];
-            $(".video-info-left .listing.items a").each(function () {
+            $(".episode-loop li > a").each(function () {
                 const ele = $(this);
 
-                const episode = ele.find(".name");
+                const episode = ele
+                    .find(".episode-number")
+                    .text()
+                    .replace("Episode", "")
+                    .trim();
                 const url = ele.attr("href");
 
                 if (url) {
-                    const ep = episode.text().trim().match(/\d+$/)?.[0];
                     episodes.push({
-                        episode: ep || "unknown",
-                        url: `${config.baseUrl}${url.trim()}`,
+                        episode: episode || "unknown",
+                        url,
                     });
                 }
             });
 
             const result: AnimeExtractorInfoResult = {
-                title: $(".video-info-left h1")
-                    .text()
-                    .trim()
-                    .replace(/ ?Episode \d+$/, ""),
+                title: $(".entry-header").text().trim(),
                 episodes,
             };
 
@@ -163,8 +164,8 @@ export default class Gogostream implements AnimeExtractorModel {
     }
 
     /**
-     * Get download URLs from Gogostream episode URL
-     * @param url Gogostream episode URL
+     * Get download URLs from Tenshi.moe episode URL
+     * @param url Tenshi.moe episode URL
      */
     async getDownloadLinks(url: string) {
         try {
@@ -183,41 +184,21 @@ export default class Gogostream implements AnimeExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            let iframeUrl = $(".play-video iframe").attr("src");
-            if (!iframeUrl)
-                throw new Error(`Could not find download urls for: ${url}`);
-
             const results: AnimeExtractorDownloadResult[] = [];
+            $("#player source").each(function () {
+                const ele = $(this);
 
-            if (!iframeUrl.startsWith("http")) iframeUrl = `https:${iframeUrl}`;
-            const sources = await GogoParser(iframeUrl);
+                const src = ele.attr("src");
+                const quality = ele.attr("title");
 
-            for (const src of sources) {
-                const extractor = getExtractor(src);
-                if (extractor) {
-                    try {
-                        const res = await extractor.fetch(src);
-                        results.push(...res);
-                    } catch (err) {
-                        this.options.logger?.debug?.(
-                            `(${this.name}) Could not parse download source: ${src} (${url})`
-                        );
-                    }
+                if (src) {
+                    results.push({
+                        quality: quality || "unknown",
+                        url: src,
+                        type: ["downloadable", "streamable"],
+                        headers: config.defaultHeaders(),
+                    });
                 }
-
-                results.push({
-                    quality: "unknown",
-                    url: src,
-                    type: ["external_embed"],
-                    headers: config.defaultHeaders(),
-                });
-            }
-
-            results.push({
-                quality: "unknown",
-                url: iframeUrl,
-                type: ["embedable", "external_embed"],
-                headers: config.defaultHeaders(),
             });
 
             return results;

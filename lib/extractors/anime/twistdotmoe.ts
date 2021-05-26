@@ -133,6 +133,8 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                     results.push({
                         title,
                         url,
+                        thumbnail: "",
+                        air: "unknown",
                         score: points,
                     });
                 }
@@ -178,7 +180,7 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                 const animeUrl = config.animePageUrl(data.slug.slug);
                 data.episodes.forEach((ep: any) => {
                     episodes.push({
-                        episode: ep.number,
+                        episode: ep.number.toString(),
                         url: `${animeUrl}/${ep.number}`,
                     });
                 });

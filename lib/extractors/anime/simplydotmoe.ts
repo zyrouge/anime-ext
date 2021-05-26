@@ -59,7 +59,7 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
                 `(${this.name}) Search terms: ${terms}`
             );
 
-            const { data } = await axios.post(
+            const { data } = await axios.post<string>(
                 functions.encodeURI(config.searchUrl),
                 qs.stringify({
                     action: "ajaxsearchlite_search",
@@ -106,7 +106,9 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
                         title: title.text().trim(),
                         url,
                         thumbnail: image ? `${config.baseUrl}${image}` : "",
-                        air: metas.length ? metas.reverse().join(" ") : "",
+                        air: metas.length
+                            ? metas.reverse().join(" ")
+                            : "unknown",
                     });
                 }
             });
@@ -149,7 +151,7 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
 
                 if (url) {
                     episodes.push({
-                        episode: +episode.text().trim(),
+                        episode: episode.text().trim(),
                         url: url.trim(),
                     });
                 }
