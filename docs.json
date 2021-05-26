@@ -114,7 +114,7 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/4anime.ts",
-									"line": 160,
+									"line": 164,
 									"character": 26
 								}
 							],
@@ -180,7 +180,7 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/4anime.ts",
-									"line": 111,
+									"line": 115,
 									"character": 17
 								}
 							],
@@ -1995,7 +1995,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 533,
+										"id": 563,
 										"name": "Logger"
 									}
 								],
@@ -2177,17 +2177,8 @@
 								}
 							],
 							"type": {
-								"type": "union",
-								"types": [
-									{
-										"type": "intrinsic",
-										"name": "number"
-									},
-									{
-										"type": "literal",
-										"value": "unknown"
-									}
-								]
+								"type": "intrinsic",
+								"name": "string"
 							}
 						},
 						{
@@ -2543,12 +2534,17 @@
 						},
 						{
 							"type": "reference",
-							"id": 158,
+							"id": 155,
 							"name": "default"
 						},
 						{
 							"type": "reference",
-							"id": 211,
+							"id": 188,
+							"name": "default"
+						},
+						{
+							"type": "reference",
+							"id": 241,
 							"name": "default"
 						}
 					]
@@ -2565,9 +2561,7 @@
 							"name": "air",
 							"kind": 1024,
 							"kindString": "Property",
-							"flags": {
-								"isOptional": true
-							},
+							"flags": {},
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/model.ts",
@@ -2585,9 +2579,7 @@
 							"name": "thumbnail",
 							"kind": 1024,
 							"kindString": "Property",
-							"flags": {
-								"isOptional": true
-							},
+							"flags": {},
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/model.ts",
@@ -2809,7 +2801,7 @@
 			"flags": {},
 			"children": [
 				{
-					"id": 158,
+					"id": 155,
 					"name": "default",
 					"kind": 128,
 					"kindString": "Class",
@@ -2819,21 +2811,21 @@
 					},
 					"children": [
 						{
-							"id": 159,
+							"id": 156,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 160,
+									"id": 157,
 									"name": "new default",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 161,
+											"id": 158,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2848,14 +2840,14 @@
 									],
 									"type": {
 										"type": "reference",
-										"id": 158,
+										"id": 155,
 										"name": "default"
 									}
 								}
 							]
 						},
 						{
-							"id": 162,
+							"id": 159,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2863,7 +2855,7 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/simplydotmoe.ts",
-									"line": 31,
+									"line": 32,
 									"character": 8
 								}
 							],
@@ -2879,7 +2871,7 @@
 							}
 						},
 						{
-							"id": 163,
+							"id": 160,
 							"name": "options",
 							"kind": 1024,
 							"kindString": "Property",
@@ -2887,7 +2879,7 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/simplydotmoe.ts",
-									"line": 32,
+									"line": 33,
 									"character": 11
 								}
 							],
@@ -2903,7 +2895,7 @@
 							}
 						},
 						{
-							"id": 173,
+							"id": 170,
 							"name": "getDownloadLinks",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2911,13 +2903,13 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/simplydotmoe.ts",
-									"line": 117,
+									"line": 179,
 									"character": 26
 								}
 							],
 							"signatures": [
 								{
-									"id": 174,
+									"id": 171,
 									"name": "getDownloadLinks",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2927,7 +2919,7 @@
 									},
 									"parameters": [
 										{
-											"id": 175,
+											"id": 172,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -2969,7 +2961,7 @@
 							}
 						},
 						{
-							"id": 170,
+							"id": 167,
 							"name": "getInfo",
 							"kind": 2048,
 							"kindString": "Method",
@@ -2977,13 +2969,13 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/simplydotmoe.ts",
-									"line": 68,
+									"line": 130,
 									"character": 17
 								}
 							],
 							"signatures": [
 								{
-									"id": 171,
+									"id": 168,
 									"name": "getInfo",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -2993,7 +2985,7 @@
 									},
 									"parameters": [
 										{
-											"id": 172,
+											"id": 169,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3032,7 +3024,7 @@
 							}
 						},
 						{
-							"id": 167,
+							"id": 164,
 							"name": "search",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3040,13 +3032,13 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/simplydotmoe.ts",
-									"line": 55,
+									"line": 56,
 									"character": 16
 								}
 							],
 							"signatures": [
 								{
-									"id": 168,
+									"id": 165,
 									"name": "search",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3056,7 +3048,7 @@
 									},
 									"parameters": [
 										{
-											"id": 169,
+											"id": 166,
 											"name": "terms",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3098,7 +3090,7 @@
 							}
 						},
 						{
-							"id": 164,
+							"id": 161,
 							"name": "validateURL",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3106,13 +3098,13 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/simplydotmoe.ts",
-									"line": 42,
+									"line": 43,
 									"character": 15
 								}
 							],
 							"signatures": [
 								{
-									"id": 165,
+									"id": 162,
 									"name": "validateURL",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3122,7 +3114,7 @@
 									},
 									"parameters": [
 										{
-											"id": 166,
+											"id": 163,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3172,32 +3164,32 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								159
+								156
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								162,
-								163
+								159,
+								160
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								173,
 								170,
 								167,
-								164
+								164,
+								161
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "lib/extractors/anime/simplydotmoe.ts",
-							"line": 30,
+							"line": 31,
 							"character": 33
 						}
 					],
@@ -3220,7 +3212,7 @@
 					"sources": [
 						{
 							"fileName": "lib/extractors/anime/simplydotmoe.ts",
-							"line": 14,
+							"line": 15,
 							"character": 19
 						}
 					],
@@ -3234,7 +3226,7 @@
 							"flags": {},
 							"children": [
 								{
-									"id": 151,
+									"id": 148,
 									"name": "animeRegex",
 									"kind": 1024,
 									"kindString": "Property",
@@ -3258,7 +3250,7 @@
 									"defaultValue": "\"https://simply.moe\""
 								},
 								{
-									"id": 152,
+									"id": 149,
 									"name": "episodeRegex",
 									"kind": 1024,
 									"kindString": "Property",
@@ -3276,23 +3268,621 @@
 									"kindString": "Property",
 									"flags": {},
 									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"https://simply.moe/wp-admin/admin-ajax.php\""
+								},
+								{
+									"id": 150,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "lib/extractors/anime/simplydotmoe.ts",
+											"line": 20,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 151,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 152,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 154,
+															"name": "Referer",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														},
+														{
+															"id": 153,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																154,
+																153
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										148,
+										146,
+										149,
+										147
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										150
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				}
+			],
+			"groups": [
+				{
+					"title": "Classes",
+					"kind": 128,
+					"children": [
+						155
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						144
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "lib/extractors/anime/simplydotmoe.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 173,
+			"name": "extractors/anime/tenshidotmoe",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 188,
+					"name": "default",
+					"kind": 128,
+					"kindString": "Class",
+					"flags": {},
+					"comment": {
+						"shortText": "Tenshi.moe Extractor"
+					},
+					"children": [
+						{
+							"id": 189,
+							"name": "constructor",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"signatures": [
+								{
+									"id": 190,
+									"name": "new default",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 191,
+											"name": "options",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"id": 107,
+												"name": "AnimeExtractorConstructorOptions"
+											},
+											"defaultValue": "{}"
+										}
+									],
+									"type": {
+										"type": "reference",
+										"id": 188,
+										"name": "default"
+									}
+								}
+							]
+						},
+						{
+							"id": 192,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/extractors/anime/tenshidotmoe.ts",
+									"line": 31,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "\"Tenshi.moe\"",
+							"implementationOf": {
+								"type": "reference",
+								"id": 129,
+								"name": "AnimeExtractorModel.name"
+							}
+						},
+						{
+							"id": 193,
+							"name": "options",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/extractors/anime/tenshidotmoe.ts",
+									"line": 32,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 107,
+								"name": "AnimeExtractorConstructorOptions"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"id": 130,
+								"name": "AnimeExtractorModel.options"
+							}
+						},
+						{
+							"id": 203,
+							"name": "getDownloadLinks",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/extractors/anime/tenshidotmoe.ts",
+									"line": 170,
+									"character": 26
+								}
+							],
+							"signatures": [
+								{
+									"id": 204,
+									"name": "getDownloadLinks",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get download URLs from Tenshi.moe episode URL"
+									},
+									"parameters": [
+										{
+											"id": 205,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Tenshi.moe episode URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 123,
+													"name": "AnimeExtractorDownloadResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 141,
+										"name": "AnimeExtractorModel.getDownloadLinks"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 140,
+								"name": "AnimeExtractorModel.getDownloadLinks"
+							}
+						},
+						{
+							"id": 200,
+							"name": "getInfo",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/extractors/anime/tenshidotmoe.ts",
+									"line": 115,
+									"character": 17
+								}
+							],
+							"signatures": [
+								{
+									"id": 201,
+									"name": "getInfo",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Get episode URLs from Tenshi.moe URL"
+									},
+									"parameters": [
+										{
+											"id": 202,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Tenshi.moe anime URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 118,
+												"name": "AnimeExtractorInfoResult"
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 138,
+										"name": "AnimeExtractorModel.getInfo"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 137,
+								"name": "AnimeExtractorModel.getInfo"
+							}
+						},
+						{
+							"id": 197,
+							"name": "search",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/extractors/anime/tenshidotmoe.ts",
+									"line": 55,
+									"character": 16
+								}
+							],
+							"signatures": [
+								{
+									"id": 198,
+									"name": "search",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Tenshi.moe Search"
+									},
+									"parameters": [
+										{
+											"id": 199,
+											"name": "terms",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Tenshi.moe term\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"id": 110,
+													"name": "AnimeExtractorSearchResult"
+												}
+											}
+										],
+										"name": "Promise"
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 135,
+										"name": "AnimeExtractorModel.search"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 134,
+								"name": "AnimeExtractorModel.search"
+							}
+						},
+						{
+							"id": 194,
+							"name": "validateURL",
+							"kind": 2048,
+							"kindString": "Method",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "lib/extractors/anime/tenshidotmoe.ts",
+									"line": 42,
+									"character": 15
+								}
+							],
+							"signatures": [
+								{
+									"id": 195,
+									"name": "validateURL",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"comment": {
+										"shortText": "Validate Tenshi.moe URL"
+									},
+									"parameters": [
+										{
+											"id": 196,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"comment": {
+												"text": "Tenshi.moe URL\n"
+											},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "literal",
+												"value": false
+											},
+											{
+												"type": "literal",
+												"value": "anime_url"
+											},
+											{
+												"type": "literal",
+												"value": "episode_url"
+											}
+										]
+									},
+									"implementationOf": {
+										"type": "reference",
+										"id": 132,
+										"name": "AnimeExtractorModel.validateURL"
+									}
+								}
+							],
+							"implementationOf": {
+								"type": "reference",
+								"id": 131,
+								"name": "AnimeExtractorModel.validateURL"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Constructors",
+							"kind": 512,
+							"children": [
+								189
+							]
+						},
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								192,
+								193
+							]
+						},
+						{
+							"title": "Methods",
+							"kind": 2048,
+							"children": [
+								203,
+								200,
+								197,
+								194
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "lib/extractors/anime/tenshidotmoe.ts",
+							"line": 30,
+							"character": 33
+						}
+					],
+					"implementedTypes": [
+						{
+							"type": "reference",
+							"id": 128,
+							"name": "AnimeExtractorModel"
+						}
+					]
+				},
+				{
+					"id": 174,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "lib/extractors/anime/tenshidotmoe.ts",
+							"line": 14,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 175,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 181,
+									"name": "animeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 176,
+									"name": "baseUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"https://tenshi.moe\""
+								},
+								{
+									"id": 182,
+									"name": "episodeRegex",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RegExp"
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 177,
+									"name": "searchUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 148,
+											"id": 178,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 149,
+													"id": 179,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 150,
+															"id": 180,
 															"name": "search",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -3314,21 +3904,21 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 153,
+									"id": 183,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "lib/extractors/anime/simplydotmoe.ts",
+											"fileName": "lib/extractors/anime/tenshidotmoe.ts",
 											"line": 19,
 											"character": 18
 										}
 									],
 									"signatures": [
 										{
-											"id": 154,
+											"id": 184,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -3336,14 +3926,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 155,
+													"id": 185,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 157,
+															"id": 187,
 															"name": "Referer",
 															"kind": 1024,
 															"kindString": "Property",
@@ -3355,7 +3945,7 @@
 															"defaultValue": "..."
 														},
 														{
-															"id": 156,
+															"id": 186,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -3372,8 +3962,8 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																157,
-																156
+																187,
+																186
 															]
 														}
 													]
@@ -3388,17 +3978,17 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										151,
-										146,
-										152,
-										147
+										181,
+										176,
+										182,
+										177
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										153
+										183
 									]
 								}
 							]
@@ -3412,34 +4002,34 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						158
+						188
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						144
+						174
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "lib/extractors/anime/simplydotmoe.ts",
+					"fileName": "lib/extractors/anime/tenshidotmoe.ts",
 					"line": 1,
 					"character": 0
 				}
 			]
 		},
 		{
-			"id": 176,
+			"id": 206,
 			"name": "extractors/anime/twistdotmoe",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 211,
+					"id": 241,
 					"name": "default",
 					"kind": 128,
 					"kindString": "Class",
@@ -3449,21 +4039,21 @@
 					},
 					"children": [
 						{
-							"id": 212,
+							"id": 242,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 213,
+									"id": 243,
 									"name": "new default",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 214,
+											"id": 244,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3478,14 +4068,14 @@
 									],
 									"type": {
 										"type": "reference",
-										"id": 211,
+										"id": 241,
 										"name": "default"
 									}
 								}
 							]
 						},
 						{
-							"id": 215,
+							"id": 245,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3509,7 +4099,7 @@
 							}
 						},
 						{
-							"id": 216,
+							"id": 246,
 							"name": "options",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3533,7 +4123,7 @@
 							}
 						},
 						{
-							"id": 217,
+							"id": 247,
 							"name": "searchCache",
 							"kind": 1024,
 							"kindString": "Property",
@@ -3550,14 +4140,14 @@
 								"elementType": {
 									"type": "reflection",
 									"declaration": {
-										"id": 218,
+										"id": 248,
 										"name": "__type",
 										"kind": 65536,
 										"kindString": "Type literal",
 										"flags": {},
 										"children": [
 											{
-												"id": 220,
+												"id": 250,
 												"name": "alt_title",
 												"kind": 1024,
 												"kindString": "Property",
@@ -3577,7 +4167,7 @@
 												}
 											},
 											{
-												"id": 219,
+												"id": 249,
 												"name": "title",
 												"kind": 1024,
 												"kindString": "Property",
@@ -3595,7 +4185,7 @@
 												}
 											},
 											{
-												"id": 221,
+												"id": 251,
 												"name": "url",
 												"kind": 1024,
 												"kindString": "Property",
@@ -3618,9 +4208,9 @@
 												"title": "Properties",
 												"kind": 1024,
 												"children": [
-													220,
-													219,
-													221
+													250,
+													249,
+													251
 												]
 											}
 										]
@@ -3630,7 +4220,7 @@
 							"defaultValue": "[]"
 						},
 						{
-							"id": 231,
+							"id": 261,
 							"name": "getDownloadLinks",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3638,13 +4228,13 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/twistdotmoe.ts",
-									"line": 206,
+									"line": 208,
 									"character": 26
 								}
 							],
 							"signatures": [
 								{
-									"id": 232,
+									"id": 262,
 									"name": "getDownloadLinks",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3654,7 +4244,7 @@
 									},
 									"parameters": [
 										{
-											"id": 233,
+											"id": 263,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3696,7 +4286,7 @@
 							}
 						},
 						{
-							"id": 228,
+							"id": 258,
 							"name": "getInfo",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3704,13 +4294,13 @@
 							"sources": [
 								{
 									"fileName": "lib/extractors/anime/twistdotmoe.ts",
-									"line": 157,
+									"line": 159,
 									"character": 17
 								}
 							],
 							"signatures": [
 								{
-									"id": 229,
+									"id": 259,
 									"name": "getInfo",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3720,7 +4310,7 @@
 									},
 									"parameters": [
 										{
-											"id": 230,
+											"id": 260,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3759,7 +4349,7 @@
 							}
 						},
 						{
-							"id": 225,
+							"id": 255,
 							"name": "search",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3773,7 +4363,7 @@
 							],
 							"signatures": [
 								{
-									"id": 226,
+									"id": 256,
 									"name": "search",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3783,7 +4373,7 @@
 									},
 									"parameters": [
 										{
-											"id": 227,
+											"id": 257,
 											"name": "terms",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3825,7 +4415,7 @@
 							}
 						},
 						{
-							"id": 222,
+							"id": 252,
 							"name": "validateURL",
 							"kind": 2048,
 							"kindString": "Method",
@@ -3839,7 +4429,7 @@
 							],
 							"signatures": [
 								{
-									"id": 223,
+									"id": 253,
 									"name": "validateURL",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -3849,7 +4439,7 @@
 									},
 									"parameters": [
 										{
-											"id": 224,
+											"id": 254,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -3899,26 +4489,26 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								212
+								242
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								215,
-								216,
-								217
+								245,
+								246,
+								247
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								231,
-								228,
-								225,
-								222
+								261,
+								258,
+								255,
+								252
 							]
 						}
 					],
@@ -3938,7 +4528,7 @@
 					]
 				},
 				{
-					"id": 177,
+					"id": 207,
 					"name": "config",
 					"kind": 32,
 					"kindString": "Variable",
@@ -3955,14 +4545,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 178,
+							"id": 208,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 186,
+									"id": 216,
 									"name": "animePageUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -3970,21 +4560,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 187,
+											"id": 217,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 188,
+													"id": 218,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 189,
+															"id": 219,
 															"name": "slug",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -4006,7 +4596,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 199,
+									"id": 229,
 									"name": "animeRegex",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4018,7 +4608,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 179,
+									"id": 209,
 									"name": "baseUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4030,7 +4620,7 @@
 									"defaultValue": "\"https://twist.moe\""
 								},
 								{
-									"id": 198,
+									"id": 228,
 									"name": "cdnUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4042,7 +4632,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 181,
+									"id": 211,
 									"name": "decryptKey",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4054,7 +4644,7 @@
 									"defaultValue": "\"267041df55ca2b36f2e322d05ee2c9cf\""
 								},
 								{
-									"id": 200,
+									"id": 230,
 									"name": "episodeRegex",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4066,7 +4656,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 190,
+									"id": 220,
 									"name": "episodesApiUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4074,21 +4664,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 191,
+											"id": 221,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 192,
+													"id": 222,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 193,
+															"id": 223,
 															"name": "slug",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -4110,7 +4700,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 182,
+									"id": 212,
 									"name": "getSlugFromUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4118,21 +4708,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 183,
+											"id": 213,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 184,
+													"id": 214,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 185,
+															"id": 215,
 															"name": "url",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -4163,7 +4753,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 180,
+									"id": 210,
 									"name": "searchUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4175,7 +4765,7 @@
 									"defaultValue": "\"https://api.twist.moe/api/anime\""
 								},
 								{
-									"id": 194,
+									"id": 224,
 									"name": "sourcesApiUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4183,21 +4773,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 195,
+											"id": 225,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 196,
+													"id": 226,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 197,
+															"id": 227,
 															"name": "slug",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -4219,7 +4809,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 201,
+									"id": 231,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
@@ -4233,7 +4823,7 @@
 									],
 									"signatures": [
 										{
-											"id": 202,
+											"id": 232,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -4241,14 +4831,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 203,
+													"id": 233,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 205,
+															"id": 235,
 															"name": "Referer",
 															"kind": 1024,
 															"kindString": "Property",
@@ -4260,7 +4850,7 @@
 															"defaultValue": "..."
 														},
 														{
-															"id": 204,
+															"id": 234,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -4272,7 +4862,7 @@
 															"defaultValue": "..."
 														},
 														{
-															"id": 206,
+															"id": 236,
 															"name": "x-access-token",
 															"kind": 1024,
 															"kindString": "Property",
@@ -4289,9 +4879,9 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																205,
-																204,
-																206
+																235,
+																234,
+																236
 															]
 														}
 													]
@@ -4306,23 +4896,23 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										186,
-										199,
-										179,
-										198,
-										181,
-										200,
-										190,
-										182,
-										180,
-										194
+										216,
+										229,
+										209,
+										228,
+										211,
+										230,
+										220,
+										212,
+										210,
+										224
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										201
+										231
 									]
 								}
 							]
@@ -4331,7 +4921,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 207,
+					"id": 237,
 					"name": "matcher",
 					"kind": 64,
 					"kindString": "Function",
@@ -4347,14 +4937,14 @@
 					],
 					"signatures": [
 						{
-							"id": 208,
+							"id": 238,
 							"name": "matcher",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 209,
+									"id": 239,
 									"name": "origin",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4365,7 +4955,7 @@
 									}
 								},
 								{
-									"id": 210,
+									"id": 240,
 									"name": "keywords",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4392,21 +4982,21 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						211
+						241
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						177
+						207
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						207
+						237
 					]
 				}
 			],
@@ -4419,14 +5009,14 @@
 			]
 		},
 		{
-			"id": 234,
+			"id": 264,
 			"name": "extractors/manga/fanfox",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 250,
+					"id": 280,
 					"name": "default",
 					"kind": 128,
 					"kindString": "Class",
@@ -4436,28 +5026,28 @@
 					},
 					"children": [
 						{
-							"id": 251,
+							"id": 281,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 252,
+									"id": 282,
 									"name": "new default",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 253,
+											"id": 283,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 346,
+												"id": 376,
 												"name": "MangaExtractorConstructorOptions"
 											},
 											"defaultValue": "{}"
@@ -4465,14 +5055,14 @@
 									],
 									"type": {
 										"type": "reference",
-										"id": 250,
+										"id": 280,
 										"name": "default"
 									}
 								}
 							]
 						},
 						{
-							"id": 254,
+							"id": 284,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4491,12 +5081,12 @@
 							"defaultValue": "\"FanFox.net\"",
 							"implementationOf": {
 								"type": "reference",
-								"id": 371,
+								"id": 401,
 								"name": "MangaExtractorModel.name"
 							}
 						},
 						{
-							"id": 255,
+							"id": 285,
 							"name": "options",
 							"kind": 1024,
 							"kindString": "Property",
@@ -4510,17 +5100,17 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 346,
+								"id": 376,
 								"name": "MangaExtractorConstructorOptions"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"id": 372,
+								"id": 402,
 								"name": "MangaExtractorModel.options"
 							}
 						},
 						{
-							"id": 265,
+							"id": 295,
 							"name": "getChapterPages",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4534,7 +5124,7 @@
 							],
 							"signatures": [
 								{
-									"id": 266,
+									"id": 296,
 									"name": "getChapterPages",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4544,7 +5134,7 @@
 									},
 									"parameters": [
 										{
-											"id": 267,
+											"id": 297,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4563,7 +5153,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 364,
+												"id": 394,
 												"name": "MangaExtractorChapterPagesResult"
 											}
 										],
@@ -4571,19 +5161,19 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 383,
+										"id": 413,
 										"name": "MangaExtractorModel.getChapterPages"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 382,
+								"id": 412,
 								"name": "MangaExtractorModel.getChapterPages"
 							}
 						},
 						{
-							"id": 262,
+							"id": 292,
 							"name": "getInfo",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4597,7 +5187,7 @@
 							],
 							"signatures": [
 								{
-									"id": 263,
+									"id": 293,
 									"name": "getInfo",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4607,7 +5197,7 @@
 									},
 									"parameters": [
 										{
-											"id": 264,
+											"id": 294,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4626,7 +5216,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 358,
+												"id": 388,
 												"name": "MangaExtractorInfoResult"
 											}
 										],
@@ -4634,19 +5224,19 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 380,
+										"id": 410,
 										"name": "MangaExtractorModel.getInfo"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 379,
+								"id": 409,
 								"name": "MangaExtractorModel.getInfo"
 							}
 						},
 						{
-							"id": 268,
+							"id": 298,
 							"name": "getPageImage",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4660,7 +5250,7 @@
 							],
 							"signatures": [
 								{
-									"id": 269,
+									"id": 299,
 									"name": "getPageImage",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4670,7 +5260,7 @@
 									},
 									"parameters": [
 										{
-											"id": 270,
+											"id": 300,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4689,7 +5279,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 367,
+												"id": 397,
 												"name": "MangaExtractorPageImageResult"
 											}
 										],
@@ -4697,19 +5287,19 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 386,
+										"id": 416,
 										"name": "MangaExtractorModel.getPageImage"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 385,
+								"id": 415,
 								"name": "MangaExtractorModel.getPageImage"
 							}
 						},
 						{
-							"id": 259,
+							"id": 289,
 							"name": "search",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4723,7 +5313,7 @@
 							],
 							"signatures": [
 								{
-									"id": 260,
+									"id": 290,
 									"name": "search",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4733,7 +5323,7 @@
 									},
 									"parameters": [
 										{
-											"id": 261,
+											"id": 291,
 											"name": "terms",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4754,7 +5344,7 @@
 												"type": "array",
 												"elementType": {
 													"type": "reference",
-													"id": 349,
+													"id": 379,
 													"name": "MangaExtractorSearchResult"
 												}
 											}
@@ -4763,19 +5353,19 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 377,
+										"id": 407,
 										"name": "MangaExtractorModel.search"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 376,
+								"id": 406,
 								"name": "MangaExtractorModel.search"
 							}
 						},
 						{
-							"id": 256,
+							"id": 286,
 							"name": "validateURL",
 							"kind": 2048,
 							"kindString": "Method",
@@ -4789,7 +5379,7 @@
 							],
 							"signatures": [
 								{
-									"id": 257,
+									"id": 287,
 									"name": "validateURL",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -4799,7 +5389,7 @@
 									},
 									"parameters": [
 										{
-											"id": 258,
+											"id": 288,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -4832,14 +5422,14 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 374,
+										"id": 404,
 										"name": "MangaExtractorModel.validateURL"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 373,
+								"id": 403,
 								"name": "MangaExtractorModel.validateURL"
 							}
 						}
@@ -4849,26 +5439,26 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								251
+								281
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								254,
-								255
+								284,
+								285
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								265,
-								262,
-								268,
-								259,
-								256
+								295,
+								292,
+								298,
+								289,
+								286
 							]
 						}
 					],
@@ -4882,13 +5472,13 @@
 					"implementedTypes": [
 						{
 							"type": "reference",
-							"id": 370,
+							"id": 400,
 							"name": "MangaExtractorModel"
 						}
 					]
 				},
 				{
-					"id": 235,
+					"id": 265,
 					"name": "config",
 					"kind": 32,
 					"kindString": "Variable",
@@ -4905,14 +5495,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 236,
+							"id": 266,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 237,
+									"id": 267,
 									"name": "baseUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4924,7 +5514,7 @@
 									"defaultValue": "\"https://fanfox.net\""
 								},
 								{
-									"id": 243,
+									"id": 273,
 									"name": "chapterRegex",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4936,7 +5526,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 242,
+									"id": 272,
 									"name": "mangaRegex",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4948,7 +5538,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 238,
+									"id": 268,
 									"name": "searchUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -4956,21 +5546,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 239,
+											"id": 269,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 240,
+													"id": 270,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 241,
+															"id": 271,
 															"name": "search",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -4992,7 +5582,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 244,
+									"id": 274,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
@@ -5006,7 +5596,7 @@
 									],
 									"signatures": [
 										{
-											"id": 245,
+											"id": 275,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -5014,14 +5604,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 246,
+													"id": 276,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 249,
+															"id": 279,
 															"name": "Cookie",
 															"kind": 1024,
 															"kindString": "Property",
@@ -5033,7 +5623,7 @@
 															"defaultValue": "\"isAdult=1;\""
 														},
 														{
-															"id": 248,
+															"id": 278,
 															"name": "Referer",
 															"kind": 1024,
 															"kindString": "Property",
@@ -5045,7 +5635,7 @@
 															"defaultValue": "..."
 														},
 														{
-															"id": 247,
+															"id": 277,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -5062,9 +5652,9 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																249,
-																248,
-																247
+																279,
+																278,
+																277
 															]
 														}
 													]
@@ -5079,17 +5669,17 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										237,
-										243,
-										242,
-										238
+										267,
+										273,
+										272,
+										268
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										244
+										274
 									]
 								}
 							]
@@ -5103,14 +5693,14 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						250
+						280
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						235
+						265
 					]
 				}
 			],
@@ -5123,14 +5713,14 @@
 			]
 		},
 		{
-			"id": 271,
+			"id": 301,
 			"name": "extractors/manga/mangadex",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 286,
+					"id": 316,
 					"name": "default",
 					"kind": 128,
 					"kindString": "Class",
@@ -5140,28 +5730,28 @@
 					},
 					"children": [
 						{
-							"id": 287,
+							"id": 317,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 288,
+									"id": 318,
 									"name": "new default",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 289,
+											"id": 319,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 346,
+												"id": 376,
 												"name": "MangaExtractorConstructorOptions"
 											},
 											"defaultValue": "{}"
@@ -5169,14 +5759,14 @@
 									],
 									"type": {
 										"type": "reference",
-										"id": 286,
+										"id": 316,
 										"name": "default"
 									}
 								}
 							]
 						},
 						{
-							"id": 290,
+							"id": 320,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -5195,12 +5785,12 @@
 							"defaultValue": "\"MangaDex.tv\"",
 							"implementationOf": {
 								"type": "reference",
-								"id": 371,
+								"id": 401,
 								"name": "MangaExtractorModel.name"
 							}
 						},
 						{
-							"id": 291,
+							"id": 321,
 							"name": "options",
 							"kind": 1024,
 							"kindString": "Property",
@@ -5214,17 +5804,17 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 346,
+								"id": 376,
 								"name": "MangaExtractorConstructorOptions"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"id": 372,
+								"id": 402,
 								"name": "MangaExtractorModel.options"
 							}
 						},
 						{
-							"id": 301,
+							"id": 331,
 							"name": "getChapterPages",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5238,7 +5828,7 @@
 							],
 							"signatures": [
 								{
-									"id": 302,
+									"id": 332,
 									"name": "getChapterPages",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5248,7 +5838,7 @@
 									},
 									"parameters": [
 										{
-											"id": 303,
+											"id": 333,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5267,7 +5857,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 364,
+												"id": 394,
 												"name": "MangaExtractorChapterPagesResult"
 											}
 										],
@@ -5275,19 +5865,19 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 383,
+										"id": 413,
 										"name": "MangaExtractorModel.getChapterPages"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 382,
+								"id": 412,
 								"name": "MangaExtractorModel.getChapterPages"
 							}
 						},
 						{
-							"id": 298,
+							"id": 328,
 							"name": "getInfo",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5301,7 +5891,7 @@
 							],
 							"signatures": [
 								{
-									"id": 299,
+									"id": 329,
 									"name": "getInfo",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5311,7 +5901,7 @@
 									},
 									"parameters": [
 										{
-											"id": 300,
+											"id": 330,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5330,7 +5920,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 358,
+												"id": 388,
 												"name": "MangaExtractorInfoResult"
 											}
 										],
@@ -5338,19 +5928,19 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 380,
+										"id": 410,
 										"name": "MangaExtractorModel.getInfo"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 379,
+								"id": 409,
 								"name": "MangaExtractorModel.getInfo"
 							}
 						},
 						{
-							"id": 304,
+							"id": 334,
 							"name": "parseMangaDexTitle",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5364,14 +5954,14 @@
 							],
 							"signatures": [
 								{
-									"id": 305,
+									"id": 335,
 									"name": "parseMangaDexTitle",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 306,
+											"id": 336,
 											"name": "title",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5385,14 +5975,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 307,
+											"id": 337,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 309,
+													"id": 339,
 													"name": "chapter",
 													"kind": 1024,
 													"kindString": "Property",
@@ -5403,7 +5993,7 @@
 													}
 												},
 												{
-													"id": 310,
+													"id": 340,
 													"name": "shortTitle",
 													"kind": 1024,
 													"kindString": "Property",
@@ -5424,7 +6014,7 @@
 													"defaultValue": "..."
 												},
 												{
-													"id": 308,
+													"id": 338,
 													"name": "volume",
 													"kind": 1024,
 													"kindString": "Property",
@@ -5440,9 +6030,9 @@
 													"title": "Properties",
 													"kind": 1024,
 													"children": [
-														309,
-														310,
-														308
+														339,
+														340,
+														338
 													]
 												}
 											]
@@ -5452,7 +6042,7 @@
 							]
 						},
 						{
-							"id": 295,
+							"id": 325,
 							"name": "search",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5466,7 +6056,7 @@
 							],
 							"signatures": [
 								{
-									"id": 296,
+									"id": 326,
 									"name": "search",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5476,7 +6066,7 @@
 									},
 									"parameters": [
 										{
-											"id": 297,
+											"id": 327,
 											"name": "terms",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5497,7 +6087,7 @@
 												"type": "array",
 												"elementType": {
 													"type": "reference",
-													"id": 349,
+													"id": 379,
 													"name": "MangaExtractorSearchResult"
 												}
 											}
@@ -5506,19 +6096,19 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 377,
+										"id": 407,
 										"name": "MangaExtractorModel.search"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 376,
+								"id": 406,
 								"name": "MangaExtractorModel.search"
 							}
 						},
 						{
-							"id": 292,
+							"id": 322,
 							"name": "validateURL",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5532,7 +6122,7 @@
 							],
 							"signatures": [
 								{
-									"id": 293,
+									"id": 323,
 									"name": "validateURL",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5542,7 +6132,7 @@
 									},
 									"parameters": [
 										{
-											"id": 294,
+											"id": 324,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5575,14 +6165,14 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 374,
+										"id": 404,
 										"name": "MangaExtractorModel.validateURL"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 373,
+								"id": 403,
 								"name": "MangaExtractorModel.validateURL"
 							}
 						}
@@ -5592,26 +6182,26 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								287
+								317
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								290,
-								291
+								320,
+								321
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								301,
-								298,
-								304,
-								295,
-								292
+								331,
+								328,
+								334,
+								325,
+								322
 							]
 						}
 					],
@@ -5625,13 +6215,13 @@
 					"implementedTypes": [
 						{
 							"type": "reference",
-							"id": 370,
+							"id": 400,
 							"name": "MangaExtractorModel"
 						}
 					]
 				},
 				{
-					"id": 272,
+					"id": 302,
 					"name": "config",
 					"kind": 32,
 					"kindString": "Variable",
@@ -5648,14 +6238,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 273,
+							"id": 303,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 274,
+									"id": 304,
 									"name": "baseUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -5667,7 +6257,7 @@
 									"defaultValue": "\"https://mangadex.tv\""
 								},
 								{
-									"id": 280,
+									"id": 310,
 									"name": "chapterRegex",
 									"kind": 1024,
 									"kindString": "Property",
@@ -5679,7 +6269,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 279,
+									"id": 309,
 									"name": "mangaRegex",
 									"kind": 1024,
 									"kindString": "Property",
@@ -5691,7 +6281,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 275,
+									"id": 305,
 									"name": "searchUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -5699,21 +6289,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 276,
+											"id": 306,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 277,
+													"id": 307,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 278,
+															"id": 308,
 															"name": "search",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -5735,7 +6325,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 281,
+									"id": 311,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
@@ -5749,7 +6339,7 @@
 									],
 									"signatures": [
 										{
-											"id": 282,
+											"id": 312,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -5757,14 +6347,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 283,
+													"id": 313,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 285,
+															"id": 315,
 															"name": "Referer",
 															"kind": 1024,
 															"kindString": "Property",
@@ -5776,7 +6366,7 @@
 															"defaultValue": "..."
 														},
 														{
-															"id": 284,
+															"id": 314,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -5793,8 +6383,8 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																285,
-																284
+																315,
+																314
 															]
 														}
 													]
@@ -5809,17 +6399,17 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										274,
-										280,
-										279,
-										275
+										304,
+										310,
+										309,
+										305
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										281
+										311
 									]
 								}
 							]
@@ -5833,14 +6423,14 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						286
+						316
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						272
+						302
 					]
 				}
 			],
@@ -5853,14 +6443,14 @@
 			]
 		},
 		{
-			"id": 311,
+			"id": 341,
 			"name": "extractors/manga/mangainn",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 324,
+					"id": 354,
 					"name": "default",
 					"kind": 128,
 					"kindString": "Class",
@@ -5870,28 +6460,28 @@
 					},
 					"children": [
 						{
-							"id": 325,
+							"id": 355,
 							"name": "constructor",
 							"kind": 512,
 							"kindString": "Constructor",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 326,
+									"id": 356,
 									"name": "new default",
 									"kind": 16384,
 									"kindString": "Constructor signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 327,
+											"id": 357,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 346,
+												"id": 376,
 												"name": "MangaExtractorConstructorOptions"
 											},
 											"defaultValue": "{}"
@@ -5899,14 +6489,14 @@
 									],
 									"type": {
 										"type": "reference",
-										"id": 324,
+										"id": 354,
 										"name": "default"
 									}
 								}
 							]
 						},
 						{
-							"id": 328,
+							"id": 358,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -5925,12 +6515,12 @@
 							"defaultValue": "\"Mangainn.net\"",
 							"implementationOf": {
 								"type": "reference",
-								"id": 371,
+								"id": 401,
 								"name": "MangaExtractorModel.name"
 							}
 						},
 						{
-							"id": 329,
+							"id": 359,
 							"name": "options",
 							"kind": 1024,
 							"kindString": "Property",
@@ -5944,17 +6534,17 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 346,
+								"id": 376,
 								"name": "MangaExtractorConstructorOptions"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"id": 372,
+								"id": 402,
 								"name": "MangaExtractorModel.options"
 							}
 						},
 						{
-							"id": 339,
+							"id": 369,
 							"name": "getChapterPages",
 							"kind": 2048,
 							"kindString": "Method",
@@ -5968,7 +6558,7 @@
 							],
 							"signatures": [
 								{
-									"id": 340,
+									"id": 370,
 									"name": "getChapterPages",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -5978,7 +6568,7 @@
 									},
 									"parameters": [
 										{
-											"id": 341,
+											"id": 371,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -5997,7 +6587,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 364,
+												"id": 394,
 												"name": "MangaExtractorChapterPagesResult"
 											}
 										],
@@ -6005,19 +6595,19 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 383,
+										"id": 413,
 										"name": "MangaExtractorModel.getChapterPages"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 382,
+								"id": 412,
 								"name": "MangaExtractorModel.getChapterPages"
 							}
 						},
 						{
-							"id": 336,
+							"id": 366,
 							"name": "getInfo",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6031,7 +6621,7 @@
 							],
 							"signatures": [
 								{
-									"id": 337,
+									"id": 367,
 									"name": "getInfo",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6041,7 +6631,7 @@
 									},
 									"parameters": [
 										{
-											"id": 338,
+											"id": 368,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6060,7 +6650,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 358,
+												"id": 388,
 												"name": "MangaExtractorInfoResult"
 											}
 										],
@@ -6068,19 +6658,19 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 380,
+										"id": 410,
 										"name": "MangaExtractorModel.getInfo"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 379,
+								"id": 409,
 								"name": "MangaExtractorModel.getInfo"
 							}
 						},
 						{
-							"id": 342,
+							"id": 372,
 							"name": "getPageImage",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6094,7 +6684,7 @@
 							],
 							"signatures": [
 								{
-									"id": 343,
+									"id": 373,
 									"name": "getPageImage",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6104,7 +6694,7 @@
 									},
 									"parameters": [
 										{
-											"id": 344,
+											"id": 374,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6123,7 +6713,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 367,
+												"id": 397,
 												"name": "MangaExtractorPageImageResult"
 											}
 										],
@@ -6131,19 +6721,19 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 386,
+										"id": 416,
 										"name": "MangaExtractorModel.getPageImage"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 385,
+								"id": 415,
 								"name": "MangaExtractorModel.getPageImage"
 							}
 						},
 						{
-							"id": 333,
+							"id": 363,
 							"name": "search",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6157,7 +6747,7 @@
 							],
 							"signatures": [
 								{
-									"id": 334,
+									"id": 364,
 									"name": "search",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6167,7 +6757,7 @@
 									},
 									"parameters": [
 										{
-											"id": 335,
+											"id": 365,
 											"name": "terms",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6188,7 +6778,7 @@
 												"type": "array",
 												"elementType": {
 													"type": "reference",
-													"id": 349,
+													"id": 379,
 													"name": "MangaExtractorSearchResult"
 												}
 											}
@@ -6197,19 +6787,19 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 377,
+										"id": 407,
 										"name": "MangaExtractorModel.search"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 376,
+								"id": 406,
 								"name": "MangaExtractorModel.search"
 							}
 						},
 						{
-							"id": 330,
+							"id": 360,
 							"name": "validateURL",
 							"kind": 2048,
 							"kindString": "Method",
@@ -6223,7 +6813,7 @@
 							],
 							"signatures": [
 								{
-									"id": 331,
+									"id": 361,
 									"name": "validateURL",
 									"kind": 4096,
 									"kindString": "Call signature",
@@ -6233,7 +6823,7 @@
 									},
 									"parameters": [
 										{
-											"id": 332,
+											"id": 362,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6266,14 +6856,14 @@
 									},
 									"implementationOf": {
 										"type": "reference",
-										"id": 374,
+										"id": 404,
 										"name": "MangaExtractorModel.validateURL"
 									}
 								}
 							],
 							"implementationOf": {
 								"type": "reference",
-								"id": 373,
+								"id": 403,
 								"name": "MangaExtractorModel.validateURL"
 							}
 						}
@@ -6283,26 +6873,26 @@
 							"title": "Constructors",
 							"kind": 512,
 							"children": [
-								325
+								355
 							]
 						},
 						{
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								328,
-								329
+								358,
+								359
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								339,
-								336,
-								342,
-								333,
-								330
+								369,
+								366,
+								372,
+								363,
+								360
 							]
 						}
 					],
@@ -6316,13 +6906,13 @@
 					"implementedTypes": [
 						{
 							"type": "reference",
-							"id": 370,
+							"id": 400,
 							"name": "MangaExtractorModel"
 						}
 					]
 				},
 				{
-					"id": 312,
+					"id": 342,
 					"name": "config",
 					"kind": 32,
 					"kindString": "Variable",
@@ -6339,14 +6929,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 313,
+							"id": 343,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 314,
+									"id": 344,
 									"name": "baseUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -6358,7 +6948,7 @@
 									"defaultValue": "\"https://www.mangainn.net\""
 								},
 								{
-									"id": 317,
+									"id": 347,
 									"name": "chapterRegex",
 									"kind": 1024,
 									"kindString": "Property",
@@ -6370,7 +6960,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 316,
+									"id": 346,
 									"name": "mangaRegex",
 									"kind": 1024,
 									"kindString": "Property",
@@ -6382,7 +6972,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 315,
+									"id": 345,
 									"name": "searchUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -6394,7 +6984,7 @@
 									"defaultValue": "\"https://www.mangainn.net/service/advanced_search\""
 								},
 								{
-									"id": 318,
+									"id": 348,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
@@ -6408,7 +6998,7 @@
 									],
 									"signatures": [
 										{
-											"id": 319,
+											"id": 349,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -6416,14 +7006,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 320,
+													"id": 350,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 322,
+															"id": 352,
 															"name": "Referer",
 															"kind": 1024,
 															"kindString": "Property",
@@ -6435,7 +7025,7 @@
 															"defaultValue": "..."
 														},
 														{
-															"id": 321,
+															"id": 351,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -6447,7 +7037,7 @@
 															"defaultValue": "..."
 														},
 														{
-															"id": 323,
+															"id": 353,
 															"name": "x-requested-with",
 															"kind": 1024,
 															"kindString": "Property",
@@ -6464,9 +7054,9 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																322,
-																321,
-																323
+																352,
+																351,
+																353
 															]
 														}
 													]
@@ -6481,17 +7071,17 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										314,
-										317,
-										316,
-										315
+										344,
+										347,
+										346,
+										345
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										318
+										348
 									]
 								}
 							]
@@ -6505,14 +7095,14 @@
 					"title": "Classes",
 					"kind": 128,
 					"children": [
-						324
+						354
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						312
+						342
 					]
 				}
 			],
@@ -6525,21 +7115,21 @@
 			]
 		},
 		{
-			"id": 345,
+			"id": 375,
 			"name": "extractors/manga/model",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 361,
+					"id": 391,
 					"name": "MangaExtractorChapterPagesEntity",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 362,
+							"id": 392,
 							"name": "page",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6557,7 +7147,7 @@
 							}
 						},
 						{
-							"id": 363,
+							"id": 393,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6580,8 +7170,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								362,
-								363
+								392,
+								393
 							]
 						}
 					],
@@ -6594,14 +7184,14 @@
 					]
 				},
 				{
-					"id": 364,
+					"id": 394,
 					"name": "MangaExtractorChapterPagesResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 366,
+							"id": 396,
 							"name": "entities",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6617,13 +7207,13 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"id": 361,
+									"id": 391,
 									"name": "MangaExtractorChapterPagesEntity"
 								}
 							}
 						},
 						{
-							"id": 365,
+							"id": 395,
 							"name": "type",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6655,8 +7245,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								366,
-								365
+								396,
+								395
 							]
 						}
 					],
@@ -6669,14 +7259,14 @@
 					]
 				},
 				{
-					"id": 353,
+					"id": 383,
 					"name": "MangaExtractorChapterResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 356,
+							"id": 386,
 							"name": "chapter",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6694,7 +7284,7 @@
 							}
 						},
 						{
-							"id": 354,
+							"id": 384,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6712,7 +7302,7 @@
 							}
 						},
 						{
-							"id": 357,
+							"id": 387,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6730,7 +7320,7 @@
 							}
 						},
 						{
-							"id": 355,
+							"id": 385,
 							"name": "volume",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6753,10 +7343,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								356,
-								354,
-								357,
-								355
+								386,
+								384,
+								387,
+								385
 							]
 						}
 					],
@@ -6769,14 +7359,14 @@
 					]
 				},
 				{
-					"id": 346,
+					"id": 376,
 					"name": "MangaExtractorConstructorOptions",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 347,
+							"id": 377,
 							"name": "logger",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6795,7 +7385,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 533,
+										"id": 563,
 										"name": "Logger"
 									}
 								],
@@ -6808,7 +7398,7 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								347
+								377
 							]
 						}
 					],
@@ -6821,14 +7411,14 @@
 					]
 				},
 				{
-					"id": 358,
+					"id": 388,
 					"name": "MangaExtractorInfoResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 360,
+							"id": 390,
 							"name": "chapters",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6844,13 +7434,13 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"id": 353,
+									"id": 383,
 									"name": "MangaExtractorChapterResult"
 								}
 							}
 						},
 						{
-							"id": 359,
+							"id": 389,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6873,8 +7463,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								360,
-								359
+								390,
+								389
 							]
 						}
 					],
@@ -6887,14 +7477,14 @@
 					]
 				},
 				{
-					"id": 370,
+					"id": 400,
 					"name": "MangaExtractorModel",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 371,
+							"id": 401,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6912,7 +7502,7 @@
 							}
 						},
 						{
-							"id": 372,
+							"id": 402,
 							"name": "options",
 							"kind": 1024,
 							"kindString": "Property",
@@ -6926,26 +7516,26 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 346,
+								"id": 376,
 								"name": "MangaExtractorConstructorOptions"
 							}
 						},
 						{
-							"id": 382,
+							"id": 412,
 							"name": "getChapterPages",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 383,
+									"id": 413,
 									"name": "getChapterPages",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 384,
+											"id": 414,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -6961,7 +7551,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 364,
+												"id": 394,
 												"name": "MangaExtractorChapterPagesResult"
 											}
 										],
@@ -6971,21 +7561,21 @@
 							]
 						},
 						{
-							"id": 379,
+							"id": 409,
 							"name": "getInfo",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 380,
+									"id": 410,
 									"name": "getInfo",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 381,
+											"id": 411,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7001,7 +7591,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 358,
+												"id": 388,
 												"name": "MangaExtractorInfoResult"
 											}
 										],
@@ -7011,7 +7601,7 @@
 							]
 						},
 						{
-							"id": 385,
+							"id": 415,
 							"name": "getPageImage",
 							"kind": 2048,
 							"kindString": "Method",
@@ -7020,14 +7610,14 @@
 							},
 							"signatures": [
 								{
-									"id": 386,
+									"id": 416,
 									"name": "getPageImage",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 387,
+											"id": 417,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7043,7 +7633,7 @@
 										"typeArguments": [
 											{
 												"type": "reference",
-												"id": 367,
+												"id": 397,
 												"name": "MangaExtractorPageImageResult"
 											}
 										],
@@ -7053,21 +7643,21 @@
 							]
 						},
 						{
-							"id": 376,
+							"id": 406,
 							"name": "search",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 377,
+									"id": 407,
 									"name": "search",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 378,
+											"id": 408,
 											"name": "terms",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7085,7 +7675,7 @@
 												"type": "array",
 												"elementType": {
 													"type": "reference",
-													"id": 349,
+													"id": 379,
 													"name": "MangaExtractorSearchResult"
 												}
 											}
@@ -7096,21 +7686,21 @@
 							]
 						},
 						{
-							"id": 373,
+							"id": 403,
 							"name": "validateURL",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 374,
+									"id": 404,
 									"name": "validateURL",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 375,
+											"id": 405,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7123,7 +7713,7 @@
 									],
 									"type": {
 										"type": "reference",
-										"id": 348,
+										"id": 378,
 										"name": "MangaExtractorValidateResults"
 									}
 								}
@@ -7135,19 +7725,19 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								371,
-								372
+								401,
+								402
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								382,
-								379,
-								385,
-								376,
-								373
+								412,
+								409,
+								415,
+								406,
+								403
 							]
 						}
 					],
@@ -7161,30 +7751,30 @@
 					"implementedBy": [
 						{
 							"type": "reference",
-							"id": 250,
+							"id": 280,
 							"name": "default"
 						},
 						{
 							"type": "reference",
-							"id": 286,
+							"id": 316,
 							"name": "default"
 						},
 						{
 							"type": "reference",
-							"id": 324,
+							"id": 354,
 							"name": "default"
 						}
 					]
 				},
 				{
-					"id": 367,
+					"id": 397,
 					"name": "MangaExtractorPageImageResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 369,
+							"id": 399,
 							"name": "image",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7202,7 +7792,7 @@
 							}
 						},
 						{
-							"id": 368,
+							"id": 398,
 							"name": "page",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7225,8 +7815,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								369,
-								368
+								399,
+								398
 							]
 						}
 					],
@@ -7239,14 +7829,14 @@
 					]
 				},
 				{
-					"id": 349,
+					"id": 379,
 					"name": "MangaExtractorSearchResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 352,
+							"id": 382,
 							"name": "image",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7266,7 +7856,7 @@
 							}
 						},
 						{
-							"id": 350,
+							"id": 380,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7284,7 +7874,7 @@
 							}
 						},
 						{
-							"id": 351,
+							"id": 381,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7307,9 +7897,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								352,
-								350,
-								351
+								382,
+								380,
+								381
 							]
 						}
 					],
@@ -7322,7 +7912,7 @@
 					]
 				},
 				{
-					"id": 348,
+					"id": 378,
 					"name": "MangaExtractorValidateResults",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -7358,21 +7948,21 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						361,
-						364,
-						353,
-						346,
-						358,
-						370,
-						367,
-						349
+						391,
+						394,
+						383,
+						376,
+						388,
+						400,
+						397,
+						379
 					]
 				},
 				{
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						348
+						378
 					]
 				}
 			],
@@ -7385,14 +7975,14 @@
 			]
 		},
 		{
-			"id": 388,
+			"id": 418,
 			"name": "extractors/parsers/gogoplay-iframe",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 389,
+					"id": 419,
 					"name": "default",
 					"kind": 1024,
 					"kindString": "Property",
@@ -7400,21 +7990,21 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 390,
+							"id": 420,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 391,
+									"id": 421,
 									"name": "__type",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 392,
+											"id": 422,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7449,7 +8039,7 @@
 					"title": "Properties",
 					"kind": 1024,
 					"children": [
-						389
+						419
 					]
 				}
 			],
@@ -7462,14 +8052,14 @@
 			]
 		},
 		{
-			"id": 397,
+			"id": 427,
 			"name": "extractors/sources",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 398,
+					"id": 428,
 					"name": "extractors",
 					"kind": 32,
 					"kindString": "Variable",
@@ -7487,14 +8077,14 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 403,
+							"id": 433,
 							"name": "SourceRetriever"
 						}
 					},
 					"defaultValue": "..."
 				},
 				{
-					"id": 399,
+					"id": 429,
 					"name": "getExtractor",
 					"kind": 64,
 					"kindString": "Function",
@@ -7510,14 +8100,14 @@
 					],
 					"signatures": [
 						{
-							"id": 400,
+							"id": 430,
 							"name": "getExtractor",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 401,
+									"id": 431,
 									"name": "url",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -7537,7 +8127,7 @@
 									},
 									{
 										"type": "reference",
-										"id": 403,
+										"id": 433,
 										"name": "SourceRetriever"
 									}
 								]
@@ -7551,14 +8141,14 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						398
+						428
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						399
+						429
 					]
 				}
 			],
@@ -7571,14 +8161,14 @@
 			]
 		},
 		{
-			"id": 393,
+			"id": 423,
 			"name": "extractors/sources/gogoplay-load",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 394,
+					"id": 424,
 					"name": "default",
 					"kind": 32,
 					"kindString": "Variable",
@@ -7594,7 +8184,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"id": 403,
+						"id": 433,
 						"name": "SourceRetriever"
 					},
 					"defaultValue": "..."
@@ -7605,7 +8195,7 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						394
+						424
 					]
 				}
 			],
@@ -7618,14 +8208,14 @@
 			]
 		},
 		{
-			"id": 395,
+			"id": 425,
 			"name": "extractors/sources/gogoplay-streaming",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 396,
+					"id": 426,
 					"name": "default",
 					"kind": 32,
 					"kindString": "Variable",
@@ -7641,7 +8231,7 @@
 					],
 					"type": {
 						"type": "reference",
-						"id": 403,
+						"id": 433,
 						"name": "SourceRetriever"
 					},
 					"defaultValue": "..."
@@ -7652,7 +8242,7 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						396
+						426
 					]
 				}
 			],
@@ -7665,14 +8255,14 @@
 			]
 		},
 		{
-			"id": 402,
+			"id": 432,
 			"name": "extractors/sources/model",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 563,
+					"id": 593,
 					"name": "AnimeExtractorDownloadResult",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -7687,14 +8277,14 @@
 					"target": 123
 				},
 				{
-					"id": 403,
+					"id": 433,
 					"name": "SourceRetriever",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 404,
+							"id": 434,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7712,21 +8302,21 @@
 							}
 						},
 						{
-							"id": 408,
+							"id": 438,
 							"name": "fetch",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 409,
+									"id": 439,
 									"name": "fetch",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 410,
+											"id": 440,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7755,21 +8345,21 @@
 							]
 						},
 						{
-							"id": 405,
+							"id": 435,
 							"name": "validate",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 406,
+									"id": 436,
 									"name": "validate",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 407,
+											"id": 437,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -7793,15 +8383,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								404
+								434
 							]
 						},
 						{
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								408,
-								405
+								438,
+								435
 							]
 						}
 					],
@@ -7819,14 +8409,14 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						563
+						593
 					]
 				},
 				{
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						403
+						433
 					]
 				}
 			],
@@ -7839,21 +8429,21 @@
 			]
 		},
 		{
-			"id": 411,
+			"id": 441,
 			"name": "integrations/myanimelist/anime-info",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 425,
+					"id": 455,
 					"name": "CharacterEntity",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 430,
+							"id": 460,
 							"name": "actor",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7870,14 +8460,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 431,
+									"id": 461,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 434,
+											"id": 464,
 											"name": "image",
 											"kind": 1024,
 											"kindString": "Property",
@@ -7895,7 +8485,7 @@
 											}
 										},
 										{
-											"id": 435,
+											"id": 465,
 											"name": "language",
 											"kind": 1024,
 											"kindString": "Property",
@@ -7913,7 +8503,7 @@
 											}
 										},
 										{
-											"id": 432,
+											"id": 462,
 											"name": "name",
 											"kind": 1024,
 											"kindString": "Property",
@@ -7931,7 +8521,7 @@
 											}
 										},
 										{
-											"id": 433,
+											"id": 463,
 											"name": "url",
 											"kind": 1024,
 											"kindString": "Property",
@@ -7954,10 +8544,10 @@
 											"title": "Properties",
 											"kind": 1024,
 											"children": [
-												434,
-												435,
-												432,
-												433
+												464,
+												465,
+												462,
+												463
 											]
 										}
 									]
@@ -7965,7 +8555,7 @@
 							}
 						},
 						{
-							"id": 428,
+							"id": 458,
 							"name": "image",
 							"kind": 1024,
 							"kindString": "Property",
@@ -7983,7 +8573,7 @@
 							}
 						},
 						{
-							"id": 426,
+							"id": 456,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8001,7 +8591,7 @@
 							}
 						},
 						{
-							"id": 429,
+							"id": 459,
 							"name": "role",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8019,7 +8609,7 @@
 							}
 						},
 						{
-							"id": 427,
+							"id": 457,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8042,11 +8632,11 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								430,
-								428,
-								426,
-								429,
-								427
+								460,
+								458,
+								456,
+								459,
+								457
 							]
 						}
 					],
@@ -8059,14 +8649,14 @@
 					]
 				},
 				{
-					"id": 423,
+					"id": 453,
 					"name": "InfoOptions",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 424,
+							"id": 454,
 							"name": "logger",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8085,7 +8675,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 533,
+										"id": 563,
 										"name": "Logger"
 									}
 								],
@@ -8098,7 +8688,7 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								424
+								454
 							]
 						}
 					],
@@ -8111,14 +8701,14 @@
 					]
 				},
 				{
-					"id": 445,
+					"id": 475,
 					"name": "InfoResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 471,
+							"id": 501,
 							"name": "characters",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8134,13 +8724,13 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"id": 425,
+									"id": 455,
 									"name": "CharacterEntity"
 								}
 							}
 						},
 						{
-							"id": 448,
+							"id": 478,
 							"name": "image",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8158,7 +8748,7 @@
 							}
 						},
 						{
-							"id": 456,
+							"id": 486,
 							"name": "info",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8173,14 +8763,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 457,
+									"id": 487,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 461,
+											"id": 491,
 											"name": "aired",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8198,7 +8788,7 @@
 											}
 										},
 										{
-											"id": 463,
+											"id": 493,
 											"name": "broadcast",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8216,7 +8806,7 @@
 											}
 										},
 										{
-											"id": 469,
+											"id": 499,
 											"name": "duration",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8234,7 +8824,7 @@
 											}
 										},
 										{
-											"id": 459,
+											"id": 489,
 											"name": "episodes",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8252,7 +8842,7 @@
 											}
 										},
 										{
-											"id": 468,
+											"id": 498,
 											"name": "genres",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8270,7 +8860,7 @@
 											}
 										},
 										{
-											"id": 465,
+											"id": 495,
 											"name": "licensors",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8288,7 +8878,7 @@
 											}
 										},
 										{
-											"id": 462,
+											"id": 492,
 											"name": "premiered",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8306,7 +8896,7 @@
 											}
 										},
 										{
-											"id": 464,
+											"id": 494,
 											"name": "producers",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8324,7 +8914,7 @@
 											}
 										},
 										{
-											"id": 470,
+											"id": 500,
 											"name": "rating",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8342,7 +8932,7 @@
 											}
 										},
 										{
-											"id": 467,
+											"id": 497,
 											"name": "source",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8360,7 +8950,7 @@
 											}
 										},
 										{
-											"id": 460,
+											"id": 490,
 											"name": "status",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8378,7 +8968,7 @@
 											}
 										},
 										{
-											"id": 466,
+											"id": 496,
 											"name": "studios",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8396,7 +8986,7 @@
 											}
 										},
 										{
-											"id": 458,
+											"id": 488,
 											"name": "type",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8419,19 +9009,19 @@
 											"title": "Properties",
 											"kind": 1024,
 											"children": [
-												461,
-												463,
-												469,
-												459,
-												468,
-												465,
-												462,
-												464,
-												470,
-												467,
-												460,
-												466,
-												458
+												491,
+												493,
+												499,
+												489,
+												498,
+												495,
+												492,
+												494,
+												500,
+												497,
+												490,
+												496,
+												488
 											]
 										}
 									]
@@ -8439,7 +9029,7 @@
 							}
 						},
 						{
-							"id": 454,
+							"id": 484,
 							"name": "members",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8457,7 +9047,7 @@
 							}
 						},
 						{
-							"id": 473,
+							"id": 503,
 							"name": "recommendations",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8473,13 +9063,13 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"id": 441,
+									"id": 471,
 									"name": "RecommendationEntity"
 								}
 							}
 						},
 						{
-							"id": 455,
+							"id": 485,
 							"name": "season",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8497,7 +9087,7 @@
 							}
 						},
 						{
-							"id": 472,
+							"id": 502,
 							"name": "staffs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8513,13 +9103,13 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"id": 436,
+									"id": 466,
 									"name": "StaffEntity"
 								}
 							}
 						},
 						{
-							"id": 449,
+							"id": 479,
 							"name": "stats",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8534,14 +9124,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 450,
+									"id": 480,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 453,
+											"id": 483,
 											"name": "popularity",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8559,7 +9149,7 @@
 											}
 										},
 										{
-											"id": 452,
+											"id": 482,
 											"name": "rank",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8577,7 +9167,7 @@
 											}
 										},
 										{
-											"id": 451,
+											"id": 481,
 											"name": "score",
 											"kind": 1024,
 											"kindString": "Property",
@@ -8600,9 +9190,9 @@
 											"title": "Properties",
 											"kind": 1024,
 											"children": [
-												453,
-												452,
-												451
+												483,
+												482,
+												481
 											]
 										}
 									]
@@ -8610,7 +9200,7 @@
 							}
 						},
 						{
-							"id": 447,
+							"id": 477,
 							"name": "synopsis",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8628,7 +9218,7 @@
 							}
 						},
 						{
-							"id": 446,
+							"id": 476,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8651,16 +9241,16 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								471,
-								448,
-								456,
-								454,
-								473,
-								455,
-								472,
-								449,
-								447,
-								446
+								501,
+								478,
+								486,
+								484,
+								503,
+								485,
+								502,
+								479,
+								477,
+								476
 							]
 						}
 					],
@@ -8673,14 +9263,14 @@
 					]
 				},
 				{
-					"id": 441,
+					"id": 471,
 					"name": "RecommendationEntity",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 444,
+							"id": 474,
 							"name": "thumbnail",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8698,7 +9288,7 @@
 							}
 						},
 						{
-							"id": 442,
+							"id": 472,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8716,7 +9306,7 @@
 							}
 						},
 						{
-							"id": 443,
+							"id": 473,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8739,9 +9329,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								444,
-								442,
-								443
+								474,
+								472,
+								473
 							]
 						}
 					],
@@ -8754,14 +9344,14 @@
 					]
 				},
 				{
-					"id": 436,
+					"id": 466,
 					"name": "StaffEntity",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 439,
+							"id": 469,
 							"name": "image",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8779,7 +9369,7 @@
 							}
 						},
 						{
-							"id": 437,
+							"id": 467,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8797,7 +9387,7 @@
 							}
 						},
 						{
-							"id": 440,
+							"id": 470,
 							"name": "role",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8815,7 +9405,7 @@
 							}
 						},
 						{
-							"id": 438,
+							"id": 468,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -8838,10 +9428,10 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								439,
-								437,
-								440,
-								438
+								469,
+								467,
+								470,
+								468
 							]
 						}
 					],
@@ -8854,7 +9444,7 @@
 					]
 				},
 				{
-					"id": 412,
+					"id": 442,
 					"name": "config",
 					"kind": 32,
 					"kindString": "Variable",
@@ -8871,14 +9461,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 413,
+							"id": 443,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 415,
+									"id": 445,
 									"name": "baseUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -8886,21 +9476,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 416,
+											"id": 446,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 417,
+													"id": 447,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 418,
+															"id": 448,
 															"name": "terms",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -8922,7 +9512,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 414,
+									"id": 444,
 									"name": "name",
 									"kind": 1024,
 									"kindString": "Property",
@@ -8934,7 +9524,7 @@
 									"defaultValue": "\"MyAnimeList-anime-info\""
 								},
 								{
-									"id": 419,
+									"id": 449,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
@@ -8948,7 +9538,7 @@
 									],
 									"signatures": [
 										{
-											"id": 420,
+											"id": 450,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -8956,14 +9546,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 421,
+													"id": 451,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 422,
+															"id": 452,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -8980,7 +9570,7 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																422
+																452
 															]
 														}
 													]
@@ -8995,15 +9585,15 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										415,
-										414
+										445,
+										444
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										419
+										449
 									]
 								}
 							]
@@ -9012,7 +9602,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 474,
+					"id": 504,
 					"name": "default",
 					"kind": 64,
 					"kindString": "Function",
@@ -9028,14 +9618,14 @@
 					],
 					"signatures": [
 						{
-							"id": 475,
+							"id": 505,
 							"name": "default",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 476,
+									"id": 506,
 									"name": "url",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9046,14 +9636,14 @@
 									}
 								},
 								{
-									"id": 477,
+									"id": 507,
 									"name": "options",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 423,
+										"id": 453,
 										"name": "InfoOptions"
 									},
 									"defaultValue": "{}"
@@ -9064,7 +9654,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 445,
+										"id": 475,
 										"name": "InfoResult"
 									}
 								],
@@ -9079,25 +9669,25 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						425,
-						423,
-						445,
-						441,
-						436
+						455,
+						453,
+						475,
+						471,
+						466
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						412
+						442
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						474
+						504
 					]
 				}
 			],
@@ -9110,21 +9700,21 @@
 			]
 		},
 		{
-			"id": 478,
+			"id": 508,
 			"name": "integrations/myanimelist/search-anime",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 490,
+					"id": 520,
 					"name": "SearchOptions",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 491,
+							"id": 521,
 							"name": "logger",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9143,7 +9733,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 533,
+										"id": 563,
 										"name": "Logger"
 									}
 								],
@@ -9156,7 +9746,7 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								491
+								521
 							]
 						}
 					],
@@ -9169,14 +9759,14 @@
 					]
 				},
 				{
-					"id": 492,
+					"id": 522,
 					"name": "SearchResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 495,
+							"id": 525,
 							"name": "description",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9194,7 +9784,7 @@
 							}
 						},
 						{
-							"id": 498,
+							"id": 528,
 							"name": "episodes",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9212,7 +9802,7 @@
 							}
 						},
 						{
-							"id": 499,
+							"id": 529,
 							"name": "score",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9230,7 +9820,7 @@
 							}
 						},
 						{
-							"id": 496,
+							"id": 526,
 							"name": "thumbnail",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9248,7 +9838,7 @@
 							}
 						},
 						{
-							"id": 493,
+							"id": 523,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9266,7 +9856,7 @@
 							}
 						},
 						{
-							"id": 497,
+							"id": 527,
 							"name": "type",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9284,7 +9874,7 @@
 							}
 						},
 						{
-							"id": 494,
+							"id": 524,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9307,13 +9897,13 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								495,
-								498,
-								499,
-								496,
-								493,
-								497,
-								494
+								525,
+								528,
+								529,
+								526,
+								523,
+								527,
+								524
 							]
 						}
 					],
@@ -9326,7 +9916,7 @@
 					]
 				},
 				{
-					"id": 479,
+					"id": 509,
 					"name": "config",
 					"kind": 32,
 					"kindString": "Variable",
@@ -9343,14 +9933,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 480,
+							"id": 510,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 482,
+									"id": 512,
 									"name": "baseUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9358,21 +9948,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 483,
+											"id": 513,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 484,
+													"id": 514,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 485,
+															"id": 515,
 															"name": "terms",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -9394,7 +9984,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 481,
+									"id": 511,
 									"name": "name",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9406,7 +9996,7 @@
 									"defaultValue": "\"MyAnimeList-search\""
 								},
 								{
-									"id": 486,
+									"id": 516,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
@@ -9420,7 +10010,7 @@
 									],
 									"signatures": [
 										{
-											"id": 487,
+											"id": 517,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -9428,14 +10018,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 488,
+													"id": 518,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 489,
+															"id": 519,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -9452,7 +10042,7 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																489
+																519
 															]
 														}
 													]
@@ -9467,15 +10057,15 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										482,
-										481
+										512,
+										511
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										486
+										516
 									]
 								}
 							]
@@ -9484,7 +10074,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 500,
+					"id": 530,
 					"name": "default",
 					"kind": 64,
 					"kindString": "Function",
@@ -9500,14 +10090,14 @@
 					],
 					"signatures": [
 						{
-							"id": 501,
+							"id": 531,
 							"name": "default",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 502,
+									"id": 532,
 									"name": "terms",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9518,14 +10108,14 @@
 									}
 								},
 								{
-									"id": 503,
+									"id": 533,
 									"name": "options",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 490,
+										"id": 520,
 										"name": "SearchOptions"
 									},
 									"defaultValue": "{}"
@@ -9538,7 +10128,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 492,
+											"id": 522,
 											"name": "SearchResult"
 										}
 									}
@@ -9554,22 +10144,22 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						490,
-						492
+						520,
+						522
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						479
+						509
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						500
+						530
 					]
 				}
 			],
@@ -9582,21 +10172,21 @@
 			]
 		},
 		{
-			"id": 504,
+			"id": 534,
 			"name": "integrations/myanimelist/top",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 516,
+					"id": 546,
 					"name": "SearchOptions",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 517,
+							"id": 547,
 							"name": "logger",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9615,7 +10205,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 533,
+										"id": 563,
 										"name": "Logger"
 									}
 								],
@@ -9628,7 +10218,7 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								517
+								547
 							]
 						}
 					],
@@ -9641,14 +10231,14 @@
 					]
 				},
 				{
-					"id": 520,
+					"id": 550,
 					"name": "TopResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 527,
+							"id": 557,
 							"name": "image",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9666,7 +10256,7 @@
 							}
 						},
 						{
-							"id": 521,
+							"id": 551,
 							"name": "rank",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9684,7 +10274,7 @@
 							}
 						},
 						{
-							"id": 526,
+							"id": 556,
 							"name": "run",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9702,7 +10292,7 @@
 							}
 						},
 						{
-							"id": 524,
+							"id": 554,
 							"name": "score",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9720,7 +10310,7 @@
 							}
 						},
 						{
-							"id": 525,
+							"id": 555,
 							"name": "series",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9738,7 +10328,7 @@
 							}
 						},
 						{
-							"id": 522,
+							"id": 552,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9756,7 +10346,7 @@
 							}
 						},
 						{
-							"id": 523,
+							"id": 553,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -9779,13 +10369,13 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								527,
-								521,
-								526,
-								524,
-								525,
-								522,
-								523
+								557,
+								551,
+								556,
+								554,
+								555,
+								552,
+								553
 							]
 						}
 					],
@@ -9798,7 +10388,7 @@
 					]
 				},
 				{
-					"id": 519,
+					"id": 549,
 					"name": "TopAnimeTypesType",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -9820,14 +10410,14 @@
 							"type": "query",
 							"queryType": {
 								"type": "reference",
-								"id": 518,
+								"id": 548,
 								"name": "TopAnimeTypes"
 							}
 						}
 					}
 				},
 				{
-					"id": 518,
+					"id": 548,
 					"name": "TopAnimeTypes",
 					"kind": 32,
 					"kindString": "Variable",
@@ -9889,7 +10479,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 505,
+					"id": 535,
 					"name": "config",
 					"kind": 32,
 					"kindString": "Variable",
@@ -9906,14 +10496,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 506,
+							"id": 536,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 508,
+									"id": 538,
 									"name": "baseUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9921,21 +10511,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 509,
+											"id": 539,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 510,
+													"id": 540,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 511,
+															"id": 541,
 															"name": "type",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -9959,7 +10549,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 507,
+									"id": 537,
 									"name": "name",
 									"kind": 1024,
 									"kindString": "Property",
@@ -9971,7 +10561,7 @@
 									"defaultValue": "\"MyAnimeList-top\""
 								},
 								{
-									"id": 512,
+									"id": 542,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
@@ -9985,7 +10575,7 @@
 									],
 									"signatures": [
 										{
-											"id": 513,
+											"id": 543,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -9993,14 +10583,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 514,
+													"id": 544,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 515,
+															"id": 545,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -10017,7 +10607,7 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																515
+																545
 															]
 														}
 													]
@@ -10032,15 +10622,15 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										508,
-										507
+										538,
+										537
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										512
+										542
 									]
 								}
 							]
@@ -10049,7 +10639,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 528,
+					"id": 558,
 					"name": "default",
 					"kind": 64,
 					"kindString": "Function",
@@ -10065,14 +10655,14 @@
 					],
 					"signatures": [
 						{
-							"id": 529,
+							"id": 559,
 							"name": "default",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 530,
+									"id": 560,
 									"name": "type",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10124,14 +10714,14 @@
 									}
 								},
 								{
-									"id": 531,
+									"id": 561,
 									"name": "options",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 516,
+										"id": 546,
 										"name": "SearchOptions"
 									},
 									"defaultValue": "{}"
@@ -10144,7 +10734,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 520,
+											"id": 550,
 											"name": "TopResult"
 										}
 									}
@@ -10160,30 +10750,30 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						516,
-						520
+						546,
+						550
 					]
 				},
 				{
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						519
+						549
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						518,
-						505
+						548,
+						535
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						528
+						558
 					]
 				}
 			],
@@ -10196,35 +10786,35 @@
 			]
 		},
 		{
-			"id": 532,
+			"id": 562,
 			"name": "types",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 533,
+					"id": 563,
 					"name": "Logger",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 537,
+							"id": 567,
 							"name": "debug",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 538,
+									"id": 568,
 									"name": "debug",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 539,
+											"id": 569,
 											"name": "text",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10243,21 +10833,21 @@
 							]
 						},
 						{
-							"id": 540,
+							"id": 570,
 							"name": "error",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 541,
+									"id": 571,
 									"name": "error",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 542,
+											"id": 572,
 											"name": "text",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10276,21 +10866,21 @@
 							]
 						},
 						{
-							"id": 534,
+							"id": 564,
 							"name": "info",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 535,
+									"id": 565,
 									"name": "info",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 536,
+											"id": 566,
 											"name": "text",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -10314,9 +10904,9 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								537,
-								540,
-								534
+								567,
+								570,
+								564
 							]
 						}
 					],
@@ -10334,7 +10924,7 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						533
+						563
 					]
 				}
 			],
@@ -10347,14 +10937,14 @@
 			]
 		},
 		{
-			"id": 543,
+			"id": 573,
 			"name": "util",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 544,
+					"id": 574,
 					"name": "constants",
 					"kind": 32,
 					"kindString": "Variable",
@@ -10371,14 +10961,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 545,
+							"id": 575,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 546,
+									"id": 576,
 									"name": "http",
 									"kind": 1024,
 									"kindString": "Property",
@@ -10386,14 +10976,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 547,
+											"id": 577,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 549,
+													"id": 579,
 													"name": "maxTimeout",
 													"kind": 1024,
 													"kindString": "Property",
@@ -10405,7 +10995,7 @@
 													"defaultValue": "..."
 												},
 												{
-													"id": 548,
+													"id": 578,
 													"name": "userAgent",
 													"kind": 1024,
 													"kindString": "Property",
@@ -10422,8 +11012,8 @@
 													"title": "Properties",
 													"kind": 1024,
 													"children": [
-														549,
-														548
+														579,
+														578
 													]
 												}
 											]
@@ -10437,7 +11027,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										546
+										576
 									]
 								}
 							]
@@ -10446,7 +11036,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 550,
+					"id": 580,
 					"name": "functions",
 					"kind": 32,
 					"kindString": "Variable",
@@ -10463,14 +11053,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 551,
+							"id": 581,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 552,
+									"id": 582,
 									"name": "sleep",
 									"kind": 1024,
 									"kindString": "Property",
@@ -10478,21 +11068,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 553,
+											"id": 583,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 554,
+													"id": 584,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 555,
+															"id": 585,
 															"name": "ms",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -10515,14 +11105,14 @@
 													}
 												},
 												{
-													"id": 556,
+													"id": 586,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"typeParameter": [
 														{
-															"id": 557,
+															"id": 587,
 															"name": "T",
 															"kind": 131072,
 															"kindString": "Type parameter",
@@ -10531,7 +11121,7 @@
 													],
 													"parameters": [
 														{
-															"id": 558,
+															"id": 588,
 															"name": "ms",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -10542,7 +11132,7 @@
 															}
 														},
 														{
-															"id": 559,
+															"id": 589,
 															"name": "value",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -10570,7 +11160,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 560,
+									"id": 590,
 									"name": "encodeURI",
 									"kind": 2048,
 									"kindString": "Method",
@@ -10584,14 +11174,14 @@
 									],
 									"signatures": [
 										{
-											"id": 561,
+											"id": 591,
 											"name": "encodeURI",
 											"kind": 4096,
 											"kindString": "Call signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 562,
+													"id": 592,
 													"name": "url",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -10615,14 +11205,14 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										552
+										582
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										560
+										590
 									]
 								}
 							]
@@ -10636,8 +11226,8 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						544,
-						550
+						574,
+						580
 					]
 				}
 			],
@@ -10660,21 +11250,22 @@
 				73,
 				106,
 				143,
-				176,
-				234,
-				271,
-				311,
-				345,
-				388,
-				397,
-				393,
-				395,
-				402,
-				411,
-				478,
-				504,
-				532,
-				543
+				173,
+				206,
+				264,
+				301,
+				341,
+				375,
+				418,
+				427,
+				423,
+				425,
+				432,
+				441,
+				508,
+				534,
+				562,
+				573
 			]
 		}
 	]
