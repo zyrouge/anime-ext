@@ -1,3 +1,4 @@
+import qs from "querystring";
 import axios from "axios";
 import cheerio from "cheerio";
 import {
@@ -13,7 +14,7 @@ import { constants, functions } from "../../util";
 
 export const config = {
     baseUrl: "https://simply.moe",
-    searchUrl: (search: string) => `https://simply.moe/?s=${search}`,
+    searchUrl: "https://simply.moe/wp-admin/admin-ajax.php",
     animeRegex: /^https:\/\/simply\.moe\/anime\/.*/,
     episodeRegex: /^https:\/\/simply.moe\/.*-episode-\w+$/,
     defaultHeaders() {
@@ -53,12 +54,71 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
      * @param terms Search term
      */
     async search(terms: string) {
-        this.options.logger?.debug?.(
-            `(${this.name}) Search for this site is not implemented yet!`
-        );
+        try {
+            this.options.logger?.debug?.(
+                `(${this.name}) Search terms: ${terms}`
+            );
 
-        const results: AnimeExtractorSearchResult[] = [];
-        return results;
+            const { data } = await axios.post(
+                functions.encodeURI(config.searchUrl),
+                qs.stringify({
+                    action: "ajaxsearchlite_search",
+                    aslp: terms,
+                    asid: 1,
+                    options:
+                        "qtranslate_lang=0&set_intitle=None&customset%5B%5D=anime",
+                }),
+                {
+                    headers: Object.assign(config.defaultHeaders(), {
+                        "Content-Type":
+                            "application/x-www-form-urlencoded; charset=UTF-8",
+                        "x-requested-with": "XMLHttpRequest",
+                    }),
+                    responseType: "text",
+                    timeout: constants.http.maxTimeout,
+                }
+            );
+
+            const $ = cheerio.load(data);
+            this.options.logger?.debug?.(
+                `(${this.name}) DOM creation successful! (${config.searchUrl})`
+            );
+
+            const results: AnimeExtractorSearchResult[] = [];
+            $(".item").each(function () {
+                const ele = $(this);
+
+                const title = ele.find(".name");
+                const url = title.attr("href");
+                const image = ele.find(".thumb").attr("src");
+                const meta = ele.find(".meta .yearzi");
+
+                if (url) {
+                    const metas: string[] = [];
+                    meta.each(function () {
+                        const ele = $(this);
+
+                        const content = ele.text().trim();
+                        metas.push(content);
+                    });
+
+                    results.push({
+                        title: title.text().trim(),
+                        url,
+                        thumbnail: image ? `${config.baseUrl}${image}` : "",
+                        air: metas.length ? metas.reverse().join(" ") : "",
+                    });
+                }
+            });
+
+            return results;
+        } catch (err) {
+            this.options.logger?.error?.(
+                `(${this.name}) Failed to scrape: ${err?.message}`
+            );
+
+            throw new Error(`Failed to scrape: ${err?.message}`);
+        }
     }
 
     /**

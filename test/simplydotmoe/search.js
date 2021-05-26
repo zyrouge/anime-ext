@@ -1,7 +1,7 @@
 const Simplydotmoe =
     require("../../dist/extractors/anime/simplydotmoe").default;
 
-const SEARCH_TERMS = "highschool dxd";
+const SEARCH_TERMS = "fruit";
 
 const LOGGER = {
     info: console.log,
