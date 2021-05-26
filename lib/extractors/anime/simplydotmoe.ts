@@ -186,23 +186,22 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
                 timeout: constants.http.maxTimeout,
             });
 
-            const $ = cheerio.load(data);
-            this.options.logger?.debug?.(
-                `(${this.name}) DOM creation successful! (${url})`
-            );
+            const results: AnimeExtractorDownloadResult[] = [];
 
-            const link = $(".opt-download a").attr("href");
-            if (!link)
-                throw new Error(`Could not find download url for: ${url}`);
+            const urls = [...data.matchAll(/(file":"(.*?)", label: "(.*?)")/g)];
+            urls.forEach((src) => {
+                const [, , url, label] = src;
+                if (url && url.startsWith("http")) {
+                    results.push({
+                        url,
+                        quality: label || "unknown",
+                        type: ["downloadable", "streamable"],
+                        headers: config.defaultHeaders(),
+                    });
+                }
+            });
 
-            const result: AnimeExtractorDownloadResult = {
-                quality: link.match(/([\w\d]+)\.[\w\d]+$/)?.[1] || "unknown",
-                url: link.trim(),
-                type: ["downloadable", "streamable"],
-                headers: config.defaultHeaders(),
-            };
-
-            return [result];
+            return results;
         } catch (err) {
             this.options.logger?.error?.(
                 `(${this.name}) Failed to scrape: ${err?.message}`
