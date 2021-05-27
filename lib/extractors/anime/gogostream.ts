@@ -1,4 +1,3 @@
-import axios from "axios";
 import cheerio from "cheerio";
 import {
     AnimeExtractorConstructorOptions,
@@ -34,7 +33,7 @@ export default class Gogostream implements AnimeExtractorModel {
     name = "Gogostream";
     options: AnimeExtractorConstructorOptions;
 
-    constructor(options: AnimeExtractorConstructorOptions = {}) {
+    constructor(options: AnimeExtractorConstructorOptions) {
         this.options = options;
     }
 
@@ -65,9 +64,8 @@ export default class Gogostream implements AnimeExtractorModel {
             const url = config.searchUrl(terms);
             this.options.logger?.debug?.(`(${this.name}) Search URL: ${url}`);
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -117,9 +115,8 @@ export default class Gogostream implements AnimeExtractorModel {
                 `(${this.name}) Episode links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -172,9 +169,8 @@ export default class Gogostream implements AnimeExtractorModel {
                 `(${this.name}) Download links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -190,13 +186,17 @@ export default class Gogostream implements AnimeExtractorModel {
             const results: AnimeExtractorDownloadResult[] = [];
 
             if (!iframeUrl.startsWith("http")) iframeUrl = `https:${iframeUrl}`;
-            const sources = await GogoParser(iframeUrl);
+            const sources = await GogoParser(iframeUrl, {
+                http: this.options.http,
+            });
 
             for (const src of sources) {
                 const extractor = getExtractor(src);
                 if (extractor) {
                     try {
-                        const res = await extractor.fetch(src);
+                        const res = await extractor.fetch(src, {
+                            http: this.options.http,
+                        });
                         results.push(...res);
                     } catch (err) {
                         this.options.logger?.debug?.(

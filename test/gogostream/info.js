@@ -1,16 +1,12 @@
 const Gogostream = require("../../dist/extractors/anime/gogostream").default;
+const util = require("../util");
 
 const ANIME_URL = "https://gogo-stream.com/videos/mayo-chiki-dub-episode-13";
 
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
-
 const start = async () => {
     const extractor = new Gogostream({
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     const episodes = await extractor.getInfo(ANIME_URL);

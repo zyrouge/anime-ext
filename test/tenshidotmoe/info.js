@@ -1,17 +1,13 @@
 const TenshiDotMoe =
     require("../../dist/extractors/anime/tenshidotmoe").default;
+const util = require("../util");
 
 const ANIME_URL = "https://tenshi.moe/anime/pyx8n806";
 
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
-
 const start = async () => {
     const extractor = new TenshiDotMoe({
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     const episodes = await extractor.getInfo(ANIME_URL);

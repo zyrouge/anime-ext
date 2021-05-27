@@ -1,16 +1,12 @@
 const Gogoanime = require("../../dist/extractors/anime/gogoanime").default;
+const util = require("../util");
 
 const ANIME_URL = "https://www1.gogoanime.ai/category/oregairu";
 
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
-
 const start = async () => {
     const extractor = new Gogoanime({
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     const episodes = await extractor.getInfo(ANIME_URL);

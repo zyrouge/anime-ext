@@ -1,7 +1,8 @@
-import { Logger } from "../../types";
+import { Logger, Requester } from "../../types";
 
 export interface MangaExtractorConstructorOptions {
     logger?: Partial<Logger>;
+    http: Requester;
 }
 
 export type MangaExtractorValidateResults =

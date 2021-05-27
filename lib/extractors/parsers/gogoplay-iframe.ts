@@ -1,18 +1,22 @@
-import axios from "axios";
 import cheerio from "cheerio";
+import { Requester } from "../../types";
 import { constants, functions } from "../../util";
 
 const defaultHeaders = () => ({
     "User-Agent": constants.http.userAgent,
 });
 
-export default async (url: string) => {
+export default async (
+    url: string,
+    options: {
+        http: Requester;
+    }
+) => {
     try {
-        const { data } = await axios.get<string>(functions.encodeURI(url), {
+        const data = await options.http.get(functions.encodeURI(url), {
             headers: Object.assign(defaultHeaders(), {
                 Referer: url,
             }),
-            responseType: "text",
             timeout: constants.http.maxTimeout,
         });
 

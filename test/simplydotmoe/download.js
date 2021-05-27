@@ -1,17 +1,13 @@
 const Simplydotmoe =
     require("../../dist/extractors/anime/simplydotmoe").default;
+const util = require("../util");
 
 const EPISODE_URL = "https://simply.moe/86-eighty-six-episode-01";
 
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
-
 const start = async () => {
     const extractor = new Simplydotmoe({
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     const episodes = await extractor.getDownloadLinks(EPISODE_URL);

@@ -1,6 +1,5 @@
-import axios from "axios";
 import cheerio from "cheerio";
-import { Logger } from "../../types";
+import { Logger, Requester } from "../../types";
 import { constants, functions } from "../../util";
 
 export const config = {
@@ -16,6 +15,7 @@ export const config = {
 
 export interface InfoOptions {
     logger?: Partial<Logger>;
+    http: Requester;
 }
 
 export interface CharacterEntity {
@@ -75,15 +75,14 @@ export interface InfoResult {
     recommendations: RecommendationEntity[];
 }
 
-const search = async (url: string, options: InfoOptions = {}) => {
+const search = async (url: string, options: InfoOptions) => {
     try {
         options.logger?.debug?.(
             `(${config.name}) Anime info requested: ${url}!`
         );
 
-        const { data } = await axios.get<string>(functions.encodeURI(url), {
+        const data = await options.http.get(functions.encodeURI(url), {
             headers: config.defaultHeaders(),
-            responseType: "text",
             timeout: constants.http.maxTimeout,
         });
 

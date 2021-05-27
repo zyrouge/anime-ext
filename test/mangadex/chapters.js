@@ -1,16 +1,12 @@
 const MangaDex = require("../../dist/extractors/manga/mangadex").default;
+const util = require("../util");
 
 const MANGA_URL = "https://mangadex.tv/manga/mayo_chiki";
 
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
-
 const start = async () => {
     const extractor = new MangaDex({
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     const chapters = await extractor.getInfo(MANGA_URL);

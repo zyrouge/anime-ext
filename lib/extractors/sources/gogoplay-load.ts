@@ -1,4 +1,3 @@
-import axios from "axios";
 import { SourceRetriever, AnimeExtractorDownloadResult } from "./model";
 import { constants, functions } from "../../util";
 
@@ -8,17 +7,16 @@ const defaultHeaders = () => ({
 
 const gogoplay: SourceRetriever = {
     name: "Gogoplay-loadserver",
-    validate: (url: string) =>
+    validate: (url) =>
         url.includes("/load.php") || url.includes("/loadserver.php"),
-    async fetch(url: string) {
+    async fetch(url, options) {
         try {
             const headers = Object.assign(defaultHeaders(), {
                 Referer: url,
             });
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await options.http.get(functions.encodeURI(url), {
                 headers,
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 

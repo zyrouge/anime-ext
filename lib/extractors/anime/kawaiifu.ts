@@ -1,4 +1,3 @@
-import axios from "axios";
 import cheerio, { Cheerio, Element } from "cheerio";
 import {
     AnimeExtractorConstructorOptions,
@@ -32,7 +31,7 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
     name = "Kawaiifu.com";
     options: AnimeExtractorConstructorOptions;
 
-    constructor(options: AnimeExtractorConstructorOptions = {}) {
+    constructor(options: AnimeExtractorConstructorOptions) {
         this.options = options;
     }
 
@@ -62,9 +61,8 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
             const url = config.searchUrl(terms);
             this.options.logger?.debug?.(`(${this.name}) Search URL: ${url}`);
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -114,11 +112,10 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
                 `(${this.name}) Episode links requested for: ${url}`
             );
 
-            const { data: sdata } = await axios.get<string>(
+            const sdata = await this.options.http.get(
                 functions.encodeURI(url),
                 {
                     headers: config.defaultHeaders(),
-                    responseType: "text",
                     timeout: constants.http.maxTimeout,
                 }
             );
@@ -140,9 +137,8 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
             if (!server)
                 throw new Error(`Could not parse episodes url for: ${url}`);
 
-            const { data: edata } = await axios.get<string>(server, {
+            const edata = await this.options.http.get(server, {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -199,9 +195,8 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
                 `(${this.name}) Download links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 

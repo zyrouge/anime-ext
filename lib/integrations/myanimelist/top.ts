@@ -1,6 +1,5 @@
-import axios from "axios";
 import cheerio from "cheerio";
-import { Logger } from "../../types";
+import { Logger, Requester } from "../../types";
 import { constants, functions } from "../../util";
 
 export const config = {
@@ -18,6 +17,7 @@ export const config = {
 
 export interface SearchOptions {
     logger?: Partial<Logger>;
+    http: Requester;
 }
 
 export const TopAnimeTypes = [
@@ -43,10 +43,7 @@ export interface TopResult {
     image: string;
 }
 
-const top = async (
-    type: TopAnimeTypesType | "all",
-    options: SearchOptions = {}
-) => {
+const top = async (type: TopAnimeTypesType | "all", options: SearchOptions) => {
     try {
         options.logger?.debug?.(
             `(${config.name}) Requested animes in ${type} category!`
@@ -55,9 +52,8 @@ const top = async (
         const url = config.baseUrl(type);
         options.logger?.debug?.(`(${config.name}) Top animes url: ${url}!`);
 
-        const { data } = await axios.get<string>(functions.encodeURI(url), {
+        const data = await options.http.get(functions.encodeURI(url), {
             headers: config.defaultHeaders(),
-            responseType: "text",
             timeout: constants.http.maxTimeout,
         });
 

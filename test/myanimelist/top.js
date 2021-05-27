@@ -2,12 +2,7 @@ const {
     TopAnimeTypes,
     default: top,
 } = require("../../dist/integrations/myanimelist/top");
-
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
+const util = require("../util");
 
 const start = async () => {
     TopAnimeTypes.push("all");
@@ -16,7 +11,8 @@ const start = async () => {
         TopAnimeTypes[Math.floor(Math.random() * TopAnimeTypes.length)];
 
     const results = await top(type, {
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     console.log(results);

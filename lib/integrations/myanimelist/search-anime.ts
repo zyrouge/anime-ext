@@ -1,6 +1,5 @@
-import axios from "axios";
 import cheerio from "cheerio";
-import { Logger } from "../../types";
+import { Logger, Requester } from "../../types";
 import { constants, functions } from "../../util";
 
 export const config = {
@@ -16,6 +15,7 @@ export const config = {
 
 export interface SearchOptions {
     logger?: Partial<Logger>;
+    http: Requester;
 }
 
 export interface SearchResult {
@@ -28,16 +28,15 @@ export interface SearchResult {
     score: string;
 }
 
-const search = async (terms: string, options: SearchOptions = {}) => {
+const search = async (terms: string, options: SearchOptions) => {
     try {
         options.logger?.debug?.(`(${config.name}) Search terms: ${terms}!`);
 
         const url = config.baseUrl(terms);
         options.logger?.debug?.(`(${config.name}) Search url: ${url}!`);
 
-        const { data } = await axios.get<string>(functions.encodeURI(url), {
+        const data = await options.http.get(functions.encodeURI(url), {
             headers: config.defaultHeaders(),
-            responseType: "text",
             timeout: constants.http.maxTimeout,
         });
 

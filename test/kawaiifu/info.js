@@ -1,17 +1,13 @@
 const Kawaiifu = require("../../dist/extractors/anime/kawaiifu").default;
+const util = require("../util");
 
 const ANIME_URL =
     "https://kawaiifu.com/season/winter-2017/masamune-kun-no-revenge.html";
 
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
-
 const start = async () => {
     const extractor = new Kawaiifu({
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     const episodes = await extractor.getInfo(ANIME_URL);

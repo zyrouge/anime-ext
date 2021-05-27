@@ -3,15 +3,10 @@ const TenshiDotMoe =
 
 const SEARCH_TERMS = "masamune";
 
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
-
 const start = async () => {
     const extractor = new TenshiDotMoe({
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     const search = await extractor.search(SEARCH_TERMS);

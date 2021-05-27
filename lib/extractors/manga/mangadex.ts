@@ -1,4 +1,3 @@
-import axios from "axios";
 import cheerio from "cheerio";
 import {
     MangaExtractorConstructorOptions,
@@ -32,7 +31,7 @@ export default class MangaDex implements MangaExtractorModel {
     name = "MangaDex.tv";
     options: MangaExtractorConstructorOptions;
 
-    constructor(options: MangaExtractorConstructorOptions = {}) {
+    constructor(options: MangaExtractorConstructorOptions) {
         this.options = options;
     }
 
@@ -62,10 +61,9 @@ export default class MangaDex implements MangaExtractorModel {
             const url = config.searchUrl(terms);
             this.options.logger?.debug?.(`(${this.name}) Search URL: ${url}`);
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
-                withCredentials: true,
+            const data = await this.options.http.get(functions.encodeURI(url), {
+                credentials: true,
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -111,9 +109,8 @@ export default class MangaDex implements MangaExtractorModel {
                 `(${this.name}) Chapter links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -167,9 +164,8 @@ export default class MangaDex implements MangaExtractorModel {
                 `(${this.name}) Chapters pages requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 

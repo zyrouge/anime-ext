@@ -1,5 +1,4 @@
 import qs from "querystring";
-import axios from "axios";
 import cheerio from "cheerio";
 import {
     MangaExtractorConstructorOptions,
@@ -34,7 +33,7 @@ export default class MangaInn implements MangaExtractorModel {
     name = "Mangainn.net";
     options: MangaExtractorConstructorOptions;
 
-    constructor(options: MangaExtractorConstructorOptions = {}) {
+    constructor(options: MangaExtractorConstructorOptions) {
         this.options = options;
     }
 
@@ -61,7 +60,7 @@ export default class MangaInn implements MangaExtractorModel {
                 `(${this.name}) Search terms: ${terms}`
             );
 
-            const { data } = await axios.post<string>(
+            const data = await this.options.http.post(
                 functions.encodeURI(config.searchUrl),
                 qs.stringify({
                     type: "all",
@@ -73,7 +72,6 @@ export default class MangaInn implements MangaExtractorModel {
                         "Content-Type":
                             "application/x-www-form-urlencoded; charset=UTF-8",
                     }),
-                    responseType: "text",
                     timeout: constants.http.maxTimeout,
                 }
             );
@@ -120,9 +118,8 @@ export default class MangaInn implements MangaExtractorModel {
                 `(${this.name}) Chapter links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -175,9 +172,8 @@ export default class MangaInn implements MangaExtractorModel {
                 `(${this.name}) Chapters pages requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -227,9 +223,8 @@ export default class MangaInn implements MangaExtractorModel {
                 `(${this.name}) Chapters pages requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 

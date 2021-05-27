@@ -1,17 +1,13 @@
 const Twistdotmoe = require("../../dist/extractors/anime/twistdotmoe").default;
+const util = require("../util");
 
 const EPISODE_URL =
     "https://twist.moe/a/seishun-buta-yarou-wa-bunny-girl-senpai-no-yume-wo-minai/13";
 
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
-
 const start = async () => {
     const extractor = new Twistdotmoe({
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     const episodes = await extractor.getDownloadLinks(EPISODE_URL);

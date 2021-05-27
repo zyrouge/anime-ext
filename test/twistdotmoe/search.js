@@ -1,16 +1,12 @@
 const Twistdotmoe = require("../../dist/extractors/anime/twistdotmoe").default;
+const util = require("../util");
 
 const SEARCH_TERMS = "bunny girl senpai";
 
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
-
 const start = async () => {
     const extractor = new Twistdotmoe({
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     const search = await extractor.search(SEARCH_TERMS);

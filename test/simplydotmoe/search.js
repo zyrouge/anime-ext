@@ -1,17 +1,13 @@
 const Simplydotmoe =
     require("../../dist/extractors/anime/simplydotmoe").default;
+const util = require("../util");
 
 const SEARCH_TERMS = "fruit";
 
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
-
 const start = async () => {
     const extractor = new Simplydotmoe({
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     const search = await extractor.search(SEARCH_TERMS);

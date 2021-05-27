@@ -1,5 +1,4 @@
 import qs from "querystring";
-import axios from "axios";
 import cheerio from "cheerio";
 import {
     AnimeExtractorConstructorOptions,
@@ -32,7 +31,7 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
     name = "Simply.moe";
     options: AnimeExtractorConstructorOptions;
 
-    constructor(options: AnimeExtractorConstructorOptions = {}) {
+    constructor(options: AnimeExtractorConstructorOptions) {
         this.options = options;
     }
 
@@ -59,7 +58,7 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
                 `(${this.name}) Search terms: ${terms}`
             );
 
-            const { data } = await axios.post<string>(
+            const data = await this.options.http.post(
                 functions.encodeURI(config.searchUrl),
                 qs.stringify({
                     action: "ajaxsearchlite_search",
@@ -74,7 +73,6 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
                             "application/x-www-form-urlencoded; charset=UTF-8",
                         "x-requested-with": "XMLHttpRequest",
                     }),
-                    responseType: "text",
                     timeout: constants.http.maxTimeout,
                 }
             );
@@ -133,9 +131,8 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
                 `(${this.name}) Episode links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -182,9 +179,8 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
                 `(${this.name}) Download links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 

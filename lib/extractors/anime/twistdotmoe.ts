@@ -1,4 +1,3 @@
-import axios from "axios";
 import { enc, AES } from "crypto-js";
 import {
     AnimeExtractorConstructorOptions,
@@ -54,7 +53,7 @@ export default class TwistDotAnime implements AnimeExtractorModel {
         url: string;
     }[] = [];
 
-    constructor(options: AnimeExtractorConstructorOptions = {}) {
+    constructor(options: AnimeExtractorConstructorOptions) {
         this.options = options;
     }
 
@@ -89,14 +88,14 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                     `(${this.name}) Search URL: ${url}`
                 );
 
-                const { data } = await axios.get<any>(
+                const unparsed = await this.options.http.get(
                     functions.encodeURI(url),
                     {
                         headers: config.defaultHeaders(),
-                        responseType: "json",
                         timeout: 30 * 1000,
                     }
                 );
+                const data = JSON.parse(unparsed);
 
                 if (Array.isArray(data)) {
                     data.forEach((anime) => {
@@ -165,15 +164,15 @@ export default class TwistDotAnime implements AnimeExtractorModel {
             const slug = config.getSlugFromUrl(url);
             if (!slug) throw new Error(`Could not parse slug from ${url}`);
 
-            const { data } = await axios.get<any>(
+            const unparsed = await this.options.http.get(
                 functions.encodeURI(config.episodesApiUrl(slug)),
                 {
                     headers: config.defaultHeaders(),
-                    responseType: "json",
                     timeout: constants.http.maxTimeout,
                 }
             );
 
+            const data = JSON.parse(unparsed);
             const episodes: AnimeExtractorEpisodeResult[] = [];
 
             if (data.slug.slug && Array.isArray(data.episodes)) {
@@ -214,15 +213,15 @@ export default class TwistDotAnime implements AnimeExtractorModel {
             const slug = config.getSlugFromUrl(url);
             if (!slug) throw new Error(`Could not parse slug from ${url}`);
 
-            const { data } = await axios.get<any>(
+            const unparsed = await this.options.http.get(
                 functions.encodeURI(config.sourcesApiUrl(slug)),
                 {
                     headers: config.defaultHeaders(),
-                    responseType: "json",
                     timeout: constants.http.maxTimeout,
                 }
             );
 
+            const data = JSON.parse(unparsed);
             const episode = +(url.match(/(\d+)$/)?.[1] || "1");
             const source = data.find((x: any) => x.number === episode)?.source;
             if (!source)

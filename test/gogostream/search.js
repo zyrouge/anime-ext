@@ -1,16 +1,12 @@
 const Gogostream = require("../../dist/extractors/anime/gogostream").default;
+const util = require("../util");
 
 const SEARCH_TERMS = "mayo chiki";
 
-const LOGGER = {
-    info: console.log,
-    debug: console.log,
-    error: console.error,
-};
-
 const start = async () => {
     const extractor = new Gogostream({
-        logger: LOGGER,
+        logger: util.logger,
+        http: util.http,
     });
 
     const search = await extractor.search(SEARCH_TERMS);

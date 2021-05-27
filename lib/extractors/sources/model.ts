@@ -1,9 +1,16 @@
+import { Requester } from "../../types";
 import { AnimeExtractorDownloadResult } from "../anime/model";
 
+export interface SourceRetrieverOptions {
+    http: Requester;
+}
 export interface SourceRetriever {
     name: string;
     validate(url: string): boolean;
-    fetch(url: string): Promise<AnimeExtractorDownloadResult[]>;
+    fetch(
+        url: string,
+        options: SourceRetrieverOptions
+    ): Promise<AnimeExtractorDownloadResult[]>;
 }
 
 export { AnimeExtractorDownloadResult } from "../anime/model";

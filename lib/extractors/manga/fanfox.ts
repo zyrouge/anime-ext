@@ -1,4 +1,3 @@
-import axios from "axios";
 import cheerio from "cheerio";
 import {
     MangaExtractorConstructorOptions,
@@ -33,7 +32,7 @@ export default class FanFox implements MangaExtractorModel {
     name = "FanFox.net";
     options: MangaExtractorConstructorOptions;
 
-    constructor(options: MangaExtractorConstructorOptions = {}) {
+    constructor(options: MangaExtractorConstructorOptions) {
         this.options = options;
     }
 
@@ -63,10 +62,9 @@ export default class FanFox implements MangaExtractorModel {
             const url = config.searchUrl(terms);
             this.options.logger?.debug?.(`(${this.name}) Search URL: ${url}`);
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
-                withCredentials: true,
+            const data = await this.options.http.get(functions.encodeURI(url), {
+                credentials: true,
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -124,9 +122,8 @@ export default class FanFox implements MangaExtractorModel {
                 `(${this.name}) Chapter links requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -183,9 +180,8 @@ export default class FanFox implements MangaExtractorModel {
                 `(${this.name}) Chapters pages requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
@@ -239,16 +235,17 @@ export default class FanFox implements MangaExtractorModel {
                 `(${this.name}) Chapters pages requested for: ${url}`
             );
 
-            const { data } = await axios.get<string>(functions.encodeURI(url), {
+            const data = await this.options.http.get(functions.encodeURI(url), {
                 headers: config.defaultHeaders(),
-                responseType: "text",
                 timeout: constants.http.maxTimeout,
             });
 
             const page = data
                 .match(/<option.*?selected=.*?>(.*?)<\/option>/)?.[1]
                 ?.trim();
-            const image = data.match(/<img src="(.*?)".*id="image".*>/)?.[1]?.trim();
+            const image = data
+                .match(/<img src="(.*?)".*id="image".*>/)?.[1]
+                ?.trim();
             if (!page || !image) throw new Error("No images were found");
 
             const result: MangaExtractorPageImageResult = {
