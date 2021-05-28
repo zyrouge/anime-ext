@@ -1,5 +1,3 @@
-import util from "util";
-
 export const constants = {
     http: {
         userAgent:
@@ -9,7 +7,13 @@ export const constants = {
 };
 
 export const functions = {
-    sleep: util.promisify(setTimeout),
+    sleep(ms: number): Promise<void> {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve();
+            }, ms);
+        });
+    },
     encodeURI(url: string) {
         if (url === decodeURI(url)) return encodeURI(url);
         return url;
