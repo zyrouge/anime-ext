@@ -1,3 +1,4 @@
+import qs from "querystring";
 import cheerio from "cheerio";
 import {
     MangaExtractorConstructorOptions,
@@ -11,11 +12,11 @@ import {
 import { constants, functions } from "../../util";
 
 export const config = {
-    baseUrl: "https://mangadex.tv",
+    baseUrl: "https://manhwatop.com",
     searchUrl: (search: string) =>
-        `https://mangadex.tv/search?type=titles&title=${search}&submit=`,
-    mangaRegex: /^https:\/\/mangadex\.tv\/manga\/.*/,
-    chapterRegex: /^https:\/\/mangadex\.tv\/chapter\/.*?\/.*/,
+        `https://manhwatop.com/?s=${search}&post_type=wp-manga&op=&author=&artist=&release=&adult=`,
+    mangaRegex: /^https:\/\/manhwatop\.com\/manga\/.*/,
+    chapterRegex: /^https:\/\/manhwatop\.com\/manga\/.*?\/.*/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
@@ -25,10 +26,10 @@ export const config = {
 };
 
 /**
- * MangaDex.tv Extractor
+ * Manhwatop.com Extractor
  */
 export default class MangaDex implements MangaExtractorModel {
-    name = "MangaDex.tv";
+    name = "Manhwatop.com";
     options: MangaExtractorConstructorOptions;
 
     constructor(options: MangaExtractorConstructorOptions) {
@@ -36,8 +37,8 @@ export default class MangaDex implements MangaExtractorModel {
     }
 
     /**
-     * Validate MangaDex.tv URL
-     * @param url MangaDex.tv URL
+     * Validate Manhwatop.com URL
+     * @param url Manhwatop.com URL
      */
     validateURL(url: string) {
         let result: MangaExtractorValidateResults = false;
@@ -49,7 +50,7 @@ export default class MangaDex implements MangaExtractorModel {
     }
 
     /**
-     * MangaDex.tv Search
+     * Manhwatop.com Search
      * @param terms Search term
      */
     async search(terms: string) {
@@ -73,18 +74,21 @@ export default class MangaDex implements MangaExtractorModel {
             );
 
             const results: MangaExtractorSearchResult[] = [];
-            $("#content .manga-entry").each(function () {
+            $(".tab-content-wrap .c-tabs-item__content").each(function () {
                 const ele = $(this);
 
-                const title = ele.find(".manga_title");
+                const title = ele.find(".post-title a");
                 const url = title.attr("href");
-                const image = ele.find(".img-loading").attr("data-src");
+                const image = ele.find("img").attr("data-src");
+                const latest = ele.find(".latest-chap .chapter");
 
                 if (url) {
                     results.push({
-                        title: title.text().trim(),
-                        url: `${config.baseUrl}${url.trim()}`,
-                        image: image ? `${config.baseUrl}${image}` : "",
+                        title: `${title.text().trim()} (Latest ${latest
+                            .text()
+                            .trim()})`,
+                        url,
+                        image: image || "",
                     });
                 }
             });
@@ -100,8 +104,8 @@ export default class MangaDex implements MangaExtractorModel {
     }
 
     /**
-     * Get chapter URLs from MangaDex.tv URL
-     * @param url MangaDex.tv chapter URL
+     * Get chapter URLs from Manhwatop.com URL
+     * @param url Manhwatop.com chapter URL
      */
     async getInfo(url: string) {
         try {
@@ -109,38 +113,65 @@ export default class MangaDex implements MangaExtractorModel {
                 `(${this.name}) Chapter links requested for: ${url}`
             );
 
-            const data = await this.options.http.get(functions.encodeURI(url), {
-                headers: config.defaultHeaders(),
-                timeout: constants.http.maxTimeout,
-            });
+            const idata = await this.options.http.get(
+                functions.encodeURI(url),
+                {
+                    headers: config.defaultHeaders(),
+                    timeout: constants.http.maxTimeout,
+                }
+            );
 
-            const $ = cheerio.load(data);
+            const i$ = cheerio.load(idata);
             this.options.logger?.debug?.(
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            var titleParser = this.parseMangaDexTitle;
+            const furtherRaw = i$("#wp-manga-js-extra")
+                .html()
+                ?.trim()
+                .match(/({.*})/)?.[1];
+            if (!furtherRaw) throw new Error("No information could be parsed");
+
+            const furtherData = JSON.parse(furtherRaw);
+            if (!furtherData.ajax_url || !furtherData.manga_id)
+                throw new Error("No information could be parsed");
+
+            const fdata = await this.options.http.post(
+                furtherData.ajax_url,
+                qs.stringify({
+                    action: "manga_get_chapters",
+                    manga: furtherData.manga_id,
+                }),
+                {
+                    headers: Object.assign(config.defaultHeaders(), {
+                        "Content-Type":
+                            "application/x-www-form-urlencoded; charset=UTF-8",
+                        "x-requested-with": "XMLHttpRequest",
+                    }),
+                    timeout: constants.http.maxTimeout,
+                }
+            );
+
+            const f$ = cheerio.load(fdata);
             const chapters: MangaExtractorChapterResult[] = [];
-            $(".chapter-container .chapter-row a").each(function () {
-                const ele = $(this);
+            f$(".listing-chapters_wrap .wp-manga-chapter a").each(function () {
+                const ele = f$(this);
 
                 const title = ele.text().trim();
                 const url = ele.attr("href");
 
                 if (url) {
-                    const { shortTitle, chapter, volume } = titleParser(title);
-
                     chapters.push({
-                        title: shortTitle?.trim() || title,
-                        url: `${config.baseUrl}${url.trim()}`,
-                        volume,
-                        chapter,
+                        title,
+                        url,
+                        volume: "",
+                        chapter: title.match(/\d+/)?.[0] || "",
                     });
                 }
             });
 
             const result: MangaExtractorInfoResult = {
-                title: $("#content .card-header > span").text().trim(),
+                title: i$(".post-title h1").text().trim(),
                 chapters,
             };
 
@@ -155,8 +186,8 @@ export default class MangaDex implements MangaExtractorModel {
     }
 
     /**
-     * Get page image URLs from MangaDex.tv page URL
-     * @param url MangaDex.tv page URL
+     * Get page image URLs from Manhwatop.com page URL
+     * @param url Manhwatop.com page URL
      */
     async getChapterPages(url: string) {
         try {
@@ -176,14 +207,17 @@ export default class MangaDex implements MangaExtractorModel {
                 entities: [],
             };
 
-            $(".reader-image-wrapper img").each(function () {
+            $(".reading-content .page-break img").each(function () {
                 const ele = $(this);
 
+                const page = ele.attr("id")?.match(/\d+/)?.[0];
                 const url = ele.attr("data-src");
-                if (typeof url === "string") {
+                const ignore =
+                    ele.attr("alt")?.trim() === "Follow ManhwaTop.Com";
+                if (!ignore && url) {
                     result.entities.push({
-                        page: ele.parent().attr("data-page")?.trim() || "",
-                        url,
+                        page: page || "",
+                        url: url.trim(),
                     });
                 }
             });
@@ -200,25 +234,5 @@ export default class MangaDex implements MangaExtractorModel {
 
             throw new Error(`Failed to scrape: ${err?.message}`);
         }
-    }
-
-    parseMangaDexTitle(title: string) {
-        let volume = "-",
-            chapter = "-";
-
-        const [vcInfo, shortTitle] = title.split(":");
-        if (vcInfo && shortTitle) {
-            const matchedVol = vcInfo.match(/Vol\.(.*?) /)?.[1]?.trim();
-            if (matchedVol) volume = matchedVol;
-
-            const matchedChapter = vcInfo.match(/Chapter (.*)/)?.[1]?.trim();
-            if (matchedChapter) chapter = matchedChapter;
-        }
-
-        return {
-            volume,
-            chapter,
-            shortTitle: shortTitle?.trim(),
-        };
     }
 }

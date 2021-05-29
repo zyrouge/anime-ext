@@ -16,7 +16,7 @@ export const config = {
     baseUrl: "https://www.mangainn.net",
     searchUrl: "https://www.mangainn.net/service/advanced_search",
     mangaRegex: /^https:\/\/www\.mangainn\.net\/.*/,
-    chapterRegex: /^https:\/\/www\.mangainn\.net\/mayo-chiki\/.*/,
+    chapterRegex: /^https:\/\/www\.mangainn\.net\/.*?\/.*/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
