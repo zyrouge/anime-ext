@@ -26,6 +26,7 @@ npm install anime-ext
 | [Fanfox.net](./lib/extractors/manga/fanfox.ts)                        | `extractor (manga)` | ✔️ Search <br>✔️ Chapters<br>✔️ Pages<br>✔️ Page images |
 | [MangaInn.net](./lib/extractors/manga/mangainn.ts)                    | `extractor (manga)` | ✔️ Search <br>✔️ Chapters<br>✔️ Pages<br>✔️ Page images |
 | [MangaDex.tv](./lib/extractors/manga/mangadex.ts)                     | `extractor (manga)` | ✔️ Search <br>✔️ Chapters<br>✔️ Pages<br>✔️ Page images |
+| [Manhwatop.com](./lib/extractors/manga/manhwatop.ts)                  | `extractor (manga)` | ✔️ Search <br>✔️ Chapters<br>✔️ Pages<br>✔️ Page images |
 | [MyAnimeList](./lib/integrations/myanimelist)                         | `integration`       | ✔️ Search <br>✔️ Anime Information                      |
 | [Gogo-play Iframe](./lib/extractors/parsers/gogoplay-iframe.ts)       | `parser`            | ✔️ Source extractor                                     |
 | [Gogo-play Streaming](./lib/extractors/sources/gogoplay-streaming.ts) | `source`            | ✔️ Stream link extractor                                |
