@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/crypto-js": "^4.0.1",
     "@types/node": "^15.6.1",
+    "@types/qs": "^6.9.6",
     "axios": "^0.21.1",
     "rimraf": "^3.0.2",
     "typedoc": "^0.20.36",
@@ -31,6 +32,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.9",
-    "crypto-js": "^4.0.0"
+    "crypto-js": "^4.0.0",
+    "qs": "^6.10.1"
   }
 }
