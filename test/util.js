@@ -1,4 +1,4 @@
-const axios = require("axios").default;
+const got = require("got").default;
 
 module.exports = {
     logger: {
@@ -8,24 +8,22 @@ module.exports = {
     },
     http: {
         async get(url, options) {
-            const { data } = await axios.get(url, {
+            const res = await got.get(url, {
                 headers: options.headers,
-                withCredentials: options.credentials,
                 timeout: options.timeout,
                 responseType: "text",
             });
 
-            return data;
+            return res.body;
         },
         async post(url, body, options) {
-            const { data } = await axios.post(url, body, {
+            const res = await got.post(url, body, {
                 headers: options.headers,
-                withCredentials: options.credentials,
                 timeout: options.timeout,
                 responseType: "text",
             });
 
-            return data;
+            return res.body;
         },
     },
 };
