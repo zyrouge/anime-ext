@@ -17,7 +17,8 @@ module.exports = {
             return res.body;
         },
         async post(url, body, options) {
-            const res = await got.post(url, body, {
+            const res = await got.post(url, {
+                body,
                 headers: options.headers,
                 timeout: options.timeout,
                 responseType: "text",
