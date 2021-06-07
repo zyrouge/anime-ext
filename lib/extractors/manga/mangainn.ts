@@ -193,8 +193,8 @@ export default class MangaInn implements MangaExtractorModel {
                     let url = ele.val();
                     if (typeof url === "string") {
                         result.entities.push({
-                            page: ele.text().split(" ").pop()?.trim() || "",
-                            url: url,
+                            page: ele.text().split(" ").pop()?.trim() || "-",
+                            url,
                         });
                     }
                 });

@@ -1,3 +1,4 @@
+import qs from "qs";
 import cheerio from "cheerio";
 import {
     MangaExtractorConstructorOptions,
@@ -11,11 +12,10 @@ import {
 import { constants, functions } from "../../util";
 
 export const config = {
-    baseUrl: "https://mangadex.tv",
-    searchUrl: (search: string) =>
-        `https://mangadex.tv/search?type=titles&title=${search}&submit=`,
-    mangaRegex: /^https:\/\/mangadex\.tv\/manga\/.*/,
-    chapterRegex: /^https:\/\/mangadex\.tv\/chapter\/.*?\/.*/,
+    baseUrl: "https://manganato.com",
+    searchUrl: "https://readmanganato.com/getstorysearchjson",
+    mangaRegex: /^https:\/\/readmanganato\.com\/manga-.*/,
+    chapterRegex: /^https:\/\/readmanganato\.com\/manga-.*\/chapter-.*/,
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
@@ -25,10 +25,10 @@ export const config = {
 };
 
 /**
- * MangaDex.tv Extractor
+ * MangaNato.com Extractor
  */
-export default class MangaDex implements MangaExtractorModel {
-    name = "MangaDex.tv";
+export default class MangaNato implements MangaExtractorModel {
+    name = "MangaNato.com";
     options: MangaExtractorConstructorOptions;
 
     constructor(options: MangaExtractorConstructorOptions) {
@@ -36,8 +36,8 @@ export default class MangaDex implements MangaExtractorModel {
     }
 
     /**
-     * Validate MangaDex.tv URL
-     * @param url MangaDex.tv URL
+     * Validate MangaNato.com URL
+     * @param url MangaNato.com URL
      */
     validateURL(url: string) {
         let result: MangaExtractorValidateResults = false;
@@ -49,7 +49,7 @@ export default class MangaDex implements MangaExtractorModel {
     }
 
     /**
-     * MangaDex.tv Search
+     * MangaNato.com Search
      * @param terms Search term
      */
     async search(terms: string) {
@@ -58,36 +58,26 @@ export default class MangaDex implements MangaExtractorModel {
                 `(${this.name}) Search terms: ${terms}`
             );
 
-            const url = config.searchUrl(terms);
-            this.options.logger?.debug?.(`(${this.name}) Search URL: ${url}`);
-
-            const data = await this.options.http.get(functions.encodeURI(url), {
-                credentials: true,
-                headers: config.defaultHeaders(),
-                timeout: constants.http.maxTimeout,
-            });
-
-            const $ = cheerio.load(data);
-            this.options.logger?.debug?.(
-                `(${this.name}) DOM creation successful! (${url})`
+            const data = await this.options.http.post(
+                functions.encodeURI(config.searchUrl),
+                qs.stringify({
+                    searchword: terms,
+                }),
+                {
+                    headers: Object.assign(config.defaultHeaders(), {
+                        "Content-Type":
+                            "application/x-www-form-urlencoded; charset=UTF-8",
+                    }),
+                    timeout: constants.http.maxTimeout,
+                }
             );
 
-            const results: MangaExtractorSearchResult[] = [];
-            $("#content .manga-entry").each(function () {
-                const ele = $(this);
-
-                const title = ele.find(".manga_title");
-                const url = title.attr("href");
-                const image = ele.find(".img-loading").attr("data-src");
-
-                if (url) {
-                    results.push({
-                        title: title.text().trim(),
-                        url: `${config.baseUrl}${url.trim()}`,
-                        image: image ? `${config.baseUrl}${image}` : "",
-                    });
-                }
-            });
+            const parsed: any[] = JSON.parse(data);
+            const results: MangaExtractorSearchResult[] = parsed.map((x) => ({
+                title: cheerio.load(x.name).text(),
+                url: x.link_story,
+                image: x.image,
+            }));
 
             return results;
         } catch (err) {
@@ -100,8 +90,8 @@ export default class MangaDex implements MangaExtractorModel {
     }
 
     /**
-     * Get chapter URLs from MangaDex.tv URL
-     * @param url MangaDex.tv chapter URL
+     * Get chapter URLs from MangaNato.com URL
+     * @param url MangaNato.com chapter URL
      */
     async getInfo(url: string) {
         try {
@@ -119,28 +109,36 @@ export default class MangaDex implements MangaExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            var titleParser = this.parseMangaDexTitle;
             const chapters: MangaExtractorChapterResult[] = [];
-            $(".chapter-container .chapter-row a").each(function () {
-                const ele = $(this);
+            $(".panel-story-chapter-list .row-content-chapter li a").each(
+                function () {
+                    const ele = $(this);
 
-                const title = ele.text().trim();
-                const url = ele.attr("href");
+                    const title = ele.text().trim();
+                    const url = ele.attr("href");
 
-                if (url) {
-                    const { shortTitle, chapter, volume } = titleParser(title);
+                    if (url) {
+                        const [volchap, shortTitle] = title.split(":");
+                        const vol = volchap?.match(/Vol\.(.*?) /)?.[1]?.trim();
+                        const chap = volchap
+                            ?.match(/Chapter (.*)/)?.[1]
+                            ?.trim();
 
-                    chapters.push({
-                        title: shortTitle?.trim() || title,
-                        url: `${config.baseUrl}${url.trim()}`,
-                        volume,
-                        chapter,
-                    });
+                        chapters.push({
+                            title:
+                                (vol || chap) && shortTitle
+                                    ? shortTitle?.trim()
+                                    : title,
+                            volume: vol || "-",
+                            chapter: chap || "-",
+                            url,
+                        });
+                    }
                 }
-            });
+            );
 
             const result: MangaExtractorInfoResult = {
-                title: $("#content .card-header > span").text().trim(),
+                title: $(".story-info-right h1").text().trim(),
                 chapters,
             };
 
@@ -155,8 +153,8 @@ export default class MangaDex implements MangaExtractorModel {
     }
 
     /**
-     * Get page image URLs from MangaDex.tv page URL
-     * @param url MangaDex.tv page URL
+     * Get page image URLs from MangaNato.com page URL
+     * @param url MangaNato.com page URL
      */
     async getChapterPages(url: string) {
         try {
@@ -170,19 +168,20 @@ export default class MangaDex implements MangaExtractorModel {
             });
 
             const $ = cheerio.load(data);
-
             const result: MangaExtractorChapterPagesResult = {
                 type: "image_urls",
                 entities: [],
             };
 
-            $(".reader-image-wrapper img").each(function () {
+            $(".container-chapter-reader img").each(function () {
                 const ele = $(this);
 
-                const url = ele.attr("data-src");
+                const url = ele.attr("src");
+                const alt = ele.attr("alt")?.match(/page (\d+)/)?.[1];
+
                 if (typeof url === "string") {
                     result.entities.push({
-                        page: ele.parent().attr("data-page")?.trim() || "-",
+                        page: alt?.trim() || "-",
                         url,
                     });
                 }
@@ -200,25 +199,5 @@ export default class MangaDex implements MangaExtractorModel {
 
             throw new Error(`Failed to scrape: ${err?.message}`);
         }
-    }
-
-    parseMangaDexTitle(title: string) {
-        let volume = "-",
-            chapter = "-";
-
-        const [vcInfo, shortTitle] = title.split(":");
-        if (vcInfo && shortTitle) {
-            const matchedVol = vcInfo.match(/Vol\.(.*?) /)?.[1]?.trim();
-            if (matchedVol) volume = matchedVol;
-
-            const matchedChapter = vcInfo.match(/Chapter (.*)/)?.[1]?.trim();
-            if (matchedChapter) chapter = matchedChapter;
-        }
-
-        return {
-            volume,
-            chapter,
-            shortTitle: shortTitle?.trim(),
-        };
     }
 }

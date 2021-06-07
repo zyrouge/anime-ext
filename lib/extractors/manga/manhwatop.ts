@@ -216,7 +216,7 @@ export default class MangaDex implements MangaExtractorModel {
                     ele.attr("alt")?.trim() === "Follow ManhwaTop.Com";
                 if (!ignore && url) {
                     result.entities.push({
-                        page: page || "",
+                        page: page || "-",
                         url: url.trim(),
                     });
                 }
