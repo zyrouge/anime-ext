@@ -27,6 +27,7 @@ export const config = {
 
 /**
  * Manhwatop.com Extractor
+ * @deprecated Avoid using this due to the website's caching method
  */
 export default class MangaDex implements MangaExtractorModel {
     name = "Manhwatop.com";

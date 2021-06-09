@@ -26,6 +26,7 @@ export const config = {
 
 /**
  * MangaNato.com Extractor
+ * @deprecated Avoid using this due to the website's caching method
  */
 export default class MangaNato implements MangaExtractorModel {
     name = "MangaNato.com";
