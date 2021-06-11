@@ -67,7 +67,8 @@ const season = async (options: SeasonOptions) => {
             const link = ele.find(".link-title");
             const title = link.text().trim();
             const url = link.attr("href");
-            const img = ele.find("img").attr("data-src");
+            const img =
+                ele.find("img").attr("src") || ele.find("img").attr("data-src");
             const date = ele.find(".remain-time").text().trim();
             const description = ele.find(".synopsis").text().trim();
             const type = ele.find(".source").text().trim();
