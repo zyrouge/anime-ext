@@ -43,6 +43,9 @@ export interface TopResult {
     image: string;
 }
 
+/**
+ * MyAnimeList.com Top Animes
+ */
 const top = async (type: TopAnimeTypesType | "all", options: SearchOptions) => {
     try {
         options.logger?.debug?.(

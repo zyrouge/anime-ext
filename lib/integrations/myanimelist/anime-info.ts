@@ -75,6 +75,9 @@ export interface InfoResult {
     recommendations: RecommendationEntity[];
 }
 
+/**
+ * MyAnimeList.com Anime Information
+ */
 const search = async (url: string, options: InfoOptions) => {
     try {
         options.logger?.debug?.(

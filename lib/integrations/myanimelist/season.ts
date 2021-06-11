@@ -3,9 +3,8 @@ import { Logger, Requester } from "../../types";
 import { constants, functions } from "../../util";
 
 export const config = {
-    name: "AniDB-season",
-    origin: "https://anidb.net",
-    baseUrl: "https://anidb.net/anime/season/",
+    name: "MyAnimeList-season",
+    baseUrl: "https://myanimelist.net/anime/season",
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
@@ -26,6 +25,8 @@ export interface AnimeEntity {
     tags: string[];
     description: string;
     image: string;
+    score: string;
+    episode: string;
 }
 
 export interface SeasonResult {
@@ -34,8 +35,7 @@ export interface SeasonResult {
 }
 
 /**
- * AniDB.net Anime Season
- * @deprecated Avoid using this due to the website's caching method
+ * MyAnimeList.com Anime Season
  */
 const season = async (options: SeasonOptions) => {
     try {
@@ -57,35 +57,40 @@ const season = async (options: SeasonOptions) => {
         );
 
         const results: SeasonResult = {
-            season: $(".g_section.content h2").text().trim(),
+            season: $(".season_nav .on").text().trim(),
             entities: [],
         };
 
-        $(".g_bubblewrap.g_bubble.container .g_bubble.box").each(function () {
+        $(".seasonal-anime").each(function () {
             const ele = $(this);
 
-            const link = ele.find(".thumb a");
-            const img = link.find("img").attr("src");
-            const title = ele.find(".data .name");
-            const date = ele.find(".data .date");
-            const description = ele.find(".data .desc");
-            const type = ele.find(".data .general");
-            const tags = ele.find(".data .tags .tagname");
+            const link = ele.find(".link-title");
+            const title = link.text().trim();
             const url = link.attr("href");
+            const img = ele.find("img").attr("data-src");
+            const date = ele.find(".remain-time").text().trim();
+            const description = ele.find(".synopsis").text().trim();
+            const type = ele.find(".source").text().trim();
+            const tags = ele
+                .find(".genre")
+                .map(function () {
+                    return $(this).text().trim();
+                })
+                .toArray();
+            const score = ele.find(".score").text().trim();
+            const ep = ele.find(".eps").text().trim();
 
             if (url && title) {
                 results.entities.push({
-                    name: title.text().trim(),
-                    url: `${config.origin}${url}`,
-                    description: description.text().trim(),
-                    image: img?.trim() || "",
-                    type: type.text().trim(),
-                    date: date.text().trim(),
-                    tags: tags
-                        .map(function () {
-                            return $(this).text().trim();
-                        })
-                        .toArray(),
+                    name: title,
+                    url,
+                    description,
+                    image: img || "",
+                    type,
+                    date,
+                    tags,
+                    score,
+                    episode: ep,
                 });
             }
         });

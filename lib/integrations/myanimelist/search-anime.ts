@@ -28,6 +28,9 @@ export interface SearchResult {
     score: string;
 }
 
+/**
+ * MyAnimeList.com Anime Search
+ */
 const search = async (terms: string, options: SearchOptions) => {
     try {
         options.logger?.debug?.(`(${config.name}) Search terms: ${terms}!`);

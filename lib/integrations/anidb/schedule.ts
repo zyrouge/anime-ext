@@ -3,7 +3,7 @@ import { Logger, Requester } from "../../types";
 import { constants, functions } from "../../util";
 
 export const config = {
-    name: "AniDB-season",
+    name: "AniDB-schedule",
     origin: "https://anidb.net",
     baseUrl: "https://anidb.net/anime/schedule/",
     defaultHeaders() {
@@ -13,7 +13,7 @@ export const config = {
     },
 };
 
-export interface SeasonOptions {
+export interface ScheduleOptions {
     logger?: Partial<Logger>;
     http: Requester;
 }
@@ -25,15 +25,19 @@ export interface AnimeEntity {
     info: string;
 }
 
-export interface SeasonResult {
+export interface ScheduleResult {
     date: string;
     entities: AnimeEntity[];
 }
 
-const season = async (options: SeasonOptions) => {
+/**
+ * AniDB.net Anime Schedule
+ * @deprecated Avoid using this due to the website's caching method
+ */
+const schedule = async (options: ScheduleOptions) => {
     try {
         options.logger?.debug?.(
-            `(${config.name}) Season url: ${config.baseUrl}!`
+            `(${config.name}) Schedule url: ${config.baseUrl}!`
         );
 
         const data = await options.http.get(
@@ -49,11 +53,11 @@ const season = async (options: SeasonOptions) => {
             `(${config.name}) DOM creation successful! (${config.baseUrl})`
         );
 
-        const results: SeasonResult[] = [];
+        const results: ScheduleResult[] = [];
         $(".g_section.content > h2").each(function () {
             const heading = $(this);
 
-            const animes: SeasonResult = {
+            const animes: ScheduleResult = {
                 date: heading.text().trim(),
                 entities: [],
             };
@@ -97,4 +101,4 @@ const season = async (options: SeasonOptions) => {
     }
 };
 
-export default season;
+export default schedule;
