@@ -128,9 +128,14 @@ export default class Gogoanime implements AnimeExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
+            const eps = $("#episode_page a");
+            const epStart = <string>eps.first().attr("ep_start"),
+                epEnd = <string>eps.last().attr("ep_end");
+            const isSgtE = +epStart > +epEnd;
+
             const episodesUrl = config.episodesUrl(
-                <string>$("#episode_page a.active").attr("ep_start"),
-                <string>$("#episode_page a.active").attr("ep_end"),
+                !isSgtE ? epStart : epEnd,
+                isSgtE ? epStart : epEnd,
                 <string>$("input#movie_id").val()
             );
 
