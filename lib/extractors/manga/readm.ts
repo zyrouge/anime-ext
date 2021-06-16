@@ -177,7 +177,7 @@ export default class ReadM implements MangaExtractorModel {
 
                 const url = ele.attr("src");
                 if (url) {
-                    const page = url.match(/p_(\d+)/)?.[1];
+                    const page = url.match(/(\d+)\..*?$/)?.[1];
 
                     result.entities.push({
                         page: page ? `${+page}` : "-",
