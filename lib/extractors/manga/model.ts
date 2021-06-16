@@ -39,7 +39,6 @@ export interface MangaExtractorChapterPagesResult {
 }
 
 export interface MangaExtractorPageImageResult {
-    page: string;
     image: string;
 }
 

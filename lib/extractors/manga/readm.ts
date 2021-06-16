@@ -136,7 +136,7 @@ export default class ReadM implements MangaExtractorModel {
             });
 
             const result: MangaExtractorInfoResult = {
-                title: $(".detail-info-right-title-font").text().trim(),
+                title: $(".page-title").text().trim(),
                 chapters,
             };
 

@@ -237,12 +237,9 @@ export default class MangaInn implements MangaExtractorModel {
             )?.[1];
             if (!page || !image) throw new Error("No images were found");
 
-            const result: MangaExtractorPageImageResult = {
-                page,
+            return <MangaExtractorPageImageResult>{
                 image,
             };
-
-            return result;
         } catch (err) {
             this.options.logger?.error?.(
                 `(${this.name}) Failed to scrape: ${err?.message}`

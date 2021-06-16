@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "docs": "npm run build && rimraf ./docs && typedoc",
-    "release": "npm run build && npm publish"
+    "release": "npm run build && npm publish && git checkout main && git merge next && git push && git checkout next"
   },
   "files": [
     "dist"
