@@ -1,4 +1,5 @@
 import { enc, AES } from "crypto-js";
+import fusejs from "fuse.js";
 import {
     AnimeExtractorConstructorOptions,
     AnimeExtractorValidateResults,
@@ -35,11 +36,11 @@ export const config = {
     },
 };
 
-export const matcher = (origin: string, keywords: string[]) =>
-    !!origin
-        .toLowerCase()
-        .split(" ")
-        .find((x) => keywords.find((s) => x.indexOf(s) > -1));
+export interface SearchEntity {
+    title: string;
+    alt_title?: string;
+    url: string;
+}
 
 /**
  * Twist.moe Extractor
@@ -47,11 +48,7 @@ export const matcher = (origin: string, keywords: string[]) =>
 export default class TwistDotAnime implements AnimeExtractorModel {
     name = "Twist.moe";
     options: AnimeExtractorConstructorOptions;
-    searchCache: {
-        title: string;
-        alt_title?: string;
-        url: string;
-    }[] = [];
+    searcher?: fusejs<SearchEntity>;
 
     constructor(options: AnimeExtractorConstructorOptions) {
         this.options = options;
@@ -82,7 +79,7 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                 `(${this.name}) Search terms: ${terms}`
             );
 
-            if (!this.searchCache.length) {
+            if (!this.searcher) {
                 const url = config.searchUrl;
                 this.options.logger?.debug?.(
                     `(${this.name}) Search URL: ${url}`
@@ -97,10 +94,11 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                 );
                 const data = JSON.parse(unparsed);
 
+                const items: SearchEntity[] = [];
                 if (Array.isArray(data)) {
                     data.forEach((anime) => {
                         if (anime.slug.slug) {
-                            this.searchCache.push({
+                            items.push({
                                 title: anime.title,
                                 alt_title: anime.alt_title || undefined,
                                 url: config.animePageUrl(anime.slug.slug),
@@ -108,40 +106,30 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                         }
                     });
                 }
+                this.searcher = new fusejs(items, {
+                    includeScore: true,
+                    keys: [
+                        {
+                            name: "title",
+                            weight: 2,
+                        },
+                        "alt_title",
+                    ],
+                });
 
                 this.options.logger?.debug?.(
-                    `(${this.name}) No. of cached animes: ${this.searchCache.length} (${url})`
+                    `(${this.name}) No. of cached animes: ${items.length} (${url})`
                 );
             }
 
-            const searches = terms.split(" ");
-            const results: (AnimeExtractorSearchResult & { score: number })[] =
-                [];
-
-            this.searchCache.forEach(({ title, alt_title, url }) => {
-                let points = 0;
-                if (matcher(title, searches)) points += 1;
-                if (title.toLowerCase().includes(terms)) points += 1;
-
-                if (alt_title) {
-                    if (matcher(alt_title, searches)) points += 1;
-                    if (alt_title.toLowerCase().includes(terms)) points += 1;
-                }
-
-                if (points > 0) {
-                    results.push({
-                        title,
-                        url,
-                        thumbnail: "",
+            return <AnimeExtractorSearchResult[]>this.searcher
+                .search(terms)
+                .sort((a, b) => a.score! - b.score!)
+                .map((x) =>
+                    Object.assign(x.item, {
                         air: "unknown",
-                        score: points,
-                    });
-                }
-            });
-
-            return <AnimeExtractorSearchResult[]>(
-                results.sort((a, b) => b.score - a.score).slice(0, 10)
-            );
+                    })
+                );
         } catch (err) {
             this.options.logger?.error?.(
                 `(${this.name}) Failed to scrape: ${err?.message}`
