@@ -25,6 +25,7 @@ export const config = {
 
 /**
  * Tenshi.moe Extractor
+ * @deprecated No more returns download links
  */
 export default class TenshiDotMoe implements AnimeExtractorModel {
     name = "Tenshi.moe";
@@ -170,11 +171,29 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
                 `(${this.name}) Download links requested for: ${url}`
             );
 
-            const data = await this.options.http.get(functions.encodeURI(url), {
-                headers: config.defaultHeaders(),
-                timeout: constants.http.maxTimeout,
-            });
+            const preData = await this.options.http.get(
+                functions.encodeURI(url),
+                {
+                    headers: config.defaultHeaders(),
+                    timeout: constants.http.maxTimeout,
+                }
+            );
+            const iframe = preData.match(/<iframe src="(.*?)"/)?.[1];
+            if (!iframe) {
+                this.options.logger?.error?.(
+                    `(${this.name}) No embeds were found`
+                );
 
+                throw new Error("No embeds were found");
+            }
+
+            const data = await this.options.http.get(
+                functions.encodeURI(iframe),
+                {
+                    headers: config.defaultHeaders(),
+                    timeout: constants.http.maxTimeout,
+                }
+            );
             const $ = cheerio.load(data);
             this.options.logger?.debug?.(
                 `(${this.name}) DOM creation successful! (${url})`

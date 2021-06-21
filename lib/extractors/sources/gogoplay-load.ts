@@ -43,6 +43,13 @@ const gogoplay: SourceRetriever = {
                     return result;
                 });
 
+            results.push({
+                quality: "unknown",
+                url,
+                type: ["embedable"],
+                headers,
+            });
+
             return results;
         } catch (err) {
             throw err;

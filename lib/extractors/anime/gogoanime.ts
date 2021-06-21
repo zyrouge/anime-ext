@@ -239,7 +239,7 @@ export default class Gogoanime implements AnimeExtractorModel {
             results.push({
                 quality: "unknown",
                 url: iframeUrl,
-                type: ["embedable", "external_embed"],
+                type: ["external_embed"],
                 headers: config.defaultHeaders(),
             });
 
