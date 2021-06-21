@@ -4689,7 +4689,13 @@
 					"kindString": "Class",
 					"flags": {},
 					"comment": {
-						"shortText": "Tenshi.moe Extractor"
+						"shortText": "Tenshi.moe Extractor",
+						"tags": [
+							{
+								"tag": "deprecated",
+								"text": "No more returns download links\n"
+							}
+						]
 					},
 					"children": [
 						{
@@ -4736,7 +4742,7 @@
 							"sources": [
 								{
 									"fileName": "extractors/anime/tenshidotmoe.ts",
-									"line": 30,
+									"line": 31,
 									"character": 8
 								}
 							],
@@ -4760,7 +4766,7 @@
 							"sources": [
 								{
 									"fileName": "extractors/anime/tenshidotmoe.ts",
-									"line": 31,
+									"line": 32,
 									"character": 11
 								}
 							],
@@ -4784,7 +4790,7 @@
 							"sources": [
 								{
 									"fileName": "extractors/anime/tenshidotmoe.ts",
-									"line": 167,
+									"line": 168,
 									"character": 26
 								}
 							],
@@ -4850,7 +4856,7 @@
 							"sources": [
 								{
 									"fileName": "extractors/anime/tenshidotmoe.ts",
-									"line": 113,
+									"line": 114,
 									"character": 17
 								}
 							],
@@ -4913,7 +4919,7 @@
 							"sources": [
 								{
 									"fileName": "extractors/anime/tenshidotmoe.ts",
-									"line": 54,
+									"line": 55,
 									"character": 16
 								}
 							],
@@ -4979,7 +4985,7 @@
 							"sources": [
 								{
 									"fileName": "extractors/anime/tenshidotmoe.ts",
-									"line": 41,
+									"line": 42,
 									"character": 15
 								}
 							],
@@ -5070,7 +5076,7 @@
 					"sources": [
 						{
 							"fileName": "extractors/anime/tenshidotmoe.ts",
-							"line": 29,
+							"line": 30,
 							"character": 33
 						}
 					],
