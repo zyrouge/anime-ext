@@ -28,6 +28,7 @@ export const config = {
 
 /**
  * Gogostream Extractor
+ * @deprecated No more provides streamable/downloadable links
  */
 export default class Gogostream implements AnimeExtractorModel {
     name = "Gogostream";

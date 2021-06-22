@@ -9,7 +9,7 @@ import {
     AnimeExtractorModel,
 } from "./model";
 import GogoParser from "../parsers/gogoplay-iframe";
-import { getExtractor } from "../sources";
+import GogoDownload from "../parsers/gogoplay-download";
 import { constants, functions } from "../../util";
 
 export const config = {
@@ -209,32 +209,18 @@ export default class Gogoanime implements AnimeExtractorModel {
             const results: AnimeExtractorDownloadResult[] = [];
 
             if (!iframeUrl.startsWith("http")) iframeUrl = `https:${iframeUrl}`;
-            const sources = await GogoParser(iframeUrl, {
-                http: this.options.http,
-            });
-
-            for (const src of sources) {
-                const extractor = getExtractor(src);
-                if (extractor) {
-                    try {
-                        const res = await extractor.fetch(src, {
-                            http: this.options.http,
-                        });
-                        results.push(...res);
-                    } catch (err) {
-                        this.options.logger?.debug?.(
-                            `(${this.name}) Could not parse download source: ${src} (${url})`
-                        );
-                    }
-                }
-
+            (
+                await GogoParser(iframeUrl, {
+                    http: this.options.http,
+                })
+            ).forEach((src) => {
                 results.push({
                     quality: "unknown",
                     url: src,
                     type: ["external_embed"],
                     headers: config.defaultHeaders(),
                 });
-            }
+            });
 
             results.push({
                 quality: "unknown",
@@ -242,6 +228,21 @@ export default class Gogoanime implements AnimeExtractorModel {
                 type: ["external_embed"],
                 headers: config.defaultHeaders(),
             });
+
+            const download = $(".dowloads a")
+                .map(function () {
+                    return $(this).attr("href");
+                })
+                .toArray()
+                .filter((x) => x);
+
+            for (const src of download) {
+                results.push(
+                    ...(await GogoDownload(src, {
+                        http: this.options.http,
+                    }))
+                );
+            }
 
             return results;
         } catch (err) {

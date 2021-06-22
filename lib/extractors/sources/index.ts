@@ -1,8 +1,7 @@
-import GogoplayStream from "./gogoplay-streaming";
-import GogoplayLoad from "./gogoplay-load";
+import SbPlay from "./sbplay";
 import { SourceRetriever } from "./model";
 
-export const extractors: SourceRetriever[] = [GogoplayStream, GogoplayLoad];
+export const extractors: SourceRetriever[] = [SbPlay];
 
 export const getExtractor = (url: string) => {
     return extractors.find((ext) => ext.validate(url));
