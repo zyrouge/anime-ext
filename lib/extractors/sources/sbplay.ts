@@ -16,19 +16,19 @@ const sbplay: SourceRetriever = {
                 Referer: url,
             });
 
-            const res = await options.http.get(
-                functions.encodeURI(url.replace("streaming.php", "ajax.php")),
-                {
-                    headers,
-                    timeout: constants.http.maxTimeout,
-                }
-            );
+            const res = await options.http.get(functions.encodeURI(url), {
+                headers,
+                timeout: constants.http.maxTimeout,
+            });
 
             const results: AnimeExtractorDownloadResult[] = [];
             for (const x of [
                 ...res.matchAll(/onclick="download_video\((.*?)\)"/g),
             ]) {
-                const [code, mode, hash] = x[1]?.match(/'(.*?)'/) || [];
+                const [code, mode, hash] = x[1]
+                    ? [...x[1]?.matchAll(/'(.*?)'/g)].map((x) => x[1])
+                    : [];
+
                 if (code && mode && hash) {
                     const download = encodeURI(
                         `${baseUrl}/dl?op=download_orig&id=${code}&mode=${mode}&hash=${hash}`
@@ -45,7 +45,6 @@ const sbplay: SourceRetriever = {
                     );
 
                     if (url) {
-                        console.log(url);
                         results.push({
                             quality: "unknown",
                             url,

@@ -34,7 +34,10 @@ export default async (
 
             const url = ele.attr("href");
             if (url) {
-                if (/.*\.(mov|avi|wmv|flv|3gp|mp4|mpg)$/.test(url)) {
+                if (
+                    /.*\.(mov|avi|wmv|flv|3gp|mp4|mpg)$/.test(url) &&
+                    !url.includes("streamtape.com")
+                ) {
                     urls.push({
                         quality:
                             ele.text().match(/\([A-Za-z0-9]+/)?.[1] ||
@@ -63,6 +66,7 @@ export default async (
 
         for (const ext of sources) {
             const res = await ext(url, options);
+            console.log(res);
             urls.push(...res);
         }
 
