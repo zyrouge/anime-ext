@@ -8,7 +8,6 @@ import {
     AnimeExtractorDownloadResult,
     AnimeExtractorModel,
 } from "./model";
-import GogoParser from "../parsers/gogoplay-iframe";
 import GogoDownload from "../parsers/gogoplay-download";
 import { constants, functions } from "../../util";
 
@@ -210,19 +209,6 @@ export default class Gogoanime implements AnimeExtractorModel {
             const results: AnimeExtractorDownloadResult[] = [];
 
             if (!iframeUrl.startsWith("http")) iframeUrl = `https:${iframeUrl}`;
-            (
-                await GogoParser(iframeUrl, {
-                    http: this.options.http,
-                })
-            ).forEach((src) => {
-                results.push({
-                    quality: "unknown",
-                    url: src,
-                    type: ["external_embed"],
-                    headers: config.defaultHeaders(),
-                });
-            });
-
             results.push({
                 quality: "unknown",
                 url: iframeUrl,
@@ -238,11 +224,10 @@ export default class Gogoanime implements AnimeExtractorModel {
                 .filter((x) => x);
 
             for (const src of download) {
-                results.push(
-                    ...(await GogoDownload(src, {
-                        http: this.options.http,
-                    }))
-                );
+                const res = await GogoDownload(src, {
+                    http: this.options.http,
+                });
+                results.push(...res);
             }
 
             return results;
