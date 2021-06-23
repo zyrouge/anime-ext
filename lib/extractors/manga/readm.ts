@@ -83,7 +83,7 @@ export default class ReadM implements MangaExtractorModel {
             return res.map<MangaExtractorSearchResult>((x) => ({
                 title: x.title,
                 url: `${config.baseUrl}${x.url}`,
-                image: `${config.baseUrl}${x.image}`,
+                thumbnail: `${config.baseUrl}${x.image}`,
             }));
         } catch (err) {
             this.options.logger?.error?.(
@@ -135,8 +135,10 @@ export default class ReadM implements MangaExtractorModel {
                 }
             });
 
+            const image = $(".series-profile-thumb").attr("src");
             const result: MangaExtractorInfoResult = {
                 title: $(".page-title").text().trim(),
+                thumbnail: image ? `${config.baseUrl}${image}` : "",
                 chapters,
             };
 

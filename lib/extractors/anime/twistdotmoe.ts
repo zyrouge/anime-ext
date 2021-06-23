@@ -175,6 +175,7 @@ export default class TwistDotAnime implements AnimeExtractorModel {
 
             const result: AnimeExtractorInfoResult = {
                 title: data.title || "",
+                thumbnail: "",
                 episodes,
             };
 

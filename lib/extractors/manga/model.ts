@@ -13,7 +13,7 @@ export type MangaExtractorValidateResults =
 export interface MangaExtractorSearchResult {
     title: string;
     url: string;
-    image?: string;
+    thumbnail: string;
 }
 
 export interface MangaExtractorChapterResult {
@@ -25,6 +25,7 @@ export interface MangaExtractorChapterResult {
 
 export interface MangaExtractorInfoResult {
     title: string;
+    thumbnail: string;
     chapters: MangaExtractorChapterResult[];
 }
 
@@ -36,6 +37,7 @@ export interface MangaExtractorChapterPagesEntity {
 export interface MangaExtractorChapterPagesResult {
     type: "image_urls" | "page_urls";
     entities: MangaExtractorChapterPagesEntity[];
+    headers?: Record<string, string>;
 }
 
 export interface MangaExtractorPageImageResult {

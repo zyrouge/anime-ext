@@ -139,8 +139,10 @@ export default class FourAnime implements AnimeExtractorModel {
                 }
             });
 
+            const thumbnail = $(".cover img").attr("src");
             const result: AnimeExtractorInfoResult = {
                 title: $(".single-anime-desktop").text().trim(),
+                thumbnail: thumbnail ? `${config.baseUrl}${thumbnail}` : "",
                 episodes,
             };
 

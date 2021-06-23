@@ -25,7 +25,6 @@ export const config = {
 
 /**
  * Tenshi.moe Extractor
- * @deprecated No more returns download links
  */
 export default class TenshiDotMoe implements AnimeExtractorModel {
     name = "Tenshi.moe";
@@ -148,6 +147,7 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
 
             const result: AnimeExtractorInfoResult = {
                 title: $(".entry-header").text().trim(),
+                thumbnail: $("img.cover-image").attr("src") || "",
                 episodes,
             };
 
@@ -178,8 +178,8 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
                     timeout: constants.http.maxTimeout,
                 }
             );
-            const iframe = preData.match(/<iframe src="(.*?)"/)?.[1];
-            if (!iframe) {
+            const iframeUrl = preData.match(/<iframe src="(.*?)"/)?.[1];
+            if (!iframeUrl) {
                 this.options.logger?.error?.(
                     `(${this.name}) No embeds were found`
                 );
@@ -188,9 +188,11 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
             }
 
             const data = await this.options.http.get(
-                functions.encodeURI(iframe),
+                functions.encodeURI(iframeUrl),
                 {
-                    headers: config.defaultHeaders(),
+                    headers: Object.assign(config.defaultHeaders(), {
+                        Referer: url,
+                    }),
                     timeout: constants.http.maxTimeout,
                 }
             );

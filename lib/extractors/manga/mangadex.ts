@@ -84,7 +84,7 @@ export default class MangaDex implements MangaExtractorModel {
                     results.push({
                         title: title.text().trim(),
                         url: `${config.baseUrl}${url.trim()}`,
-                        image: image ? `${config.baseUrl}${image}` : "",
+                        thumbnail: image ? `${config.baseUrl}${image}` : "",
                     });
                 }
             });
@@ -139,8 +139,10 @@ export default class MangaDex implements MangaExtractorModel {
                 }
             });
 
+            const image = $("#content img").attr("src");
             const result: MangaExtractorInfoResult = {
                 title: $("#content .card-header > span").text().trim(),
+                thumbnail: image ? `${config.baseUrl}${image}` : "",
                 chapters,
             };
 

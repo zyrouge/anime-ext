@@ -24,6 +24,7 @@ export interface AnimeExtractorEpisodeResult {
 
 export interface AnimeExtractorInfoResult {
     title: string;
+    thumbnail: string;
     episodes: AnimeExtractorEpisodeResult[];
 }
 

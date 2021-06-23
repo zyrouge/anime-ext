@@ -13,6 +13,7 @@ import { constants, functions } from "../../util";
 
 export const config = {
     baseUrl: "https://manganato.com",
+    readBaseUrl: "https://readmanganato.com",
     searchUrl: "https://readmanganato.com/getstorysearchjson",
     mangaRegex: /^https:\/\/readmanganato\.com\/manga-.*/,
     chapterRegex: /^https:\/\/readmanganato\.com\/manga-.*\/chapter-.*/,
@@ -26,7 +27,6 @@ export const config = {
 
 /**
  * MangaNato.com Extractor
- * @deprecated Avoid using this due to the website's caching method
  */
 export default class MangaNato implements MangaExtractorModel {
     name = "MangaNato.com";
@@ -77,7 +77,7 @@ export default class MangaNato implements MangaExtractorModel {
             const results: MangaExtractorSearchResult[] = parsed.map((x) => ({
                 title: cheerio.load(x.name).text(),
                 url: x.link_story,
-                image: x.image,
+                thumbnail: x.image,
             }));
 
             return results;
@@ -140,6 +140,7 @@ export default class MangaNato implements MangaExtractorModel {
 
             const result: MangaExtractorInfoResult = {
                 title: $(".story-info-right h1").text().trim(),
+                thumbnail: $(".info-image img").attr("src") || "",
                 chapters,
             };
 
@@ -172,6 +173,9 @@ export default class MangaNato implements MangaExtractorModel {
             const result: MangaExtractorChapterPagesResult = {
                 type: "image_urls",
                 entities: [],
+                headers: {
+                    Referer: config.readBaseUrl,
+                },
             };
 
             $(".container-chapter-reader img").each(function () {

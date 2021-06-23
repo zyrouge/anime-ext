@@ -27,7 +27,6 @@ export const config = {
 
 /**
  * Manhwatop.com Extractor
- * @deprecated Avoid using this due to the website's caching method
  */
 export default class MangaDex implements MangaExtractorModel {
     name = "Manhwatop.com";
@@ -89,7 +88,7 @@ export default class MangaDex implements MangaExtractorModel {
                             .text()
                             .trim()})`,
                         url,
-                        image: image || "",
+                        thumbnail: image || "",
                     });
                 }
             });
@@ -173,6 +172,7 @@ export default class MangaDex implements MangaExtractorModel {
 
             const result: MangaExtractorInfoResult = {
                 title: i$(".post-title h1").text().trim(),
+                thumbnail: i$(".summary_image img").attr("src") || "",
                 chapters,
             };
 
@@ -206,6 +206,9 @@ export default class MangaDex implements MangaExtractorModel {
             const result: MangaExtractorChapterPagesResult = {
                 type: "image_urls",
                 entities: [],
+                headers: {
+                    Referer: config.baseUrl,
+                },
             };
 
             $(".reading-content .page-break img").each(function () {

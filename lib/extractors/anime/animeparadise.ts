@@ -152,6 +152,7 @@ export default class AnimeParadise implements AnimeExtractorModel {
                 title: `${$(".column strong").text().trim()}${
                     tags.length ? ` ${tags.join(" ")}` : ""
                 }`,
+                thumbnail: $(".column.is-one-fifth img").attr("src") || "",
                 episodes,
             };
 

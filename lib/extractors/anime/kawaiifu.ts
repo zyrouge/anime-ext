@@ -162,7 +162,8 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
                 const url = ele.attr("href");
                 if (url) {
                     episodes.push({
-                        episode: ele.text().trim() || "unknown",
+                        episode:
+                            ele.text().replace("Ep", "").trim() || "unknown",
                         url,
                     });
                 }
@@ -172,6 +173,7 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
                 title:
                     s$(".desc h2.title").text().trim() ||
                     s$(".desc .sub-title").text().trim(),
+                thumbnail: s$(".row .thumb img").attr("src") || "",
                 episodes,
             };
 

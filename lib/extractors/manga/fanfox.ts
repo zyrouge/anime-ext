@@ -97,7 +97,7 @@ export default class FanFox implements MangaExtractorModel {
                     results.push({
                         title: `${title.text().trim()}${append}`,
                         url: `${config.baseUrl}${url.trim()}`,
-                        image: image?.trim() || "",
+                        thumbnail: image || "",
                     });
                 }
             });
@@ -155,6 +155,7 @@ export default class FanFox implements MangaExtractorModel {
 
             const result: MangaExtractorInfoResult = {
                 title: $(".detail-info-right-title-font").text().trim(),
+                thumbnail: $("img.detail-info-cover-img").attr("src") || "",
                 chapters,
             };
 

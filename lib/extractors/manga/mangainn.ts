@@ -92,7 +92,7 @@ export default class MangaInn implements MangaExtractorModel {
                 if (url) {
                     results.push({
                         title: title.text().trim(),
-                        image: image?.trim() || "",
+                        thumbnail: image || "",
                         url,
                     });
                 }
@@ -149,6 +149,7 @@ export default class MangaInn implements MangaExtractorModel {
 
             const result: MangaExtractorInfoResult = {
                 title: $(".content .widget-heading").first().text().trim(),
+                thumbnail: $(".content img").attr("src") || "",
                 chapters,
             };
 

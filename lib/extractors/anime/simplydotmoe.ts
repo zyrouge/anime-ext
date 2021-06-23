@@ -156,6 +156,7 @@ export default class SimplyDotMoe implements AnimeExtractorModel {
 
             const result: AnimeExtractorInfoResult = {
                 title: $(".info-container .title").text().trim(),
+                thumbnail: $(".cover img").attr("src") || "",
                 episodes,
             };
 

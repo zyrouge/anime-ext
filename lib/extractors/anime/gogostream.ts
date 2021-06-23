@@ -147,6 +147,7 @@ export default class Gogostream implements AnimeExtractorModel {
                     .text()
                     .trim()
                     .replace(/ ?Episode \d+$/, ""),
+                thumbnail: "",
                 episodes,
             };
 

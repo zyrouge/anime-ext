@@ -169,6 +169,7 @@ export default class Gogoanime implements AnimeExtractorModel {
 
             const result: AnimeExtractorInfoResult = {
                 title: $(".anime_info_body_bg h1").text().trim(),
+                thumbnail: $(".anime_info_body_bg img").attr("src") || "",
                 episodes,
             };
 
