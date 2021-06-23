@@ -52,5 +52,8 @@ export interface MangaExtractorModel {
     search(terms: string): Promise<MangaExtractorSearchResult[]>;
     getInfo(url: string): Promise<MangaExtractorInfoResult>;
     getChapterPages(url: string): Promise<MangaExtractorChapterPagesResult>;
-    getPageImage?(url: string): Promise<MangaExtractorPageImageResult>;
+    getPageImage?(
+        url: string,
+        headers?: Record<string, string>
+    ): Promise<MangaExtractorPageImageResult>;
 }
