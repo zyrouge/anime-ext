@@ -49,18 +49,13 @@ export interface InfoResult {
     season: string;
     info: {
         type: string;
-        episodes: string;
+        volumes: string;
+        chapters: string;
         status: string;
-        aired: string;
-        premiered: string;
-        broadcast: string;
-        producers: string;
-        licensors: string;
-        studios: string;
-        source: string;
+        published: string;
         genres: string;
-        duration: string;
-        rating: string;
+        authors: string;
+        serialization: string;
     };
     characters: CharacterEntity[];
     recommendations: RecommendationEntity[];

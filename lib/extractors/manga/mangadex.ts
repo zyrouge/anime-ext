@@ -205,8 +205,8 @@ export default class MangaDex implements MangaExtractorModel {
     }
 
     parseMangaDexTitle(title: string) {
-        let volume = "-",
-            chapter = "-";
+        let volume = undefined,
+            chapter = undefined;
 
         const [vcInfo, shortTitle] = title.split(":");
         if (vcInfo && shortTitle) {
@@ -217,9 +217,14 @@ export default class MangaDex implements MangaExtractorModel {
             if (matchedChapter) chapter = matchedChapter;
         }
 
+        if (!volume || !chapter) {
+            const matchedChapter = title.match(/\d+/)?.[0];
+            if (matchedChapter) chapter = matchedChapter;
+        }
+
         return {
-            volume,
-            chapter,
+            volume: volume || "-",
+            chapter: chapter || "-",
             shortTitle: shortTitle?.trim(),
         };
     }
