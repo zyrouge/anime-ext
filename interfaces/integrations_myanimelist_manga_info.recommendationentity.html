@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SearchOptions | Anime Extractor</title>
+	<title>RecommendationEntity | Anime Extractor</title>
 	<meta name="description" content="Documentation for Anime Extractor">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,13 +55,13 @@
 					<a href="../modules.html">Anime Extractor</a>
 				</li>
 				<li>
-					<a href="../modules/integrations_myanimelist_search_anime.html">integrations/myanimelist/search-anime</a>
+					<a href="../modules/integrations_myanimelist_manga_info.html">integrations/myanimelist/manga-info</a>
 				</li>
 				<li>
-					<a href="integrations_myanimelist_search_anime.searchoptions.html">SearchOptions</a>
+					<a href="integrations_myanimelist_manga_info.recommendationentity.html">RecommendationEntity</a>
 				</li>
 			</ul>
-			<h1>Interface SearchOptions</h1>
+			<h1>Interface RecommendationEntity</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SearchOptions</span>
+						<span class="target">RecommendationEntity</span>
 					</li>
 				</ul>
 			</section>
@@ -83,8 +83,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="integrations_myanimelist_search_anime.searchoptions.html#http" class="tsd-kind-icon">http</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="integrations_myanimelist_search_anime.searchoptions.html#logger" class="tsd-kind-icon">logger</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="integrations_myanimelist_manga_info.recommendationentity.html#thumbnail" class="tsd-kind-icon">thumbnail</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="integrations_myanimelist_manga_info.recommendationentity.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="integrations_myanimelist_manga_info.recommendationentity.html#url" class="tsd-kind-icon">url</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,22 +94,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="http" class="tsd-anchor"></a>
-					<h3>http</h3>
-					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <a href="types.requester.html" class="tsd-signature-type" data-tsd-kind="Interface">Requester</a></div>
+					<a name="thumbnail" class="tsd-anchor"></a>
+					<h3>thumbnail</h3>
+					<div class="tsd-signature tsd-kind-icon">thumbnail<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/3bed424/lib/integrations/myanimelist/search-anime.ts#L18">integrations/myanimelist/search-anime.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/691c12b/lib/integrations/myanimelist/manga-info.ts#L36">integrations/myanimelist/manga-info.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="logger" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> logger</h3>
-					<div class="tsd-signature tsd-kind-icon">logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="types.logger.html" class="tsd-signature-type" data-tsd-kind="Interface">Logger</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="title" class="tsd-anchor"></a>
+					<h3>title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/3bed424/lib/integrations/myanimelist/search-anime.ts#L17">integrations/myanimelist/search-anime.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/691c12b/lib/integrations/myanimelist/manga-info.ts#L34">integrations/myanimelist/manga-info.ts:34</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="url" class="tsd-anchor"></a>
+					<h3>url</h3>
+					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/691c12b/lib/integrations/myanimelist/manga-info.ts#L35">integrations/myanimelist/manga-info.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -121,35 +132,47 @@
 						<a href="../modules.html">Modules</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/integrations_myanimelist_search_anime.html">integrations/myanimelist/search-<wbr>anime</a>
+						<a href="../modules/integrations_myanimelist_manga_info.html">integrations/myanimelist/manga-<wbr>info</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="integrations_myanimelist_manga_info.characterentity.html" class="tsd-kind-icon">Character<wbr>Entity</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="integrations_myanimelist_manga_info.infooptions.html" class="tsd-kind-icon">Info<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="integrations_myanimelist_manga_info.inforesult.html" class="tsd-kind-icon">Info<wbr>Result</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="integrations_myanimelist_search_anime.searchoptions.html" class="tsd-kind-icon">Search<wbr>Options</a>
+						<a href="integrations_myanimelist_manga_info.recommendationentity.html" class="tsd-kind-icon">Recommendation<wbr>Entity</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="integrations_myanimelist_search_anime.searchoptions.html#http" class="tsd-kind-icon">http</a>
+								<a href="integrations_myanimelist_manga_info.recommendationentity.html#thumbnail" class="tsd-kind-icon">thumbnail</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="integrations_myanimelist_search_anime.searchoptions.html#logger" class="tsd-kind-icon">logger</a>
+								<a href="integrations_myanimelist_manga_info.recommendationentity.html#title" class="tsd-kind-icon">title</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="integrations_myanimelist_manga_info.recommendationentity.html#url" class="tsd-kind-icon">url</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="integrations_myanimelist_search_anime.searchresult.html" class="tsd-kind-icon">Search<wbr>Result</a>
+						<a href="integrations_myanimelist_manga_info.staffentity.html" class="tsd-kind-icon">Staff<wbr>Entity</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/integrations_myanimelist_search_anime.html#config" class="tsd-kind-icon">config</a>
+						<a href="../modules/integrations_myanimelist_manga_info.html#config" class="tsd-kind-icon">config</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/integrations_myanimelist_search_anime.html#default" class="tsd-kind-icon">default</a>
+						<a href="../modules/integrations_myanimelist_manga_info.html#default" class="tsd-kind-icon">default</a>
 					</li>
 				</ul>
 			</nav>

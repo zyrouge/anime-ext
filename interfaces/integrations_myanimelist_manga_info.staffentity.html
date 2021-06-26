@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SeasonResult | Anime Extractor</title>
+	<title>StaffEntity | Anime Extractor</title>
 	<meta name="description" content="Documentation for Anime Extractor">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,13 +55,13 @@
 					<a href="../modules.html">Anime Extractor</a>
 				</li>
 				<li>
-					<a href="../modules/integrations_myanimelist_season.html">integrations/myanimelist/season</a>
+					<a href="../modules/integrations_myanimelist_manga_info.html">integrations/myanimelist/manga-info</a>
 				</li>
 				<li>
-					<a href="integrations_myanimelist_season.seasonresult.html">SeasonResult</a>
+					<a href="integrations_myanimelist_manga_info.staffentity.html">StaffEntity</a>
 				</li>
 			</ul>
-			<h1>Interface SeasonResult</h1>
+			<h1>Interface StaffEntity</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SeasonResult</span>
+						<span class="target">StaffEntity</span>
 					</li>
 				</ul>
 			</section>
@@ -83,8 +83,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="integrations_myanimelist_season.seasonresult.html#entities" class="tsd-kind-icon">entities</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="integrations_myanimelist_season.seasonresult.html#season" class="tsd-kind-icon">season</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="integrations_myanimelist_manga_info.staffentity.html#image" class="tsd-kind-icon">image</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="integrations_myanimelist_manga_info.staffentity.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="integrations_myanimelist_manga_info.staffentity.html#role" class="tsd-kind-icon">role</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="integrations_myanimelist_manga_info.staffentity.html#url" class="tsd-kind-icon">url</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,22 +95,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="entities" class="tsd-anchor"></a>
-					<h3>entities</h3>
-					<div class="tsd-signature tsd-kind-icon">entities<span class="tsd-signature-symbol">:</span> <a href="integrations_myanimelist_season.animeentity.html" class="tsd-signature-type" data-tsd-kind="Interface">AnimeEntity</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="image" class="tsd-anchor"></a>
+					<h3>image</h3>
+					<div class="tsd-signature tsd-kind-icon">image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/691c12b/lib/integrations/myanimelist/season.ts#L34">integrations/myanimelist/season.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/691c12b/lib/integrations/myanimelist/manga-info.ts#L29">integrations/myanimelist/manga-info.ts:29</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="season" class="tsd-anchor"></a>
-					<h3>season</h3>
-					<div class="tsd-signature tsd-kind-icon">season<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/691c12b/lib/integrations/myanimelist/season.ts#L33">integrations/myanimelist/season.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/691c12b/lib/integrations/myanimelist/manga-info.ts#L27">integrations/myanimelist/manga-info.ts:27</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="role" class="tsd-anchor"></a>
+					<h3>role</h3>
+					<div class="tsd-signature tsd-kind-icon">role<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/691c12b/lib/integrations/myanimelist/manga-info.ts#L30">integrations/myanimelist/manga-info.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="url" class="tsd-anchor"></a>
+					<h3>url</h3>
+					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/zyrouge/anime-ext/blob/691c12b/lib/integrations/myanimelist/manga-info.ts#L28">integrations/myanimelist/manga-info.ts:28</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -121,38 +143,50 @@
 						<a href="../modules.html">Modules</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/integrations_myanimelist_season.html">integrations/myanimelist/season</a>
+						<a href="../modules/integrations_myanimelist_manga_info.html">integrations/myanimelist/manga-<wbr>info</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="integrations_myanimelist_season.animeentity.html" class="tsd-kind-icon">Anime<wbr>Entity</a>
+						<a href="integrations_myanimelist_manga_info.characterentity.html" class="tsd-kind-icon">Character<wbr>Entity</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="integrations_myanimelist_season.seasonoptions.html" class="tsd-kind-icon">Season<wbr>Options</a>
+						<a href="integrations_myanimelist_manga_info.infooptions.html" class="tsd-kind-icon">Info<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="integrations_myanimelist_manga_info.inforesult.html" class="tsd-kind-icon">Info<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="integrations_myanimelist_manga_info.recommendationentity.html" class="tsd-kind-icon">Recommendation<wbr>Entity</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="integrations_myanimelist_season.seasonresult.html" class="tsd-kind-icon">Season<wbr>Result</a>
+						<a href="integrations_myanimelist_manga_info.staffentity.html" class="tsd-kind-icon">Staff<wbr>Entity</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="integrations_myanimelist_season.seasonresult.html#entities" class="tsd-kind-icon">entities</a>
+								<a href="integrations_myanimelist_manga_info.staffentity.html#image" class="tsd-kind-icon">image</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="integrations_myanimelist_season.seasonresult.html#season" class="tsd-kind-icon">season</a>
+								<a href="integrations_myanimelist_manga_info.staffentity.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="integrations_myanimelist_manga_info.staffentity.html#role" class="tsd-kind-icon">role</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="integrations_myanimelist_manga_info.staffentity.html#url" class="tsd-kind-icon">url</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/integrations_myanimelist_season.html#config" class="tsd-kind-icon">config</a>
+						<a href="../modules/integrations_myanimelist_manga_info.html#config" class="tsd-kind-icon">config</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/integrations_myanimelist_season.html#default" class="tsd-kind-icon">default</a>
+						<a href="../modules/integrations_myanimelist_manga_info.html#default" class="tsd-kind-icon">default</a>
 					</li>
 				</ul>
 			</nav>

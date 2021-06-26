@@ -3251,7 +3251,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 860,
+								"id": 940,
 								"name": "Requester"
 							}
 						},
@@ -3275,7 +3275,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 846,
+										"id": 926,
 										"name": "Logger"
 									}
 								],
@@ -9905,7 +9905,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 860,
+								"id": 940,
 								"name": "Requester"
 							}
 						},
@@ -9929,7 +9929,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 846,
+										"id": 926,
 										"name": "Logger"
 									}
 								],
@@ -11219,7 +11219,7 @@
 															],
 															"type": {
 																"type": "reference",
-																"id": 860,
+																"id": 940,
 																"name": "Requester"
 															}
 														}
@@ -11344,7 +11344,7 @@
 															],
 															"type": {
 																"type": "reference",
-																"id": 860,
+																"id": 940,
 																"name": "Requester"
 															}
 														}
@@ -11515,7 +11515,7 @@
 			"flags": {},
 			"children": [
 				{
-					"id": 891,
+					"id": 971,
 					"name": "AnimeExtractorDownloadResult",
 					"kind": 16777216,
 					"kindString": "Reference",
@@ -11690,7 +11690,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 860,
+								"id": 940,
 								"name": "Requester"
 							}
 						}
@@ -11718,7 +11718,7 @@
 					"title": "References",
 					"kind": 16777216,
 					"children": [
-						891
+						971
 					]
 				},
 				{
@@ -11914,7 +11914,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 860,
+								"id": 940,
 								"name": "Requester"
 							}
 						},
@@ -11938,7 +11938,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 846,
+										"id": 926,
 										"name": "Logger"
 									}
 								],
@@ -12454,7 +12454,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 860,
+								"id": 940,
 								"name": "Requester"
 							}
 						},
@@ -12478,7 +12478,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 846,
+										"id": 926,
 										"name": "Logger"
 									}
 								],
@@ -12810,14 +12810,14 @@
 			"flags": {},
 			"children": [
 				{
-					"id": 680,
+					"id": 676,
 					"name": "CharacterEntity",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 685,
+							"id": 681,
 							"name": "actor",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12827,21 +12827,21 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 26,
+									"line": 24,
 									"character": 9
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 686,
+									"id": 682,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 689,
+											"id": 685,
 											"name": "image",
 											"kind": 1024,
 											"kindString": "Property",
@@ -12849,7 +12849,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 29,
+													"line": 27,
 													"character": 13
 												}
 											],
@@ -12859,7 +12859,7 @@
 											}
 										},
 										{
-											"id": 690,
+											"id": 686,
 											"name": "language",
 											"kind": 1024,
 											"kindString": "Property",
@@ -12867,7 +12867,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 30,
+													"line": 28,
 													"character": 16
 												}
 											],
@@ -12877,7 +12877,7 @@
 											}
 										},
 										{
-											"id": 687,
+											"id": 683,
 											"name": "name",
 											"kind": 1024,
 											"kindString": "Property",
@@ -12885,7 +12885,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 27,
+													"line": 25,
 													"character": 12
 												}
 											],
@@ -12895,7 +12895,7 @@
 											}
 										},
 										{
-											"id": 688,
+											"id": 684,
 											"name": "url",
 											"kind": 1024,
 											"kindString": "Property",
@@ -12903,7 +12903,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 28,
+													"line": 26,
 													"character": 11
 												}
 											],
@@ -12918,10 +12918,10 @@
 											"title": "Properties",
 											"kind": 1024,
 											"children": [
-												689,
-												690,
-												687,
-												688
+												685,
+												686,
+												683,
+												684
 											]
 										}
 									]
@@ -12929,7 +12929,7 @@
 							}
 						},
 						{
-							"id": 683,
+							"id": 679,
 							"name": "image",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12937,7 +12937,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 24,
+									"line": 22,
 									"character": 9
 								}
 							],
@@ -12947,7 +12947,7 @@
 							}
 						},
 						{
-							"id": 681,
+							"id": 677,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12955,7 +12955,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 22,
+									"line": 20,
 									"character": 8
 								}
 							],
@@ -12965,7 +12965,7 @@
 							}
 						},
 						{
-							"id": 684,
+							"id": 680,
 							"name": "role",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12973,7 +12973,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 25,
+									"line": 23,
 									"character": 8
 								}
 							],
@@ -12983,7 +12983,7 @@
 							}
 						},
 						{
-							"id": 682,
+							"id": 678,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -12991,7 +12991,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 23,
+									"line": 21,
 									"character": 7
 								}
 							],
@@ -13006,31 +13006,31 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								685,
-								683,
 								681,
-								684,
-								682
+								679,
+								677,
+								680,
+								678
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "integrations/myanimelist/anime-info.ts",
-							"line": 21,
+							"line": 19,
 							"character": 32
 						}
 					]
 				},
 				{
-					"id": 677,
+					"id": 673,
 					"name": "InfoOptions",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 679,
+							"id": 675,
 							"name": "http",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13038,18 +13038,18 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 18,
+									"line": 16,
 									"character": 8
 								}
 							],
 							"type": {
 								"type": "reference",
-								"id": 860,
+								"id": 940,
 								"name": "Requester"
 							}
 						},
 						{
-							"id": 678,
+							"id": 674,
 							"name": "logger",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13059,7 +13059,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 17,
+									"line": 15,
 									"character": 10
 								}
 							],
@@ -13068,7 +13068,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 846,
+										"id": 926,
 										"name": "Logger"
 									}
 								],
@@ -13081,28 +13081,28 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								679,
-								678
+								675,
+								674
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "integrations/myanimelist/anime-info.ts",
-							"line": 16,
+							"line": 14,
 							"character": 28
 						}
 					]
 				},
 				{
-					"id": 700,
+					"id": 696,
 					"name": "InfoResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 726,
+							"id": 722,
 							"name": "characters",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13110,7 +13110,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 73,
+									"line": 71,
 									"character": 14
 								}
 							],
@@ -13118,13 +13118,13 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"id": 680,
+									"id": 676,
 									"name": "CharacterEntity"
 								}
 							}
 						},
 						{
-							"id": 703,
+							"id": 699,
 							"name": "image",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13132,7 +13132,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 50,
+									"line": 48,
 									"character": 9
 								}
 							],
@@ -13142,7 +13142,7 @@
 							}
 						},
 						{
-							"id": 711,
+							"id": 707,
 							"name": "info",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13150,21 +13150,21 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 58,
+									"line": 56,
 									"character": 8
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 712,
+									"id": 708,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 716,
+											"id": 712,
 											"name": "aired",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13172,7 +13172,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 62,
+													"line": 60,
 													"character": 13
 												}
 											],
@@ -13182,8 +13182,80 @@
 											}
 										},
 										{
-											"id": 718,
+											"id": 714,
 											"name": "broadcast",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 62,
+													"character": 17
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 720,
+											"name": "duration",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 68,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 710,
+											"name": "episodes",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 58,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 719,
+											"name": "genres",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/anime-info.ts",
+													"line": 67,
+													"character": 14
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 716,
+											"name": "licensors",
 											"kind": 1024,
 											"kindString": "Property",
 											"flags": {},
@@ -13200,69 +13272,15 @@
 											}
 										},
 										{
-											"id": 724,
-											"name": "duration",
+											"id": 713,
+											"name": "premiered",
 											"kind": 1024,
 											"kindString": "Property",
 											"flags": {},
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 70,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										},
-										{
-											"id": 714,
-											"name": "episodes",
-											"kind": 1024,
-											"kindString": "Property",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 60,
-													"character": 16
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										},
-										{
-											"id": 723,
-											"name": "genres",
-											"kind": 1024,
-											"kindString": "Property",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 69,
-													"character": 14
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										},
-										{
-											"id": 720,
-											"name": "licensors",
-											"kind": 1024,
-											"kindString": "Property",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 66,
+													"line": 61,
 													"character": 17
 												}
 											],
@@ -13272,8 +13290,8 @@
 											}
 										},
 										{
-											"id": 717,
-											"name": "premiered",
+											"id": 715,
+											"name": "producers",
 											"kind": 1024,
 											"kindString": "Property",
 											"flags": {},
@@ -13290,25 +13308,7 @@
 											}
 										},
 										{
-											"id": 719,
-											"name": "producers",
-											"kind": 1024,
-											"kindString": "Property",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 65,
-													"character": 17
-												}
-											],
-											"type": {
-												"type": "intrinsic",
-												"name": "string"
-											}
-										},
-										{
-											"id": 725,
+											"id": 721,
 											"name": "rating",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13316,7 +13316,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 71,
+													"line": 69,
 													"character": 14
 												}
 											],
@@ -13326,7 +13326,7 @@
 											}
 										},
 										{
-											"id": 722,
+											"id": 718,
 											"name": "source",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13334,7 +13334,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 68,
+													"line": 66,
 													"character": 14
 												}
 											],
@@ -13344,7 +13344,7 @@
 											}
 										},
 										{
-											"id": 715,
+											"id": 711,
 											"name": "status",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13352,7 +13352,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 61,
+													"line": 59,
 													"character": 14
 												}
 											],
@@ -13362,7 +13362,7 @@
 											}
 										},
 										{
-											"id": 721,
+											"id": 717,
 											"name": "studios",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13370,7 +13370,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 67,
+													"line": 65,
 													"character": 15
 												}
 											],
@@ -13380,7 +13380,7 @@
 											}
 										},
 										{
-											"id": 713,
+											"id": 709,
 											"name": "type",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13388,7 +13388,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 59,
+													"line": 57,
 													"character": 12
 												}
 											],
@@ -13403,19 +13403,19 @@
 											"title": "Properties",
 											"kind": 1024,
 											"children": [
-												716,
-												718,
-												724,
+												712,
 												714,
-												723,
 												720,
-												717,
+												710,
 												719,
-												725,
-												722,
+												716,
+												713,
 												715,
 												721,
-												713
+												718,
+												711,
+												717,
+												709
 											]
 										}
 									]
@@ -13423,7 +13423,7 @@
 							}
 						},
 						{
-							"id": 709,
+							"id": 705,
 							"name": "members",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13431,7 +13431,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 56,
+									"line": 54,
 									"character": 11
 								}
 							],
@@ -13441,7 +13441,7 @@
 							}
 						},
 						{
-							"id": 728,
+							"id": 724,
 							"name": "recommendations",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13449,7 +13449,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 75,
+									"line": 73,
 									"character": 19
 								}
 							],
@@ -13457,13 +13457,13 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"id": 696,
+									"id": 692,
 									"name": "RecommendationEntity"
 								}
 							}
 						},
 						{
-							"id": 710,
+							"id": 706,
 							"name": "season",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13471,7 +13471,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 57,
+									"line": 55,
 									"character": 10
 								}
 							],
@@ -13481,7 +13481,7 @@
 							}
 						},
 						{
-							"id": 727,
+							"id": 723,
 							"name": "staffs",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13489,7 +13489,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 74,
+									"line": 72,
 									"character": 10
 								}
 							],
@@ -13497,13 +13497,13 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"id": 691,
+									"id": 687,
 									"name": "StaffEntity"
 								}
 							}
 						},
 						{
-							"id": 704,
+							"id": 700,
 							"name": "stats",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13511,21 +13511,21 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 51,
+									"line": 49,
 									"character": 9
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 705,
+									"id": 701,
 									"name": "__type",
 									"kind": 65536,
 									"kindString": "Type literal",
 									"flags": {},
 									"children": [
 										{
-											"id": 708,
+											"id": 704,
 											"name": "popularity",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13533,7 +13533,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 54,
+													"line": 52,
 													"character": 18
 												}
 											],
@@ -13543,7 +13543,7 @@
 											}
 										},
 										{
-											"id": 707,
+											"id": 703,
 											"name": "rank",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13551,7 +13551,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 53,
+													"line": 51,
 													"character": 12
 												}
 											],
@@ -13561,7 +13561,7 @@
 											}
 										},
 										{
-											"id": 706,
+											"id": 702,
 											"name": "score",
 											"kind": 1024,
 											"kindString": "Property",
@@ -13569,7 +13569,7 @@
 											"sources": [
 												{
 													"fileName": "integrations/myanimelist/anime-info.ts",
-													"line": 52,
+													"line": 50,
 													"character": 13
 												}
 											],
@@ -13584,9 +13584,9 @@
 											"title": "Properties",
 											"kind": 1024,
 											"children": [
-												708,
-												707,
-												706
+												704,
+												703,
+												702
 											]
 										}
 									]
@@ -13594,7 +13594,7 @@
 							}
 						},
 						{
-							"id": 702,
+							"id": 698,
 							"name": "synopsis",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13602,78 +13602,8 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 49,
+									"line": 47,
 									"character": 12
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						},
-						{
-							"id": 701,
-							"name": "title",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 48,
-									"character": 9
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						}
-					],
-					"groups": [
-						{
-							"title": "Properties",
-							"kind": 1024,
-							"children": [
-								726,
-								703,
-								711,
-								709,
-								728,
-								710,
-								727,
-								704,
-								702,
-								701
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "integrations/myanimelist/anime-info.ts",
-							"line": 47,
-							"character": 27
-						}
-					]
-				},
-				{
-					"id": 696,
-					"name": "RecommendationEntity",
-					"kind": 256,
-					"kindString": "Interface",
-					"flags": {},
-					"children": [
-						{
-							"id": 699,
-							"name": "thumbnail",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 44,
-									"character": 13
 								}
 							],
 							"type": {
@@ -13690,26 +13620,8 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 42,
+									"line": 46,
 									"character": 9
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						},
-						{
-							"id": 698,
-							"name": "url",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 43,
-									"character": 7
 								}
 							],
 							"type": {
@@ -13723,74 +13635,45 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
+								722,
 								699,
-								697,
-								698
+								707,
+								705,
+								724,
+								706,
+								723,
+								700,
+								698,
+								697
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "integrations/myanimelist/anime-info.ts",
-							"line": 41,
-							"character": 37
+							"line": 45,
+							"character": 27
 						}
 					]
 				},
 				{
-					"id": 691,
-					"name": "StaffEntity",
+					"id": 692,
+					"name": "RecommendationEntity",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 694,
-							"name": "image",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 37,
-									"character": 9
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						},
-						{
-							"id": 692,
-							"name": "name",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 35,
-									"character": 8
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						},
-						{
 							"id": 695,
-							"name": "role",
+							"name": "thumbnail",
 							"kind": 1024,
 							"kindString": "Property",
 							"flags": {},
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 38,
-									"character": 8
+									"line": 42,
+									"character": 13
 								}
 							],
 							"type": {
@@ -13800,6 +13683,24 @@
 						},
 						{
 							"id": 693,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 40,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 694,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -13807,7 +13708,7 @@
 							"sources": [
 								{
 									"fileName": "integrations/myanimelist/anime-info.ts",
-									"line": 36,
+									"line": 41,
 									"character": 7
 								}
 							],
@@ -13822,17 +13723,116 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								694,
-								692,
 								695,
-								693
+								693,
+								694
 							]
 						}
 					],
 					"sources": [
 						{
 							"fileName": "integrations/myanimelist/anime-info.ts",
-							"line": 34,
+							"line": 39,
+							"character": 37
+						}
+					]
+				},
+				{
+					"id": 687,
+					"name": "StaffEntity",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 690,
+							"name": "image",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 35,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 688,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 33,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 691,
+							"name": "role",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 36,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 689,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-info.ts",
+									"line": 34,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								690,
+								688,
+								691,
+								689
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-info.ts",
+							"line": 32,
 							"character": 28
 						}
 					]
@@ -13862,7 +13862,456 @@
 							"flags": {},
 							"children": [
 								{
+									"id": 668,
+									"name": "name",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"MyAnimeList-anime-info\""
+								},
+								{
 									"id": 669,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "integrations/myanimelist/anime-info.ts",
+											"line": 7,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 670,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 671,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 672,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																672
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										668
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										669
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 725,
+					"name": "default",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-info.ts",
+							"line": 79,
+							"character": 12
+						}
+					],
+					"signatures": [
+						{
+							"id": 726,
+							"name": "default",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "MyAnimeList.com Anime Information"
+							},
+							"parameters": [
+								{
+									"id": 727,
+									"name": "url",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 728,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 673,
+										"name": "InfoOptions"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 696,
+										"name": "InfoResult"
+									}
+								],
+								"name": "Promise"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						676,
+						673,
+						696,
+						692,
+						687
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						666
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						725
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "integrations/myanimelist/anime-info.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 729,
+			"name": "integrations/myanimelist/anime-search",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 741,
+					"name": "SearchOptions",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 743,
+							"name": "http",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-search.ts",
+									"line": 18,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 940,
+								"name": "Requester"
+							}
+						},
+						{
+							"id": 742,
+							"name": "logger",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-search.ts",
+									"line": 17,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 926,
+										"name": "Logger"
+									}
+								],
+								"name": "Partial"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								743,
+								742
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-search.ts",
+							"line": 16,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 744,
+					"name": "SearchResult",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 747,
+							"name": "description",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-search.ts",
+									"line": 24,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 750,
+							"name": "episodes",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-search.ts",
+									"line": 27,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 751,
+							"name": "score",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-search.ts",
+									"line": 28,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 748,
+							"name": "thumbnail",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-search.ts",
+									"line": 25,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 745,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-search.ts",
+									"line": 22,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 749,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-search.ts",
+									"line": 26,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 746,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/anime-search.ts",
+									"line": 23,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								747,
+								750,
+								751,
+								748,
+								745,
+								749,
+								746
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-search.ts",
+							"line": 21,
+							"character": 29
+						}
+					]
+				},
+				{
+					"id": 730,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/anime-search.ts",
+							"line": 5,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 731,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 733,
 									"name": "baseUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -13870,21 +14319,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 670,
+											"id": 734,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 671,
+													"id": 735,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 672,
+															"id": 736,
 															"name": "terms",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -13906,7 +14355,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 668,
+									"id": 732,
 									"name": "name",
 									"kind": 1024,
 									"kindString": "Property",
@@ -13915,24 +14364,24 @@
 										"type": "intrinsic",
 										"name": "string"
 									},
-									"defaultValue": "\"MyAnimeList-anime-info\""
+									"defaultValue": "\"MyAnimeList-search\""
 								},
 								{
-									"id": 673,
+									"id": 737,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
 									"flags": {},
 									"sources": [
 										{
-											"fileName": "integrations/myanimelist/anime-info.ts",
+											"fileName": "integrations/myanimelist/anime-search.ts",
 											"line": 9,
 											"character": 18
 										}
 									],
 									"signatures": [
 										{
-											"id": 674,
+											"id": 738,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -13940,14 +14389,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 675,
+													"id": 739,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 676,
+															"id": 740,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -13964,7 +14413,7 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																676
+																740
 															]
 														}
 													]
@@ -13979,15 +14428,15 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										669,
-										668
+										733,
+										732
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										673
+										737
 									]
 								}
 							]
@@ -13996,7 +14445,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 729,
+					"id": 752,
 					"name": "default",
 					"kind": 64,
 					"kindString": "Function",
@@ -14005,24 +14454,1136 @@
 					},
 					"sources": [
 						{
-							"fileName": "integrations/myanimelist/anime-info.ts",
-							"line": 81,
+							"fileName": "integrations/myanimelist/anime-search.ts",
+							"line": 34,
 							"character": 12
 						}
 					],
 					"signatures": [
 						{
-							"id": 730,
+							"id": 753,
 							"name": "default",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
-								"shortText": "MyAnimeList.com Anime Information"
+								"shortText": "MyAnimeList.com Anime Search"
 							},
 							"parameters": [
 								{
-									"id": 731,
+									"id": 754,
+									"name": "terms",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 755,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 741,
+										"name": "SearchOptions"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 744,
+											"name": "SearchResult"
+										}
+									}
+								],
+								"name": "Promise"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						741,
+						744
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						730
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						752
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "integrations/myanimelist/anime-search.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 756,
+			"name": "integrations/myanimelist/manga-info",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 767,
+					"name": "CharacterEntity",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 770,
+							"name": "image",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 22,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 768,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 20,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 771,
+							"name": "role",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 23,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 769,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 21,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								770,
+								768,
+								771,
+								769
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/manga-info.ts",
+							"line": 19,
+							"character": 32
+						}
+					]
+				},
+				{
+					"id": 764,
+					"name": "InfoOptions",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 766,
+							"name": "http",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 16,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 940,
+								"name": "Requester"
+							}
+						},
+						{
+							"id": 765,
+							"name": "logger",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 15,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 926,
+										"name": "Logger"
+									}
+								],
+								"name": "Partial"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								766,
+								765
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/manga-info.ts",
+							"line": 14,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 781,
+					"name": "InfoResult",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 807,
+							"name": "characters",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 65,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 767,
+									"name": "CharacterEntity"
+								}
+							}
+						},
+						{
+							"id": 784,
+							"name": "image",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 42,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 792,
+							"name": "info",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 50,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 793,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 797,
+											"name": "aired",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 54,
+													"character": 13
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 799,
+											"name": "broadcast",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 56,
+													"character": 17
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 805,
+											"name": "duration",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 62,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 795,
+											"name": "episodes",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 52,
+													"character": 16
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 804,
+											"name": "genres",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 61,
+													"character": 14
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 801,
+											"name": "licensors",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 58,
+													"character": 17
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 798,
+											"name": "premiered",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 55,
+													"character": 17
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 800,
+											"name": "producers",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 57,
+													"character": 17
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 806,
+											"name": "rating",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 63,
+													"character": 14
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 803,
+											"name": "source",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 60,
+													"character": 14
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 796,
+											"name": "status",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 53,
+													"character": 14
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 802,
+											"name": "studios",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 59,
+													"character": 15
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 794,
+											"name": "type",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 51,
+													"character": 12
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												797,
+												799,
+												805,
+												795,
+												804,
+												801,
+												798,
+												800,
+												806,
+												803,
+												796,
+												802,
+												794
+											]
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 790,
+							"name": "members",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 48,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 808,
+							"name": "recommendations",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 66,
+									"character": 19
+								}
+							],
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "reference",
+									"id": 777,
+									"name": "RecommendationEntity"
+								}
+							}
+						},
+						{
+							"id": 791,
+							"name": "season",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 49,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 785,
+							"name": "stats",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 43,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 786,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"children": [
+										{
+											"id": 789,
+											"name": "popularity",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 46,
+													"character": 18
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 788,
+											"name": "rank",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 45,
+													"character": 12
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 787,
+											"name": "score",
+											"kind": 1024,
+											"kindString": "Property",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "integrations/myanimelist/manga-info.ts",
+													"line": 44,
+													"character": 13
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"kind": 1024,
+											"children": [
+												789,
+												788,
+												787
+											]
+										}
+									]
+								}
+							}
+						},
+						{
+							"id": 783,
+							"name": "synopsis",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 41,
+									"character": 12
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 782,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 40,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								807,
+								784,
+								792,
+								790,
+								808,
+								791,
+								785,
+								783,
+								782
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/manga-info.ts",
+							"line": 39,
+							"character": 27
+						}
+					]
+				},
+				{
+					"id": 777,
+					"name": "RecommendationEntity",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 780,
+							"name": "thumbnail",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 36,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 778,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 34,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 779,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 35,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								780,
+								778,
+								779
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/manga-info.ts",
+							"line": 33,
+							"character": 37
+						}
+					]
+				},
+				{
+					"id": 772,
+					"name": "StaffEntity",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 775,
+							"name": "image",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 29,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 773,
+							"name": "name",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 27,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 776,
+							"name": "role",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 30,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 774,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-info.ts",
+									"line": 28,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								775,
+								773,
+								776,
+								774
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/manga-info.ts",
+							"line": 26,
+							"character": 28
+						}
+					]
+				},
+				{
+					"id": 757,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/manga-info.ts",
+							"line": 5,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 758,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 759,
+									"name": "name",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"MyAnimeList-manga-info\""
+								},
+								{
+									"id": 760,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "integrations/myanimelist/manga-info.ts",
+											"line": 7,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 761,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 762,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 763,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																763
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										759
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										760
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 809,
+					"name": "default",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/manga-info.ts",
+							"line": 72,
+							"character": 12
+						}
+					],
+					"signatures": [
+						{
+							"id": 810,
+							"name": "default",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "MyAnimeList.com Manga Information"
+							},
+							"parameters": [
+								{
+									"id": 811,
 									"name": "url",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -14033,14 +15594,14 @@
 									}
 								},
 								{
-									"id": 732,
+									"id": 812,
 									"name": "options",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 677,
+										"id": 764,
 										"name": "InfoOptions"
 									}
 								}
@@ -14050,7 +15611,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 700,
+										"id": 781,
 										"name": "InfoResult"
 									}
 								],
@@ -14065,52 +15626,546 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						680,
-						677,
-						700,
-						696,
-						691
+						767,
+						764,
+						781,
+						777,
+						772
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						666
+						757
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						729
+						809
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "integrations/myanimelist/anime-info.ts",
+					"fileName": "integrations/myanimelist/manga-info.ts",
 					"line": 1,
 					"character": 0
 				}
 			]
 		},
 		{
-			"id": 733,
+			"id": 813,
+			"name": "integrations/myanimelist/manga-search",
+			"kind": 1,
+			"kindString": "Module",
+			"flags": {},
+			"children": [
+				{
+					"id": 825,
+					"name": "SearchOptions",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 827,
+							"name": "http",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-search.ts",
+									"line": 18,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 940,
+								"name": "Requester"
+							}
+						},
+						{
+							"id": 826,
+							"name": "logger",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-search.ts",
+									"line": 17,
+									"character": 10
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 926,
+										"name": "Logger"
+									}
+								],
+								"name": "Partial"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								827,
+								826
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/manga-search.ts",
+							"line": 16,
+							"character": 30
+						}
+					]
+				},
+				{
+					"id": 828,
+					"name": "SearchResult",
+					"kind": 256,
+					"kindString": "Interface",
+					"flags": {},
+					"children": [
+						{
+							"id": 831,
+							"name": "description",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-search.ts",
+									"line": 24,
+									"character": 15
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 835,
+							"name": "score",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-search.ts",
+									"line": 28,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 832,
+							"name": "thumbnail",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-search.ts",
+									"line": 25,
+									"character": 13
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 829,
+							"name": "title",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-search.ts",
+									"line": 22,
+									"character": 9
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 833,
+							"name": "type",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-search.ts",
+									"line": 26,
+									"character": 8
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 830,
+							"name": "url",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-search.ts",
+									"line": 23,
+									"character": 7
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 834,
+							"name": "volumes",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "integrations/myanimelist/manga-search.ts",
+									"line": 27,
+									"character": 11
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"kind": 1024,
+							"children": [
+								831,
+								835,
+								832,
+								829,
+								833,
+								830,
+								834
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/manga-search.ts",
+							"line": 21,
+							"character": 29
+						}
+					]
+				},
+				{
+					"id": 814,
+					"name": "config",
+					"kind": 32,
+					"kindString": "Variable",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/manga-search.ts",
+							"line": 5,
+							"character": 19
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 815,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 817,
+									"name": "baseUrl",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 818,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"signatures": [
+												{
+													"id": 819,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 820,
+															"name": "terms",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "string"
+													}
+												}
+											]
+										}
+									},
+									"defaultValue": "..."
+								},
+								{
+									"id": 816,
+									"name": "name",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									},
+									"defaultValue": "\"MyAnimeList-search\""
+								},
+								{
+									"id": 821,
+									"name": "defaultHeaders",
+									"kind": 2048,
+									"kindString": "Method",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "integrations/myanimelist/manga-search.ts",
+											"line": 9,
+											"character": 18
+										}
+									],
+									"signatures": [
+										{
+											"id": 822,
+											"name": "defaultHeaders",
+											"kind": 4096,
+											"kindString": "Call signature",
+											"flags": {},
+											"type": {
+												"type": "reflection",
+												"declaration": {
+													"id": 823,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 824,
+															"name": "User-Agent",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "string"
+															},
+															"defaultValue": "..."
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"kind": 1024,
+															"children": [
+																824
+															]
+														}
+													]
+												}
+											}
+										}
+									]
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"kind": 1024,
+									"children": [
+										817,
+										816
+									]
+								},
+								{
+									"title": "Methods",
+									"kind": 2048,
+									"children": [
+										821
+									]
+								}
+							]
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 836,
+					"name": "default",
+					"kind": 64,
+					"kindString": "Function",
+					"flags": {
+						"isConst": true
+					},
+					"sources": [
+						{
+							"fileName": "integrations/myanimelist/manga-search.ts",
+							"line": 34,
+							"character": 12
+						}
+					],
+					"signatures": [
+						{
+							"id": 837,
+							"name": "default",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "MyAnimeList.com Anime Search"
+							},
+							"parameters": [
+								{
+									"id": 838,
+									"name": "terms",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 839,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 825,
+										"name": "SearchOptions"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 828,
+											"name": "SearchResult"
+										}
+									}
+								],
+								"name": "Promise"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Interfaces",
+					"kind": 256,
+					"children": [
+						825,
+						828
+					]
+				},
+				{
+					"title": "Variables",
+					"kind": 32,
+					"children": [
+						814
+					]
+				},
+				{
+					"title": "Functions",
+					"kind": 64,
+					"children": [
+						836
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "integrations/myanimelist/manga-search.ts",
+					"line": 1,
+					"character": 0
+				}
+			]
+		},
+		{
+			"id": 840,
 			"name": "integrations/myanimelist/schedule",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 745,
+					"id": 852,
 					"name": "AnimeEntity",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 753,
+							"id": 860,
 							"name": "date",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14128,7 +16183,7 @@
 							}
 						},
 						{
-							"id": 750,
+							"id": 857,
 							"name": "description",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14146,7 +16201,7 @@
 							}
 						},
 						{
-							"id": 749,
+							"id": 856,
 							"name": "episode",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14164,7 +16219,7 @@
 							}
 						},
 						{
-							"id": 752,
+							"id": 859,
 							"name": "genre",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14185,7 +16240,7 @@
 							}
 						},
 						{
-							"id": 748,
+							"id": 855,
 							"name": "image",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14203,7 +16258,7 @@
 							}
 						},
 						{
-							"id": 746,
+							"id": 853,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14221,7 +16276,7 @@
 							}
 						},
 						{
-							"id": 754,
+							"id": 861,
 							"name": "score",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14239,7 +16294,7 @@
 							}
 						},
 						{
-							"id": 751,
+							"id": 858,
 							"name": "type",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14257,7 +16312,7 @@
 							}
 						},
 						{
-							"id": 747,
+							"id": 854,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14280,15 +16335,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								753,
-								750,
-								749,
-								752,
-								748,
-								746,
-								754,
-								751,
-								747
+								860,
+								857,
+								856,
+								859,
+								855,
+								853,
+								861,
+								858,
+								854
 							]
 						}
 					],
@@ -14301,14 +16356,14 @@
 					]
 				},
 				{
-					"id": 742,
+					"id": 849,
 					"name": "ScheduleOptions",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 744,
+							"id": 851,
 							"name": "http",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14322,12 +16377,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 860,
+								"id": 940,
 								"name": "Requester"
 							}
 						},
 						{
-							"id": 743,
+							"id": 850,
 							"name": "logger",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14346,7 +16401,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 846,
+										"id": 926,
 										"name": "Logger"
 									}
 								],
@@ -14359,8 +16414,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								744,
-								743
+								851,
+								850
 							]
 						}
 					],
@@ -14373,14 +16428,14 @@
 					]
 				},
 				{
-					"id": 755,
+					"id": 862,
 					"name": "ScheduleResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 756,
+							"id": 863,
 							"name": "date",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14398,7 +16453,7 @@
 							}
 						},
 						{
-							"id": 757,
+							"id": 864,
 							"name": "entities",
 							"kind": 1024,
 							"kindString": "Property",
@@ -14414,7 +16469,7 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"id": 745,
+									"id": 852,
 									"name": "AnimeEntity"
 								}
 							}
@@ -14425,8 +16480,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								756,
-								757
+								863,
+								864
 							]
 						}
 					],
@@ -14439,7 +16494,7 @@
 					]
 				},
 				{
-					"id": 734,
+					"id": 841,
 					"name": "config",
 					"kind": 32,
 					"kindString": "Variable",
@@ -14456,14 +16511,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 735,
+							"id": 842,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 737,
+									"id": 844,
 									"name": "baseUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -14475,7 +16530,7 @@
 									"defaultValue": "\"https://myanimelist.net/anime/season/schedule\""
 								},
 								{
-									"id": 736,
+									"id": 843,
 									"name": "name",
 									"kind": 1024,
 									"kindString": "Property",
@@ -14487,7 +16542,7 @@
 									"defaultValue": "\"MyAnimeList-schedule\""
 								},
 								{
-									"id": 738,
+									"id": 845,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
@@ -14501,7 +16556,7 @@
 									],
 									"signatures": [
 										{
-											"id": 739,
+											"id": 846,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -14509,14 +16564,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 740,
+													"id": 847,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 741,
+															"id": 848,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -14533,7 +16588,7 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																741
+																848
 															]
 														}
 													]
@@ -14548,15 +16603,15 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										737,
-										736
+										844,
+										843
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										738
+										845
 									]
 								}
 							]
@@ -14565,7 +16620,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 758,
+					"id": 865,
 					"name": "default",
 					"kind": 64,
 					"kindString": "Function",
@@ -14581,7 +16636,7 @@
 					],
 					"signatures": [
 						{
-							"id": 759,
+							"id": 866,
 							"name": "default",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -14591,14 +16646,14 @@
 							},
 							"parameters": [
 								{
-									"id": 760,
+									"id": 867,
 									"name": "options",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 742,
+										"id": 849,
 										"name": "ScheduleOptions"
 									}
 								}
@@ -14610,7 +16665,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 755,
+											"id": 862,
 											"name": "ScheduleResult"
 										}
 									}
@@ -14626,23 +16681,23 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						745,
-						742,
-						755
+						852,
+						849,
+						862
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						734
+						841
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						758
+						865
 					]
 				}
 			],
@@ -14655,515 +16710,21 @@
 			]
 		},
 		{
-			"id": 761,
-			"name": "integrations/myanimelist/search-anime",
-			"kind": 1,
-			"kindString": "Module",
-			"flags": {},
-			"children": [
-				{
-					"id": 773,
-					"name": "SearchOptions",
-					"kind": 256,
-					"kindString": "Interface",
-					"flags": {},
-					"children": [
-						{
-							"id": 775,
-							"name": "http",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/search-anime.ts",
-									"line": 18,
-									"character": 8
-								}
-							],
-							"type": {
-								"type": "reference",
-								"id": 860,
-								"name": "Requester"
-							}
-						},
-						{
-							"id": 774,
-							"name": "logger",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {
-								"isOptional": true
-							},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/search-anime.ts",
-									"line": 17,
-									"character": 10
-								}
-							],
-							"type": {
-								"type": "reference",
-								"typeArguments": [
-									{
-										"type": "reference",
-										"id": 846,
-										"name": "Logger"
-									}
-								],
-								"name": "Partial"
-							}
-						}
-					],
-					"groups": [
-						{
-							"title": "Properties",
-							"kind": 1024,
-							"children": [
-								775,
-								774
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "integrations/myanimelist/search-anime.ts",
-							"line": 16,
-							"character": 30
-						}
-					]
-				},
-				{
-					"id": 776,
-					"name": "SearchResult",
-					"kind": 256,
-					"kindString": "Interface",
-					"flags": {},
-					"children": [
-						{
-							"id": 779,
-							"name": "description",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/search-anime.ts",
-									"line": 24,
-									"character": 15
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						},
-						{
-							"id": 782,
-							"name": "episodes",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/search-anime.ts",
-									"line": 27,
-									"character": 12
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						},
-						{
-							"id": 783,
-							"name": "score",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/search-anime.ts",
-									"line": 28,
-									"character": 9
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						},
-						{
-							"id": 780,
-							"name": "thumbnail",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/search-anime.ts",
-									"line": 25,
-									"character": 13
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						},
-						{
-							"id": 777,
-							"name": "title",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/search-anime.ts",
-									"line": 22,
-									"character": 9
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						},
-						{
-							"id": 781,
-							"name": "type",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/search-anime.ts",
-									"line": 26,
-									"character": 8
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						},
-						{
-							"id": 778,
-							"name": "url",
-							"kind": 1024,
-							"kindString": "Property",
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "integrations/myanimelist/search-anime.ts",
-									"line": 23,
-									"character": 7
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						}
-					],
-					"groups": [
-						{
-							"title": "Properties",
-							"kind": 1024,
-							"children": [
-								779,
-								782,
-								783,
-								780,
-								777,
-								781,
-								778
-							]
-						}
-					],
-					"sources": [
-						{
-							"fileName": "integrations/myanimelist/search-anime.ts",
-							"line": 21,
-							"character": 29
-						}
-					]
-				},
-				{
-					"id": 762,
-					"name": "config",
-					"kind": 32,
-					"kindString": "Variable",
-					"flags": {
-						"isConst": true
-					},
-					"sources": [
-						{
-							"fileName": "integrations/myanimelist/search-anime.ts",
-							"line": 5,
-							"character": 19
-						}
-					],
-					"type": {
-						"type": "reflection",
-						"declaration": {
-							"id": 763,
-							"name": "__type",
-							"kind": 65536,
-							"kindString": "Type literal",
-							"flags": {},
-							"children": [
-								{
-									"id": 765,
-									"name": "baseUrl",
-									"kind": 1024,
-									"kindString": "Property",
-									"flags": {},
-									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 766,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"signatures": [
-												{
-													"id": 767,
-													"name": "__type",
-													"kind": 4096,
-													"kindString": "Call signature",
-													"flags": {},
-													"parameters": [
-														{
-															"id": 768,
-															"name": "terms",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "string"
-															}
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "string"
-													}
-												}
-											]
-										}
-									},
-									"defaultValue": "..."
-								},
-								{
-									"id": 764,
-									"name": "name",
-									"kind": 1024,
-									"kindString": "Property",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									},
-									"defaultValue": "\"MyAnimeList-search\""
-								},
-								{
-									"id": 769,
-									"name": "defaultHeaders",
-									"kind": 2048,
-									"kindString": "Method",
-									"flags": {},
-									"sources": [
-										{
-											"fileName": "integrations/myanimelist/search-anime.ts",
-											"line": 9,
-											"character": 18
-										}
-									],
-									"signatures": [
-										{
-											"id": 770,
-											"name": "defaultHeaders",
-											"kind": 4096,
-											"kindString": "Call signature",
-											"flags": {},
-											"type": {
-												"type": "reflection",
-												"declaration": {
-													"id": 771,
-													"name": "__type",
-													"kind": 65536,
-													"kindString": "Type literal",
-													"flags": {},
-													"children": [
-														{
-															"id": 772,
-															"name": "User-Agent",
-															"kind": 1024,
-															"kindString": "Property",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "string"
-															},
-															"defaultValue": "..."
-														}
-													],
-													"groups": [
-														{
-															"title": "Properties",
-															"kind": 1024,
-															"children": [
-																772
-															]
-														}
-													]
-												}
-											}
-										}
-									]
-								}
-							],
-							"groups": [
-								{
-									"title": "Properties",
-									"kind": 1024,
-									"children": [
-										765,
-										764
-									]
-								},
-								{
-									"title": "Methods",
-									"kind": 2048,
-									"children": [
-										769
-									]
-								}
-							]
-						}
-					},
-					"defaultValue": "..."
-				},
-				{
-					"id": 784,
-					"name": "default",
-					"kind": 64,
-					"kindString": "Function",
-					"flags": {
-						"isConst": true
-					},
-					"sources": [
-						{
-							"fileName": "integrations/myanimelist/search-anime.ts",
-							"line": 34,
-							"character": 12
-						}
-					],
-					"signatures": [
-						{
-							"id": 785,
-							"name": "default",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"shortText": "MyAnimeList.com Anime Search"
-							},
-							"parameters": [
-								{
-									"id": 786,
-									"name": "terms",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								},
-								{
-									"id": 787,
-									"name": "options",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"id": 773,
-										"name": "SearchOptions"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"typeArguments": [
-									{
-										"type": "array",
-										"elementType": {
-											"type": "reference",
-											"id": 776,
-											"name": "SearchResult"
-										}
-									}
-								],
-								"name": "Promise"
-							}
-						}
-					]
-				}
-			],
-			"groups": [
-				{
-					"title": "Interfaces",
-					"kind": 256,
-					"children": [
-						773,
-						776
-					]
-				},
-				{
-					"title": "Variables",
-					"kind": 32,
-					"children": [
-						762
-					]
-				},
-				{
-					"title": "Functions",
-					"kind": 64,
-					"children": [
-						784
-					]
-				}
-			],
-			"sources": [
-				{
-					"fileName": "integrations/myanimelist/search-anime.ts",
-					"line": 1,
-					"character": 0
-				}
-			]
-		},
-		{
-			"id": 788,
+			"id": 868,
 			"name": "integrations/myanimelist/season",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 800,
+					"id": 880,
 					"name": "AnimeEntity",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 803,
+							"id": 883,
 							"name": "date",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15181,7 +16742,7 @@
 							}
 						},
 						{
-							"id": 806,
+							"id": 886,
 							"name": "description",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15199,7 +16760,7 @@
 							}
 						},
 						{
-							"id": 809,
+							"id": 889,
 							"name": "episode",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15217,7 +16778,7 @@
 							}
 						},
 						{
-							"id": 807,
+							"id": 887,
 							"name": "image",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15235,7 +16796,7 @@
 							}
 						},
 						{
-							"id": 801,
+							"id": 881,
 							"name": "name",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15253,7 +16814,7 @@
 							}
 						},
 						{
-							"id": 808,
+							"id": 888,
 							"name": "score",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15271,7 +16832,7 @@
 							}
 						},
 						{
-							"id": 805,
+							"id": 885,
 							"name": "tags",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15292,7 +16853,7 @@
 							}
 						},
 						{
-							"id": 804,
+							"id": 884,
 							"name": "type",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15310,7 +16871,7 @@
 							}
 						},
 						{
-							"id": 802,
+							"id": 882,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15333,15 +16894,15 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								803,
-								806,
-								809,
-								807,
-								801,
-								808,
-								805,
-								804,
-								802
+								883,
+								886,
+								889,
+								887,
+								881,
+								888,
+								885,
+								884,
+								882
 							]
 						}
 					],
@@ -15354,14 +16915,14 @@
 					]
 				},
 				{
-					"id": 797,
+					"id": 877,
 					"name": "SeasonOptions",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 799,
+							"id": 879,
 							"name": "http",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15375,12 +16936,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 860,
+								"id": 940,
 								"name": "Requester"
 							}
 						},
 						{
-							"id": 798,
+							"id": 878,
 							"name": "logger",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15399,7 +16960,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 846,
+										"id": 926,
 										"name": "Logger"
 									}
 								],
@@ -15412,8 +16973,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								799,
-								798
+								879,
+								878
 							]
 						}
 					],
@@ -15426,14 +16987,14 @@
 					]
 				},
 				{
-					"id": 810,
+					"id": 890,
 					"name": "SeasonResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 812,
+							"id": 892,
 							"name": "entities",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15449,13 +17010,13 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"id": 800,
+									"id": 880,
 									"name": "AnimeEntity"
 								}
 							}
 						},
 						{
-							"id": 811,
+							"id": 891,
 							"name": "season",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15478,8 +17039,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								812,
-								811
+								892,
+								891
 							]
 						}
 					],
@@ -15492,7 +17053,7 @@
 					]
 				},
 				{
-					"id": 789,
+					"id": 869,
 					"name": "config",
 					"kind": 32,
 					"kindString": "Variable",
@@ -15509,14 +17070,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 790,
+							"id": 870,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 792,
+									"id": 872,
 									"name": "baseUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -15528,7 +17089,7 @@
 									"defaultValue": "\"https://myanimelist.net/anime/season\""
 								},
 								{
-									"id": 791,
+									"id": 871,
 									"name": "name",
 									"kind": 1024,
 									"kindString": "Property",
@@ -15540,7 +17101,7 @@
 									"defaultValue": "\"MyAnimeList-season\""
 								},
 								{
-									"id": 793,
+									"id": 873,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
@@ -15554,7 +17115,7 @@
 									],
 									"signatures": [
 										{
-											"id": 794,
+											"id": 874,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -15562,14 +17123,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 795,
+													"id": 875,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 796,
+															"id": 876,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -15586,7 +17147,7 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																796
+																876
 															]
 														}
 													]
@@ -15601,15 +17162,15 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										792,
-										791
+										872,
+										871
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										793
+										873
 									]
 								}
 							]
@@ -15618,7 +17179,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 813,
+					"id": 893,
 					"name": "default",
 					"kind": 64,
 					"kindString": "Function",
@@ -15634,7 +17195,7 @@
 					],
 					"signatures": [
 						{
-							"id": 814,
+							"id": 894,
 							"name": "default",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -15644,14 +17205,14 @@
 							},
 							"parameters": [
 								{
-									"id": 815,
+									"id": 895,
 									"name": "options",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 797,
+										"id": 877,
 										"name": "SeasonOptions"
 									}
 								}
@@ -15661,7 +17222,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 810,
+										"id": 890,
 										"name": "SeasonResult"
 									}
 								],
@@ -15676,23 +17237,23 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						800,
-						797,
-						810
+						880,
+						877,
+						890
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						789
+						869
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						813
+						893
 					]
 				}
 			],
@@ -15705,21 +17266,21 @@
 			]
 		},
 		{
-			"id": 816,
+			"id": 896,
 			"name": "integrations/myanimelist/top",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 828,
+					"id": 908,
 					"name": "SearchOptions",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 830,
+							"id": 910,
 							"name": "http",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15733,12 +17294,12 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 860,
+								"id": 940,
 								"name": "Requester"
 							}
 						},
 						{
-							"id": 829,
+							"id": 909,
 							"name": "logger",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15757,7 +17318,7 @@
 								"typeArguments": [
 									{
 										"type": "reference",
-										"id": 846,
+										"id": 926,
 										"name": "Logger"
 									}
 								],
@@ -15770,8 +17331,8 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								830,
-								829
+								910,
+								909
 							]
 						}
 					],
@@ -15784,14 +17345,14 @@
 					]
 				},
 				{
-					"id": 833,
+					"id": 913,
 					"name": "TopResult",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 840,
+							"id": 920,
 							"name": "image",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15809,7 +17370,7 @@
 							}
 						},
 						{
-							"id": 834,
+							"id": 914,
 							"name": "rank",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15827,7 +17388,7 @@
 							}
 						},
 						{
-							"id": 839,
+							"id": 919,
 							"name": "run",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15845,7 +17406,7 @@
 							}
 						},
 						{
-							"id": 837,
+							"id": 917,
 							"name": "score",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15863,7 +17424,7 @@
 							}
 						},
 						{
-							"id": 838,
+							"id": 918,
 							"name": "series",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15881,7 +17442,7 @@
 							}
 						},
 						{
-							"id": 835,
+							"id": 915,
 							"name": "title",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15899,7 +17460,7 @@
 							}
 						},
 						{
-							"id": 836,
+							"id": 916,
 							"name": "url",
 							"kind": 1024,
 							"kindString": "Property",
@@ -15922,13 +17483,13 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								840,
-								834,
-								839,
-								837,
-								838,
-								835,
-								836
+								920,
+								914,
+								919,
+								917,
+								918,
+								915,
+								916
 							]
 						}
 					],
@@ -15941,7 +17502,7 @@
 					]
 				},
 				{
-					"id": 832,
+					"id": 912,
 					"name": "TopAnimeTypesType",
 					"kind": 4194304,
 					"kindString": "Type alias",
@@ -15963,14 +17524,14 @@
 							"type": "query",
 							"queryType": {
 								"type": "reference",
-								"id": 831,
+								"id": 911,
 								"name": "TopAnimeTypes"
 							}
 						}
 					}
 				},
 				{
-					"id": 831,
+					"id": 911,
 					"name": "TopAnimeTypes",
 					"kind": 32,
 					"kindString": "Variable",
@@ -16032,7 +17593,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 817,
+					"id": 897,
 					"name": "config",
 					"kind": 32,
 					"kindString": "Variable",
@@ -16049,14 +17610,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 818,
+							"id": 898,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 820,
+									"id": 900,
 									"name": "baseUrl",
 									"kind": 1024,
 									"kindString": "Property",
@@ -16064,21 +17625,21 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 821,
+											"id": 901,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"signatures": [
 												{
-													"id": 822,
+													"id": 902,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 823,
+															"id": 903,
 															"name": "type",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -16102,7 +17663,7 @@
 									"defaultValue": "..."
 								},
 								{
-									"id": 819,
+									"id": 899,
 									"name": "name",
 									"kind": 1024,
 									"kindString": "Property",
@@ -16114,7 +17675,7 @@
 									"defaultValue": "\"MyAnimeList-top\""
 								},
 								{
-									"id": 824,
+									"id": 904,
 									"name": "defaultHeaders",
 									"kind": 2048,
 									"kindString": "Method",
@@ -16128,7 +17689,7 @@
 									],
 									"signatures": [
 										{
-											"id": 825,
+											"id": 905,
 											"name": "defaultHeaders",
 											"kind": 4096,
 											"kindString": "Call signature",
@@ -16136,14 +17697,14 @@
 											"type": {
 												"type": "reflection",
 												"declaration": {
-													"id": 826,
+													"id": 906,
 													"name": "__type",
 													"kind": 65536,
 													"kindString": "Type literal",
 													"flags": {},
 													"children": [
 														{
-															"id": 827,
+															"id": 907,
 															"name": "User-Agent",
 															"kind": 1024,
 															"kindString": "Property",
@@ -16160,7 +17721,7 @@
 															"title": "Properties",
 															"kind": 1024,
 															"children": [
-																827
+																907
 															]
 														}
 													]
@@ -16175,15 +17736,15 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										820,
-										819
+										900,
+										899
 									]
 								},
 								{
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										824
+										904
 									]
 								}
 							]
@@ -16192,7 +17753,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 841,
+					"id": 921,
 					"name": "default",
 					"kind": 64,
 					"kindString": "Function",
@@ -16208,7 +17769,7 @@
 					],
 					"signatures": [
 						{
-							"id": 842,
+							"id": 922,
 							"name": "default",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -16218,7 +17779,7 @@
 							},
 							"parameters": [
 								{
-									"id": 843,
+									"id": 923,
 									"name": "type",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -16270,14 +17831,14 @@
 									}
 								},
 								{
-									"id": 844,
+									"id": 924,
 									"name": "options",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 828,
+										"id": 908,
 										"name": "SearchOptions"
 									}
 								}
@@ -16289,7 +17850,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"id": 833,
+											"id": 913,
 											"name": "TopResult"
 										}
 									}
@@ -16305,30 +17866,30 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						828,
-						833
+						908,
+						913
 					]
 				},
 				{
 					"title": "Type aliases",
 					"kind": 4194304,
 					"children": [
-						832
+						912
 					]
 				},
 				{
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						831,
-						817
+						911,
+						897
 					]
 				},
 				{
 					"title": "Functions",
 					"kind": 64,
 					"children": [
-						841
+						921
 					]
 				}
 			],
@@ -16341,35 +17902,35 @@
 			]
 		},
 		{
-			"id": 845,
+			"id": 925,
 			"name": "types",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 846,
+					"id": 926,
 					"name": "Logger",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 850,
+							"id": 930,
 							"name": "debug",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 851,
+									"id": 931,
 									"name": "debug",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 852,
+											"id": 932,
 											"name": "text",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -16388,21 +17949,21 @@
 							]
 						},
 						{
-							"id": 853,
+							"id": 933,
 							"name": "error",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 854,
+									"id": 934,
 									"name": "error",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 855,
+											"id": 935,
 											"name": "text",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -16421,21 +17982,21 @@
 							]
 						},
 						{
-							"id": 847,
+							"id": 927,
 							"name": "info",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 848,
+									"id": 928,
 									"name": "info",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 849,
+											"id": 929,
 											"name": "text",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -16459,9 +18020,9 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								850,
-								853,
-								847
+								930,
+								933,
+								927
 							]
 						}
 					],
@@ -16474,28 +18035,28 @@
 					]
 				},
 				{
-					"id": 860,
+					"id": 940,
 					"name": "Requester",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 861,
+							"id": 941,
 							"name": "get",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 862,
+									"id": 942,
 									"name": "get",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 863,
+											"id": 943,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -16506,14 +18067,14 @@
 											}
 										},
 										{
-											"id": 864,
+											"id": 944,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 856,
+												"id": 936,
 												"name": "RequesterOptions"
 											}
 										}
@@ -16532,21 +18093,21 @@
 							]
 						},
 						{
-							"id": 865,
+							"id": 945,
 							"name": "post",
 							"kind": 2048,
 							"kindString": "Method",
 							"flags": {},
 							"signatures": [
 								{
-									"id": 866,
+									"id": 946,
 									"name": "post",
 									"kind": 4096,
 									"kindString": "Call signature",
 									"flags": {},
 									"parameters": [
 										{
-											"id": 867,
+											"id": 947,
 											"name": "url",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -16557,7 +18118,7 @@
 											}
 										},
 										{
-											"id": 868,
+											"id": 948,
 											"name": "body",
 											"kind": 32768,
 											"kindString": "Parameter",
@@ -16568,14 +18129,14 @@
 											}
 										},
 										{
-											"id": 869,
+											"id": 949,
 											"name": "options",
 											"kind": 32768,
 											"kindString": "Parameter",
 											"flags": {},
 											"type": {
 												"type": "reference",
-												"id": 856,
+												"id": 936,
 												"name": "RequesterOptions"
 											}
 										}
@@ -16599,8 +18160,8 @@
 							"title": "Methods",
 							"kind": 2048,
 							"children": [
-								861,
-								865
+								941,
+								945
 							]
 						}
 					],
@@ -16613,14 +18174,14 @@
 					]
 				},
 				{
-					"id": 856,
+					"id": 936,
 					"name": "RequesterOptions",
 					"kind": 256,
 					"kindString": "Interface",
 					"flags": {},
 					"children": [
 						{
-							"id": 859,
+							"id": 939,
 							"name": "credentials",
 							"kind": 1024,
 							"kindString": "Property",
@@ -16640,7 +18201,7 @@
 							}
 						},
 						{
-							"id": 857,
+							"id": 937,
 							"name": "headers",
 							"kind": 1024,
 							"kindString": "Property",
@@ -16668,7 +18229,7 @@
 							}
 						},
 						{
-							"id": 858,
+							"id": 938,
 							"name": "timeout",
 							"kind": 1024,
 							"kindString": "Property",
@@ -16693,9 +18254,9 @@
 							"title": "Properties",
 							"kind": 1024,
 							"children": [
-								859,
-								857,
-								858
+								939,
+								937,
+								938
 							]
 						}
 					],
@@ -16713,9 +18274,9 @@
 					"title": "Interfaces",
 					"kind": 256,
 					"children": [
-						846,
-						860,
-						856
+						926,
+						940,
+						936
 					]
 				}
 			],
@@ -16728,14 +18289,14 @@
 			]
 		},
 		{
-			"id": 870,
+			"id": 950,
 			"name": "util",
 			"kind": 1,
 			"kindString": "Module",
 			"flags": {},
 			"children": [
 				{
-					"id": 871,
+					"id": 951,
 					"name": "constants",
 					"kind": 32,
 					"kindString": "Variable",
@@ -16752,14 +18313,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 872,
+							"id": 952,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 873,
+									"id": 953,
 									"name": "http",
 									"kind": 1024,
 									"kindString": "Property",
@@ -16767,14 +18328,14 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 874,
+											"id": 954,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"children": [
 												{
-													"id": 875,
+													"id": 955,
 													"name": "_userAgents",
 													"kind": 1024,
 													"kindString": "Property",
@@ -16789,7 +18350,7 @@
 													"defaultValue": "..."
 												},
 												{
-													"id": 878,
+													"id": 958,
 													"name": "maxTimeout",
 													"kind": 1024,
 													"kindString": "Property",
@@ -16801,7 +18362,7 @@
 													"defaultValue": "..."
 												},
 												{
-													"id": 876,
+													"id": 956,
 													"name": "userAgent",
 													"kind": 262144,
 													"kindString": "Accessor",
@@ -16815,7 +18376,7 @@
 													],
 													"getSignature": [
 														{
-															"id": 877,
+															"id": 957,
 															"name": "userAgent",
 															"kind": 524288,
 															"kindString": "Get signature",
@@ -16833,15 +18394,15 @@
 													"title": "Properties",
 													"kind": 1024,
 													"children": [
-														875,
-														878
+														955,
+														958
 													]
 												},
 												{
 													"title": "Accessors",
 													"kind": 262144,
 													"children": [
-														876
+														956
 													]
 												}
 											]
@@ -16855,7 +18416,7 @@
 									"title": "Properties",
 									"kind": 1024,
 									"children": [
-										873
+										953
 									]
 								}
 							]
@@ -16864,7 +18425,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 879,
+					"id": 959,
 					"name": "functions",
 					"kind": 32,
 					"kindString": "Variable",
@@ -16881,14 +18442,14 @@
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 880,
+							"id": 960,
 							"name": "__type",
 							"kind": 65536,
 							"kindString": "Type literal",
 							"flags": {},
 							"children": [
 								{
-									"id": 888,
+									"id": 968,
 									"name": "encodeURI",
 									"kind": 2048,
 									"kindString": "Method",
@@ -16902,14 +18463,14 @@
 									],
 									"signatures": [
 										{
-											"id": 889,
+											"id": 969,
 											"name": "encodeURI",
 											"kind": 4096,
 											"kindString": "Call signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 890,
+													"id": 970,
 													"name": "url",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -16928,7 +18489,7 @@
 									]
 								},
 								{
-									"id": 881,
+									"id": 961,
 									"name": "random",
 									"kind": 2048,
 									"kindString": "Method",
@@ -16942,14 +18503,14 @@
 									],
 									"signatures": [
 										{
-											"id": 882,
+											"id": 962,
 											"name": "random",
 											"kind": 4096,
 											"kindString": "Call signature",
 											"flags": {},
 											"typeParameter": [
 												{
-													"id": 883,
+													"id": 963,
 													"name": "T",
 													"kind": 131072,
 													"kindString": "Type parameter",
@@ -16958,7 +18519,7 @@
 											],
 											"parameters": [
 												{
-													"id": 884,
+													"id": 964,
 													"name": "arr",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -16980,7 +18541,7 @@
 									]
 								},
 								{
-									"id": 885,
+									"id": 965,
 									"name": "sleep",
 									"kind": 2048,
 									"kindString": "Method",
@@ -16994,14 +18555,14 @@
 									],
 									"signatures": [
 										{
-											"id": 886,
+											"id": 966,
 											"name": "sleep",
 											"kind": 4096,
 											"kindString": "Call signature",
 											"flags": {},
 											"parameters": [
 												{
-													"id": 887,
+													"id": 967,
 													"name": "ms",
 													"kind": 32768,
 													"kindString": "Parameter",
@@ -17031,9 +18592,9 @@
 									"title": "Methods",
 									"kind": 2048,
 									"children": [
-										888,
-										881,
-										885
+										968,
+										961,
+										965
 									]
 								}
 							]
@@ -17047,8 +18608,8 @@
 					"title": "Variables",
 					"kind": 32,
 					"children": [
-						871,
-						879
+						951,
+						959
 					]
 				}
 			],
@@ -17090,12 +18651,14 @@
 				614,
 				638,
 				665,
-				733,
-				761,
-				788,
-				816,
-				845,
-				870
+				729,
+				756,
+				813,
+				840,
+				868,
+				896,
+				925,
+				950
 			]
 		}
 	]
