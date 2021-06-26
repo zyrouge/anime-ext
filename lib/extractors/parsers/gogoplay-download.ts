@@ -66,7 +66,6 @@ export default async (
 
         for (const ext of sources) {
             const res = await ext(url, options);
-            console.log(res);
             urls.push(...res);
         }
 

@@ -1,0 +1,99 @@
+import cheerio from "cheerio";
+import { Logger, Requester } from "../../types";
+import { constants, functions } from "../../util";
+
+export const config = {
+    name: "MyAnimeList-search",
+    baseUrl: (terms: string) =>
+        `https://myanimelist.net/manga.php?q=${terms}&cat=manga`,
+    defaultHeaders() {
+        return {
+            "User-Agent": constants.http.userAgent,
+        };
+    },
+};
+
+export interface SearchOptions {
+    logger?: Partial<Logger>;
+    http: Requester;
+}
+
+export interface SearchResult {
+    title: string;
+    url: string;
+    description: string;
+    thumbnail: string;
+    type: string;
+    volumes: string;
+    score: string;
+}
+
+/**
+ * MyAnimeList.com Anime Search
+ */
+const search = async (terms: string, options: SearchOptions) => {
+    try {
+        options.logger?.debug?.(`(${config.name}) Search terms: ${terms}!`);
+
+        const url = config.baseUrl(terms);
+        options.logger?.debug?.(`(${config.name}) Search url: ${url}!`);
+
+        const data = await options.http.get(functions.encodeURI(url), {
+            headers: config.defaultHeaders(),
+            timeout: constants.http.maxTimeout,
+        });
+
+        const $ = cheerio.load(data);
+        options.logger?.debug?.(
+            `(${config.name}) DOM creation successful! (${url})`
+        );
+
+        const items = $(".js-categories-seasonal tr");
+        options.logger?.debug?.(
+            `(${config.name}) No. of items found: ${items.length} (${url})`
+        );
+
+        const results: SearchResult[] = [];
+
+        items.each(function () {
+            const ele = $(this);
+
+            const [pic, info, type, vols, score] = ele
+                .find("td")
+                .map(function () {
+                    return $(this);
+                });
+
+            const link = pic?.find("a").attr("href");
+            const img = pic?.find("img").attr("data-src");
+            const title = info?.find("strong");
+            const description = info?.find(".pt4");
+
+            if (link && title) {
+                results.push({
+                    title: title.text().trim(),
+                    url: link,
+                    description: description?.text().trim() || "",
+                    thumbnail: img?.trim() || "",
+                    type: type?.text().trim() || "",
+                    volumes: vols?.text().trim() || "",
+                    score: score?.text().trim() || "",
+                });
+            }
+        });
+
+        options.logger?.debug?.(
+            `(${config.name}) No. of links parsed: ${results.length} (${url})`
+        );
+
+        return results;
+    } catch (err) {
+        options.logger?.debug?.(
+            `(${config.name}) Failed to parse: ${err?.message}!`
+        );
+
+        throw new Error(`Something went wrong: ${err?.message}!`);
+    }
+};
+
+export default search;

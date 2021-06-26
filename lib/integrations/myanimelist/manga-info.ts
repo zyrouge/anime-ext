@@ -3,7 +3,7 @@ import { Logger, Requester } from "../../types";
 import { constants, functions } from "../../util";
 
 export const config = {
-    name: "MyAnimeList-anime-info",
+    name: "MyAnimeList-manga-info",
     defaultHeaders() {
         return {
             "User-Agent": constants.http.userAgent,
@@ -21,12 +21,6 @@ export interface CharacterEntity {
     url: string;
     image: string;
     role: string;
-    actor?: {
-        name: string;
-        url: string;
-        image: string;
-        language: string;
-    };
 }
 
 export interface StaffEntity {
@@ -69,17 +63,16 @@ export interface InfoResult {
         rating: string;
     };
     characters: CharacterEntity[];
-    staffs: StaffEntity[];
     recommendations: RecommendationEntity[];
 }
 
 /**
- * MyAnimeList.com Anime Information
+ * MyAnimeList.com Manga Information
  */
 const search = async (url: string, options: InfoOptions) => {
     try {
         options.logger?.debug?.(
-            `(${config.name}) Anime info requested: ${url}!`
+            `(${config.name}) Manga info requested: ${url}!`
         );
 
         const data = await options.http.get(functions.encodeURI(url), {
@@ -126,7 +119,7 @@ const search = async (url: string, options: InfoOptions) => {
         const characters: CharacterEntity[] = [];
         charactersTable?.find("> div > table > tbody > tr").each(function () {
             const ele = $(this);
-            const [charImg, charInfo, actorInfoCont] = ele
+            const [charImg, charInfo] = ele
                 .find("> td")
                 .map(function () {
                     return $(this);
@@ -134,61 +127,18 @@ const search = async (url: string, options: InfoOptions) => {
                 .toArray();
 
             const name = charInfo?.find("a");
-
-            const [actorInfo, actorImg] =
-                actorInfoCont
-                    ?.find("td")
-                    .map(function () {
-                        return $(this);
-                    })
-                    .toArray() || [];
-
-            const actorName = actorInfo?.find("a");
-
             if (name) {
                 characters.push({
                     name: name.text().trim(),
                     url: name.attr("href") || "",
                     image: charImg?.find("img").attr("data-src") || "",
                     role: charInfo?.find("small").text().trim() || "",
-                    actor: actorName
-                        ? {
-                              name: actorName.text().trim(),
-                              url: actorName.attr("href") || "",
-                              image:
-                                  actorImg?.find("img").attr("data-src") || "",
-                              language:
-                                  actorInfo?.find("small").text().trim() || "",
-                          }
-                        : undefined,
-                });
-            }
-        });
-
-        const staffs: StaffEntity[] = [];
-        staffTable?.find("tr").each(function () {
-            const ele = $(this);
-            const [staffImg, staffInfo] = ele
-                .find("td")
-                .map(function () {
-                    return $(this);
-                })
-                .toArray();
-
-            const name = staffInfo?.find("a");
-
-            if (name) {
-                staffs.push({
-                    name: name.text().trim(),
-                    url: name.attr("href") || "",
-                    image: staffImg?.find("img").attr("data-src") || "",
-                    role: staffInfo?.find("small").text().trim() || "",
                 });
             }
         });
 
         const recommendations: RecommendationEntity[] = [];
-        $("#anime_recommendation li.btn-anime a").each(function () {
+        $("#manga_recommendation li.btn-anime a").each(function () {
             const ele = $(this);
 
             recommendations.push({
@@ -201,7 +151,7 @@ const search = async (url: string, options: InfoOptions) => {
         const stats = $(".stats-block");
 
         const result: InfoResult = {
-            title: $(".title-name strong").text().trim(),
+            title: $(".h1-title > span").contents().first().text().trim(),
             synopsis: $("[itemprop='description']").text().trim(),
             image: $("#contentWrapper img").attr("data-src") || "",
             stats: {
@@ -213,7 +163,6 @@ const search = async (url: string, options: InfoOptions) => {
             season: stats.find(".season").text().trim(),
             info: information,
             characters,
-            staffs,
             recommendations,
         };
 
