@@ -17,21 +17,27 @@ export default async (
     }
 ) => {
     try {
-        url = `https://gogo-stream.com/download?id=${new URLSearchParams(
-            url.split("?")[1]
-        ).get("id")}`;
+        const id = url
+            .split(/(\?|&)id=/)
+            .pop()
+            ?.split("&")[0];
+        if (!id) return [];
 
         const data = await options.http
-            .get(functions.encodeURI(url), {
-                headers: Object.assign(defaultHeaders(), {
-                    Referer: url,
-                }),
-                timeout: constants.http.maxTimeout,
-            })
+            .get(
+                functions.encodeURI(
+                    `https://gogo-stream.com/download?id=${id}`
+                ),
+                {
+                    headers: Object.assign(defaultHeaders(), {
+                        Referer: url,
+                    }),
+                    timeout: constants.http.maxTimeout,
+                }
+            )
             .catch(async () => {
                 return null;
             });
-
         if (!data) return [];
 
         const $ = cheerio.load(data);
