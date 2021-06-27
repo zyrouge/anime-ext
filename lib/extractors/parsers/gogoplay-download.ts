@@ -1,4 +1,5 @@
 import cheerio from "cheerio";
+import { URLSearchParams } from "url";
 import { Requester } from "../../types";
 import { constants, functions } from "../../util";
 import { AnimeExtractorDownloadResult } from "../anime/model";
@@ -16,12 +17,22 @@ export default async (
     }
 ) => {
     try {
-        const data = await options.http.get(functions.encodeURI(url), {
-            headers: Object.assign(defaultHeaders(), {
-                Referer: url,
-            }),
-            timeout: constants.http.maxTimeout,
-        });
+        url = `https://gogo-stream.com/download?id=${new URLSearchParams(
+            url.split("?")[1]
+        ).get("id")}`;
+
+        const data = await options.http
+            .get(functions.encodeURI(url), {
+                headers: Object.assign(defaultHeaders(), {
+                    Referer: url,
+                }),
+                timeout: constants.http.maxTimeout,
+            })
+            .catch(async () => {
+                return null;
+            });
+
+        if (!data) return [];
 
         const $ = cheerio.load(data);
         const items = $(".dowload a");
