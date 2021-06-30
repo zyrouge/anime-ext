@@ -12,9 +12,9 @@ import GogoDownload from "../parsers/gogoplay-download";
 import { constants, functions } from "../../util";
 
 export const config = {
-    baseUrl: "https://www1.gogoanime.ai",
+    baseUrl: "https://gogoanime.pe",
     searchUrl: (search: string) =>
-        `https://www1.gogoanime.ai/search.html?keyword=${search}`,
+        `https://gogoanime.pe/search.html?keyword=${search}`,
     episodesUrl: (start: string, end: string, id: string) =>
         `https://ajax.gogo-load.com/ajax/load-list-episode?ep_start=${start}&ep_end=${end}&id=${id}`,
     animeRegex: /^https:\/\/www1.gogoanime.ai\/category\/.*/,
