@@ -1,9 +1,9 @@
+import { URL } from "url";
 import cheerio from "cheerio";
 import {
     AnimeExtractorConstructorOptions,
     AnimeExtractorValidateResults,
     AnimeExtractorSearchResult,
-    AnimeExtractorEpisodeResult,
     AnimeExtractorInfoResult,
     AnimeExtractorDownloadResult,
     AnimeExtractorModel,
@@ -112,6 +112,9 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
      */
     async getInfo(url: string) {
         try {
+            url = url.replace(new URL(url).search, "");
+            if (!url.endsWith("/")) url = `${url}/`;
+
             this.options.logger?.debug?.(
                 `(${this.name}) Episode links requested for: ${url}`
             );
@@ -126,29 +129,23 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
                 `(${this.name}) DOM creation successful! (${url})`
             );
 
-            const episodes: AnimeExtractorEpisodeResult[] = [];
-            $(".episode-loop li > a").each(function () {
-                const ele = $(this);
-
-                const episode = ele
-                    .find(".episode-number")
-                    .text()
-                    .replace("Episode", "")
-                    .trim();
-                const url = ele.attr("href");
-
-                if (url) {
-                    episodes.push({
-                        episode: episode || "unknown",
-                        url,
-                    });
-                }
-            });
+            const totalEpisodes = +$(
+                ".entry-episodes .badge.badge-secondary.align-top"
+            )
+                .text()
+                .trim();
+            if (totalEpisodes < 0 || !isFinite(totalEpisodes))
+                throw new Error("Could not estimated the episodes count.");
 
             const result: AnimeExtractorInfoResult = {
                 title: $(".entry-header").text().trim(),
                 thumbnail: $("img.cover-image").attr("src") || "",
-                episodes,
+                episodes: Array(totalEpisodes)
+                    .fill(null)
+                    .map((x, i) => ({
+                        episode: `${i}`,
+                        url: `${url}${i}`,
+                    })),
             };
 
             return result;
