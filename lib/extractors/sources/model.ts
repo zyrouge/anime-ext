@@ -3,7 +3,9 @@ import { AnimeExtractorDownloadResult } from "../anime/model";
 
 export interface SourceRetrieverOptions {
     http: Requester;
+    headers?: Record<string, string>;
 }
+
 export interface SourceRetriever {
     name: string;
     validate(url: string): boolean;

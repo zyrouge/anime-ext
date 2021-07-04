@@ -12,6 +12,8 @@ const sbplay: SourceRetriever = {
     validate: (url) => /https:\/\/sbplay\.org\/.*/.test(url),
     async fetch(url, options) {
         try {
+            if (url.includes("/embed-")) url = url.replace("embed-", "d/");
+
             const headers = Object.assign(defaultHeaders(), {
                 Referer: url,
             });

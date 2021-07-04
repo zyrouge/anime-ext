@@ -8,7 +8,7 @@ import {
     AnimeExtractorDownloadResult,
     AnimeExtractorModel,
 } from "./model";
-import GogoDownload from "../parsers/gogoplay-download";
+import { getExtractor } from "../sources";
 import { constants, functions } from "../../util";
 
 export const config = {
@@ -216,18 +216,32 @@ export default class Gogoanime implements AnimeExtractorModel {
                 headers: config.defaultHeaders(),
             });
 
-            const download = $(".dowloads a")
+            const source = $(".anime_muti_link a")
                 .map(function () {
-                    return $(this).attr("href");
+                    return $(this).attr("data-video");
                 })
                 .toArray()
-                .filter((x) => x);
+                .filter((x) => x)
+                .map((x) => {
+                    if (!x.startsWith("http")) x = `https:${x}`;
 
-            for (const src of download) {
-                const res = await GogoDownload(src, {
-                    http: this.options.http,
+                    return x;
                 });
-                results.push(...res);
+
+            for (const src of source) {
+                const extractor = getExtractor(src);
+                if (extractor) {
+                    const links = await extractor
+                        .fetch(src, {
+                            http: this.options.http,
+                            headers: {
+                                Referer: url,
+                            },
+                        })
+                        .catch(() => null);
+
+                    if (links) results.push(...links);
+                }
             }
 
             return results;

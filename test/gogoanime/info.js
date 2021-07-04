@@ -1,7 +1,7 @@
 const Gogoanime = require("../../dist/extractors/anime/gogoanime").default;
 const util = require("../util");
 
-const ANIME_URL = "https://www1.gogoanime.ai/category/one-piece";
+const ANIME_URL = "https://gogoanime.pe/category/one-piece";
 
 const start = async () => {
     const extractor = new Gogoanime({

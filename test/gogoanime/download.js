@@ -2,7 +2,7 @@ const Gogoanime = require("../../dist/extractors/anime/gogoanime").default;
 const util = require("../util");
 
 const EPISODE_URL =
-    "https://www1.gogoanime.ai/yahari-ore-no-seishun-love-comedy-wa-machigatteiru-episode-12";
+    "https://gogoanime.pe/yahari-ore-no-seishun-love-comedy-wa-machigatteiru-episode-12";
 
 const start = async () => {
     const extractor = new Gogoanime({
