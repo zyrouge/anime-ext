@@ -3,12 +3,11 @@ import { constants, functions } from "../../util";
 
 const defaultHeaders = () => ({
     "User-Agent": constants.http.userAgent,
-    "x-requested-with": "XMLHttpRequest",
 });
 
 const sbplay: SourceRetriever = {
-    name: "StreamAni-Load",
-    validate: (url) => /https:\/\/streamani\.net\/load\.php\?.*/.test(url),
+    name: "Streamtape",
+    validate: (url) => /https:\/\/streamtape\.com\/.*/.test(url),
     async fetch(url, options) {
         try {
             const headers = Object.assign(defaultHeaders(), options.headers);
@@ -16,22 +15,19 @@ const sbplay: SourceRetriever = {
             const res = await options.http.get(functions.encodeURI(url), {
                 headers,
                 timeout: constants.http.maxTimeout,
-                credentials: true,
             });
 
             const results: AnimeExtractorDownloadResult[] = [];
-            for (const [, url, label] of [
-                ...res.matchAll(
-                    /file:\s+['"](.*?)['"].*?label:\s+['"](.*?)['"]/g
-                ),
-            ]) {
-                if (url && label) {
-                    results.push({
-                        url,
-                        quality: label,
-                        type: ["downloadable"],
-                    });
-                }
+
+            const link = res.match(
+                /id="videolink"[\s\S]+\.innerHTML[\s]+=[\s\S]+(id=.*?)['"]/
+            )?.[1];
+            if (link && link.startsWith("id") && /&token=.*$/.test(link)) {
+                results.push({
+                    url: `https://streamtape.com/get_video?${link}`,
+                    quality: "unknown",
+                    type: ["streamable", "downloadable"],
+                });
             }
 
             return results;
