@@ -1,4 +1,3 @@
-import { URL } from "url";
 import cheerio from "cheerio";
 import {
     AnimeExtractorConstructorOptions,
@@ -112,8 +111,7 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
      */
     async getInfo(url: string) {
         try {
-            url = url.replace(new URL(url).search, "");
-            if (!url.endsWith("/")) url = `${url}/`;
+            url = functions.removeSearchParams(url);
 
             this.options.logger?.debug?.(
                 `(${this.name}) Episode links requested for: ${url}`
@@ -144,7 +142,7 @@ export default class TenshiDotMoe implements AnimeExtractorModel {
                     .fill(null)
                     .map((x, i) => ({
                         episode: `${i}`,
-                        url: `${url}${i}`,
+                        url: `${url}/${i}`,
                     })),
             };
 
