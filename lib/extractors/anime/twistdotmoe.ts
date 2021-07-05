@@ -224,7 +224,7 @@ export default class TwistDotAnime implements AnimeExtractorModel {
                 quality:
                     path.match(/\[([\w\d]+)\]\.[\d\w]+$/)?.[1] || "unknown",
                 url: `${config.cdnUrl}${path}`,
-                type: ["external_download"],
+                type: ["downloadable"],
                 headers: config.defaultHeaders(),
             };
 
