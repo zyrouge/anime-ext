@@ -18214,7 +18214,7 @@
 					"sources": [
 						{
 							"fileName": "util.ts",
-							"line": 3,
+							"line": 1,
 							"character": 22
 						}
 					],
@@ -18278,7 +18278,7 @@
 													"sources": [
 														{
 															"fileName": "util.ts",
-															"line": 37,
+															"line": 35,
 															"character": 21
 														}
 													],
@@ -18343,7 +18343,7 @@
 					"sources": [
 						{
 							"fileName": "util.ts",
-							"line": 44,
+							"line": 42,
 							"character": 22
 						}
 					],
@@ -18365,7 +18365,7 @@
 									"sources": [
 										{
 											"fileName": "util.ts",
-											"line": 55,
+											"line": 53,
 											"character": 13
 										}
 									],
@@ -18405,7 +18405,7 @@
 									"sources": [
 										{
 											"fileName": "util.ts",
-											"line": 45,
+											"line": 43,
 											"character": 10
 										}
 									],
@@ -18457,7 +18457,7 @@
 									"sources": [
 										{
 											"fileName": "util.ts",
-											"line": 59,
+											"line": 57,
 											"character": 22
 										}
 									],
@@ -18476,17 +18476,8 @@
 													"kindString": "Parameter",
 													"flags": {},
 													"type": {
-														"type": "union",
-														"types": [
-															{
-																"type": "intrinsic",
-																"name": "string"
-															},
-															{
-																"type": "reference",
-																"name": "URL"
-															}
-														]
+														"type": "intrinsic",
+														"name": "string"
 													}
 												}
 											],
@@ -18506,7 +18497,7 @@
 									"sources": [
 										{
 											"fileName": "util.ts",
-											"line": 48,
+											"line": 46,
 											"character": 9
 										}
 									],
