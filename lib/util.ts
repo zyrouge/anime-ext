@@ -1,5 +1,3 @@
-import { URL } from "url";
-
 export const constants = {
     http: {
         _userAgents: [
@@ -56,10 +54,7 @@ export const functions = {
         if (url === decodeURI(url)) return encodeURI(url);
         return url;
     },
-    removeSearchParams(url: string | URL) {
-        const inst = typeof url === "string" ? new URL(url) : url;
-        let out = inst.href.replace(inst.search, "");
-        if (out.endsWith("/")) out = out.slice(0, -1);
-        return out;
+    removeSearchParams(url: string) {
+        return url.match(/(.*?)\?[^/]*$/)?.[1] || url;
     },
 };
