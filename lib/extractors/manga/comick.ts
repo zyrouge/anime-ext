@@ -187,7 +187,12 @@ export default class ComicK implements MangaExtractorModel {
 
             const result: MangaExtractorChapterPagesResult = {
                 type: "image_urls",
-                entities: JSON.parse(data).data.chapter.images,
+                entities: (
+                    JSON.parse(data).data.chapter.images as string[]
+                ).map((x, i) => ({
+                    page: `${i + 1}`,
+                    url: x,
+                })),
             };
 
             return result;
