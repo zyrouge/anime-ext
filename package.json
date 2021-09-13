@@ -26,7 +26,7 @@
     "@types/qs": "^6.9.6",
     "got": "^11.8.2",
     "rimraf": "^3.0.2",
-    "typedoc": "^0.21.0-beta.4",
+    "typedoc": "^0.22.3",
     "typedoc-material-dark": "github:zyrouge/typedoc-material-dark",
     "typescript": "^4.3.2"
   },
