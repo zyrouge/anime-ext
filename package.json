@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@types/crypto-js": "^4.0.1",
-    "@types/node": "^15.6.1",
+    "@types/node": "^16.10.9",
     "@types/qs": "^6.9.6",
     "got": "^11.8.2",
     "rimraf": "^3.0.2",
